@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="localhost.EntsoeWeatherDW.sa"
+  DTS:DTSID="{AA7E84A8-E9A3-4EB5-9AB7-65AA9F4430BE}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=EntsoeWeatherDW;Provider=SQLNCLI11.1;Application Name=SSIS-Integration Services Project1-{AA7E84A8-E9A3-4EB5-9AB7-65AA9F4430BE}localhost.EntsoeWeatherDW.sa;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1uBfdC5MnESsUj8oakBFFAAAAAACAAAAAAAQZgAAAAEAACAAAABIO8UHhazG9LGRKj24jPvV7Zq11MFX3Zzb+xhOHrQqBAAAAAAOgAAAAAIAACAAAADn16MY9CGRFkMkHptPX2B3EMe2o/kxhKvFKuZ+opmD3YAAAACiRiR0EVgMDQr6hR6cn+oFf6UnPr+erwS95LROOAtw81j0UAd4APK1pnMEXMfq97ZXgj8F6JFECaiW306v+fimB9iVrht6YhSy6Ruc5gmX0GvgD/5pVoQelqTm74J9mPzoGEs1ueFXkiQ2XqHcGPNU2tZyaAqclxYxNMyMA9wzUUAAAAAn7HG/qpVnzJI3ZYWXf12SdO7lLMas+xI5kmTwDykF93G914Rn1KIYBSQuVM4r61DpTdPE9SW0GCDLx/1ca7/V</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

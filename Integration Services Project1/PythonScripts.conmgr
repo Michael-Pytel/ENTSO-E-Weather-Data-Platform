@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="PythonScripts"
+  DTS:DTSID="{4134E3B5-7376-45BD-828A-3384F3329681}"
+  DTS:CreationName="FILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:FileUsageType="2"
+      DTS:ConnectionString="D:\hurtownie\Integration Services Project1\PythonScripts" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
