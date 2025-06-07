@@ -1,0 +1,8 @@
+country_code,country_name,time_period,value,dataset
+CZ,Czechia,2024-S1,0.0931,heating_systems
+DE,Germany,2024-S1,0.0916,heating_systems
+ES,Spain,2024-S1,0.0677,heating_systems
+FR,France,2024-S1,0.088,heating_systems
+HU,Hungary,2024-S1,0.0218,heating_systems
+IT,Italy,2024-S1,0.0882,heating_systems
+SK,Slovakia,2024-S1,0.0509,heating_systems

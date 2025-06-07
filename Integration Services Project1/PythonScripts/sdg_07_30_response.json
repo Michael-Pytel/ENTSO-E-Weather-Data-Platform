@@ -1,0 +1,173 @@
+{
+  "version": "2.0",
+  "class": "dataset",
+  "label": "Energy productivity",
+  "source": "ESTAT",
+  "updated": "2024-12-19T23:00:00+0100",
+  "value": {},
+  "id": [
+    "freq",
+    "unit",
+    "geo",
+    "time"
+  ],
+  "size": [
+    1,
+    0,
+    3,
+    4
+  ],
+  "dimension": {
+    "freq": {
+      "label": "Time frequency",
+      "category": {
+        "index": {
+          "A": 0
+        },
+        "label": {
+          "A": "Annual"
+        }
+      }
+    },
+    "unit": {
+      "label": "Unit of measure",
+      "category": {
+        "index": {},
+        "label": {}
+      }
+    },
+    "geo": {
+      "label": "Geopolitical entity (reporting)",
+      "category": {
+        "index": {
+          "DE": 0,
+          "FR": 1,
+          "PL": 2
+        },
+        "label": {
+          "DE": "Germany",
+          "FR": "France",
+          "PL": "Poland"
+        }
+      }
+    },
+    "time": {
+      "label": "Time",
+      "category": {
+        "index": {
+          "2020": 0,
+          "2021": 1,
+          "2022": 2,
+          "2023": 3
+        },
+        "label": {
+          "2020": "2020",
+          "2021": "2021",
+          "2022": "2022",
+          "2023": "2023"
+        }
+      }
+    }
+  },
+  "extension": {
+    "lang": "EN",
+    "description": "The indicator measures the amount of economic output that is produced per unit of gross available energy. The gross available energy represents the quantity of energy products necessary to satisfy all demand of entities in the geographical area under consideration.The economic output is either given as in the unit of Euros in chain-linked volumes to the reference year 2010 at 2010 exchange rates or in the unit PPS (Purchasing Power Standard). The former is used to observe the evolution over time for a specific region while the latter allows comparing Member States in a given year.",
+    "id": "SDG_07_30",
+    "agencyId": "ESTAT",
+    "version": "1.0",
+    "datastructure": {
+      "id": "SDG_07_30",
+      "agencyId": "ESTAT",
+      "version": "30.2"
+    },
+    "annotation": [
+      {
+        "type": "CREATED",
+        "date": "2019-03-19T11:23:41+0100"
+      },
+      {
+        "type": "DISSEMINATION_DOI_XML",
+        "title": "<adms:identifier xmlns:adms=\"http://www.w3.org/ns/adms#\" xmlns:skos=\"http://www.w3.org/2004/02/skos/core.html\" xmlns:dct=\"http://purl.org/dc/terms/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"><adms:Identifier rdf:about=\"https://doi.org/10.2908/SDG_07_30\"><skos:notation rdf:datatype=\"http://purl.org/spar/datacite/doi\">10.2908/SDG_07_30</skos:notation><dct:creator rdf:resource=\"http://publications.europa.eu/resource/authority/corporate-body/ESTAT\"/><dct:issued rdf:datatype=\"http://www.w3.org/2001/XMLSchema#date\">2023-01-23</dct:issued></adms:Identifier></adms:identifier>"
+      },
+      {
+        "type": "DISSEMINATION_OBJECT_TYPE",
+        "title": "DATASET"
+      },
+      {
+        "type": "DISSEMINATION_PRESENTATIONS",
+        "title": "[{\"names\":{\"de\":{\"locale\":\"de\",\"value\":\"Standardpräsentation\",\"html\":false},\"en\":{\"locale\":\"en\",\"value\":\"Default presentation\",\"html\":false},\"fr\":{\"locale\":\"fr\",\"value\":\"Présentation par défaut\",\"html\":false}},\"descriptions\":{},\"code\":\"default\",\"useAsDefault\":true,\"order\":0,\"defaultView\":\"view.table\",\"jsonFormat\":null,\"preselection\":[{\"code\":\"freq\",\"multipleSelection\":null,\"singleSelection\":\"A\"},{\"code\":\"unit\",\"multipleSelection\":null,\"singleSelection\":null},{\"code\":\"geo\",\"multipleSelection\":null,\"singleSelection\":null}],\"preselectionTimeFilter\":{\"code\":\"time\",\"multipleSelection\":null,\"singleSelection\":null,\"mode\":\"ALL\",\"from\":null,\"to\":null,\"fixed\":null},\"layoutFormat\":{\"layoutAxes\":{\"y1\":\"time\",\"x1\":\"geo\"},\"fixedMinMax\":false,\"mapProjection\":null,\"mapShowAllGeo\":true,\"mapNumberOfColors\":0,\"rankingMode\":false,\"highlightMode\":false,\"labelOption\":null,\"labelByDimension\":null,\"businessRulesStrategy\":null,\"mapClassificartionMethode\":null}}]"
+      },
+      {
+        "type": "DISSEMINATION_PRESENTATIONS_VERSION",
+        "title": "v0_4_X"
+      },
+      {
+        "type": "DISSEMINATION_SOURCE_DATASET",
+        "title": "NRG_IND_EP"
+      },
+      {
+        "type": "DISSEMINATION_TIMESTAMP_DATA",
+        "date": "2025-01-24T23:00:00+0100"
+      },
+      {
+        "type": "DISSEMINATION_TIMESTAMP_GLOBAL",
+        "date": "2025-01-24T23:00:00+0100"
+      },
+      {
+        "type": "DISSEMINATION_TIMESTAMP_PLANNED",
+        "date": "2025-01-24T23:00:00+0100"
+      },
+      {
+        "type": "ESMS_HTML",
+        "title": "Explanatory texts (metadata)",
+        "href": "https://ec.europa.eu/eurostat/cache/metadata/en/sdg_07_30_esmsip2.htm"
+      },
+      {
+        "type": "ESMS_SDMX",
+        "title": "Explanatory texts (metadata)",
+        "href": "https://ec.europa.eu/eurostat/api/dissemination/files?file=metadata/sdg_07_30_esmsip2.sdmx.zip"
+      },
+      {
+        "type": "OBS_COUNT",
+        "title": "1723"
+      },
+      {
+        "type": "OBS_PERIOD_OVERALL_LATEST",
+        "title": "2023"
+      },
+      {
+        "type": "OBS_PERIOD_OVERALL_OLDEST",
+        "title": "2000"
+      },
+      {
+        "type": "SOURCE_INSTITUTIONS",
+        "text": "Eurostat"
+      },
+      {
+        "type": "UPDATE_DATA",
+        "date": "2024-12-19T23:00:00+0100"
+      },
+      {
+        "type": "UPDATE_STRUCTURE",
+        "date": "2024-12-19T23:00:00+0100"
+      }
+    ],
+    "positions-with-no-data": {
+      "freq": [
+        0
+      ],
+      "unit": [],
+      "geo": [
+        0,
+        1,
+        2
+      ],
+      "time": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}

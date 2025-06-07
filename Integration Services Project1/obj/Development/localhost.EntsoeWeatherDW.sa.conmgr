@@ -7,10 +7,6 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=EntsoeWeatherDW;Provider=SQLNCLI11.1;Application Name=SSIS-Integration Services Project1-{AA7E84A8-E9A3-4EB5-9AB7-65AA9F4430BE}localhost.EntsoeWeatherDW.sa;Auto Translate=False;">
-      <DTS:Password
-        DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1uBfdC5MnESsUj8oakBFFAAAAAACAAAAAAAQZgAAAAEAACAAAABZhPeVo/sLIyUNnSH5hhW59znxh6PzWZwObY9jFRYOFQAAAAAOgAAAAAIAACAAAADG5Hqhuf9qp/Uj1OY6dx6i/X3l7HPTnIqRwmdf3y2mnYAAAADrUnpDadYq3Lnq/YgIp0Ht7MIHoJ02EhCoqt8NKxM3qLRnzYsHQ1JaGAAfS7j7pClW9asnNv67E4SDidiOBtmBIoN20ulkFlsflzU1Y9LWkj/PtRj4NoRshLYoS7D9qEeufGuORLUOqLmIizhYwJie6UasHaP5HMu+1AYcZFp27UAAAACxRQcrX9CtCZV+XsWLcxXtNOqJHbCw7LTZVUZ0/1p9sG3YjX6uSDlE/10TdSUbY7tgiso+bo3jQmeuXp5HTbYa</DTS:Password>
-    </DTS:ConnectionManager>
+      DTS:ConnectionString="Data Source=localhost;Initial Catalog=EnergyWeatherDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Integration Services Project1-{AA7E84A8-E9A3-4EB5-9AB7-65AA9F4430BE}localhost.EntsoeWeatherDW.sa;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

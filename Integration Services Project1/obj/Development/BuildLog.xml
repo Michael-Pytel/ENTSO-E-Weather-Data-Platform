@@ -2,13 +2,18 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>Integration Services Project1</Name>
-    <LastWriteTime>2025-05-19T09:42:12.9412791Z</LastWriteTime>
+    <LastWriteTime>2025-06-04T17:37:50.5515278Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>ENTSO_Weather_Main.dtsx</Name>
-      <LastWriteTime>2025-05-19T12:44:06.3462625Z</LastWriteTime>
+      <LastWriteTime>2025-05-19T19:58:20.6673014Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Main_ETL_Process.dtsx</Name>
+      <LastWriteTime>2025-06-07T17:50:21.4991743Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

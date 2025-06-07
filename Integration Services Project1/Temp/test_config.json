@@ -1,0 +1,252 @@
+{
+    "entsoe_api_key": "14911a12-10be-4bcb-a74a-64195e416851",
+    "bidding_zones": [
+        {
+            "code": "10YPL-AREA-----S",
+            "name": "Poland",
+            "short_code": "PL"
+        },
+        {
+            "code": "10Y1001A1001A63L",
+            "name": "Germany-Luxembourg",
+            "short_code": "DE_LU"
+        },
+        {
+            "code": "10YFR-RTE------C",
+            "name": "France",
+            "short_code": "FR"
+        },
+        {
+            "code": "10YES-REE------0",
+            "name": "Spain",
+            "short_code": "ES"
+        },
+        {
+            "code": "10Y1001A1001A73I",
+            "name": "Italy (North)",
+            "short_code": "IT_NORD"
+        },
+        {
+            "code": "10YNL----------L",
+            "name": "Netherlands",
+            "short_code": "NL"
+        },
+        {
+            "code": "10YBE----------2",
+            "name": "Belgium",
+            "short_code": "BE"
+        },
+        {
+            "code": "10YAT-APG------L",
+            "name": "Austria",
+            "short_code": "AT"
+        },
+        {
+            "code": "10YCH-SWISSGRIDZ",
+            "name": "Switzerland",
+            "short_code": "CH"
+        },
+        {
+            "code": "10YGB----------A",
+            "name": "Great Britain",
+            "short_code": "GB"
+        },
+        {
+            "code": "10YNO-1--------2",
+            "name": "Norway (South)",
+            "short_code": "NO_1"
+        },
+        {
+            "code": "10YDK-1--------W",
+            "name": "Denmark (West)",
+            "short_code": "DK_1"
+        },
+        {
+            "code": "10YDK-2--------M",
+            "name": "Denmark (East)",
+            "short_code": "DK_2"
+        },
+        {
+            "code": "10YSE-1--------K",
+            "name": "Sweden (North)",
+            "short_code": "SE_1"
+        },
+        {
+            "code": "10YSE-4--------9",
+            "name": "Sweden (South)",
+            "short_code": "SE_4"
+        },
+        {
+            "code": "10YFI-1--------U",
+            "name": "Finland",
+            "short_code": "FI"
+        },
+        {
+            "code": "10YCZ-CEPS-----N",
+            "name": "Czech Republic",
+            "short_code": "CZ"
+        },
+        {
+            "code": "10YSK-SEPS-----K",
+            "name": "Slovakia",
+            "short_code": "SK"
+        },
+        {
+            "code": "10YHU-MAVIR----U",
+            "name": "Hungary",
+            "short_code": "HU"
+        },
+        {
+            "code": "10YRO-TEL------P",
+            "name": "Romania",
+            "short_code": "RO"
+        },
+        {
+            "code": "10YGR-HTSO-----Y",
+            "name": "Greece",
+            "short_code": "GR"
+        },
+        {
+            "code": "10YPT-REN------W",
+            "name": "Portugal",
+            "short_code": "PT"
+        },
+        {
+            "code": "10Y1001A1001A59C",
+            "name": "Ireland",
+            "short_code": "IE_SEM"
+        }
+    ],
+    "country_map": {
+        "PL": "10YPL-AREA-----S",
+        "DE_LU": "10Y1001A1001A63L",
+        "FR": "10YFR-RTE------C",
+        "ES": "10YES-REE------0",
+        "IT_NORD": "10Y1001A1001A73I",
+        "NL": "10YNL----------L",
+        "BE": "10YBE----------2",
+        "AT": "10YAT-APG------L",
+        "CH": "10YCH-SWISSGRIDZ",
+        "GB": "10YGB----------A",
+        "NO_1": "10YNO-1--------2",
+        "DK_1": "10YDK-1--------W",
+        "DK_2": "10YDK-2--------M",
+        "SE_1": "10YSE-1--------K",
+        "SE_4": "10YSE-4--------9",
+        "FI": "10YFI-1--------U",
+        "CZ": "10YCZ-CEPS-----N",
+        "SK": "10YSK-SEPS-----K",
+        "HU": "10YHU-MAVIR----U",
+        "RO": "10YRO-TEL------P",
+        "GR": "10YGR-HTSO-----Y",
+        "PT": "10YPT-REN------W",
+        "IE_SEM": "10Y1001A1001A59C"
+    },
+    "locations": [
+        {
+            "name": "Warsaw",
+            "latitude": 52.23,
+            "longitude": 21.01,
+            "country": "PL"
+        },
+        {
+            "name": "Berlin",
+            "latitude": 52.52,
+            "longitude": 13.4,
+            "country": "DE_LU"
+        },
+        {
+            "name": "Paris",
+            "latitude": 48.85,
+            "longitude": 2.35,
+            "country": "FR"
+        },
+        {
+            "name": "Madrid",
+            "latitude": 40.42,
+            "longitude": -3.7,
+            "country": "ES"
+        },
+        {
+            "name": "Rome",
+            "latitude": 41.9,
+            "longitude": 12.5,
+            "country": "IT_NORD"
+        },
+        {
+            "name": "Amsterdam",
+            "latitude": 52.37,
+            "longitude": 4.9,
+            "country": "NL"
+        },
+        {
+            "name": "Brussels",
+            "latitude": 50.85,
+            "longitude": 4.35,
+            "country": "BE"
+        },
+        {
+            "name": "Vienna",
+            "latitude": 48.21,
+            "longitude": 16.37,
+            "country": "AT"
+        },
+        {
+            "name": "Prague",
+            "latitude": 50.08,
+            "longitude": 14.42,
+            "country": "CZ"
+        },
+        {
+            "name": "Stockholm",
+            "latitude": 59.33,
+            "longitude": 18.06,
+            "country": "SE_4"
+        },
+        {
+            "name": "Helsinki",
+            "latitude": 60.17,
+            "longitude": 24.94,
+            "country": "FI"
+        },
+        {
+            "name": "Budapest",
+            "latitude": 47.5,
+            "longitude": 19.04,
+            "country": "HU"
+        },
+        {
+            "name": "Athens",
+            "latitude": 37.98,
+            "longitude": 23.73,
+            "country": "GR"
+        },
+        {
+            "name": "Lisbon",
+            "latitude": 38.72,
+            "longitude": -9.13,
+            "country": "PT"
+        },
+        {
+            "name": "Dublin",
+            "latitude": 53.35,
+            "longitude": -6.26,
+            "country": "IE_SEM"
+        }
+    ],
+    "sql_server": "localhost",
+    "sql_database": "EntsoeWeatherDW",
+    "sql_username": "sa",
+    "sql_password": "******",
+    "temp_folder": "D:/hurtownie/Integration Services Project1/Temp",
+    "log_folder": "D:/hurtownie/Integration Services Project1/logs",
+    "historical_years": 5,
+    "batch_days": 30,
+    "max_retries": 5,
+    "sleep_between_calls": 3,
+    "timeout": 120,
+    "api_endpoint": "https://web-api.tp.entsoe.eu/api",
+    "test_mode": false,
+    "save_raw_responses": false,
+    "use_historical_dates": false
+}

@@ -1,0 +1,1870 @@
+2025-06-07 05:27:46,878 - __main__ - INFO - Starting complete diagnostics for Eurostat energy_intensity endpoint
+2025-06-07 05:27:46,878 - __main__ - INFO - 
+=== TESTING ENERGY INTENSITY ENDPOINT WITH DIFFERENT PARAMETERS ===
+2025-06-07 05:27:46,880 - __main__ - INFO - 
+Testing: No parameters
+2025-06-07 05:27:46,880 - __main__ - INFO - Sending request to https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei with params: {'format': 'JSON', 'lang': 'EN', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT'], 'sinceTimePeriod': '2020'}
+2025-06-07 05:27:46,888 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:27:47,253 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei?format=JSON&lang=EN&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT&sinceTimePeriod=2020 HTTP/1.1" 200 4109
+2025-06-07 05:27:47,255 - __main__ - INFO - Success! Response contains 80 non-null values
+2025-06-07 05:27:47,256 - __main__ - INFO - Found successful configuration with 80 values, analyzing structure...
+2025-06-07 05:27:47,262 - __main__ - INFO - 
+=== ANALYSIS OF RESPONSE STRUCTURE ===
+2025-06-07 05:27:47,263 - __main__ - INFO - Main sections: ['version', 'class', 'label', 'source', 'updated', 'value', 'id', 'size', 'dimension', 'extension']
+2025-06-07 05:27:47,263 - __main__ - INFO - Dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:27:47,264 - __main__ - INFO - 
+Dimension 'freq':
+2025-06-07 05:27:47,264 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:47,265 - __main__ - INFO -   Sample indices: {'A': 0}...
+2025-06-07 05:27:47,265 - __main__ - INFO -   Sample labels: {'A': 'Annual'}...
+2025-06-07 05:27:47,268 - __main__ - INFO - 
+Dimension 'nrg_bal':
+2025-06-07 05:27:47,268 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:47,269 - __main__ - INFO -   Sample indices: {'EI_GDP_PPS': 0, 'EI_GDP_CLV05': 1, 'EI_GDP_CLV10': 2}...
+2025-06-07 05:27:47,269 - __main__ - INFO -   Sample labels: {'EI_GDP_PPS': 'Energy intensity of GDP in purchasing power standards (PPS)', 'EI_GDP_CLV05': 'Energy intensity of GDP in chain linked volumes (2005)', 'EI_GDP_CLV10': 'Energy intensity of GDP in chain linked volumes (2010)'}...
+2025-06-07 05:27:47,359 - __main__ - INFO - 
+Dimension 'unit':
+2025-06-07 05:27:47,361 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:47,361 - __main__ - INFO -   Sample indices: {'KGOE_TEUR': 0, 'KGOE_TEUR_PPS': 1}...
+2025-06-07 05:27:47,366 - __main__ - INFO -   Sample labels: {'KGOE_TEUR': 'Kilograms of oil equivalent (KGOE) per thousand euro', 'KGOE_TEUR_PPS': 'Kilograms of oil equivalent (KGOE) per thousand euro in purchasing power standards (PPS)'}...
+2025-06-07 05:27:47,366 - __main__ - INFO - 
+Dimension 'geo':
+2025-06-07 05:27:47,367 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:47,368 - __main__ - INFO -   Sample indices: {'DE': 0, 'ES': 1, 'FR': 2}...
+2025-06-07 05:27:47,368 - __main__ - INFO -   Sample labels: {'DE': 'Germany', 'ES': 'Spain', 'FR': 'France'}...
+2025-06-07 05:27:47,369 - __main__ - INFO - 
+Dimension 'time':
+2025-06-07 05:27:47,369 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:47,370 - __main__ - INFO -   Sample indices: {'2020': 0, '2021': 1, '2022': 2}...
+2025-06-07 05:27:47,377 - __main__ - INFO -   Sample labels: {'2020': '2020', '2021': '2021', '2022': '2022'}...
+2025-06-07 05:27:47,378 - __main__ - INFO - 
+Values: 80 non-null out of 80 total
+2025-06-07 05:27:47,379 - __main__ - INFO - Sample values: {'40': 103.73, '41': 104.09, '42': 97.87, '43': 89.55, '44': 123.05}
+2025-06-07 05:27:47,379 - __main__ - INFO - 
+Analyzing key structure. Sample key: '40'
+2025-06-07 05:27:47,380 - __main__ - INFO - Key is numeric: 40
+2025-06-07 05:27:47,380 - __main__ - INFO - Attempting to decode using dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:27:47,381 - __main__ - INFO - Checking if key can be decoded using common patterns...
+2025-06-07 05:27:47,382 - __main__ - INFO - === END OF ANALYSIS ===
+
+2025-06-07 05:27:47,383 - __main__ - INFO - 
+=== TESTING PARSING FUNCTIONS ===
+2025-06-07 05:27:47,385 - __main__ - INFO - Testing separator-based parsing method...
+2025-06-07 05:27:47,385 - __main__ - INFO - Separator method produced 0 records
+2025-06-07 05:27:47,386 - __main__ - INFO - Testing numeric index parsing method...
+2025-06-07 05:27:47,393 - __main__ - INFO - Numeric method produced 0 records
+2025-06-07 05:27:47,394 - __main__ - INFO - Testing direct mapping method...
+2025-06-07 05:27:47,394 - __main__ - INFO - Direct mapping method produced 20 records
+2025-06-07 05:27:47,395 - __main__ - INFO - Best parsing method: direct with 20 records
+2025-06-07 05:27:47,396 - __main__ - INFO - Sample records from best method:
+2025-06-07 05:27:47,396 - __main__ - INFO - Record 1: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2020', 'value': 103.73}
+2025-06-07 05:27:47,397 - __main__ - INFO - Record 2: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2021', 'value': 103.73}
+2025-06-07 05:27:47,397 - __main__ - INFO - Record 3: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2022', 'value': 103.73}
+2025-06-07 05:27:47,398 - __main__ - INFO - Record 4: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2023', 'value': 103.73}
+2025-06-07 05:27:47,398 - __main__ - INFO - Record 5: {'country_code': 'ES', 'country_name': 'Spain', 'time_period': '2020', 'value': 103.73}
+2025-06-07 05:27:47,399 - __main__ - INFO - === END OF PARSING TESTS ===
+
+2025-06-07 05:27:47,400 - __main__ - INFO - 
+=== GENERATING OPTIMIZED PARSING FUNCTION ===
+2025-06-07 05:27:47,402 - __main__ - INFO - Generated parsing function for 'direct' method:
+
+def _parse_energy_intensity_data(self, values, geo_indices, geo_labels, time_indices, dimension):
+    records = []
+    
+    # Najpierw spróbuj metody z separatorami
+    sample_key = next(iter(values.keys()), None)
+    if sample_key and ":" in sample_key:
+        dim_positions = {}
+        key_parts = sample_key.split(':')
+        
+        # Próba okreœlenia, która pozycja odpowiada któremu wymiarowi
+        for i, part in enumerate(key_parts):
+            for dim_name, dim_data in dimension.items():
+                if 'category' in dim_data and 'index' in dim_data['category']:
+                    if part in dim_data['category']['index']:
+                        dim_positions[dim_name] = i
+                        break
+        
+        # Przetwarzaj wartoœci z separatorami
+        for key, value in values.items():
+            if value is None:
+                continue
+                
+            key_parts = key.split(':')
+            
+            country_code = None
+            time_period = None
+            
+            if 'geo' in dim_positions and dim_positions['geo'] < len(key_parts):
+                geo_idx = dim_positions['geo']
+                country_code = key_parts[geo_idx]
+                
+            if 'time' in dim_positions and dim_positions['time'] < len(key_parts):
+                time_idx = dim_positions['time']
+                time_period = key_parts[time_idx]
+                
+            if country_code and time_period:
+                record = {
+                    'country_code': country_code,
+                    'country_name': geo_labels.get(country_code, country_code),
+                    'time_period': time_period,
+                    'value': float(value) if value is not None else None
+                }
+                records.append(record)
+    else:
+        # Spróbuj metody numerycznej
+        try:
+            country_codes = list(geo_indices.keys())
+            time_codes = list(time_indices.keys())
+            
+            for value_key, value in values.items():
+                try:
+                    key_num = int(value_key)
+                    
+                    if len(time_codes) > 0:
+                        country_idx = key_num // len(time_codes)
+                        time_idx = key_num % len(time_codes)
+                        
+                        if country_idx < len(country_codes) and time_idx < len(time_codes):
+                            country_code = country_codes[country_idx]
+                            time_period = time_codes[time_idx]
+                            
+                            record = {
+                                'country_code': country_code,
+                                'country_name': geo_labels.get(country_code, country_code),
+                                'time_period': time_period,
+                                'value': float(value) if value is not None else None
+                            }
+                            records.append(record)
+                except (ValueError, IndexError):
+                    continue
+        except Exception:
+            pass
+    
+    # Jeœli poprzednie metody nie da³y wyników, u¿yj metody bezpoœredniego mapowania
+    if not records:
+        # Iteruj po wszystkich krajach i latach
+        for country_code in geo_indices.keys():
+            for time_period in time_indices.keys():
+                for key, value in values.items():
+                    if value is None:
+                        continue
+                        
+                    # SprawdŸ, czy klucz odnosi siê do tego kraju i okresu
+                    matches_country = False
+                    matches_time = False
+                    
+                    if ':' in key:
+                        # Dla kluczy z separatorami
+                        key_parts = key.split(':')
+                        for part in key_parts:
+                            if part == country_code:
+                                matches_country = True
+                            if part == time_period:
+                                matches_time = True
+                    
+                    if matches_country and matches_time:
+                        record = {
+                            'country_code': country_code,
+                            'country_name': geo_labels.get(country_code, country_code),
+                            'time_period': time_period,
+                            'value': float(value) if value is not None else None
+                        }
+                        records.append(record)
+                        break  # Znaleziono wartoœæ dla tej kombinacji kraju i czasu
+    
+    return records
+
+2025-06-07 05:27:47,406 - __main__ - INFO - 
+Testing: With unit=KGOE_TEUR
+2025-06-07 05:27:47,409 - __main__ - INFO - Sending request to https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei with params: {'format': 'JSON', 'lang': 'EN', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT'], 'sinceTimePeriod': '2020', 'unit': 'KGOE_TEUR'}
+2025-06-07 05:27:47,411 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:27:47,700 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei?format=JSON&lang=EN&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT&sinceTimePeriod=2020&unit=KGOE_TEUR HTTP/1.1" 200 3741
+2025-06-07 05:27:47,701 - __main__ - INFO - Success! Response contains 60 non-null values
+2025-06-07 05:27:47,702 - __main__ - INFO - Found successful configuration with 60 values, analyzing structure...
+2025-06-07 05:27:47,702 - __main__ - INFO - 
+=== ANALYSIS OF RESPONSE STRUCTURE ===
+2025-06-07 05:27:47,707 - __main__ - INFO - Main sections: ['version', 'class', 'label', 'source', 'updated', 'value', 'id', 'size', 'dimension', 'extension']
+2025-06-07 05:27:47,708 - __main__ - INFO - Dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:27:47,708 - __main__ - INFO - 
+Dimension 'freq':
+2025-06-07 05:27:47,709 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:47,709 - __main__ - INFO -   Sample indices: {'A': 0}...
+2025-06-07 05:27:47,711 - __main__ - INFO -   Sample labels: {'A': 'Annual'}...
+2025-06-07 05:27:47,711 - __main__ - INFO - 
+Dimension 'nrg_bal':
+2025-06-07 05:27:47,712 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:47,712 - __main__ - INFO -   Sample indices: {'EI_GDP_PPS': 0, 'EI_GDP_CLV05': 1, 'EI_GDP_CLV10': 2}...
+2025-06-07 05:27:47,713 - __main__ - INFO -   Sample labels: {'EI_GDP_PPS': 'Energy intensity of GDP in purchasing power standards (PPS)', 'EI_GDP_CLV05': 'Energy intensity of GDP in chain linked volumes (2005)', 'EI_GDP_CLV10': 'Energy intensity of GDP in chain linked volumes (2010)'}...
+2025-06-07 05:27:47,713 - __main__ - INFO - 
+Dimension 'unit':
+2025-06-07 05:27:47,714 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:47,721 - __main__ - INFO -   Sample indices: {'KGOE_TEUR': 0}...
+2025-06-07 05:27:47,721 - __main__ - INFO -   Sample labels: {'KGOE_TEUR': 'Kilograms of oil equivalent (KGOE) per thousand euro'}...
+2025-06-07 05:27:47,722 - __main__ - INFO - 
+Dimension 'geo':
+2025-06-07 05:27:47,722 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:47,723 - __main__ - INFO -   Sample indices: {'DE': 0, 'ES': 1, 'FR': 2}...
+2025-06-07 05:27:47,723 - __main__ - INFO -   Sample labels: {'DE': 'Germany', 'ES': 'Spain', 'FR': 'France'}...
+2025-06-07 05:27:47,724 - __main__ - INFO - 
+Dimension 'time':
+2025-06-07 05:27:47,724 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:47,725 - __main__ - INFO -   Sample indices: {'2020': 0, '2021': 1, '2022': 2}...
+2025-06-07 05:27:47,726 - __main__ - INFO -   Sample labels: {'2020': '2020', '2021': '2021', '2022': '2022'}...
+2025-06-07 05:27:47,726 - __main__ - INFO - 
+Values: 60 non-null out of 60 total
+2025-06-07 05:27:47,727 - __main__ - INFO - Sample values: {'20': 103.73, '21': 104.09, '22': 97.87, '23': 89.55, '24': 123.05}
+2025-06-07 05:27:47,727 - __main__ - INFO - 
+Analyzing key structure. Sample key: '20'
+2025-06-07 05:27:47,728 - __main__ - INFO - Key is numeric: 20
+2025-06-07 05:27:47,728 - __main__ - INFO - Attempting to decode using dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:27:47,729 - __main__ - INFO - Checking if key can be decoded using common patterns...
+2025-06-07 05:27:47,737 - __main__ - INFO - === END OF ANALYSIS ===
+
+2025-06-07 05:27:47,738 - __main__ - INFO - 
+=== TESTING PARSING FUNCTIONS ===
+2025-06-07 05:27:47,739 - __main__ - INFO - Testing separator-based parsing method...
+2025-06-07 05:27:47,739 - __main__ - INFO - Separator method produced 0 records
+2025-06-07 05:27:47,740 - __main__ - INFO - Testing numeric index parsing method...
+2025-06-07 05:27:47,741 - __main__ - INFO - Numeric method produced 0 records
+2025-06-07 05:27:47,741 - __main__ - INFO - Testing direct mapping method...
+2025-06-07 05:27:47,742 - __main__ - INFO - Direct mapping method produced 20 records
+2025-06-07 05:27:47,742 - __main__ - INFO - Best parsing method: direct with 20 records
+2025-06-07 05:27:47,743 - __main__ - INFO - Sample records from best method:
+2025-06-07 05:27:47,744 - __main__ - INFO - Record 1: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2020', 'value': 103.73}
+2025-06-07 05:27:47,744 - __main__ - INFO - Record 2: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2021', 'value': 103.73}
+2025-06-07 05:27:47,744 - __main__ - INFO - Record 3: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2022', 'value': 103.73}
+2025-06-07 05:27:47,745 - __main__ - INFO - Record 4: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2023', 'value': 103.73}
+2025-06-07 05:27:47,746 - __main__ - INFO - Record 5: {'country_code': 'ES', 'country_name': 'Spain', 'time_period': '2020', 'value': 103.73}
+2025-06-07 05:27:47,746 - __main__ - INFO - === END OF PARSING TESTS ===
+
+2025-06-07 05:27:47,747 - __main__ - INFO - 
+=== GENERATING OPTIMIZED PARSING FUNCTION ===
+2025-06-07 05:27:47,747 - __main__ - INFO - Generated parsing function for 'direct' method:
+
+def _parse_energy_intensity_data(self, values, geo_indices, geo_labels, time_indices, dimension):
+    records = []
+    
+    # Najpierw spróbuj metody z separatorami
+    sample_key = next(iter(values.keys()), None)
+    if sample_key and ":" in sample_key:
+        dim_positions = {}
+        key_parts = sample_key.split(':')
+        
+        # Próba okreœlenia, która pozycja odpowiada któremu wymiarowi
+        for i, part in enumerate(key_parts):
+            for dim_name, dim_data in dimension.items():
+                if 'category' in dim_data and 'index' in dim_data['category']:
+                    if part in dim_data['category']['index']:
+                        dim_positions[dim_name] = i
+                        break
+        
+        # Przetwarzaj wartoœci z separatorami
+        for key, value in values.items():
+            if value is None:
+                continue
+                
+            key_parts = key.split(':')
+            
+            country_code = None
+            time_period = None
+            
+            if 'geo' in dim_positions and dim_positions['geo'] < len(key_parts):
+                geo_idx = dim_positions['geo']
+                country_code = key_parts[geo_idx]
+                
+            if 'time' in dim_positions and dim_positions['time'] < len(key_parts):
+                time_idx = dim_positions['time']
+                time_period = key_parts[time_idx]
+                
+            if country_code and time_period:
+                record = {
+                    'country_code': country_code,
+                    'country_name': geo_labels.get(country_code, country_code),
+                    'time_period': time_period,
+                    'value': float(value) if value is not None else None
+                }
+                records.append(record)
+    else:
+        # Spróbuj metody numerycznej
+        try:
+            country_codes = list(geo_indices.keys())
+            time_codes = list(time_indices.keys())
+            
+            for value_key, value in values.items():
+                try:
+                    key_num = int(value_key)
+                    
+                    if len(time_codes) > 0:
+                        country_idx = key_num // len(time_codes)
+                        time_idx = key_num % len(time_codes)
+                        
+                        if country_idx < len(country_codes) and time_idx < len(time_codes):
+                            country_code = country_codes[country_idx]
+                            time_period = time_codes[time_idx]
+                            
+                            record = {
+                                'country_code': country_code,
+                                'country_name': geo_labels.get(country_code, country_code),
+                                'time_period': time_period,
+                                'value': float(value) if value is not None else None
+                            }
+                            records.append(record)
+                except (ValueError, IndexError):
+                    continue
+        except Exception:
+            pass
+    
+    # Jeœli poprzednie metody nie da³y wyników, u¿yj metody bezpoœredniego mapowania
+    if not records:
+        # Iteruj po wszystkich krajach i latach
+        for country_code in geo_indices.keys():
+            for time_period in time_indices.keys():
+                for key, value in values.items():
+                    if value is None:
+                        continue
+                        
+                    # SprawdŸ, czy klucz odnosi siê do tego kraju i okresu
+                    matches_country = False
+                    matches_time = False
+                    
+                    if ':' in key:
+                        # Dla kluczy z separatorami
+                        key_parts = key.split(':')
+                        for part in key_parts:
+                            if part == country_code:
+                                matches_country = True
+                            if part == time_period:
+                                matches_time = True
+                    
+                    if matches_country and matches_time:
+                        record = {
+                            'country_code': country_code,
+                            'country_name': geo_labels.get(country_code, country_code),
+                            'time_period': time_period,
+                            'value': float(value) if value is not None else None
+                        }
+                        records.append(record)
+                        break  # Znaleziono wartoœæ dla tej kombinacji kraju i czasu
+    
+    return records
+
+2025-06-07 05:27:47,749 - __main__ - INFO - 
+Testing: With nrg_bal=EI_GDP_PPS
+2025-06-07 05:27:47,749 - __main__ - INFO - Sending request to https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei with params: {'format': 'JSON', 'lang': 'EN', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT'], 'sinceTimePeriod': '2020', 'nrg_bal': 'EI_GDP_PPS'}
+2025-06-07 05:27:47,751 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:27:48,770 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei?format=JSON&lang=EN&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT&sinceTimePeriod=2020&nrg_bal=EI_GDP_PPS HTTP/1.1" 200 3127
+2025-06-07 05:27:48,799 - __main__ - INFO - Success! Response contains 20 non-null values
+2025-06-07 05:27:48,800 - __main__ - INFO - Found successful configuration with 20 values, analyzing structure...
+2025-06-07 05:27:48,802 - __main__ - INFO - 
+=== ANALYSIS OF RESPONSE STRUCTURE ===
+2025-06-07 05:27:48,806 - __main__ - INFO - Main sections: ['version', 'class', 'label', 'source', 'updated', 'value', 'id', 'size', 'dimension', 'extension']
+2025-06-07 05:27:48,807 - __main__ - INFO - Dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:27:48,807 - __main__ - INFO - 
+Dimension 'freq':
+2025-06-07 05:27:48,808 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:48,808 - __main__ - INFO -   Sample indices: {'A': 0}...
+2025-06-07 05:27:48,809 - __main__ - INFO -   Sample labels: {'A': 'Annual'}...
+2025-06-07 05:27:48,809 - __main__ - INFO - 
+Dimension 'nrg_bal':
+2025-06-07 05:27:48,810 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:48,810 - __main__ - INFO -   Sample indices: {'EI_GDP_PPS': 0}...
+2025-06-07 05:27:48,811 - __main__ - INFO -   Sample labels: {'EI_GDP_PPS': 'Energy intensity of GDP in purchasing power standards (PPS)'}...
+2025-06-07 05:27:48,812 - __main__ - INFO - 
+Dimension 'unit':
+2025-06-07 05:27:48,812 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:48,813 - __main__ - INFO -   Sample indices: {'KGOE_TEUR': 0, 'KGOE_TEUR_PPS': 1}...
+2025-06-07 05:27:48,821 - __main__ - INFO -   Sample labels: {'KGOE_TEUR': 'Kilograms of oil equivalent (KGOE) per thousand euro', 'KGOE_TEUR_PPS': 'Kilograms of oil equivalent (KGOE) per thousand euro in purchasing power standards (PPS)'}...
+2025-06-07 05:27:48,821 - __main__ - INFO - 
+Dimension 'geo':
+2025-06-07 05:27:48,822 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:48,823 - __main__ - INFO -   Sample indices: {'DE': 0, 'ES': 1, 'FR': 2}...
+2025-06-07 05:27:48,823 - __main__ - INFO -   Sample labels: {'DE': 'Germany', 'ES': 'Spain', 'FR': 'France'}...
+2025-06-07 05:27:48,824 - __main__ - INFO - 
+Dimension 'time':
+2025-06-07 05:27:48,824 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:48,825 - __main__ - INFO -   Sample indices: {'2020': 0, '2021': 1, '2022': 2}...
+2025-06-07 05:27:48,825 - __main__ - INFO -   Sample labels: {'2020': '2020', '2021': '2021', '2022': '2022'}...
+2025-06-07 05:27:48,826 - __main__ - INFO - 
+Values: 20 non-null out of 20 total
+2025-06-07 05:27:48,826 - __main__ - INFO - Sample values: {'20': 91.81, '21': 90.16, '22': 80.32, '23': 69.58, '24': 99.32}
+2025-06-07 05:27:48,827 - __main__ - INFO - 
+Analyzing key structure. Sample key: '20'
+2025-06-07 05:27:48,827 - __main__ - INFO - Key is numeric: 20
+2025-06-07 05:27:48,827 - __main__ - INFO - Attempting to decode using dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:27:48,828 - __main__ - INFO - Checking if key can be decoded using common patterns...
+2025-06-07 05:27:48,828 - __main__ - INFO - === END OF ANALYSIS ===
+
+2025-06-07 05:27:48,829 - __main__ - INFO - 
+=== TESTING PARSING FUNCTIONS ===
+2025-06-07 05:27:48,837 - __main__ - INFO - Testing separator-based parsing method...
+2025-06-07 05:27:48,838 - __main__ - INFO - Separator method produced 0 records
+2025-06-07 05:27:48,838 - __main__ - INFO - Testing numeric index parsing method...
+2025-06-07 05:27:48,839 - __main__ - INFO - Numeric method produced 0 records
+2025-06-07 05:27:48,840 - __main__ - INFO - Testing direct mapping method...
+2025-06-07 05:27:48,840 - __main__ - INFO - Direct mapping method produced 20 records
+2025-06-07 05:27:48,841 - __main__ - INFO - Best parsing method: direct with 20 records
+2025-06-07 05:27:48,841 - __main__ - INFO - Sample records from best method:
+2025-06-07 05:27:48,842 - __main__ - INFO - Record 1: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2020', 'value': 91.81}
+2025-06-07 05:27:48,842 - __main__ - INFO - Record 2: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2021', 'value': 91.81}
+2025-06-07 05:27:48,843 - __main__ - INFO - Record 3: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2022', 'value': 91.81}
+2025-06-07 05:27:48,843 - __main__ - INFO - Record 4: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2023', 'value': 91.81}
+2025-06-07 05:27:48,844 - __main__ - INFO - Record 5: {'country_code': 'ES', 'country_name': 'Spain', 'time_period': '2020', 'value': 91.81}
+2025-06-07 05:27:48,844 - __main__ - INFO - === END OF PARSING TESTS ===
+
+2025-06-07 05:27:48,845 - __main__ - INFO - 
+=== GENERATING OPTIMIZED PARSING FUNCTION ===
+2025-06-07 05:27:48,854 - __main__ - INFO - Generated parsing function for 'direct' method:
+
+def _parse_energy_intensity_data(self, values, geo_indices, geo_labels, time_indices, dimension):
+    records = []
+    
+    # Najpierw spróbuj metody z separatorami
+    sample_key = next(iter(values.keys()), None)
+    if sample_key and ":" in sample_key:
+        dim_positions = {}
+        key_parts = sample_key.split(':')
+        
+        # Próba okreœlenia, która pozycja odpowiada któremu wymiarowi
+        for i, part in enumerate(key_parts):
+            for dim_name, dim_data in dimension.items():
+                if 'category' in dim_data and 'index' in dim_data['category']:
+                    if part in dim_data['category']['index']:
+                        dim_positions[dim_name] = i
+                        break
+        
+        # Przetwarzaj wartoœci z separatorami
+        for key, value in values.items():
+            if value is None:
+                continue
+                
+            key_parts = key.split(':')
+            
+            country_code = None
+            time_period = None
+            
+            if 'geo' in dim_positions and dim_positions['geo'] < len(key_parts):
+                geo_idx = dim_positions['geo']
+                country_code = key_parts[geo_idx]
+                
+            if 'time' in dim_positions and dim_positions['time'] < len(key_parts):
+                time_idx = dim_positions['time']
+                time_period = key_parts[time_idx]
+                
+            if country_code and time_period:
+                record = {
+                    'country_code': country_code,
+                    'country_name': geo_labels.get(country_code, country_code),
+                    'time_period': time_period,
+                    'value': float(value) if value is not None else None
+                }
+                records.append(record)
+    else:
+        # Spróbuj metody numerycznej
+        try:
+            country_codes = list(geo_indices.keys())
+            time_codes = list(time_indices.keys())
+            
+            for value_key, value in values.items():
+                try:
+                    key_num = int(value_key)
+                    
+                    if len(time_codes) > 0:
+                        country_idx = key_num // len(time_codes)
+                        time_idx = key_num % len(time_codes)
+                        
+                        if country_idx < len(country_codes) and time_idx < len(time_codes):
+                            country_code = country_codes[country_idx]
+                            time_period = time_codes[time_idx]
+                            
+                            record = {
+                                'country_code': country_code,
+                                'country_name': geo_labels.get(country_code, country_code),
+                                'time_period': time_period,
+                                'value': float(value) if value is not None else None
+                            }
+                            records.append(record)
+                except (ValueError, IndexError):
+                    continue
+        except Exception:
+            pass
+    
+    # Jeœli poprzednie metody nie da³y wyników, u¿yj metody bezpoœredniego mapowania
+    if not records:
+        # Iteruj po wszystkich krajach i latach
+        for country_code in geo_indices.keys():
+            for time_period in time_indices.keys():
+                for key, value in values.items():
+                    if value is None:
+                        continue
+                        
+                    # SprawdŸ, czy klucz odnosi siê do tego kraju i okresu
+                    matches_country = False
+                    matches_time = False
+                    
+                    if ':' in key:
+                        # Dla kluczy z separatorami
+                        key_parts = key.split(':')
+                        for part in key_parts:
+                            if part == country_code:
+                                matches_country = True
+                            if part == time_period:
+                                matches_time = True
+                    
+                    if matches_country and matches_time:
+                        record = {
+                            'country_code': country_code,
+                            'country_name': geo_labels.get(country_code, country_code),
+                            'time_period': time_period,
+                            'value': float(value) if value is not None else None
+                        }
+                        records.append(record)
+                        break  # Znaleziono wartoœæ dla tej kombinacji kraju i czasu
+    
+    return records
+
+2025-06-07 05:27:48,855 - __main__ - INFO - 
+Testing: With freq=A
+2025-06-07 05:27:48,856 - __main__ - INFO - Sending request to https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei with params: {'format': 'JSON', 'lang': 'EN', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT'], 'sinceTimePeriod': '2020', 'freq': 'A'}
+2025-06-07 05:27:48,858 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:27:49,850 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei?format=JSON&lang=EN&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT&sinceTimePeriod=2020&freq=A HTTP/1.1" 200 4109
+2025-06-07 05:27:49,852 - __main__ - INFO - Success! Response contains 80 non-null values
+2025-06-07 05:27:49,852 - __main__ - INFO - Found successful configuration with 80 values, analyzing structure...
+2025-06-07 05:27:49,853 - __main__ - INFO - 
+=== ANALYSIS OF RESPONSE STRUCTURE ===
+2025-06-07 05:27:49,857 - __main__ - INFO - Main sections: ['version', 'class', 'label', 'source', 'updated', 'value', 'id', 'size', 'dimension', 'extension']
+2025-06-07 05:27:49,857 - __main__ - INFO - Dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:27:49,858 - __main__ - INFO - 
+Dimension 'freq':
+2025-06-07 05:27:49,859 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:49,859 - __main__ - INFO -   Sample indices: {'A': 0}...
+2025-06-07 05:27:49,860 - __main__ - INFO -   Sample labels: {'A': 'Annual'}...
+2025-06-07 05:27:49,860 - __main__ - INFO - 
+Dimension 'nrg_bal':
+2025-06-07 05:27:49,861 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:49,861 - __main__ - INFO -   Sample indices: {'EI_GDP_PPS': 0, 'EI_GDP_CLV05': 1, 'EI_GDP_CLV10': 2}...
+2025-06-07 05:27:49,862 - __main__ - INFO -   Sample labels: {'EI_GDP_PPS': 'Energy intensity of GDP in purchasing power standards (PPS)', 'EI_GDP_CLV05': 'Energy intensity of GDP in chain linked volumes (2005)', 'EI_GDP_CLV10': 'Energy intensity of GDP in chain linked volumes (2010)'}...
+2025-06-07 05:27:49,862 - __main__ - INFO - 
+Dimension 'unit':
+2025-06-07 05:27:49,863 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:49,863 - __main__ - INFO -   Sample indices: {'KGOE_TEUR': 0, 'KGOE_TEUR_PPS': 1}...
+2025-06-07 05:27:49,864 - __main__ - INFO -   Sample labels: {'KGOE_TEUR': 'Kilograms of oil equivalent (KGOE) per thousand euro', 'KGOE_TEUR_PPS': 'Kilograms of oil equivalent (KGOE) per thousand euro in purchasing power standards (PPS)'}...
+2025-06-07 05:27:49,864 - __main__ - INFO - 
+Dimension 'geo':
+2025-06-07 05:27:49,865 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:49,867 - __main__ - INFO -   Sample indices: {'DE': 0, 'ES': 1, 'FR': 2}...
+2025-06-07 05:27:49,868 - __main__ - INFO -   Sample labels: {'DE': 'Germany', 'ES': 'Spain', 'FR': 'France'}...
+2025-06-07 05:27:49,868 - __main__ - INFO - 
+Dimension 'time':
+2025-06-07 05:27:49,869 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:49,869 - __main__ - INFO -   Sample indices: {'2020': 0, '2021': 1, '2022': 2}...
+2025-06-07 05:27:49,870 - __main__ - INFO -   Sample labels: {'2020': '2020', '2021': '2021', '2022': '2022'}...
+2025-06-07 05:27:49,870 - __main__ - INFO - 
+Values: 80 non-null out of 80 total
+2025-06-07 05:27:49,871 - __main__ - INFO - Sample values: {'40': 103.73, '41': 104.09, '42': 97.87, '43': 89.55, '44': 123.05}
+2025-06-07 05:27:49,871 - __main__ - INFO - 
+Analyzing key structure. Sample key: '40'
+2025-06-07 05:27:49,872 - __main__ - INFO - Key is numeric: 40
+2025-06-07 05:27:49,872 - __main__ - INFO - Attempting to decode using dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:27:49,873 - __main__ - INFO - Checking if key can be decoded using common patterns...
+2025-06-07 05:27:49,873 - __main__ - INFO - === END OF ANALYSIS ===
+
+2025-06-07 05:27:49,873 - __main__ - INFO - 
+=== TESTING PARSING FUNCTIONS ===
+2025-06-07 05:27:49,874 - __main__ - INFO - Testing separator-based parsing method...
+2025-06-07 05:27:49,874 - __main__ - INFO - Separator method produced 0 records
+2025-06-07 05:27:49,875 - __main__ - INFO - Testing numeric index parsing method...
+2025-06-07 05:27:49,884 - __main__ - INFO - Numeric method produced 0 records
+2025-06-07 05:27:49,885 - __main__ - INFO - Testing direct mapping method...
+2025-06-07 05:27:49,886 - __main__ - INFO - Direct mapping method produced 20 records
+2025-06-07 05:27:49,886 - __main__ - INFO - Best parsing method: direct with 20 records
+2025-06-07 05:27:49,887 - __main__ - INFO - Sample records from best method:
+2025-06-07 05:27:49,887 - __main__ - INFO - Record 1: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2020', 'value': 103.73}
+2025-06-07 05:27:49,887 - __main__ - INFO - Record 2: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2021', 'value': 103.73}
+2025-06-07 05:27:49,888 - __main__ - INFO - Record 3: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2022', 'value': 103.73}
+2025-06-07 05:27:49,888 - __main__ - INFO - Record 4: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2023', 'value': 103.73}
+2025-06-07 05:27:49,889 - __main__ - INFO - Record 5: {'country_code': 'ES', 'country_name': 'Spain', 'time_period': '2020', 'value': 103.73}
+2025-06-07 05:27:49,889 - __main__ - INFO - === END OF PARSING TESTS ===
+
+2025-06-07 05:27:49,890 - __main__ - INFO - 
+=== GENERATING OPTIMIZED PARSING FUNCTION ===
+2025-06-07 05:27:49,897 - __main__ - INFO - Generated parsing function for 'direct' method:
+
+def _parse_energy_intensity_data(self, values, geo_indices, geo_labels, time_indices, dimension):
+    records = []
+    
+    # Najpierw spróbuj metody z separatorami
+    sample_key = next(iter(values.keys()), None)
+    if sample_key and ":" in sample_key:
+        dim_positions = {}
+        key_parts = sample_key.split(':')
+        
+        # Próba okreœlenia, która pozycja odpowiada któremu wymiarowi
+        for i, part in enumerate(key_parts):
+            for dim_name, dim_data in dimension.items():
+                if 'category' in dim_data and 'index' in dim_data['category']:
+                    if part in dim_data['category']['index']:
+                        dim_positions[dim_name] = i
+                        break
+        
+        # Przetwarzaj wartoœci z separatorami
+        for key, value in values.items():
+            if value is None:
+                continue
+                
+            key_parts = key.split(':')
+            
+            country_code = None
+            time_period = None
+            
+            if 'geo' in dim_positions and dim_positions['geo'] < len(key_parts):
+                geo_idx = dim_positions['geo']
+                country_code = key_parts[geo_idx]
+                
+            if 'time' in dim_positions and dim_positions['time'] < len(key_parts):
+                time_idx = dim_positions['time']
+                time_period = key_parts[time_idx]
+                
+            if country_code and time_period:
+                record = {
+                    'country_code': country_code,
+                    'country_name': geo_labels.get(country_code, country_code),
+                    'time_period': time_period,
+                    'value': float(value) if value is not None else None
+                }
+                records.append(record)
+    else:
+        # Spróbuj metody numerycznej
+        try:
+            country_codes = list(geo_indices.keys())
+            time_codes = list(time_indices.keys())
+            
+            for value_key, value in values.items():
+                try:
+                    key_num = int(value_key)
+                    
+                    if len(time_codes) > 0:
+                        country_idx = key_num // len(time_codes)
+                        time_idx = key_num % len(time_codes)
+                        
+                        if country_idx < len(country_codes) and time_idx < len(time_codes):
+                            country_code = country_codes[country_idx]
+                            time_period = time_codes[time_idx]
+                            
+                            record = {
+                                'country_code': country_code,
+                                'country_name': geo_labels.get(country_code, country_code),
+                                'time_period': time_period,
+                                'value': float(value) if value is not None else None
+                            }
+                            records.append(record)
+                except (ValueError, IndexError):
+                    continue
+        except Exception:
+            pass
+    
+    # Jeœli poprzednie metody nie da³y wyników, u¿yj metody bezpoœredniego mapowania
+    if not records:
+        # Iteruj po wszystkich krajach i latach
+        for country_code in geo_indices.keys():
+            for time_period in time_indices.keys():
+                for key, value in values.items():
+                    if value is None:
+                        continue
+                        
+                    # SprawdŸ, czy klucz odnosi siê do tego kraju i okresu
+                    matches_country = False
+                    matches_time = False
+                    
+                    if ':' in key:
+                        # Dla kluczy z separatorami
+                        key_parts = key.split(':')
+                        for part in key_parts:
+                            if part == country_code:
+                                matches_country = True
+                            if part == time_period:
+                                matches_time = True
+                    
+                    if matches_country and matches_time:
+                        record = {
+                            'country_code': country_code,
+                            'country_name': geo_labels.get(country_code, country_code),
+                            'time_period': time_period,
+                            'value': float(value) if value is not None else None
+                        }
+                        records.append(record)
+                        break  # Znaleziono wartoœæ dla tej kombinacji kraju i czasu
+    
+    return records
+
+2025-06-07 05:27:49,899 - __main__ - INFO - 
+Testing: With unit=KGOE_TEUR_PPS
+2025-06-07 05:27:49,900 - __main__ - INFO - Sending request to https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei with params: {'format': 'JSON', 'lang': 'EN', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT'], 'sinceTimePeriod': '2020', 'unit': 'KGOE_TEUR_PPS'}
+2025-06-07 05:27:49,902 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:27:50,810 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei?format=JSON&lang=EN&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT&sinceTimePeriod=2020&unit=KGOE_TEUR_PPS HTTP/1.1" 200 3307
+2025-06-07 05:27:50,840 - __main__ - INFO - Success! Response contains 20 non-null values
+2025-06-07 05:27:50,840 - __main__ - INFO - Found successful configuration with 20 values, analyzing structure...
+2025-06-07 05:27:50,842 - __main__ - INFO - 
+=== ANALYSIS OF RESPONSE STRUCTURE ===
+2025-06-07 05:27:50,846 - __main__ - INFO - Main sections: ['version', 'class', 'label', 'source', 'updated', 'value', 'id', 'size', 'dimension', 'extension']
+2025-06-07 05:27:50,847 - __main__ - INFO - Dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:27:50,848 - __main__ - INFO - 
+Dimension 'freq':
+2025-06-07 05:27:50,849 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:50,851 - __main__ - INFO -   Sample indices: {'A': 0}...
+2025-06-07 05:27:50,851 - __main__ - INFO -   Sample labels: {'A': 'Annual'}...
+2025-06-07 05:27:50,852 - __main__ - INFO - 
+Dimension 'nrg_bal':
+2025-06-07 05:27:50,852 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:50,853 - __main__ - INFO -   Sample indices: {'EI_GDP_PPS': 0, 'EI_GDP_CLV05': 1, 'EI_GDP_CLV10': 2}...
+2025-06-07 05:27:50,856 - __main__ - INFO -   Sample labels: {'EI_GDP_PPS': 'Energy intensity of GDP in purchasing power standards (PPS)', 'EI_GDP_CLV05': 'Energy intensity of GDP in chain linked volumes (2005)', 'EI_GDP_CLV10': 'Energy intensity of GDP in chain linked volumes (2010)'}...
+2025-06-07 05:27:50,860 - __main__ - INFO - 
+Dimension 'unit':
+2025-06-07 05:27:50,860 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:50,861 - __main__ - INFO -   Sample indices: {'KGOE_TEUR_PPS': 0}...
+2025-06-07 05:27:50,861 - __main__ - INFO -   Sample labels: {'KGOE_TEUR_PPS': 'Kilograms of oil equivalent (KGOE) per thousand euro in purchasing power standards (PPS)'}...
+2025-06-07 05:27:50,862 - __main__ - INFO - 
+Dimension 'geo':
+2025-06-07 05:27:50,862 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:50,863 - __main__ - INFO -   Sample indices: {'DE': 0, 'ES': 1, 'FR': 2}...
+2025-06-07 05:27:50,863 - __main__ - INFO -   Sample labels: {'DE': 'Germany', 'ES': 'Spain', 'FR': 'France'}...
+2025-06-07 05:27:50,864 - __main__ - INFO - 
+Dimension 'time':
+2025-06-07 05:27:50,864 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:50,865 - __main__ - INFO -   Sample indices: {'2020': 0, '2021': 1, '2022': 2}...
+2025-06-07 05:27:50,867 - __main__ - INFO -   Sample labels: {'2020': '2020', '2021': '2021', '2022': '2022'}...
+2025-06-07 05:27:50,868 - __main__ - INFO - 
+Values: 20 non-null out of 20 total
+2025-06-07 05:27:50,875 - __main__ - INFO - Sample values: {'0': 91.81, '1': 90.16, '2': 80.32, '3': 69.58, '4': 99.32}
+2025-06-07 05:27:50,876 - __main__ - INFO - 
+Analyzing key structure. Sample key: '0'
+2025-06-07 05:27:50,876 - __main__ - INFO - Key is numeric: 0
+2025-06-07 05:27:50,876 - __main__ - INFO - Attempting to decode using dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:27:50,877 - __main__ - INFO - Checking if key can be decoded using common patterns...
+2025-06-07 05:27:50,877 - __main__ - INFO - === END OF ANALYSIS ===
+
+2025-06-07 05:27:50,878 - __main__ - INFO - 
+=== TESTING PARSING FUNCTIONS ===
+2025-06-07 05:27:50,878 - __main__ - INFO - Testing separator-based parsing method...
+2025-06-07 05:27:50,879 - __main__ - INFO - Separator method produced 0 records
+2025-06-07 05:27:50,879 - __main__ - INFO - Testing numeric index parsing method...
+2025-06-07 05:27:50,880 - __main__ - INFO - Numeric method produced 20 records
+2025-06-07 05:27:50,880 - __main__ - INFO - Testing direct mapping method...
+2025-06-07 05:27:50,881 - __main__ - INFO - Direct mapping method produced 20 records
+2025-06-07 05:27:50,882 - __main__ - INFO - Best parsing method: numeric with 20 records
+2025-06-07 05:27:50,884 - __main__ - INFO - Sample records from best method:
+2025-06-07 05:27:50,890 - __main__ - INFO - Record 1: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2020', 'value': 91.81}
+2025-06-07 05:27:50,890 - __main__ - INFO - Record 2: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2021', 'value': 90.16}
+2025-06-07 05:27:50,891 - __main__ - INFO - Record 3: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2022', 'value': 80.32}
+2025-06-07 05:27:50,891 - __main__ - INFO - Record 4: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2023', 'value': 69.58}
+2025-06-07 05:27:50,892 - __main__ - INFO - Record 5: {'country_code': 'ES', 'country_name': 'Spain', 'time_period': '2020', 'value': 99.32}
+2025-06-07 05:27:50,893 - __main__ - INFO - === END OF PARSING TESTS ===
+
+2025-06-07 05:27:50,893 - __main__ - INFO - 
+=== GENERATING OPTIMIZED PARSING FUNCTION ===
+2025-06-07 05:27:50,894 - __main__ - INFO - Generated parsing function for 'numeric' method:
+
+def _parse_energy_intensity_data(self, values, geo_indices, geo_labels, time_indices, dimension):
+    records = []
+    
+    country_codes = list(geo_indices.keys())
+    time_codes = list(time_indices.keys())
+    
+    for value_key, value in values.items():
+        try:
+            key_num = int(value_key)
+            
+            if len(time_codes) > 0:
+                country_idx = key_num // len(time_codes)
+                time_idx = key_num % len(time_codes)
+                
+                if country_idx < len(country_codes) and time_idx < len(time_codes):
+                    country_code = country_codes[country_idx]
+                    time_period = time_codes[time_idx]
+                    
+                    record = {
+                        'country_code': country_code,
+                        'country_name': geo_labels.get(country_code, country_code),
+                        'time_period': time_period,
+                        'value': float(value) if value is not None else None
+                    }
+                    records.append(record)
+        except (ValueError, IndexError):
+            continue
+    
+    return records
+
+2025-06-07 05:27:50,894 - __main__ - INFO - 
+Testing: With nrg_bal=EI_GDP_CLV05
+2025-06-07 05:27:50,896 - __main__ - INFO - Sending request to https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei with params: {'format': 'JSON', 'lang': 'EN', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT'], 'sinceTimePeriod': '2020', 'nrg_bal': 'EI_GDP_CLV05'}
+2025-06-07 05:27:50,897 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:27:51,890 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei?format=JSON&lang=EN&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT&sinceTimePeriod=2020&nrg_bal=EI_GDP_CLV05 HTTP/1.1" 200 3128
+2025-06-07 05:27:51,891 - __main__ - INFO - Success! Response contains 20 non-null values
+2025-06-07 05:27:51,891 - __main__ - INFO - Found successful configuration with 20 values, analyzing structure...
+2025-06-07 05:27:51,892 - __main__ - INFO - 
+=== ANALYSIS OF RESPONSE STRUCTURE ===
+2025-06-07 05:27:51,897 - __main__ - INFO - Main sections: ['version', 'class', 'label', 'source', 'updated', 'value', 'id', 'size', 'dimension', 'extension']
+2025-06-07 05:27:51,898 - __main__ - INFO - Dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:27:51,899 - __main__ - INFO - 
+Dimension 'freq':
+2025-06-07 05:27:51,901 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:51,901 - __main__ - INFO -   Sample indices: {'A': 0}...
+2025-06-07 05:27:51,902 - __main__ - INFO -   Sample labels: {'A': 'Annual'}...
+2025-06-07 05:27:51,902 - __main__ - INFO - 
+Dimension 'nrg_bal':
+2025-06-07 05:27:51,902 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:51,903 - __main__ - INFO -   Sample indices: {'EI_GDP_CLV05': 0}...
+2025-06-07 05:27:51,903 - __main__ - INFO -   Sample labels: {'EI_GDP_CLV05': 'Energy intensity of GDP in chain linked volumes (2005)'}...
+2025-06-07 05:27:51,904 - __main__ - INFO - 
+Dimension 'unit':
+2025-06-07 05:27:51,904 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:51,905 - __main__ - INFO -   Sample indices: {'KGOE_TEUR': 0, 'KGOE_TEUR_PPS': 1}...
+2025-06-07 05:27:51,905 - __main__ - INFO -   Sample labels: {'KGOE_TEUR': 'Kilograms of oil equivalent (KGOE) per thousand euro', 'KGOE_TEUR_PPS': 'Kilograms of oil equivalent (KGOE) per thousand euro in purchasing power standards (PPS)'}...
+2025-06-07 05:27:51,906 - __main__ - INFO - 
+Dimension 'geo':
+2025-06-07 05:27:51,906 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:51,907 - __main__ - INFO -   Sample indices: {'DE': 0, 'ES': 1, 'FR': 2}...
+2025-06-07 05:27:51,907 - __main__ - INFO -   Sample labels: {'DE': 'Germany', 'ES': 'Spain', 'FR': 'France'}...
+2025-06-07 05:27:51,908 - __main__ - INFO - 
+Dimension 'time':
+2025-06-07 05:27:51,908 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:27:51,909 - __main__ - INFO -   Sample indices: {'2020': 0, '2021': 1, '2022': 2}...
+2025-06-07 05:27:51,909 - __main__ - INFO -   Sample labels: {'2020': '2020', '2021': '2021', '2022': '2022'}...
+2025-06-07 05:27:51,910 - __main__ - INFO - 
+Values: 20 non-null out of 20 total
+2025-06-07 05:27:51,910 - __main__ - INFO - Sample values: {'0': 103.73, '1': 104.09, '2': 97.87, '3': 89.55, '4': 123.05}
+2025-06-07 05:27:51,910 - __main__ - INFO - 
+Analyzing key structure. Sample key: '0'
+2025-06-07 05:27:51,911 - __main__ - INFO - Key is numeric: 0
+2025-06-07 05:27:51,918 - __main__ - INFO - Attempting to decode using dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:27:51,919 - __main__ - INFO - Checking if key can be decoded using common patterns...
+2025-06-07 05:27:51,919 - __main__ - INFO - === END OF ANALYSIS ===
+
+2025-06-07 05:27:51,920 - __main__ - INFO - 
+=== TESTING PARSING FUNCTIONS ===
+2025-06-07 05:27:51,921 - __main__ - INFO - Testing separator-based parsing method...
+2025-06-07 05:27:51,921 - __main__ - INFO - Separator method produced 0 records
+2025-06-07 05:27:51,922 - __main__ - INFO - Testing numeric index parsing method...
+2025-06-07 05:27:51,923 - __main__ - INFO - Numeric method produced 20 records
+2025-06-07 05:27:51,923 - __main__ - INFO - Testing direct mapping method...
+2025-06-07 05:27:51,924 - __main__ - INFO - Direct mapping method produced 20 records
+2025-06-07 05:27:51,924 - __main__ - INFO - Best parsing method: numeric with 20 records
+2025-06-07 05:27:51,925 - __main__ - INFO - Sample records from best method:
+2025-06-07 05:27:51,925 - __main__ - INFO - Record 1: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2020', 'value': 103.73}
+2025-06-07 05:27:51,926 - __main__ - INFO - Record 2: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2021', 'value': 104.09}
+2025-06-07 05:27:51,926 - __main__ - INFO - Record 3: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2022', 'value': 97.87}
+2025-06-07 05:27:51,926 - __main__ - INFO - Record 4: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2023', 'value': 89.55}
+2025-06-07 05:27:51,935 - __main__ - INFO - Record 5: {'country_code': 'ES', 'country_name': 'Spain', 'time_period': '2020', 'value': 123.05}
+2025-06-07 05:27:51,936 - __main__ - INFO - === END OF PARSING TESTS ===
+
+2025-06-07 05:27:51,936 - __main__ - INFO - 
+=== GENERATING OPTIMIZED PARSING FUNCTION ===
+2025-06-07 05:27:51,937 - __main__ - INFO - Generated parsing function for 'numeric' method:
+
+def _parse_energy_intensity_data(self, values, geo_indices, geo_labels, time_indices, dimension):
+    records = []
+    
+    country_codes = list(geo_indices.keys())
+    time_codes = list(time_indices.keys())
+    
+    for value_key, value in values.items():
+        try:
+            key_num = int(value_key)
+            
+            if len(time_codes) > 0:
+                country_idx = key_num // len(time_codes)
+                time_idx = key_num % len(time_codes)
+                
+                if country_idx < len(country_codes) and time_idx < len(time_codes):
+                    country_code = country_codes[country_idx]
+                    time_period = time_codes[time_idx]
+                    
+                    record = {
+                        'country_code': country_code,
+                        'country_name': geo_labels.get(country_code, country_code),
+                        'time_period': time_period,
+                        'value': float(value) if value is not None else None
+                    }
+                    records.append(record)
+        except (ValueError, IndexError):
+            continue
+    
+    return records
+
+2025-06-07 05:27:51,938 - __main__ - INFO - 
+Testing: With nrg_bal=EI_GDP_PPS and unit=KGOE_TEUR
+2025-06-07 05:27:51,938 - __main__ - INFO - Sending request to https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei with params: {'format': 'JSON', 'lang': 'EN', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT'], 'sinceTimePeriod': '2020', 'nrg_bal': 'EI_GDP_PPS', 'unit': 'KGOE_TEUR'}
+2025-06-07 05:27:51,940 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:27:52,970 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei?format=JSON&lang=EN&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT&sinceTimePeriod=2020&nrg_bal=EI_GDP_PPS&unit=KGOE_TEUR HTTP/1.1" 200 2797
+2025-06-07 05:27:52,971 - __main__ - WARNING - Response contains no values
+2025-06-07 05:27:52,972 - __main__ - INFO - 
+=== SUMMARY OF ENDPOINT TESTS ===
+2025-06-07 05:27:53,043 - __main__ - INFO - 
+Najlepsza konfiguracja: No parameters z 80 wartoœciami
+2025-06-07 05:27:53,044 - __main__ - INFO - 
+'energy_intensity': {
+    'code': 'nrg_ind_ei',
+    'description': 'Energy intensity of the economy',
+    'params': {
+        
+    }
+}
+
+2025-06-07 05:27:53,051 - __main__ - INFO - === END OF ENDPOINT TESTS ===
+2025-06-07 05:27:53,053 - __main__ - INFO - 
+=== TESTING IMPLEMENTATION IN EUROSTAT CLIENT ===
+2025-06-07 05:27:53,185 - __main__ - INFO - Testing get_energy_intensity_data method with diagnostic logging
+2025-06-07 05:27:53,186 - EurostatClient - INFO - Fetching energy intensity data from Eurostat
+2025-06-07 05:27:53,187 - EurostatClient - INFO - Sending request to: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sdg_07_30 with params: {'format': 'JSON', 'lang': 'EN', 'unit': 'EUR_KGOE', 'sinceTimePeriod': '2020', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT']}
+2025-06-07 05:27:53,193 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:27:54,484 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/sdg_07_30?format=JSON&lang=EN&unit=EUR_KGOE&sinceTimePeriod=2020&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT HTTP/1.1" 200 4644
+2025-06-07 05:27:54,507 - EurostatClient - INFO - Successfully parsed 20 records for energy_intensity
+2025-06-07 05:27:54,508 - __main__ - INFO - get_energy_intensity_data returned DataFrame with 20 rows
+2025-06-07 05:27:54,508 - __main__ - INFO - DataFrame columns: ['country_code', 'country_name', 'time_period', 'value', 'dataset']
+2025-06-07 05:27:54,523 - __main__ - INFO - DataFrame sample:
+  country_code country_name time_period  value           dataset
+0           DE      Germany        2020  10.22  energy_intensity
+1           DE      Germany        2021  10.19  energy_intensity
+2           DE      Germany        2022  10.84  energy_intensity
+3           DE      Germany        2023  11.84  energy_intensity
+4           ES        Spain        2020   9.02  energy_intensity
+2025-06-07 05:27:54,524 - __main__ - INFO - Non-null values in 'value' column: 20 out of 20
+2025-06-07 05:27:54,524 - __main__ - INFO - Implementation appears to be working correctly!
+2025-06-07 05:27:54,528 - __main__ - INFO - === END OF IMPLEMENTATION TEST ===
+2025-06-07 05:27:54,529 - __main__ - INFO - 
+Diagnostics completed. Check the logs for detailed results and recommendations.
+2025-06-07 05:34:15,347 - __main__ - INFO - Starting complete diagnostics for Eurostat energy_intensity endpoint
+2025-06-07 05:34:15,347 - __main__ - INFO - 
+=== TESTING ENERGY INTENSITY ENDPOINT WITH DIFFERENT PARAMETERS ===
+2025-06-07 05:34:15,348 - __main__ - INFO - 
+Testing: No parameters
+2025-06-07 05:34:15,349 - __main__ - INFO - Sending request to https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei with params: {'format': 'JSON', 'lang': 'EN', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT'], 'sinceTimePeriod': '2020'}
+2025-06-07 05:34:15,359 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:34:15,712 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei?format=JSON&lang=EN&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT&sinceTimePeriod=2020 HTTP/1.1" 200 4109
+2025-06-07 05:34:15,715 - __main__ - INFO - Success! Response contains 80 non-null values
+2025-06-07 05:34:15,715 - __main__ - INFO - Found successful configuration with 80 values, analyzing structure...
+2025-06-07 05:34:15,717 - __main__ - INFO - 
+=== ANALYSIS OF RESPONSE STRUCTURE ===
+2025-06-07 05:34:15,722 - __main__ - INFO - Main sections: ['version', 'class', 'label', 'source', 'updated', 'value', 'id', 'size', 'dimension', 'extension']
+2025-06-07 05:34:15,722 - __main__ - INFO - Dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:34:15,722 - __main__ - INFO - 
+Dimension 'freq':
+2025-06-07 05:34:15,723 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:15,723 - __main__ - INFO -   Sample indices: {'A': 0}...
+2025-06-07 05:34:15,724 - __main__ - INFO -   Sample labels: {'A': 'Annual'}...
+2025-06-07 05:34:15,724 - __main__ - INFO - 
+Dimension 'nrg_bal':
+2025-06-07 05:34:15,725 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:15,726 - __main__ - INFO -   Sample indices: {'EI_GDP_PPS': 0, 'EI_GDP_CLV05': 1, 'EI_GDP_CLV10': 2}...
+2025-06-07 05:34:15,726 - __main__ - INFO -   Sample labels: {'EI_GDP_PPS': 'Energy intensity of GDP in purchasing power standards (PPS)', 'EI_GDP_CLV05': 'Energy intensity of GDP in chain linked volumes (2005)', 'EI_GDP_CLV10': 'Energy intensity of GDP in chain linked volumes (2010)'}...
+2025-06-07 05:34:15,727 - __main__ - INFO - 
+Dimension 'unit':
+2025-06-07 05:34:15,727 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:15,728 - __main__ - INFO -   Sample indices: {'KGOE_TEUR': 0, 'KGOE_TEUR_PPS': 1}...
+2025-06-07 05:34:15,732 - __main__ - INFO -   Sample labels: {'KGOE_TEUR': 'Kilograms of oil equivalent (KGOE) per thousand euro', 'KGOE_TEUR_PPS': 'Kilograms of oil equivalent (KGOE) per thousand euro in purchasing power standards (PPS)'}...
+2025-06-07 05:34:15,736 - __main__ - INFO - 
+Dimension 'geo':
+2025-06-07 05:34:15,736 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:15,737 - __main__ - INFO -   Sample indices: {'DE': 0, 'ES': 1, 'FR': 2}...
+2025-06-07 05:34:15,738 - __main__ - INFO -   Sample labels: {'DE': 'Germany', 'ES': 'Spain', 'FR': 'France'}...
+2025-06-07 05:34:15,741 - __main__ - INFO - 
+Dimension 'time':
+2025-06-07 05:34:15,741 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:15,742 - __main__ - INFO -   Sample indices: {'2020': 0, '2021': 1, '2022': 2}...
+2025-06-07 05:34:15,742 - __main__ - INFO -   Sample labels: {'2020': '2020', '2021': '2021', '2022': '2022'}...
+2025-06-07 05:34:15,742 - __main__ - INFO - 
+Values: 80 non-null out of 80 total
+2025-06-07 05:34:15,743 - __main__ - INFO - Sample values: {'40': 103.73, '41': 104.09, '42': 97.87, '43': 89.55, '44': 123.05}
+2025-06-07 05:34:15,743 - __main__ - INFO - 
+Analyzing key structure. Sample key: '40'
+2025-06-07 05:34:15,744 - __main__ - INFO - Key is numeric: 40
+2025-06-07 05:34:15,751 - __main__ - INFO - Attempting to decode using dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:34:15,752 - __main__ - INFO - Checking if key can be decoded using common patterns...
+2025-06-07 05:34:15,752 - __main__ - INFO - === END OF ANALYSIS ===
+
+2025-06-07 05:34:15,752 - __main__ - INFO - 
+=== TESTING PARSING FUNCTIONS ===
+2025-06-07 05:34:15,753 - __main__ - INFO - Testing separator-based parsing method...
+2025-06-07 05:34:15,754 - __main__ - INFO - Separator method produced 0 records
+2025-06-07 05:34:15,754 - __main__ - INFO - Testing numeric index parsing method...
+2025-06-07 05:34:15,757 - __main__ - INFO - Numeric method produced 0 records
+2025-06-07 05:34:15,757 - __main__ - INFO - Testing direct mapping method...
+2025-06-07 05:34:15,758 - __main__ - INFO - Direct mapping method produced 20 records
+2025-06-07 05:34:15,758 - __main__ - INFO - Best parsing method: direct with 20 records
+2025-06-07 05:34:15,759 - __main__ - INFO - Sample records from best method:
+2025-06-07 05:34:15,759 - __main__ - INFO - Record 1: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2020', 'value': 103.73}
+2025-06-07 05:34:15,762 - __main__ - INFO - Record 2: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2021', 'value': 103.73}
+2025-06-07 05:34:15,766 - __main__ - INFO - Record 3: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2022', 'value': 103.73}
+2025-06-07 05:34:15,766 - __main__ - INFO - Record 4: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2023', 'value': 103.73}
+2025-06-07 05:34:15,767 - __main__ - INFO - Record 5: {'country_code': 'ES', 'country_name': 'Spain', 'time_period': '2020', 'value': 103.73}
+2025-06-07 05:34:15,767 - __main__ - INFO - === END OF PARSING TESTS ===
+
+2025-06-07 05:34:15,768 - __main__ - INFO - 
+=== GENERATING OPTIMIZED PARSING FUNCTION ===
+2025-06-07 05:34:15,768 - __main__ - INFO - Generated parsing function for 'direct' method:
+
+def _parse_energy_intensity_data(self, values, geo_indices, geo_labels, time_indices, dimension):
+    records = []
+    
+    # Najpierw spróbuj metody z separatorami
+    sample_key = next(iter(values.keys()), None)
+    if sample_key and ":" in sample_key:
+        dim_positions = {}
+        key_parts = sample_key.split(':')
+        
+        # Próba okreœlenia, która pozycja odpowiada któremu wymiarowi
+        for i, part in enumerate(key_parts):
+            for dim_name, dim_data in dimension.items():
+                if 'category' in dim_data and 'index' in dim_data['category']:
+                    if part in dim_data['category']['index']:
+                        dim_positions[dim_name] = i
+                        break
+        
+        # Przetwarzaj wartoœci z separatorami
+        for key, value in values.items():
+            if value is None:
+                continue
+                
+            key_parts = key.split(':')
+            
+            country_code = None
+            time_period = None
+            
+            if 'geo' in dim_positions and dim_positions['geo'] < len(key_parts):
+                geo_idx = dim_positions['geo']
+                country_code = key_parts[geo_idx]
+                
+            if 'time' in dim_positions and dim_positions['time'] < len(key_parts):
+                time_idx = dim_positions['time']
+                time_period = key_parts[time_idx]
+                
+            if country_code and time_period:
+                record = {
+                    'country_code': country_code,
+                    'country_name': geo_labels.get(country_code, country_code),
+                    'time_period': time_period,
+                    'value': float(value) if value is not None else None
+                }
+                records.append(record)
+    else:
+        # Spróbuj metody numerycznej
+        try:
+            country_codes = list(geo_indices.keys())
+            time_codes = list(time_indices.keys())
+            
+            for value_key, value in values.items():
+                try:
+                    key_num = int(value_key)
+                    
+                    if len(time_codes) > 0:
+                        country_idx = key_num // len(time_codes)
+                        time_idx = key_num % len(time_codes)
+                        
+                        if country_idx < len(country_codes) and time_idx < len(time_codes):
+                            country_code = country_codes[country_idx]
+                            time_period = time_codes[time_idx]
+                            
+                            record = {
+                                'country_code': country_code,
+                                'country_name': geo_labels.get(country_code, country_code),
+                                'time_period': time_period,
+                                'value': float(value) if value is not None else None
+                            }
+                            records.append(record)
+                except (ValueError, IndexError):
+                    continue
+        except Exception:
+            pass
+    
+    # Jeœli poprzednie metody nie da³y wyników, u¿yj metody bezpoœredniego mapowania
+    if not records:
+        # Iteruj po wszystkich krajach i latach
+        for country_code in geo_indices.keys():
+            for time_period in time_indices.keys():
+                for key, value in values.items():
+                    if value is None:
+                        continue
+                        
+                    # SprawdŸ, czy klucz odnosi siê do tego kraju i okresu
+                    matches_country = False
+                    matches_time = False
+                    
+                    if ':' in key:
+                        # Dla kluczy z separatorami
+                        key_parts = key.split(':')
+                        for part in key_parts:
+                            if part == country_code:
+                                matches_country = True
+                            if part == time_period:
+                                matches_time = True
+                    
+                    if matches_country and matches_time:
+                        record = {
+                            'country_code': country_code,
+                            'country_name': geo_labels.get(country_code, country_code),
+                            'time_period': time_period,
+                            'value': float(value) if value is not None else None
+                        }
+                        records.append(record)
+                        break  # Znaleziono wartoœæ dla tej kombinacji kraju i czasu
+    
+    return records
+
+2025-06-07 05:34:15,771 - __main__ - INFO - 
+Testing: With unit=KGOE_TEUR
+2025-06-07 05:34:15,772 - __main__ - INFO - Sending request to https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei with params: {'format': 'JSON', 'lang': 'EN', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT'], 'sinceTimePeriod': '2020', 'unit': 'KGOE_TEUR'}
+2025-06-07 05:34:15,774 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:34:16,092 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei?format=JSON&lang=EN&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT&sinceTimePeriod=2020&unit=KGOE_TEUR HTTP/1.1" 200 3741
+2025-06-07 05:34:16,094 - __main__ - INFO - Success! Response contains 60 non-null values
+2025-06-07 05:34:16,094 - __main__ - INFO - Found successful configuration with 60 values, analyzing structure...
+2025-06-07 05:34:16,098 - __main__ - INFO - 
+=== ANALYSIS OF RESPONSE STRUCTURE ===
+2025-06-07 05:34:16,099 - __main__ - INFO - Main sections: ['version', 'class', 'label', 'source', 'updated', 'value', 'id', 'size', 'dimension', 'extension']
+2025-06-07 05:34:16,100 - __main__ - INFO - Dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:34:16,100 - __main__ - INFO - 
+Dimension 'freq':
+2025-06-07 05:34:16,101 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,101 - __main__ - INFO -   Sample indices: {'A': 0}...
+2025-06-07 05:34:16,102 - __main__ - INFO -   Sample labels: {'A': 'Annual'}...
+2025-06-07 05:34:16,102 - __main__ - INFO - 
+Dimension 'nrg_bal':
+2025-06-07 05:34:16,103 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,112 - __main__ - INFO -   Sample indices: {'EI_GDP_PPS': 0, 'EI_GDP_CLV05': 1, 'EI_GDP_CLV10': 2}...
+2025-06-07 05:34:16,112 - __main__ - INFO -   Sample labels: {'EI_GDP_PPS': 'Energy intensity of GDP in purchasing power standards (PPS)', 'EI_GDP_CLV05': 'Energy intensity of GDP in chain linked volumes (2005)', 'EI_GDP_CLV10': 'Energy intensity of GDP in chain linked volumes (2010)'}...
+2025-06-07 05:34:16,113 - __main__ - INFO - 
+Dimension 'unit':
+2025-06-07 05:34:16,114 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,114 - __main__ - INFO -   Sample indices: {'KGOE_TEUR': 0}...
+2025-06-07 05:34:16,115 - __main__ - INFO -   Sample labels: {'KGOE_TEUR': 'Kilograms of oil equivalent (KGOE) per thousand euro'}...
+2025-06-07 05:34:16,115 - __main__ - INFO - 
+Dimension 'geo':
+2025-06-07 05:34:16,115 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,116 - __main__ - INFO -   Sample indices: {'DE': 0, 'ES': 1, 'FR': 2}...
+2025-06-07 05:34:16,116 - __main__ - INFO -   Sample labels: {'DE': 'Germany', 'ES': 'Spain', 'FR': 'France'}...
+2025-06-07 05:34:16,116 - __main__ - INFO - 
+Dimension 'time':
+2025-06-07 05:34:16,117 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,117 - __main__ - INFO -   Sample indices: {'2020': 0, '2021': 1, '2022': 2}...
+2025-06-07 05:34:16,118 - __main__ - INFO -   Sample labels: {'2020': '2020', '2021': '2021', '2022': '2022'}...
+2025-06-07 05:34:16,126 - __main__ - INFO - 
+Values: 60 non-null out of 60 total
+2025-06-07 05:34:16,127 - __main__ - INFO - Sample values: {'20': 103.73, '21': 104.09, '22': 97.87, '23': 89.55, '24': 123.05}
+2025-06-07 05:34:16,127 - __main__ - INFO - 
+Analyzing key structure. Sample key: '20'
+2025-06-07 05:34:16,128 - __main__ - INFO - Key is numeric: 20
+2025-06-07 05:34:16,128 - __main__ - INFO - Attempting to decode using dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:34:16,129 - __main__ - INFO - Checking if key can be decoded using common patterns...
+2025-06-07 05:34:16,129 - __main__ - INFO - === END OF ANALYSIS ===
+
+2025-06-07 05:34:16,129 - __main__ - INFO - 
+=== TESTING PARSING FUNCTIONS ===
+2025-06-07 05:34:16,130 - __main__ - INFO - Testing separator-based parsing method...
+2025-06-07 05:34:16,130 - __main__ - INFO - Separator method produced 0 records
+2025-06-07 05:34:16,131 - __main__ - INFO - Testing numeric index parsing method...
+2025-06-07 05:34:16,131 - __main__ - INFO - Numeric method produced 0 records
+2025-06-07 05:34:16,131 - __main__ - INFO - Testing direct mapping method...
+2025-06-07 05:34:16,132 - __main__ - INFO - Direct mapping method produced 20 records
+2025-06-07 05:34:16,132 - __main__ - INFO - Best parsing method: direct with 20 records
+2025-06-07 05:34:16,133 - __main__ - INFO - Sample records from best method:
+2025-06-07 05:34:16,133 - __main__ - INFO - Record 1: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2020', 'value': 103.73}
+2025-06-07 05:34:16,134 - __main__ - INFO - Record 2: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2021', 'value': 103.73}
+2025-06-07 05:34:16,142 - __main__ - INFO - Record 3: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2022', 'value': 103.73}
+2025-06-07 05:34:16,143 - __main__ - INFO - Record 4: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2023', 'value': 103.73}
+2025-06-07 05:34:16,143 - __main__ - INFO - Record 5: {'country_code': 'ES', 'country_name': 'Spain', 'time_period': '2020', 'value': 103.73}
+2025-06-07 05:34:16,144 - __main__ - INFO - === END OF PARSING TESTS ===
+
+2025-06-07 05:34:16,145 - __main__ - INFO - 
+=== GENERATING OPTIMIZED PARSING FUNCTION ===
+2025-06-07 05:34:16,145 - __main__ - INFO - Generated parsing function for 'direct' method:
+
+def _parse_energy_intensity_data(self, values, geo_indices, geo_labels, time_indices, dimension):
+    records = []
+    
+    # Najpierw spróbuj metody z separatorami
+    sample_key = next(iter(values.keys()), None)
+    if sample_key and ":" in sample_key:
+        dim_positions = {}
+        key_parts = sample_key.split(':')
+        
+        # Próba okreœlenia, która pozycja odpowiada któremu wymiarowi
+        for i, part in enumerate(key_parts):
+            for dim_name, dim_data in dimension.items():
+                if 'category' in dim_data and 'index' in dim_data['category']:
+                    if part in dim_data['category']['index']:
+                        dim_positions[dim_name] = i
+                        break
+        
+        # Przetwarzaj wartoœci z separatorami
+        for key, value in values.items():
+            if value is None:
+                continue
+                
+            key_parts = key.split(':')
+            
+            country_code = None
+            time_period = None
+            
+            if 'geo' in dim_positions and dim_positions['geo'] < len(key_parts):
+                geo_idx = dim_positions['geo']
+                country_code = key_parts[geo_idx]
+                
+            if 'time' in dim_positions and dim_positions['time'] < len(key_parts):
+                time_idx = dim_positions['time']
+                time_period = key_parts[time_idx]
+                
+            if country_code and time_period:
+                record = {
+                    'country_code': country_code,
+                    'country_name': geo_labels.get(country_code, country_code),
+                    'time_period': time_period,
+                    'value': float(value) if value is not None else None
+                }
+                records.append(record)
+    else:
+        # Spróbuj metody numerycznej
+        try:
+            country_codes = list(geo_indices.keys())
+            time_codes = list(time_indices.keys())
+            
+            for value_key, value in values.items():
+                try:
+                    key_num = int(value_key)
+                    
+                    if len(time_codes) > 0:
+                        country_idx = key_num // len(time_codes)
+                        time_idx = key_num % len(time_codes)
+                        
+                        if country_idx < len(country_codes) and time_idx < len(time_codes):
+                            country_code = country_codes[country_idx]
+                            time_period = time_codes[time_idx]
+                            
+                            record = {
+                                'country_code': country_code,
+                                'country_name': geo_labels.get(country_code, country_code),
+                                'time_period': time_period,
+                                'value': float(value) if value is not None else None
+                            }
+                            records.append(record)
+                except (ValueError, IndexError):
+                    continue
+        except Exception:
+            pass
+    
+    # Jeœli poprzednie metody nie da³y wyników, u¿yj metody bezpoœredniego mapowania
+    if not records:
+        # Iteruj po wszystkich krajach i latach
+        for country_code in geo_indices.keys():
+            for time_period in time_indices.keys():
+                for key, value in values.items():
+                    if value is None:
+                        continue
+                        
+                    # SprawdŸ, czy klucz odnosi siê do tego kraju i okresu
+                    matches_country = False
+                    matches_time = False
+                    
+                    if ':' in key:
+                        # Dla kluczy z separatorami
+                        key_parts = key.split(':')
+                        for part in key_parts:
+                            if part == country_code:
+                                matches_country = True
+                            if part == time_period:
+                                matches_time = True
+                    
+                    if matches_country and matches_time:
+                        record = {
+                            'country_code': country_code,
+                            'country_name': geo_labels.get(country_code, country_code),
+                            'time_period': time_period,
+                            'value': float(value) if value is not None else None
+                        }
+                        records.append(record)
+                        break  # Znaleziono wartoœæ dla tej kombinacji kraju i czasu
+    
+    return records
+
+2025-06-07 05:34:16,147 - __main__ - INFO - 
+Testing: With nrg_bal=EI_GDP_PPS
+2025-06-07 05:34:16,147 - __main__ - INFO - Sending request to https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei with params: {'format': 'JSON', 'lang': 'EN', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT'], 'sinceTimePeriod': '2020', 'nrg_bal': 'EI_GDP_PPS'}
+2025-06-07 05:34:16,149 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:34:16,497 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei?format=JSON&lang=EN&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT&sinceTimePeriod=2020&nrg_bal=EI_GDP_PPS HTTP/1.1" 200 3127
+2025-06-07 05:34:16,499 - __main__ - INFO - Success! Response contains 20 non-null values
+2025-06-07 05:34:16,499 - __main__ - INFO - Found successful configuration with 20 values, analyzing structure...
+2025-06-07 05:34:16,503 - __main__ - INFO - 
+=== ANALYSIS OF RESPONSE STRUCTURE ===
+2025-06-07 05:34:16,504 - __main__ - INFO - Main sections: ['version', 'class', 'label', 'source', 'updated', 'value', 'id', 'size', 'dimension', 'extension']
+2025-06-07 05:34:16,505 - __main__ - INFO - Dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:34:16,507 - __main__ - INFO - 
+Dimension 'freq':
+2025-06-07 05:34:16,513 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,513 - __main__ - INFO -   Sample indices: {'A': 0}...
+2025-06-07 05:34:16,514 - __main__ - INFO -   Sample labels: {'A': 'Annual'}...
+2025-06-07 05:34:16,515 - __main__ - INFO - 
+Dimension 'nrg_bal':
+2025-06-07 05:34:16,516 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,516 - __main__ - INFO -   Sample indices: {'EI_GDP_PPS': 0}...
+2025-06-07 05:34:16,517 - __main__ - INFO -   Sample labels: {'EI_GDP_PPS': 'Energy intensity of GDP in purchasing power standards (PPS)'}...
+2025-06-07 05:34:16,517 - __main__ - INFO - 
+Dimension 'unit':
+2025-06-07 05:34:16,518 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,518 - __main__ - INFO -   Sample indices: {'KGOE_TEUR': 0, 'KGOE_TEUR_PPS': 1}...
+2025-06-07 05:34:16,519 - __main__ - INFO -   Sample labels: {'KGOE_TEUR': 'Kilograms of oil equivalent (KGOE) per thousand euro', 'KGOE_TEUR_PPS': 'Kilograms of oil equivalent (KGOE) per thousand euro in purchasing power standards (PPS)'}...
+2025-06-07 05:34:16,519 - __main__ - INFO - 
+Dimension 'geo':
+2025-06-07 05:34:16,519 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,520 - __main__ - INFO -   Sample indices: {'DE': 0, 'ES': 1, 'FR': 2}...
+2025-06-07 05:34:16,520 - __main__ - INFO -   Sample labels: {'DE': 'Germany', 'ES': 'Spain', 'FR': 'France'}...
+2025-06-07 05:34:16,521 - __main__ - INFO - 
+Dimension 'time':
+2025-06-07 05:34:16,523 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,528 - __main__ - INFO -   Sample indices: {'2020': 0, '2021': 1, '2022': 2}...
+2025-06-07 05:34:16,531 - __main__ - INFO -   Sample labels: {'2020': '2020', '2021': '2021', '2022': '2022'}...
+2025-06-07 05:34:16,532 - __main__ - INFO - 
+Values: 20 non-null out of 20 total
+2025-06-07 05:34:16,532 - __main__ - INFO - Sample values: {'20': 91.81, '21': 90.16, '22': 80.32, '23': 69.58, '24': 99.32}
+2025-06-07 05:34:16,532 - __main__ - INFO - 
+Analyzing key structure. Sample key: '20'
+2025-06-07 05:34:16,533 - __main__ - INFO - Key is numeric: 20
+2025-06-07 05:34:16,533 - __main__ - INFO - Attempting to decode using dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:34:16,534 - __main__ - INFO - Checking if key can be decoded using common patterns...
+2025-06-07 05:34:16,534 - __main__ - INFO - === END OF ANALYSIS ===
+
+2025-06-07 05:34:16,535 - __main__ - INFO - 
+=== TESTING PARSING FUNCTIONS ===
+2025-06-07 05:34:16,535 - __main__ - INFO - Testing separator-based parsing method...
+2025-06-07 05:34:16,536 - __main__ - INFO - Separator method produced 0 records
+2025-06-07 05:34:16,537 - __main__ - INFO - Testing numeric index parsing method...
+2025-06-07 05:34:16,538 - __main__ - INFO - Numeric method produced 0 records
+2025-06-07 05:34:16,542 - __main__ - INFO - Testing direct mapping method...
+2025-06-07 05:34:16,547 - __main__ - INFO - Direct mapping method produced 20 records
+2025-06-07 05:34:16,547 - __main__ - INFO - Best parsing method: direct with 20 records
+2025-06-07 05:34:16,548 - __main__ - INFO - Sample records from best method:
+2025-06-07 05:34:16,548 - __main__ - INFO - Record 1: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2020', 'value': 91.81}
+2025-06-07 05:34:16,549 - __main__ - INFO - Record 2: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2021', 'value': 91.81}
+2025-06-07 05:34:16,550 - __main__ - INFO - Record 3: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2022', 'value': 91.81}
+2025-06-07 05:34:16,550 - __main__ - INFO - Record 4: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2023', 'value': 91.81}
+2025-06-07 05:34:16,551 - __main__ - INFO - Record 5: {'country_code': 'ES', 'country_name': 'Spain', 'time_period': '2020', 'value': 91.81}
+2025-06-07 05:34:16,551 - __main__ - INFO - === END OF PARSING TESTS ===
+
+2025-06-07 05:34:16,552 - __main__ - INFO - 
+=== GENERATING OPTIMIZED PARSING FUNCTION ===
+2025-06-07 05:34:16,552 - __main__ - INFO - Generated parsing function for 'direct' method:
+
+def _parse_energy_intensity_data(self, values, geo_indices, geo_labels, time_indices, dimension):
+    records = []
+    
+    # Najpierw spróbuj metody z separatorami
+    sample_key = next(iter(values.keys()), None)
+    if sample_key and ":" in sample_key:
+        dim_positions = {}
+        key_parts = sample_key.split(':')
+        
+        # Próba okreœlenia, która pozycja odpowiada któremu wymiarowi
+        for i, part in enumerate(key_parts):
+            for dim_name, dim_data in dimension.items():
+                if 'category' in dim_data and 'index' in dim_data['category']:
+                    if part in dim_data['category']['index']:
+                        dim_positions[dim_name] = i
+                        break
+        
+        # Przetwarzaj wartoœci z separatorami
+        for key, value in values.items():
+            if value is None:
+                continue
+                
+            key_parts = key.split(':')
+            
+            country_code = None
+            time_period = None
+            
+            if 'geo' in dim_positions and dim_positions['geo'] < len(key_parts):
+                geo_idx = dim_positions['geo']
+                country_code = key_parts[geo_idx]
+                
+            if 'time' in dim_positions and dim_positions['time'] < len(key_parts):
+                time_idx = dim_positions['time']
+                time_period = key_parts[time_idx]
+                
+            if country_code and time_period:
+                record = {
+                    'country_code': country_code,
+                    'country_name': geo_labels.get(country_code, country_code),
+                    'time_period': time_period,
+                    'value': float(value) if value is not None else None
+                }
+                records.append(record)
+    else:
+        # Spróbuj metody numerycznej
+        try:
+            country_codes = list(geo_indices.keys())
+            time_codes = list(time_indices.keys())
+            
+            for value_key, value in values.items():
+                try:
+                    key_num = int(value_key)
+                    
+                    if len(time_codes) > 0:
+                        country_idx = key_num // len(time_codes)
+                        time_idx = key_num % len(time_codes)
+                        
+                        if country_idx < len(country_codes) and time_idx < len(time_codes):
+                            country_code = country_codes[country_idx]
+                            time_period = time_codes[time_idx]
+                            
+                            record = {
+                                'country_code': country_code,
+                                'country_name': geo_labels.get(country_code, country_code),
+                                'time_period': time_period,
+                                'value': float(value) if value is not None else None
+                            }
+                            records.append(record)
+                except (ValueError, IndexError):
+                    continue
+        except Exception:
+            pass
+    
+    # Jeœli poprzednie metody nie da³y wyników, u¿yj metody bezpoœredniego mapowania
+    if not records:
+        # Iteruj po wszystkich krajach i latach
+        for country_code in geo_indices.keys():
+            for time_period in time_indices.keys():
+                for key, value in values.items():
+                    if value is None:
+                        continue
+                        
+                    # SprawdŸ, czy klucz odnosi siê do tego kraju i okresu
+                    matches_country = False
+                    matches_time = False
+                    
+                    if ':' in key:
+                        # Dla kluczy z separatorami
+                        key_parts = key.split(':')
+                        for part in key_parts:
+                            if part == country_code:
+                                matches_country = True
+                            if part == time_period:
+                                matches_time = True
+                    
+                    if matches_country and matches_time:
+                        record = {
+                            'country_code': country_code,
+                            'country_name': geo_labels.get(country_code, country_code),
+                            'time_period': time_period,
+                            'value': float(value) if value is not None else None
+                        }
+                        records.append(record)
+                        break  # Znaleziono wartoœæ dla tej kombinacji kraju i czasu
+    
+    return records
+
+2025-06-07 05:34:16,555 - __main__ - INFO - 
+Testing: With freq=A
+2025-06-07 05:34:16,564 - __main__ - INFO - Sending request to https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei with params: {'format': 'JSON', 'lang': 'EN', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT'], 'sinceTimePeriod': '2020', 'freq': 'A'}
+2025-06-07 05:34:16,567 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:34:16,866 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei?format=JSON&lang=EN&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT&sinceTimePeriod=2020&freq=A HTTP/1.1" 200 4109
+2025-06-07 05:34:16,868 - __main__ - INFO - Success! Response contains 80 non-null values
+2025-06-07 05:34:16,870 - __main__ - INFO - Found successful configuration with 80 values, analyzing structure...
+2025-06-07 05:34:16,875 - __main__ - INFO - 
+=== ANALYSIS OF RESPONSE STRUCTURE ===
+2025-06-07 05:34:16,875 - __main__ - INFO - Main sections: ['version', 'class', 'label', 'source', 'updated', 'value', 'id', 'size', 'dimension', 'extension']
+2025-06-07 05:34:16,876 - __main__ - INFO - Dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:34:16,876 - __main__ - INFO - 
+Dimension 'freq':
+2025-06-07 05:34:16,877 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,877 - __main__ - INFO -   Sample indices: {'A': 0}...
+2025-06-07 05:34:16,878 - __main__ - INFO -   Sample labels: {'A': 'Annual'}...
+2025-06-07 05:34:16,878 - __main__ - INFO - 
+Dimension 'nrg_bal':
+2025-06-07 05:34:16,879 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,879 - __main__ - INFO -   Sample indices: {'EI_GDP_PPS': 0, 'EI_GDP_CLV05': 1, 'EI_GDP_CLV10': 2}...
+2025-06-07 05:34:16,880 - __main__ - INFO -   Sample labels: {'EI_GDP_PPS': 'Energy intensity of GDP in purchasing power standards (PPS)', 'EI_GDP_CLV05': 'Energy intensity of GDP in chain linked volumes (2005)', 'EI_GDP_CLV10': 'Energy intensity of GDP in chain linked volumes (2010)'}...
+2025-06-07 05:34:16,880 - __main__ - INFO - 
+Dimension 'unit':
+2025-06-07 05:34:16,881 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,881 - __main__ - INFO -   Sample indices: {'KGOE_TEUR': 0, 'KGOE_TEUR_PPS': 1}...
+2025-06-07 05:34:16,882 - __main__ - INFO -   Sample labels: {'KGOE_TEUR': 'Kilograms of oil equivalent (KGOE) per thousand euro', 'KGOE_TEUR_PPS': 'Kilograms of oil equivalent (KGOE) per thousand euro in purchasing power standards (PPS)'}...
+2025-06-07 05:34:16,882 - __main__ - INFO - 
+Dimension 'geo':
+2025-06-07 05:34:16,883 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,890 - __main__ - INFO -   Sample indices: {'DE': 0, 'ES': 1, 'FR': 2}...
+2025-06-07 05:34:16,891 - __main__ - INFO -   Sample labels: {'DE': 'Germany', 'ES': 'Spain', 'FR': 'France'}...
+2025-06-07 05:34:16,892 - __main__ - INFO - 
+Dimension 'time':
+2025-06-07 05:34:16,893 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:16,893 - __main__ - INFO -   Sample indices: {'2020': 0, '2021': 1, '2022': 2}...
+2025-06-07 05:34:16,894 - __main__ - INFO -   Sample labels: {'2020': '2020', '2021': '2021', '2022': '2022'}...
+2025-06-07 05:34:16,894 - __main__ - INFO - 
+Values: 80 non-null out of 80 total
+2025-06-07 05:34:16,894 - __main__ - INFO - Sample values: {'40': 103.73, '41': 104.09, '42': 97.87, '43': 89.55, '44': 123.05}
+2025-06-07 05:34:16,894 - __main__ - INFO - 
+Analyzing key structure. Sample key: '40'
+2025-06-07 05:34:16,896 - __main__ - INFO - Key is numeric: 40
+2025-06-07 05:34:16,897 - __main__ - INFO - Attempting to decode using dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:34:16,897 - __main__ - INFO - Checking if key can be decoded using common patterns...
+2025-06-07 05:34:16,897 - __main__ - INFO - === END OF ANALYSIS ===
+
+2025-06-07 05:34:16,898 - __main__ - INFO - 
+=== TESTING PARSING FUNCTIONS ===
+2025-06-07 05:34:16,898 - __main__ - INFO - Testing separator-based parsing method...
+2025-06-07 05:34:16,899 - __main__ - INFO - Separator method produced 0 records
+2025-06-07 05:34:16,908 - __main__ - INFO - Testing numeric index parsing method...
+2025-06-07 05:34:16,908 - __main__ - INFO - Numeric method produced 0 records
+2025-06-07 05:34:16,909 - __main__ - INFO - Testing direct mapping method...
+2025-06-07 05:34:16,910 - __main__ - INFO - Direct mapping method produced 20 records
+2025-06-07 05:34:16,910 - __main__ - INFO - Best parsing method: direct with 20 records
+2025-06-07 05:34:16,911 - __main__ - INFO - Sample records from best method:
+2025-06-07 05:34:16,911 - __main__ - INFO - Record 1: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2020', 'value': 103.73}
+2025-06-07 05:34:16,912 - __main__ - INFO - Record 2: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2021', 'value': 103.73}
+2025-06-07 05:34:16,912 - __main__ - INFO - Record 3: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2022', 'value': 103.73}
+2025-06-07 05:34:16,913 - __main__ - INFO - Record 4: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2023', 'value': 103.73}
+2025-06-07 05:34:16,913 - __main__ - INFO - Record 5: {'country_code': 'ES', 'country_name': 'Spain', 'time_period': '2020', 'value': 103.73}
+2025-06-07 05:34:16,914 - __main__ - INFO - === END OF PARSING TESTS ===
+
+2025-06-07 05:34:16,914 - __main__ - INFO - 
+=== GENERATING OPTIMIZED PARSING FUNCTION ===
+2025-06-07 05:34:16,915 - __main__ - INFO - Generated parsing function for 'direct' method:
+
+def _parse_energy_intensity_data(self, values, geo_indices, geo_labels, time_indices, dimension):
+    records = []
+    
+    # Najpierw spróbuj metody z separatorami
+    sample_key = next(iter(values.keys()), None)
+    if sample_key and ":" in sample_key:
+        dim_positions = {}
+        key_parts = sample_key.split(':')
+        
+        # Próba okreœlenia, która pozycja odpowiada któremu wymiarowi
+        for i, part in enumerate(key_parts):
+            for dim_name, dim_data in dimension.items():
+                if 'category' in dim_data and 'index' in dim_data['category']:
+                    if part in dim_data['category']['index']:
+                        dim_positions[dim_name] = i
+                        break
+        
+        # Przetwarzaj wartoœci z separatorami
+        for key, value in values.items():
+            if value is None:
+                continue
+                
+            key_parts = key.split(':')
+            
+            country_code = None
+            time_period = None
+            
+            if 'geo' in dim_positions and dim_positions['geo'] < len(key_parts):
+                geo_idx = dim_positions['geo']
+                country_code = key_parts[geo_idx]
+                
+            if 'time' in dim_positions and dim_positions['time'] < len(key_parts):
+                time_idx = dim_positions['time']
+                time_period = key_parts[time_idx]
+                
+            if country_code and time_period:
+                record = {
+                    'country_code': country_code,
+                    'country_name': geo_labels.get(country_code, country_code),
+                    'time_period': time_period,
+                    'value': float(value) if value is not None else None
+                }
+                records.append(record)
+    else:
+        # Spróbuj metody numerycznej
+        try:
+            country_codes = list(geo_indices.keys())
+            time_codes = list(time_indices.keys())
+            
+            for value_key, value in values.items():
+                try:
+                    key_num = int(value_key)
+                    
+                    if len(time_codes) > 0:
+                        country_idx = key_num // len(time_codes)
+                        time_idx = key_num % len(time_codes)
+                        
+                        if country_idx < len(country_codes) and time_idx < len(time_codes):
+                            country_code = country_codes[country_idx]
+                            time_period = time_codes[time_idx]
+                            
+                            record = {
+                                'country_code': country_code,
+                                'country_name': geo_labels.get(country_code, country_code),
+                                'time_period': time_period,
+                                'value': float(value) if value is not None else None
+                            }
+                            records.append(record)
+                except (ValueError, IndexError):
+                    continue
+        except Exception:
+            pass
+    
+    # Jeœli poprzednie metody nie da³y wyników, u¿yj metody bezpoœredniego mapowania
+    if not records:
+        # Iteruj po wszystkich krajach i latach
+        for country_code in geo_indices.keys():
+            for time_period in time_indices.keys():
+                for key, value in values.items():
+                    if value is None:
+                        continue
+                        
+                    # SprawdŸ, czy klucz odnosi siê do tego kraju i okresu
+                    matches_country = False
+                    matches_time = False
+                    
+                    if ':' in key:
+                        # Dla kluczy z separatorami
+                        key_parts = key.split(':')
+                        for part in key_parts:
+                            if part == country_code:
+                                matches_country = True
+                            if part == time_period:
+                                matches_time = True
+                    
+                    if matches_country and matches_time:
+                        record = {
+                            'country_code': country_code,
+                            'country_name': geo_labels.get(country_code, country_code),
+                            'time_period': time_period,
+                            'value': float(value) if value is not None else None
+                        }
+                        records.append(record)
+                        break  # Znaleziono wartoœæ dla tej kombinacji kraju i czasu
+    
+    return records
+
+2025-06-07 05:34:16,923 - __main__ - INFO - 
+Testing: With unit=KGOE_TEUR_PPS
+2025-06-07 05:34:16,924 - __main__ - INFO - Sending request to https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei with params: {'format': 'JSON', 'lang': 'EN', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT'], 'sinceTimePeriod': '2020', 'unit': 'KGOE_TEUR_PPS'}
+2025-06-07 05:34:16,926 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:34:17,277 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei?format=JSON&lang=EN&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT&sinceTimePeriod=2020&unit=KGOE_TEUR_PPS HTTP/1.1" 200 3307
+2025-06-07 05:34:17,279 - __main__ - INFO - Success! Response contains 20 non-null values
+2025-06-07 05:34:17,280 - __main__ - INFO - Found successful configuration with 20 values, analyzing structure...
+2025-06-07 05:34:17,284 - __main__ - INFO - 
+=== ANALYSIS OF RESPONSE STRUCTURE ===
+2025-06-07 05:34:17,285 - __main__ - INFO - Main sections: ['version', 'class', 'label', 'source', 'updated', 'value', 'id', 'size', 'dimension', 'extension']
+2025-06-07 05:34:17,286 - __main__ - INFO - Dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:34:17,286 - __main__ - INFO - 
+Dimension 'freq':
+2025-06-07 05:34:17,287 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:17,288 - __main__ - INFO -   Sample indices: {'A': 0}...
+2025-06-07 05:34:17,295 - __main__ - INFO -   Sample labels: {'A': 'Annual'}...
+2025-06-07 05:34:17,296 - __main__ - INFO - 
+Dimension 'nrg_bal':
+2025-06-07 05:34:17,296 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:17,297 - __main__ - INFO -   Sample indices: {'EI_GDP_PPS': 0, 'EI_GDP_CLV05': 1, 'EI_GDP_CLV10': 2}...
+2025-06-07 05:34:17,297 - __main__ - INFO -   Sample labels: {'EI_GDP_PPS': 'Energy intensity of GDP in purchasing power standards (PPS)', 'EI_GDP_CLV05': 'Energy intensity of GDP in chain linked volumes (2005)', 'EI_GDP_CLV10': 'Energy intensity of GDP in chain linked volumes (2010)'}...
+2025-06-07 05:34:17,298 - __main__ - INFO - 
+Dimension 'unit':
+2025-06-07 05:34:17,299 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:17,299 - __main__ - INFO -   Sample indices: {'KGOE_TEUR_PPS': 0}...
+2025-06-07 05:34:17,300 - __main__ - INFO -   Sample labels: {'KGOE_TEUR_PPS': 'Kilograms of oil equivalent (KGOE) per thousand euro in purchasing power standards (PPS)'}...
+2025-06-07 05:34:17,300 - __main__ - INFO - 
+Dimension 'geo':
+2025-06-07 05:34:17,300 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:17,301 - __main__ - INFO -   Sample indices: {'DE': 0, 'ES': 1, 'FR': 2}...
+2025-06-07 05:34:17,301 - __main__ - INFO -   Sample labels: {'DE': 'Germany', 'ES': 'Spain', 'FR': 'France'}...
+2025-06-07 05:34:17,302 - __main__ - INFO - 
+Dimension 'time':
+2025-06-07 05:34:17,302 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:17,303 - __main__ - INFO -   Sample indices: {'2020': 0, '2021': 1, '2022': 2}...
+2025-06-07 05:34:17,309 - __main__ - INFO -   Sample labels: {'2020': '2020', '2021': '2021', '2022': '2022'}...
+2025-06-07 05:34:17,312 - __main__ - INFO - 
+Values: 20 non-null out of 20 total
+2025-06-07 05:34:17,313 - __main__ - INFO - Sample values: {'0': 91.81, '1': 90.16, '2': 80.32, '3': 69.58, '4': 99.32}
+2025-06-07 05:34:17,314 - __main__ - INFO - 
+Analyzing key structure. Sample key: '0'
+2025-06-07 05:34:17,314 - __main__ - INFO - Key is numeric: 0
+2025-06-07 05:34:17,315 - __main__ - INFO - Attempting to decode using dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:34:17,315 - __main__ - INFO - Checking if key can be decoded using common patterns...
+2025-06-07 05:34:17,316 - __main__ - INFO - === END OF ANALYSIS ===
+
+2025-06-07 05:34:17,316 - __main__ - INFO - 
+=== TESTING PARSING FUNCTIONS ===
+2025-06-07 05:34:17,317 - __main__ - INFO - Testing separator-based parsing method...
+2025-06-07 05:34:17,317 - __main__ - INFO - Separator method produced 0 records
+2025-06-07 05:34:17,318 - __main__ - INFO - Testing numeric index parsing method...
+2025-06-07 05:34:17,326 - __main__ - INFO - Numeric method produced 20 records
+2025-06-07 05:34:17,326 - __main__ - INFO - Testing direct mapping method...
+2025-06-07 05:34:17,326 - __main__ - INFO - Direct mapping method produced 20 records
+2025-06-07 05:34:17,327 - __main__ - INFO - Best parsing method: numeric with 20 records
+2025-06-07 05:34:17,327 - __main__ - INFO - Sample records from best method:
+2025-06-07 05:34:17,328 - __main__ - INFO - Record 1: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2020', 'value': 91.81}
+2025-06-07 05:34:17,328 - __main__ - INFO - Record 2: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2021', 'value': 90.16}
+2025-06-07 05:34:17,328 - __main__ - INFO - Record 3: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2022', 'value': 80.32}
+2025-06-07 05:34:17,329 - __main__ - INFO - Record 4: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2023', 'value': 69.58}
+2025-06-07 05:34:17,329 - __main__ - INFO - Record 5: {'country_code': 'ES', 'country_name': 'Spain', 'time_period': '2020', 'value': 99.32}
+2025-06-07 05:34:17,330 - __main__ - INFO - === END OF PARSING TESTS ===
+
+2025-06-07 05:34:17,330 - __main__ - INFO - 
+=== GENERATING OPTIMIZED PARSING FUNCTION ===
+2025-06-07 05:34:17,331 - __main__ - INFO - Generated parsing function for 'numeric' method:
+
+def _parse_energy_intensity_data(self, values, geo_indices, geo_labels, time_indices, dimension):
+    records = []
+    
+    country_codes = list(geo_indices.keys())
+    time_codes = list(time_indices.keys())
+    
+    for value_key, value in values.items():
+        try:
+            key_num = int(value_key)
+            
+            if len(time_codes) > 0:
+                country_idx = key_num // len(time_codes)
+                time_idx = key_num % len(time_codes)
+                
+                if country_idx < len(country_codes) and time_idx < len(time_codes):
+                    country_code = country_codes[country_idx]
+                    time_period = time_codes[time_idx]
+                    
+                    record = {
+                        'country_code': country_code,
+                        'country_name': geo_labels.get(country_code, country_code),
+                        'time_period': time_period,
+                        'value': float(value) if value is not None else None
+                    }
+                    records.append(record)
+        except (ValueError, IndexError):
+            continue
+    
+    return records
+
+2025-06-07 05:34:17,331 - __main__ - INFO - 
+Testing: With nrg_bal=EI_GDP_CLV05
+2025-06-07 05:34:17,332 - __main__ - INFO - Sending request to https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei with params: {'format': 'JSON', 'lang': 'EN', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT'], 'sinceTimePeriod': '2020', 'nrg_bal': 'EI_GDP_CLV05'}
+2025-06-07 05:34:17,334 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:34:17,678 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei?format=JSON&lang=EN&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT&sinceTimePeriod=2020&nrg_bal=EI_GDP_CLV05 HTTP/1.1" 200 3128
+2025-06-07 05:34:17,680 - __main__ - INFO - Success! Response contains 20 non-null values
+2025-06-07 05:34:17,681 - __main__ - INFO - Found successful configuration with 20 values, analyzing structure...
+2025-06-07 05:34:17,686 - __main__ - INFO - 
+=== ANALYSIS OF RESPONSE STRUCTURE ===
+2025-06-07 05:34:17,686 - __main__ - INFO - Main sections: ['version', 'class', 'label', 'source', 'updated', 'value', 'id', 'size', 'dimension', 'extension']
+2025-06-07 05:34:17,687 - __main__ - INFO - Dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:34:17,688 - __main__ - INFO - 
+Dimension 'freq':
+2025-06-07 05:34:17,690 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:17,691 - __main__ - INFO -   Sample indices: {'A': 0}...
+2025-06-07 05:34:17,693 - __main__ - INFO -   Sample labels: {'A': 'Annual'}...
+2025-06-07 05:34:17,698 - __main__ - INFO - 
+Dimension 'nrg_bal':
+2025-06-07 05:34:17,698 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:17,699 - __main__ - INFO -   Sample indices: {'EI_GDP_CLV05': 0}...
+2025-06-07 05:34:17,700 - __main__ - INFO -   Sample labels: {'EI_GDP_CLV05': 'Energy intensity of GDP in chain linked volumes (2005)'}...
+2025-06-07 05:34:17,700 - __main__ - INFO - 
+Dimension 'unit':
+2025-06-07 05:34:17,701 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:17,702 - __main__ - INFO -   Sample indices: {'KGOE_TEUR': 0, 'KGOE_TEUR_PPS': 1}...
+2025-06-07 05:34:17,702 - __main__ - INFO -   Sample labels: {'KGOE_TEUR': 'Kilograms of oil equivalent (KGOE) per thousand euro', 'KGOE_TEUR_PPS': 'Kilograms of oil equivalent (KGOE) per thousand euro in purchasing power standards (PPS)'}...
+2025-06-07 05:34:17,703 - __main__ - INFO - 
+Dimension 'geo':
+2025-06-07 05:34:17,704 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:17,706 - __main__ - INFO -   Sample indices: {'DE': 0, 'ES': 1, 'FR': 2}...
+2025-06-07 05:34:17,710 - __main__ - INFO -   Sample labels: {'DE': 'Germany', 'ES': 'Spain', 'FR': 'France'}...
+2025-06-07 05:34:17,715 - __main__ - INFO - 
+Dimension 'time':
+2025-06-07 05:34:17,715 - __main__ - INFO -   Category keys: ['index', 'label']
+2025-06-07 05:34:17,716 - __main__ - INFO -   Sample indices: {'2020': 0, '2021': 1, '2022': 2}...
+2025-06-07 05:34:17,716 - __main__ - INFO -   Sample labels: {'2020': '2020', '2021': '2021', '2022': '2022'}...
+2025-06-07 05:34:17,717 - __main__ - INFO - 
+Values: 20 non-null out of 20 total
+2025-06-07 05:34:17,717 - __main__ - INFO - Sample values: {'0': 103.73, '1': 104.09, '2': 97.87, '3': 89.55, '4': 123.05}
+2025-06-07 05:34:17,718 - __main__ - INFO - 
+Analyzing key structure. Sample key: '0'
+2025-06-07 05:34:17,718 - __main__ - INFO - Key is numeric: 0
+2025-06-07 05:34:17,719 - __main__ - INFO - Attempting to decode using dimensions: ['freq', 'nrg_bal', 'unit', 'geo', 'time']
+2025-06-07 05:34:17,719 - __main__ - INFO - Checking if key can be decoded using common patterns...
+2025-06-07 05:34:17,720 - __main__ - INFO - === END OF ANALYSIS ===
+
+2025-06-07 05:34:17,721 - __main__ - INFO - 
+=== TESTING PARSING FUNCTIONS ===
+2025-06-07 05:34:17,728 - __main__ - INFO - Testing separator-based parsing method...
+2025-06-07 05:34:17,729 - __main__ - INFO - Separator method produced 0 records
+2025-06-07 05:34:17,730 - __main__ - INFO - Testing numeric index parsing method...
+2025-06-07 05:34:17,730 - __main__ - INFO - Numeric method produced 20 records
+2025-06-07 05:34:17,731 - __main__ - INFO - Testing direct mapping method...
+2025-06-07 05:34:17,732 - __main__ - INFO - Direct mapping method produced 20 records
+2025-06-07 05:34:17,732 - __main__ - INFO - Best parsing method: numeric with 20 records
+2025-06-07 05:34:17,732 - __main__ - INFO - Sample records from best method:
+2025-06-07 05:34:17,732 - __main__ - INFO - Record 1: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2020', 'value': 103.73}
+2025-06-07 05:34:17,733 - __main__ - INFO - Record 2: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2021', 'value': 104.09}
+2025-06-07 05:34:17,733 - __main__ - INFO - Record 3: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2022', 'value': 97.87}
+2025-06-07 05:34:17,734 - __main__ - INFO - Record 4: {'country_code': 'DE', 'country_name': 'Germany', 'time_period': '2023', 'value': 89.55}
+2025-06-07 05:34:17,734 - __main__ - INFO - Record 5: {'country_code': 'ES', 'country_name': 'Spain', 'time_period': '2020', 'value': 123.05}
+2025-06-07 05:34:17,735 - __main__ - INFO - === END OF PARSING TESTS ===
+
+2025-06-07 05:34:17,735 - __main__ - INFO - 
+=== GENERATING OPTIMIZED PARSING FUNCTION ===
+2025-06-07 05:34:17,735 - __main__ - INFO - Generated parsing function for 'numeric' method:
+
+def _parse_energy_intensity_data(self, values, geo_indices, geo_labels, time_indices, dimension):
+    records = []
+    
+    country_codes = list(geo_indices.keys())
+    time_codes = list(time_indices.keys())
+    
+    for value_key, value in values.items():
+        try:
+            key_num = int(value_key)
+            
+            if len(time_codes) > 0:
+                country_idx = key_num // len(time_codes)
+                time_idx = key_num % len(time_codes)
+                
+                if country_idx < len(country_codes) and time_idx < len(time_codes):
+                    country_code = country_codes[country_idx]
+                    time_period = time_codes[time_idx]
+                    
+                    record = {
+                        'country_code': country_code,
+                        'country_name': geo_labels.get(country_code, country_code),
+                        'time_period': time_period,
+                        'value': float(value) if value is not None else None
+                    }
+                    records.append(record)
+        except (ValueError, IndexError):
+            continue
+    
+    return records
+
+2025-06-07 05:34:17,736 - __main__ - INFO - 
+Testing: With nrg_bal=EI_GDP_PPS and unit=KGOE_TEUR
+2025-06-07 05:34:17,738 - __main__ - INFO - Sending request to https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei with params: {'format': 'JSON', 'lang': 'EN', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT'], 'sinceTimePeriod': '2020', 'nrg_bal': 'EI_GDP_PPS', 'unit': 'KGOE_TEUR'}
+2025-06-07 05:34:17,747 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:34:18,063 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ei?format=JSON&lang=EN&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT&sinceTimePeriod=2020&nrg_bal=EI_GDP_PPS&unit=KGOE_TEUR HTTP/1.1" 200 2797
+2025-06-07 05:34:18,065 - __main__ - WARNING - Response contains no values
+2025-06-07 05:34:18,066 - __main__ - INFO - 
+=== SUMMARY OF ENDPOINT TESTS ===
+2025-06-07 05:34:18,140 - __main__ - INFO - 
+Najlepsza konfiguracja: No parameters z 80 wartoœciami
+2025-06-07 05:34:18,140 - __main__ - INFO - 
+'energy_intensity': {
+    'code': 'nrg_ind_ei',
+    'description': 'Energy intensity of the economy',
+    'params': {
+        
+    }
+}
+
+2025-06-07 05:34:18,141 - __main__ - INFO - === END OF ENDPOINT TESTS ===
+2025-06-07 05:34:18,141 - __main__ - INFO - 
+=== TESTING IMPLEMENTATION IN EUROSTAT CLIENT ===
+2025-06-07 05:34:18,146 - __main__ - INFO - Testing get_energy_intensity_data method with diagnostic logging
+2025-06-07 05:34:18,150 - EurostatClient - INFO - Fetching energy intensity data from Eurostat
+2025-06-07 05:34:18,151 - EurostatClient - INFO - Sending request to: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sdg_07_30 with params: {'format': 'JSON', 'lang': 'EN', 'unit': 'EUR_KGOE', 'sinceTimePeriod': '2020', 'geo': ['PL', 'DE', 'FR', 'ES', 'IT']}
+2025-06-07 05:34:18,153 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): ec.europa.eu:443
+2025-06-07 05:34:18,441 - urllib3.connectionpool - DEBUG - https://ec.europa.eu:443 "GET /eurostat/api/dissemination/statistics/1.0/data/sdg_07_30?format=JSON&lang=EN&unit=EUR_KGOE&sinceTimePeriod=2020&geo=PL&geo=DE&geo=FR&geo=ES&geo=IT HTTP/1.1" 200 4644
+2025-06-07 05:34:18,444 - EurostatClient - INFO - Successfully parsed 20 records for energy_intensity
+2025-06-07 05:34:18,445 - __main__ - INFO - get_energy_intensity_data returned DataFrame with 20 rows
+2025-06-07 05:34:18,445 - __main__ - INFO - DataFrame columns: ['country_code', 'country_name', 'time_period', 'value', 'dataset']
+2025-06-07 05:34:18,457 - __main__ - INFO - DataFrame sample:
+  country_code country_name time_period  value           dataset
+0           DE      Germany        2020  10.22  energy_intensity
+1           DE      Germany        2021  10.19  energy_intensity
+2           DE      Germany        2022  10.84  energy_intensity
+3           DE      Germany        2023  11.84  energy_intensity
+4           ES        Spain        2020   9.02  energy_intensity
+2025-06-07 05:34:18,458 - __main__ - INFO - Non-null values in 'value' column: 20 out of 20
+2025-06-07 05:34:18,459 - __main__ - INFO - Implementation appears to be working correctly!
+2025-06-07 05:34:18,463 - __main__ - INFO - === END OF IMPLEMENTATION TEST ===
+2025-06-07 05:34:18,463 - __main__ - INFO - 
+Diagnostics completed. Check the logs for detailed results and recommendations.

@@ -1,0 +1,333 @@
+"""
+EurostatTestClient.py
+Skrypt testowy do sprawdzenia działania API Eurostat dla różnych parametrów
+"""
+
+import requests
+import pandas as pd
+import json
+import logging
+import time
+from typing import Dict, List, Optional
+import argparse
+
+# Konfiguracja logowania
+logging.basicConfig(level=logging.INFO, 
+                  format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger("EurostatTest")
+
+class EurostatTester:
+    """Klasa do testowania API Eurostat"""
+    
+    def __init__(self):
+        """Inicjalizacja testera"""
+        self.base_url = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data"
+        
+        # Domyślne parametry dla każdego zapytania
+        self.default_params = {
+            'format': 'JSON',
+            'lang': 'EN'
+        }
+        
+        # Kraje testowe
+        self.test_countries = ['PL', 'DE', 'FR']
+        
+        # Problematyczne datasety
+        self.datasets_to_test = {
+            'urbanization': {
+                'code': 'urb_cpop1',
+                'description': 'Urban population',
+                'test_params': [
+                    {'unit': 'PC', 'indic_ur': 'URBAN_POP'},
+                    {'unit': 'PC', 'indic_ur': 'URB_POP'},
+                    {'indic_ur': 'URBAN_POP'},
+                    {'indic_ur': 'URB_POP'},
+                    {'cities': 'TOTAL', 'indic_ur': 'URBAN_POP'},
+                    {'cities': 'TOTAL'},
+                    # Alternatywne datasety
+                    {'dataset': 'urb_lpop1', 'unit': 'PC'},
+                    {'dataset': 'demo_gind', 'unit': 'PC', 'indic_de': 'TOTPOP'}
+                ]
+            },
+            'service_sector': {
+                'code': 'nama_10_a10',
+                'description': 'Service sector percentage',
+                'test_params': [
+                    {'unit': 'PC_TOT', 'nace_r2': 'G-U'},
+                    {'unit': 'PC_TOT', 'nace_r2': 'G-U', 'na_item': 'B1G'},
+                    {'unit': 'PC_TOT', 'nace_r2': 'TOTAL', 'na_item': 'B1G'},
+                    {'unit': 'PC_TOT', 'nace_r2': 'G-U', 'na_item': 'D1'},
+                    {'unit': 'PC_TOT', 'nace_r2': 'G-U', 'na_item': 'P1'},
+                    {'unit': 'PC_GDP', 'nace_r2': 'G-U'},
+                    {'unit': 'PCW', 'nace_r2': 'G-U'},
+                    # Alternatywne datasety
+                    {'dataset': 'nama_10_a64', 'unit': 'PC_TOT', 'nace_r2': 'G-U'},
+                    {'dataset': 'nama_10_a64', 'unit': 'PC_GDP', 'nace_r2': 'G-U'},
+                    {'dataset': 'nama_10_gdp', 'unit': 'PC_GDP', 'nace_r2': 'G-U'}
+                ]
+            },
+            'household_size': {
+                'code': 'ilc_lvph01',
+                'description': 'Average household size',
+                'test_params': [
+                    {'unit': 'NR', 'hhtyp': 'TOTAL'},
+                    {'unit': 'NR', 'hhtype': 'TOTAL'},
+                    {'unit': 'NR'},
+                    {'hhtyp': 'TOTAL'},
+                    {'hhtype': 'TOTAL'},
+                    # Alternatywne datasety
+                    {'dataset': 'hbs_car_t313', 'unit': 'NR'},
+                    {'dataset': 'lfst_hhantych', 'unit': 'THS'},
+                    {'dataset': 'lfst_hhnhtych', 'unit': 'THS_PER'}
+                ]
+            },
+            'heating_systems': {
+                'code': 'nrg_d_hhq',
+                'description': 'Primary heating systems',
+                'test_params': [
+                    {'unit': 'PC', 'siec': 'TOTAL'},
+                    {'unit': 'PC', 'nrg_bal': 'FC_OTH_HH_E'},
+                    {'unit': 'PC', 'nrg_bal': 'FC_OBS_HH_E'},
+                    {'unit': 'PC', 'siec': 'G3000'},
+                    {'unit': 'THS_T', 'siec': 'TOTAL'},
+                    {'unit': 'THS_T', 'nrg_bal': 'FC_OTH_HH_E'},
+                    # Alternatywne datasety
+                    {'dataset': 'nrg_bal_c', 'unit': 'PC', 'siec': 'TOTAL', 'nrg_bal': 'FC_OTH_HH_E'},
+                    {'dataset': 'nrg_bal_c', 'unit': 'PC', 'siec': 'TOTAL', 'nrg_bal': 'FC_OBS_HH_E'},
+                    {'dataset': 'nrg_d_hhq_a', 'unit': 'PC', 'siec': 'TOTAL'}
+                ]
+            }
+        }
+    
+    def test_dataset(self, dataset_name: str, code: str, params_list: List[Dict], print_sample: bool = True) -> Dict:
+        """
+        Test różnych kombinacji parametrów dla datasetu
+        
+        Args:
+            dataset_name: Nazwa datasetu
+            code: Kod datasetu
+            params_list: Lista różnych kombinacji parametrów do przetestowania
+            print_sample: Czy wypisać przykładowe dane
+            
+        Returns:
+            Słownik z wynikami testów
+        """
+        results = {}
+        
+        logger.info(f"Testing dataset: {dataset_name} ({code})")
+        
+        for i, test_params in enumerate(params_list):
+            # Sprawdź, czy używamy alternatywnego datasetu
+            dataset_code = test_params.pop('dataset', code)
+            
+            # Utwórz parametry zapytania
+            params = self.default_params.copy()
+            params.update(test_params)
+            params['geo'] = self.test_countries
+            params['sinceTimePeriod'] = '2020'
+            
+            test_name = f"Test {i+1}: {dataset_code} - {json.dumps(test_params)}"
+            logger.info(f"Running {test_name}")
+            
+            try:
+                url = f"{self.base_url}/{dataset_code}"
+                logger.info(f"Request URL: {url}")
+                logger.info(f"Request params: {params}")
+                
+                response = requests.get(url, params=params, timeout=30)
+                
+                if response.status_code == 200:
+                    data = response.json()
+                    
+                    # Sprawdź, czy mamy wartości w odpowiedzi
+                    if 'value' in data and data['value']:
+                        records_count = len(data['value'])
+                        results[test_name] = {
+                            'status': 'SUCCESS',
+                            'records': records_count,
+                            'message': f"Received {records_count} records"
+                        }
+                        
+                        if print_sample and records_count > 0:
+                            # Pokaż próbkę danych
+                            sample_key = list(data['value'].keys())[0]
+                            sample_value = data['value'][sample_key]
+                            logger.info(f"Sample value: {sample_key} -> {sample_value}")
+                            
+                            # Pokaż strukturę wymiarów
+                            if 'dimension' in data:
+                                logger.info(f"Dimensions: {', '.join(data['dimension'].keys())}")
+                    else:
+                        results[test_name] = {
+                            'status': 'EMPTY',
+                            'records': 0,
+                            'message': "Response contains no values"
+                        }
+                else:
+                    results[test_name] = {
+                        'status': 'ERROR',
+                        'records': 0,
+                        'message': f"HTTP Error {response.status_code}: {response.text}"
+                    }
+                    logger.error(f"HTTP Error {response.status_code}: {response.text}")
+            
+            except Exception as e:
+                results[test_name] = {
+                    'status': 'EXCEPTION',
+                    'records': 0,
+                    'message': str(e)
+                }
+                logger.error(f"Exception: {str(e)}")
+            
+            # Krótka przerwa między zapytaniami, aby uniknąć przekroczenia limitu zapytań
+            time.sleep(1)
+        
+        return results
+    
+    def test_all_datasets(self) -> Dict:
+        """
+        Testowanie wszystkich problematycznych datasetów
+        
+        Returns:
+            Słownik z wynikami wszystkich testów
+        """
+        all_results = {}
+        
+        for dataset_name, info in self.datasets_to_test.items():
+            results = self.test_dataset(
+                dataset_name, 
+                info['code'], 
+                info['test_params']
+            )
+            all_results[dataset_name] = results
+        
+        return all_results
+    
+    def print_results_summary(self, all_results: Dict):
+        """
+        Wydruk podsumowania wyników testów
+        
+        Args:
+            all_results: Słownik z wynikami wszystkich testów
+        """
+        print("\n===== EUROSTAT API TEST RESULTS =====")
+        
+        success_configs = {}
+        
+        for dataset_name, results in all_results.items():
+            print(f"\n----- {dataset_name} -----")
+            
+            success_count = 0
+            successful_tests = []
+            
+            for test_name, result in results.items():
+                status = result['status']
+                records = result['records']
+                message = result['message']
+                
+                status_display = {
+                    'SUCCESS': '✓ SUCCESS',
+                    'EMPTY': '⚠ EMPTY',
+                    'ERROR': '✗ ERROR',
+                    'EXCEPTION': '✗ EXCEPTION'
+                }.get(status, status)
+                
+                print(f"{status_display} - {test_name} - {records} records")
+                
+                if status == 'SUCCESS' and records > 0:
+                    success_count += 1
+                    successful_tests.append(test_name)
+            
+            if success_count > 0:
+                print(f"\nSuccessful configs for {dataset_name}:")
+                for test in successful_tests:
+                    print(f"  {test}")
+                
+                # Zapisz najlepszą konfigurację do słownika
+                best_test = successful_tests[0]  # Bierzemy pierwszy udany test
+                # Ekstrahuj parametry z nazwy testu
+                test_parts = best_test.split(' - ', 1)
+                if len(test_parts) == 2:
+                    dataset_code = test_parts[0].split(': ')[1]
+                    params_str = test_parts[1]
+                    try:
+                        params = json.loads(params_str)
+                        success_configs[dataset_name] = {
+                            'code': dataset_code,
+                            'params': params
+                        }
+                    except json.JSONDecodeError:
+                        print(f"  Could not parse parameters from: {params_str}")
+            else:
+                print("\nNo successful configurations found for this dataset.")
+        
+        # Wydruk zalecanych konfiguracji do użycia w EurostatClient.py
+        if success_configs:
+            print("\n===== RECOMMENDED CONFIGURATIONS =====")
+            print("\nCopy and paste these configurations to your EurostatClient.py:")
+            print("\nself.datasets = {")
+            
+            # Podstawowe datasety, które zawsze działają
+            print("    'population': {")
+            print("        'code': 'demo_pjan',")
+            print("        'description': 'Population by sex and age',")
+            print("        'params': {")
+            print("            'sex': 'T',      # Total")
+            print("            'age': 'TOTAL'   # All ages")
+            print("        }")
+            print("    },")
+            
+            print("    'gdp_per_capita': {")
+            print("        'code': 'nama_10_pc',")
+            print("        'description': 'GDP per capita',")
+            print("        'params': {")
+            print("            'unit': 'CP_EUR_HAB',  # Current prices, euro per capita")
+            print("            'na_item': 'B1GQ'      # Gross domestic product at market prices")
+            print("        },")
+            print("        'alternative_units': ['CP_PPS_EU27_2020_HAB']")
+            print("    },")
+            
+            # Dodaj przetestowane konfiguracje
+            for dataset_name, config in success_configs.items():
+                print(f"    '{dataset_name}': {{")
+                print(f"        'code': '{config['code']}',")
+                print(f"        'description': '{self.datasets_to_test[dataset_name]['description']}',")
+                print(f"        'params': {{")
+                for key, value in config['params'].items():
+                    print(f"            '{key}': '{value}',")
+                print("        }")
+                print("    },")
+            
+            print("    # ... pozostałe datasety")
+            print("}")
+        
+        print("\n====================================")
+
+
+def main():
+    """Główna funkcja skryptu"""
+    parser = argparse.ArgumentParser(description="Test Eurostat API endpoints")
+    parser.add_argument('--dataset', choices=['urbanization', 'service_sector', 'household_size', 'heating_systems', 'all'],
+                        default='all', help='Which dataset to test')
+    
+    args = parser.parse_args()
+    
+    tester = EurostatTester()
+    
+    if args.dataset == 'all':
+        all_results = tester.test_all_datasets()
+        tester.print_results_summary(all_results)
+    else:
+        # Test tylko wybranego datasetu
+        dataset_info = tester.datasets_to_test[args.dataset]
+        results = tester.test_dataset(
+            args.dataset,
+            dataset_info['code'],
+            dataset_info['test_params']
+        )
+        
+        tester.print_results_summary({args.dataset: results})
+
+
+if __name__ == "__main__":
+    main()

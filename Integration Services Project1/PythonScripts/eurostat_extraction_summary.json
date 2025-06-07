@@ -1,0 +1,85 @@
+{
+  "extraction_timestamp": "2025-06-07T20:03:50.069551",
+  "raw_data_stats": {
+    "population": {
+      "total_records": 40,
+      "records_with_data": 40,
+      "data_coverage_pct": 100.0
+    },
+    "gdp_per_capita": {
+      "total_records": 40,
+      "records_with_data": 40,
+      "data_coverage_pct": 100.0
+    },
+    "electricity_prices": {
+      "total_records": 80,
+      "records_with_data": 80,
+      "data_coverage_pct": 100.0
+    },
+    "energy_intensity": {
+      "total_records": 32,
+      "records_with_data": 32,
+      "data_coverage_pct": 100.0
+    },
+    "unemployment_rate": {
+      "total_records": 40,
+      "records_with_data": 40,
+      "data_coverage_pct": 100.0
+    },
+    "poverty_by_degree_of_urbanization": {
+      "total_records": 40,
+      "records_with_data": 40,
+      "data_coverage_pct": 100.0
+    },
+    "service_sector": {
+      "total_records": 37,
+      "records_with_data": 37,
+      "data_coverage_pct": 100.0
+    },
+    "industry_sector": {
+      "total_records": 40,
+      "records_with_data": 40,
+      "data_coverage_pct": 100.0
+    },
+    "household_size": {
+      "total_records": 40,
+      "records_with_data": 40,
+      "data_coverage_pct": 100.0
+    },
+    "energy_poverty": {
+      "total_records": 40,
+      "records_with_data": 40,
+      "data_coverage_pct": 100.0
+    },
+    "heating_systems": {
+      "total_records": 7,
+      "records_with_data": 7,
+      "data_coverage_pct": 100.0
+    },
+    "total": 436
+  },
+  "integrated_data_stats": {
+    "total_country_year_profiles": 40,
+    "countries_covered": 8,
+    "years_covered": 5,
+    "avg_data_quality_score": 10.6,
+    "profiles_with_complete_data": 38
+  },
+  "data_quality_overview": {
+    "quality_score_distribution": {
+      "11": 26,
+      "10": 12,
+      "9": 2
+    },
+    "countries_by_avg_quality": {
+      "CZ": 10.8,
+      "DE": 10.8,
+      "ES": 10.6,
+      "FR": 10.8,
+      "HU": 10.8,
+      "IT": 10.6,
+      "PL": 9.6,
+      "SK": 10.8
+    }
+  }
+}

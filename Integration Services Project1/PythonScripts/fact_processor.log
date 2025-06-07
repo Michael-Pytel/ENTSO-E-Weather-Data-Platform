@@ -1,0 +1,2035 @@
+2025-06-07 10:44:51,673 - FactProcessorMain - INFO - Starting Fact Processor
+2025-06-07 10:44:51,673 - FactProcessorMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-07 10:44:51,674 - FactProcessorMain - ERROR - Fatal error: name 'FactProcessor' is not defined
+2025-06-07 10:44:59,785 - FactProcessorMain - INFO - Starting Fact Processor
+2025-06-07 10:44:59,785 - FactProcessorMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-07 10:44:59,787 - FactProcessorMain - ERROR - Fatal error: name 'FactProcessor' is not defined
+2025-06-07 10:44:59,789 - FactProcessorMain - ERROR - Traceback (most recent call last):
+  File "D:\hurtownie\Integration Services Project1\PythonScripts\FactProcessor.py", line 30, in main
+    processor = FactProcessor(connection_string)
+NameError: name 'FactProcessor' is not defined
+
+2025-06-07 10:46:32,949 - FactProcessorMain - INFO - Starting Fact Processor
+2025-06-07 10:46:32,949 - FactProcessorMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-07 10:46:32,950 - __main__ - INFO - Starting fact processing
+2025-06-07 10:46:38,868 - __main__ - INFO - Loading dimension mappings from staging tables
+2025-06-07 10:46:39,282 - __main__ - INFO - Loaded 1096 date dimension records
+2025-06-07 10:46:39,288 - __main__ - INFO - Loaded 24 time dimension records
+2025-06-07 10:46:39,294 - __main__ - INFO - Loaded 121 bidding zone dimension records
+2025-06-07 10:46:39,300 - __main__ - INFO - Loaded 25 weather zone dimension records
+2025-06-07 10:46:39,357 - __main__ - INFO - Loaded 18 generation type dimension records
+2025-06-07 10:46:39,364 - __main__ - INFO - Loaded 14 weather condition dimension records
+2025-06-07 10:46:39,367 - __main__ - ERROR - Error loading socioeconomic profile dimension: Execution failed on sql '
+                    SELECT id as staging_socioeconomic_profile_id, profile_name, bidding_zone_id
+                    FROM staging_dim_socioeconomic_profile
+                ': ('42S22', "[42S22] [Microsoft][ODBC SQL Server Driver][SQL Server]Invalid column name 'profile_name'. (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC SQL Server Driver][SQL Server]Invalid column name 'bidding_zone_id'. (207)")
+2025-06-07 10:46:39,368 - __main__ - INFO - Loading data from staging tables
+2025-06-07 10:46:46,906 - __main__ - INFO - Loaded 41828 actual load records
+2025-06-07 11:28:29,297 - FactProcessorMain - INFO - Starting Fact Processor
+2025-06-07 11:28:29,297 - FactProcessorMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-07 11:28:29,299 - __main__ - INFO - Starting fact processing
+2025-06-07 11:28:33,939 - __main__ - INFO - Loading dimension mappings from staging tables
+2025-06-07 11:28:34,356 - __main__ - INFO - Loaded 1096 date dimension records
+2025-06-07 11:28:34,360 - __main__ - INFO - Loaded 24 time dimension records
+2025-06-07 11:28:34,365 - __main__ - INFO - Loaded 121 bidding zone dimension records
+2025-06-07 11:28:34,369 - __main__ - INFO - Loaded 25 weather zone dimension records
+2025-06-07 11:28:34,375 - __main__ - INFO - Loaded 18 generation type dimension records
+2025-06-07 11:28:34,379 - __main__ - INFO - Loaded 14 weather condition dimension records
+2025-06-07 11:28:34,382 - __main__ - INFO - Loaded 120 socioeconomic profile dimension records
+2025-06-07 11:28:34,386 - __main__ - INFO - Loading data from staging tables
+2025-06-07 11:28:34,823 - __main__ - INFO - Loaded 41828 actual load records
+2025-06-07 11:29:04,557 - __main__ - INFO - Loaded 557729 generation records
+2025-06-07 11:29:04,994 - __main__ - INFO - Loaded 41496 forecast records
+2025-06-07 11:29:18,495 - __main__ - INFO - Loaded 125904 weather records
+2025-06-07 11:29:18,649 - __main__ - INFO - Loaded 5429 climate records
+2025-06-07 11:29:18,650 - __main__ - INFO - Merging energy and weather data
+2025-06-07 11:29:18,651 - __main__ - INFO - Processing 41828 actual load records
+2025-06-07 11:29:41,810 - __main__ - INFO - Processing 557729 generation records
+2025-06-07 11:34:50,059 - __main__ - INFO - Processing 41496 forecast records
+2025-06-07 11:36:59,168 - __main__ - INFO - Prepared 454663 energy data records
+2025-06-07 11:36:59,460 - __main__ - INFO - Processing 125904 weather records
+2025-06-07 11:36:59,561 - __main__ - INFO - Merging with 5429 climate records
+2025-06-07 11:37:00,108 - __main__ - INFO - Prepared 423096 weather data records
+2025-06-07 11:37:08,144 - __main__ - INFO - Merged data contains 3335827 records
+2025-06-07 11:37:08,232 - __main__ - INFO - Calculating derived metrics
+2025-06-07 11:50:41,796 - __main__ - INFO - Derived metrics calculated successfully
+2025-06-07 11:54:55,822 - __main__ - INFO - Mapping data to dimension keys
+2025-06-07 12:03:20,033 - __main__ - INFO - Dimension keys mapped successfully
+2025-06-07 12:03:21,330 - __main__ - INFO - Inserting 3335827 facts to staging table
+2025-06-07 12:03:33,526 - __main__ - INFO - Creating staging fact table
+2025-06-07 12:03:37,011 - __main__ - INFO - Created new staging_fact_energy_weather table
+2025-06-07 12:03:37,404 - __main__ - INFO - Truncating staging fact table
+2025-06-07 12:03:37,486 - __main__ - INFO - Truncated staging_fact_energy_weather table
+2025-06-07 12:03:42,959 - __main__ - INFO - Inserted batch: 1000/3335827 rows
+2025-06-07 12:03:43,659 - __main__ - INFO - Inserted batch: 2000/3335827 rows
+2025-06-07 12:03:44,005 - __main__ - INFO - Inserted batch: 3000/3335827 rows
+2025-06-07 12:03:44,518 - __main__ - INFO - Inserted batch: 4000/3335827 rows
+2025-06-07 12:03:45,048 - __main__ - INFO - Inserted batch: 5000/3335827 rows
+2025-06-07 12:03:45,419 - __main__ - INFO - Inserted batch: 6000/3335827 rows
+2025-06-07 12:03:45,789 - __main__ - INFO - Inserted batch: 7000/3335827 rows
+2025-06-07 12:03:46,193 - __main__ - INFO - Inserted batch: 8000/3335827 rows
+2025-06-07 12:03:46,535 - __main__ - INFO - Inserted batch: 9000/3335827 rows
+2025-06-07 12:03:46,931 - __main__ - INFO - Inserted batch: 10000/3335827 rows
+2025-06-07 12:03:47,422 - __main__ - INFO - Inserted batch: 11000/3335827 rows
+2025-06-07 12:03:47,837 - __main__ - INFO - Inserted batch: 12000/3335827 rows
+2025-06-07 12:03:48,400 - __main__ - INFO - Inserted batch: 13000/3335827 rows
+2025-06-07 12:03:48,806 - __main__ - INFO - Inserted batch: 14000/3335827 rows
+2025-06-07 12:03:49,168 - __main__ - INFO - Inserted batch: 15000/3335827 rows
+2025-06-07 12:03:49,488 - __main__ - INFO - Inserted batch: 16000/3335827 rows
+2025-06-07 12:03:49,817 - __main__ - INFO - Inserted batch: 17000/3335827 rows
+2025-06-07 12:03:50,148 - __main__ - INFO - Inserted batch: 18000/3335827 rows
+2025-06-07 12:03:50,464 - __main__ - INFO - Inserted batch: 19000/3335827 rows
+2025-06-07 12:03:50,785 - __main__ - INFO - Inserted batch: 20000/3335827 rows
+2025-06-07 12:03:51,142 - __main__ - INFO - Inserted batch: 21000/3335827 rows
+2025-06-07 12:03:51,459 - __main__ - INFO - Inserted batch: 22000/3335827 rows
+2025-06-07 12:03:51,807 - __main__ - INFO - Inserted batch: 23000/3335827 rows
+2025-06-07 12:03:52,130 - __main__ - INFO - Inserted batch: 24000/3335827 rows
+2025-06-07 12:03:52,529 - __main__ - INFO - Inserted batch: 25000/3335827 rows
+2025-06-07 12:03:52,857 - __main__ - INFO - Inserted batch: 26000/3335827 rows
+2025-06-07 12:03:53,207 - __main__ - INFO - Inserted batch: 27000/3335827 rows
+2025-06-07 12:03:53,558 - __main__ - INFO - Inserted batch: 28000/3335827 rows
+2025-06-07 12:03:53,872 - __main__ - INFO - Inserted batch: 29000/3335827 rows
+2025-06-07 12:03:54,231 - __main__ - INFO - Inserted batch: 30000/3335827 rows
+2025-06-07 12:03:54,554 - __main__ - INFO - Inserted batch: 31000/3335827 rows
+2025-06-07 12:03:54,892 - __main__ - INFO - Inserted batch: 32000/3335827 rows
+2025-06-07 12:03:55,212 - __main__ - INFO - Inserted batch: 33000/3335827 rows
+2025-06-07 12:03:55,539 - __main__ - INFO - Inserted batch: 34000/3335827 rows
+2025-06-07 12:03:55,905 - __main__ - INFO - Inserted batch: 35000/3335827 rows
+2025-06-07 12:03:56,224 - __main__ - INFO - Inserted batch: 36000/3335827 rows
+2025-06-07 12:03:56,540 - __main__ - INFO - Inserted batch: 37000/3335827 rows
+2025-06-07 12:03:56,888 - __main__ - INFO - Inserted batch: 38000/3335827 rows
+2025-06-07 12:03:57,203 - __main__ - INFO - Inserted batch: 39000/3335827 rows
+2025-06-07 12:03:57,521 - __main__ - INFO - Inserted batch: 40000/3335827 rows
+2025-06-07 12:03:57,987 - __main__ - INFO - Inserted batch: 41000/3335827 rows
+2025-06-07 12:03:58,304 - __main__ - INFO - Inserted batch: 42000/3335827 rows
+2025-06-07 12:03:58,681 - __main__ - INFO - Inserted batch: 43000/3335827 rows
+2025-06-07 12:03:59,000 - __main__ - INFO - Inserted batch: 44000/3335827 rows
+2025-06-07 12:03:59,316 - __main__ - INFO - Inserted batch: 45000/3335827 rows
+2025-06-07 12:03:59,631 - __main__ - INFO - Inserted batch: 46000/3335827 rows
+2025-06-07 12:03:59,948 - __main__ - INFO - Inserted batch: 47000/3335827 rows
+2025-06-07 12:04:00,275 - __main__ - INFO - Inserted batch: 48000/3335827 rows
+2025-06-07 12:04:00,594 - __main__ - INFO - Inserted batch: 49000/3335827 rows
+2025-06-07 12:04:00,915 - __main__ - INFO - Inserted batch: 50000/3335827 rows
+2025-06-07 12:04:01,271 - __main__ - INFO - Inserted batch: 51000/3335827 rows
+2025-06-07 12:04:01,588 - __main__ - INFO - Inserted batch: 52000/3335827 rows
+2025-06-07 12:04:01,902 - __main__ - INFO - Inserted batch: 53000/3335827 rows
+2025-06-07 12:04:02,255 - __main__ - INFO - Inserted batch: 54000/3335827 rows
+2025-06-07 12:04:02,617 - __main__ - INFO - Inserted batch: 55000/3335827 rows
+2025-06-07 12:04:02,947 - __main__ - INFO - Inserted batch: 56000/3335827 rows
+2025-06-07 12:04:03,272 - __main__ - INFO - Inserted batch: 57000/3335827 rows
+2025-06-07 12:04:03,590 - __main__ - INFO - Inserted batch: 58000/3335827 rows
+2025-06-07 12:04:03,912 - __main__ - INFO - Inserted batch: 59000/3335827 rows
+2025-06-07 12:04:04,227 - __main__ - INFO - Inserted batch: 60000/3335827 rows
+2025-06-07 12:04:04,548 - __main__ - INFO - Inserted batch: 61000/3335827 rows
+2025-06-07 12:04:04,870 - __main__ - INFO - Inserted batch: 62000/3335827 rows
+2025-06-07 12:04:05,579 - __main__ - INFO - Inserted batch: 63000/3335827 rows
+2025-06-07 12:04:06,040 - __main__ - INFO - Inserted batch: 64000/3335827 rows
+2025-06-07 12:04:06,398 - __main__ - INFO - Inserted batch: 65000/3335827 rows
+2025-06-07 12:04:06,732 - __main__ - INFO - Inserted batch: 66000/3335827 rows
+2025-06-07 12:04:07,053 - __main__ - INFO - Inserted batch: 67000/3335827 rows
+2025-06-07 12:04:07,377 - __main__ - INFO - Inserted batch: 68000/3335827 rows
+2025-06-07 12:04:07,711 - __main__ - INFO - Inserted batch: 69000/3335827 rows
+2025-06-07 12:04:08,032 - __main__ - INFO - Inserted batch: 70000/3335827 rows
+2025-06-07 12:04:08,356 - __main__ - INFO - Inserted batch: 71000/3335827 rows
+2025-06-07 12:04:08,680 - __main__ - INFO - Inserted batch: 72000/3335827 rows
+2025-06-07 12:04:09,002 - __main__ - INFO - Inserted batch: 73000/3335827 rows
+2025-06-07 12:04:09,321 - __main__ - INFO - Inserted batch: 74000/3335827 rows
+2025-06-07 12:04:09,659 - __main__ - INFO - Inserted batch: 75000/3335827 rows
+2025-06-07 12:04:10,002 - __main__ - INFO - Inserted batch: 76000/3335827 rows
+2025-06-07 12:04:10,320 - __main__ - INFO - Inserted batch: 77000/3335827 rows
+2025-06-07 12:04:10,645 - __main__ - INFO - Inserted batch: 78000/3335827 rows
+2025-06-07 12:04:10,966 - __main__ - INFO - Inserted batch: 79000/3335827 rows
+2025-06-07 12:04:11,326 - __main__ - INFO - Inserted batch: 80000/3335827 rows
+2025-06-07 12:04:11,653 - __main__ - INFO - Inserted batch: 81000/3335827 rows
+2025-06-07 12:04:11,991 - __main__ - INFO - Inserted batch: 82000/3335827 rows
+2025-06-07 12:04:12,316 - __main__ - INFO - Inserted batch: 83000/3335827 rows
+2025-06-07 12:04:12,636 - __main__ - INFO - Inserted batch: 84000/3335827 rows
+2025-06-07 12:04:12,966 - __main__ - INFO - Inserted batch: 85000/3335827 rows
+2025-06-07 12:04:13,286 - __main__ - INFO - Inserted batch: 86000/3335827 rows
+2025-06-07 12:04:13,611 - __main__ - INFO - Inserted batch: 87000/3335827 rows
+2025-06-07 12:04:14,160 - __main__ - INFO - Inserted batch: 88000/3335827 rows
+2025-06-07 12:04:14,497 - __main__ - INFO - Inserted batch: 89000/3335827 rows
+2025-06-07 12:04:15,862 - __main__ - INFO - Inserted batch: 90000/3335827 rows
+2025-06-07 12:04:17,752 - __main__ - INFO - Inserted batch: 91000/3335827 rows
+2025-06-07 12:04:18,197 - __main__ - INFO - Inserted batch: 92000/3335827 rows
+2025-06-07 12:04:18,526 - __main__ - INFO - Inserted batch: 93000/3335827 rows
+2025-06-07 12:04:18,856 - __main__ - INFO - Inserted batch: 94000/3335827 rows
+2025-06-07 12:04:19,192 - __main__ - INFO - Inserted batch: 95000/3335827 rows
+2025-06-07 12:04:19,513 - __main__ - INFO - Inserted batch: 96000/3335827 rows
+2025-06-07 12:04:19,837 - __main__ - INFO - Inserted batch: 97000/3335827 rows
+2025-06-07 12:04:20,237 - __main__ - INFO - Inserted batch: 98000/3335827 rows
+2025-06-07 12:04:20,561 - __main__ - INFO - Inserted batch: 99000/3335827 rows
+2025-06-07 12:04:20,886 - __main__ - INFO - Inserted batch: 100000/3335827 rows
+2025-06-07 12:04:21,208 - __main__ - INFO - Inserted batch: 101000/3335827 rows
+2025-06-07 12:04:21,553 - __main__ - INFO - Inserted batch: 102000/3335827 rows
+2025-06-07 12:04:21,880 - __main__ - INFO - Inserted batch: 103000/3335827 rows
+2025-06-07 12:04:22,216 - __main__ - INFO - Inserted batch: 104000/3335827 rows
+2025-06-07 12:04:22,576 - __main__ - INFO - Inserted batch: 105000/3335827 rows
+2025-06-07 12:04:22,921 - __main__ - INFO - Inserted batch: 106000/3335827 rows
+2025-06-07 12:04:23,932 - __main__ - INFO - Inserted batch: 107000/3335827 rows
+2025-06-07 12:04:25,762 - __main__ - INFO - Inserted batch: 108000/3335827 rows
+2025-06-07 12:04:26,466 - __main__ - INFO - Inserted batch: 109000/3335827 rows
+2025-06-07 12:04:26,816 - __main__ - INFO - Inserted batch: 110000/3335827 rows
+2025-06-07 12:04:27,145 - __main__ - INFO - Inserted batch: 111000/3335827 rows
+2025-06-07 12:04:27,472 - __main__ - INFO - Inserted batch: 112000/3335827 rows
+2025-06-07 12:04:27,805 - __main__ - INFO - Inserted batch: 113000/3335827 rows
+2025-06-07 12:04:28,130 - __main__ - INFO - Inserted batch: 114000/3335827 rows
+2025-06-07 12:04:28,455 - __main__ - INFO - Inserted batch: 115000/3335827 rows
+2025-06-07 12:04:30,016 - __main__ - INFO - Inserted batch: 116000/3335827 rows
+2025-06-07 12:04:31,819 - __main__ - INFO - Inserted batch: 117000/3335827 rows
+2025-06-07 12:04:32,135 - __main__ - INFO - Inserted batch: 118000/3335827 rows
+2025-06-07 12:04:32,462 - __main__ - INFO - Inserted batch: 119000/3335827 rows
+2025-06-07 12:04:32,796 - __main__ - INFO - Inserted batch: 120000/3335827 rows
+2025-06-07 12:04:33,110 - __main__ - INFO - Inserted batch: 121000/3335827 rows
+2025-06-07 12:04:33,428 - __main__ - INFO - Inserted batch: 122000/3335827 rows
+2025-06-07 12:04:33,750 - __main__ - INFO - Inserted batch: 123000/3335827 rows
+2025-06-07 12:04:34,075 - __main__ - INFO - Inserted batch: 124000/3335827 rows
+2025-06-07 12:04:34,392 - __main__ - INFO - Inserted batch: 125000/3335827 rows
+2025-06-07 12:04:34,713 - __main__ - INFO - Inserted batch: 126000/3335827 rows
+2025-06-07 12:04:35,029 - __main__ - INFO - Inserted batch: 127000/3335827 rows
+2025-06-07 12:04:35,520 - __main__ - INFO - Inserted batch: 128000/3335827 rows
+2025-06-07 12:04:35,835 - __main__ - INFO - Inserted batch: 129000/3335827 rows
+2025-06-07 12:04:36,179 - __main__ - INFO - Inserted batch: 130000/3335827 rows
+2025-06-07 12:04:36,518 - __main__ - INFO - Inserted batch: 131000/3335827 rows
+2025-06-07 12:04:36,843 - __main__ - INFO - Inserted batch: 132000/3335827 rows
+2025-06-07 12:04:37,165 - __main__ - INFO - Inserted batch: 133000/3335827 rows
+2025-06-07 12:04:37,492 - __main__ - INFO - Inserted batch: 134000/3335827 rows
+2025-06-07 12:04:37,835 - __main__ - INFO - Inserted batch: 135000/3335827 rows
+2025-06-07 12:04:38,151 - __main__ - INFO - Inserted batch: 136000/3335827 rows
+2025-06-07 12:04:38,473 - __main__ - INFO - Inserted batch: 137000/3335827 rows
+2025-06-07 12:04:38,859 - __main__ - INFO - Inserted batch: 138000/3335827 rows
+2025-06-07 12:04:39,263 - __main__ - INFO - Inserted batch: 139000/3335827 rows
+2025-06-07 12:04:40,150 - __main__ - INFO - Inserted batch: 140000/3335827 rows
+2025-06-07 12:04:40,584 - __main__ - INFO - Inserted batch: 141000/3335827 rows
+2025-06-07 12:04:40,916 - __main__ - INFO - Inserted batch: 142000/3335827 rows
+2025-06-07 12:04:41,258 - __main__ - INFO - Inserted batch: 143000/3335827 rows
+2025-06-07 12:04:41,592 - __main__ - INFO - Inserted batch: 144000/3335827 rows
+2025-06-07 12:04:42,453 - __main__ - INFO - Inserted batch: 145000/3335827 rows
+2025-06-07 12:04:43,408 - __main__ - INFO - Inserted batch: 146000/3335827 rows
+2025-06-07 12:04:45,338 - __main__ - INFO - Inserted batch: 147000/3335827 rows
+2025-06-07 12:04:46,353 - __main__ - INFO - Inserted batch: 148000/3335827 rows
+2025-06-07 12:04:46,738 - __main__ - INFO - Inserted batch: 149000/3335827 rows
+2025-06-07 12:04:47,061 - __main__ - INFO - Inserted batch: 150000/3335827 rows
+2025-06-07 12:04:47,422 - __main__ - INFO - Inserted batch: 151000/3335827 rows
+2025-06-07 12:04:47,793 - __main__ - INFO - Inserted batch: 152000/3335827 rows
+2025-06-07 12:04:48,161 - __main__ - INFO - Inserted batch: 153000/3335827 rows
+2025-06-07 12:04:48,500 - __main__ - INFO - Inserted batch: 154000/3335827 rows
+2025-06-07 12:04:48,822 - __main__ - INFO - Inserted batch: 155000/3335827 rows
+2025-06-07 12:04:49,150 - __main__ - INFO - Inserted batch: 156000/3335827 rows
+2025-06-07 12:04:49,468 - __main__ - INFO - Inserted batch: 157000/3335827 rows
+2025-06-07 12:04:49,783 - __main__ - INFO - Inserted batch: 158000/3335827 rows
+2025-06-07 12:04:50,099 - __main__ - INFO - Inserted batch: 159000/3335827 rows
+2025-06-07 12:04:50,873 - __main__ - INFO - Inserted batch: 160000/3335827 rows
+2025-06-07 12:04:51,185 - __main__ - INFO - Inserted batch: 161000/3335827 rows
+2025-06-07 12:04:51,502 - __main__ - INFO - Inserted batch: 162000/3335827 rows
+2025-06-07 12:04:51,821 - __main__ - INFO - Inserted batch: 163000/3335827 rows
+2025-06-07 12:04:52,141 - __main__ - INFO - Inserted batch: 164000/3335827 rows
+2025-06-07 12:04:52,459 - __main__ - INFO - Inserted batch: 165000/3335827 rows
+2025-06-07 12:04:52,787 - __main__ - INFO - Inserted batch: 166000/3335827 rows
+2025-06-07 12:04:53,100 - __main__ - INFO - Inserted batch: 167000/3335827 rows
+2025-06-07 12:04:53,417 - __main__ - INFO - Inserted batch: 168000/3335827 rows
+2025-06-07 12:04:53,730 - __main__ - INFO - Inserted batch: 169000/3335827 rows
+2025-06-07 12:04:54,047 - __main__ - INFO - Inserted batch: 170000/3335827 rows
+2025-06-07 12:04:54,370 - __main__ - INFO - Inserted batch: 171000/3335827 rows
+2025-06-07 12:04:55,011 - __main__ - INFO - Inserted batch: 172000/3335827 rows
+2025-06-07 12:04:55,343 - __main__ - INFO - Inserted batch: 173000/3335827 rows
+2025-06-07 12:04:55,663 - __main__ - INFO - Inserted batch: 174000/3335827 rows
+2025-06-07 12:04:55,981 - __main__ - INFO - Inserted batch: 175000/3335827 rows
+2025-06-07 12:04:56,301 - __main__ - INFO - Inserted batch: 176000/3335827 rows
+2025-06-07 12:04:56,620 - __main__ - INFO - Inserted batch: 177000/3335827 rows
+2025-06-07 12:04:56,946 - __main__ - INFO - Inserted batch: 178000/3335827 rows
+2025-06-07 12:04:57,268 - __main__ - INFO - Inserted batch: 179000/3335827 rows
+2025-06-07 12:04:57,592 - __main__ - INFO - Inserted batch: 180000/3335827 rows
+2025-06-07 12:04:57,922 - __main__ - INFO - Inserted batch: 181000/3335827 rows
+2025-06-07 12:04:58,405 - __main__ - INFO - Inserted batch: 182000/3335827 rows
+2025-06-07 12:04:58,733 - __main__ - INFO - Inserted batch: 183000/3335827 rows
+2025-06-07 12:04:59,052 - __main__ - INFO - Inserted batch: 184000/3335827 rows
+2025-06-07 12:04:59,371 - __main__ - INFO - Inserted batch: 185000/3335827 rows
+2025-06-07 12:04:59,686 - __main__ - INFO - Inserted batch: 186000/3335827 rows
+2025-06-07 12:05:00,004 - __main__ - INFO - Inserted batch: 187000/3335827 rows
+2025-06-07 12:05:00,326 - __main__ - INFO - Inserted batch: 188000/3335827 rows
+2025-06-07 12:05:00,655 - __main__ - INFO - Inserted batch: 189000/3335827 rows
+2025-06-07 12:05:00,967 - __main__ - INFO - Inserted batch: 190000/3335827 rows
+2025-06-07 12:05:01,289 - __main__ - INFO - Inserted batch: 191000/3335827 rows
+2025-06-07 12:05:01,610 - __main__ - INFO - Inserted batch: 192000/3335827 rows
+2025-06-07 12:05:01,924 - __main__ - INFO - Inserted batch: 193000/3335827 rows
+2025-06-07 12:05:02,250 - __main__ - INFO - Inserted batch: 194000/3335827 rows
+2025-06-07 12:05:02,569 - __main__ - INFO - Inserted batch: 195000/3335827 rows
+2025-06-07 12:05:02,899 - __main__ - INFO - Inserted batch: 196000/3335827 rows
+2025-06-07 12:05:03,218 - __main__ - INFO - Inserted batch: 197000/3335827 rows
+2025-06-07 12:05:03,537 - __main__ - INFO - Inserted batch: 198000/3335827 rows
+2025-06-07 12:05:03,851 - __main__ - INFO - Inserted batch: 199000/3335827 rows
+2025-06-07 12:05:05,224 - __main__ - INFO - Inserted batch: 200000/3335827 rows
+2025-06-07 12:05:05,543 - __main__ - INFO - Inserted batch: 201000/3335827 rows
+2025-06-07 12:05:05,865 - __main__ - INFO - Inserted batch: 202000/3335827 rows
+2025-06-07 12:05:06,183 - __main__ - INFO - Inserted batch: 203000/3335827 rows
+2025-06-07 12:05:06,501 - __main__ - INFO - Inserted batch: 204000/3335827 rows
+2025-06-07 12:05:06,820 - __main__ - INFO - Inserted batch: 205000/3335827 rows
+2025-06-07 12:05:07,143 - __main__ - INFO - Inserted batch: 206000/3335827 rows
+2025-06-07 12:05:07,459 - __main__ - INFO - Inserted batch: 207000/3335827 rows
+2025-06-07 12:05:07,785 - __main__ - INFO - Inserted batch: 208000/3335827 rows
+2025-06-07 12:05:08,100 - __main__ - INFO - Inserted batch: 209000/3335827 rows
+2025-06-07 12:05:08,414 - __main__ - INFO - Inserted batch: 210000/3335827 rows
+2025-06-07 12:05:09,199 - __main__ - INFO - Inserted batch: 211000/3335827 rows
+2025-06-07 12:05:11,057 - __main__ - INFO - Inserted batch: 212000/3335827 rows
+2025-06-07 12:05:11,982 - __main__ - INFO - Inserted batch: 213000/3335827 rows
+2025-06-07 12:05:12,311 - __main__ - INFO - Inserted batch: 214000/3335827 rows
+2025-06-07 12:05:12,635 - __main__ - INFO - Inserted batch: 215000/3335827 rows
+2025-06-07 12:05:12,954 - __main__ - INFO - Inserted batch: 216000/3335827 rows
+2025-06-07 12:05:13,274 - __main__ - INFO - Inserted batch: 217000/3335827 rows
+2025-06-07 12:05:13,595 - __main__ - INFO - Inserted batch: 218000/3335827 rows
+2025-06-07 12:05:13,909 - __main__ - INFO - Inserted batch: 219000/3335827 rows
+2025-06-07 12:05:14,225 - __main__ - INFO - Inserted batch: 220000/3335827 rows
+2025-06-07 12:05:14,542 - __main__ - INFO - Inserted batch: 221000/3335827 rows
+2025-06-07 12:05:14,864 - __main__ - INFO - Inserted batch: 222000/3335827 rows
+2025-06-07 12:05:15,182 - __main__ - INFO - Inserted batch: 223000/3335827 rows
+2025-06-07 12:05:15,496 - __main__ - INFO - Inserted batch: 224000/3335827 rows
+2025-06-07 12:05:15,979 - __main__ - INFO - Inserted batch: 225000/3335827 rows
+2025-06-07 12:05:16,301 - __main__ - INFO - Inserted batch: 226000/3335827 rows
+2025-06-07 12:05:16,613 - __main__ - INFO - Inserted batch: 227000/3335827 rows
+2025-06-07 12:05:16,933 - __main__ - INFO - Inserted batch: 228000/3335827 rows
+2025-06-07 12:05:17,254 - __main__ - INFO - Inserted batch: 229000/3335827 rows
+2025-06-07 12:05:17,570 - __main__ - INFO - Inserted batch: 230000/3335827 rows
+2025-06-07 12:05:17,887 - __main__ - INFO - Inserted batch: 231000/3335827 rows
+2025-06-07 12:05:18,270 - __main__ - INFO - Inserted batch: 232000/3335827 rows
+2025-06-07 12:05:18,583 - __main__ - INFO - Inserted batch: 233000/3335827 rows
+2025-06-07 12:05:18,900 - __main__ - INFO - Inserted batch: 234000/3335827 rows
+2025-06-07 12:05:19,224 - __main__ - INFO - Inserted batch: 235000/3335827 rows
+2025-06-07 12:05:19,536 - __main__ - INFO - Inserted batch: 236000/3335827 rows
+2025-06-07 12:05:19,848 - __main__ - INFO - Inserted batch: 237000/3335827 rows
+2025-06-07 12:05:20,159 - __main__ - INFO - Inserted batch: 238000/3335827 rows
+2025-06-07 12:05:20,471 - __main__ - INFO - Inserted batch: 239000/3335827 rows
+2025-06-07 12:05:20,790 - __main__ - INFO - Inserted batch: 240000/3335827 rows
+2025-06-07 12:05:21,105 - __main__ - INFO - Inserted batch: 241000/3335827 rows
+2025-06-07 12:05:21,416 - __main__ - INFO - Inserted batch: 242000/3335827 rows
+2025-06-07 12:05:21,732 - __main__ - INFO - Inserted batch: 243000/3335827 rows
+2025-06-07 12:05:22,046 - __main__ - INFO - Inserted batch: 244000/3335827 rows
+2025-06-07 12:05:22,382 - __main__ - INFO - Inserted batch: 245000/3335827 rows
+2025-06-07 12:05:22,743 - __main__ - INFO - Inserted batch: 246000/3335827 rows
+2025-06-07 12:05:23,077 - __main__ - INFO - Inserted batch: 247000/3335827 rows
+2025-06-07 12:05:23,401 - __main__ - INFO - Inserted batch: 248000/3335827 rows
+2025-06-07 12:05:23,718 - __main__ - INFO - Inserted batch: 249000/3335827 rows
+2025-06-07 12:05:24,034 - __main__ - INFO - Inserted batch: 250000/3335827 rows
+2025-06-07 12:05:24,348 - __main__ - INFO - Inserted batch: 251000/3335827 rows
+2025-06-07 12:05:24,665 - __main__ - INFO - Inserted batch: 252000/3335827 rows
+2025-06-07 12:05:24,976 - __main__ - INFO - Inserted batch: 253000/3335827 rows
+2025-06-07 12:05:25,299 - __main__ - INFO - Inserted batch: 254000/3335827 rows
+2025-06-07 12:05:25,617 - __main__ - INFO - Inserted batch: 255000/3335827 rows
+2025-06-07 12:05:25,928 - __main__ - INFO - Inserted batch: 256000/3335827 rows
+2025-06-07 12:05:26,240 - __main__ - INFO - Inserted batch: 257000/3335827 rows
+2025-06-07 12:05:26,556 - __main__ - INFO - Inserted batch: 258000/3335827 rows
+2025-06-07 12:05:26,884 - __main__ - INFO - Inserted batch: 259000/3335827 rows
+2025-06-07 12:05:27,203 - __main__ - INFO - Inserted batch: 260000/3335827 rows
+2025-06-07 12:05:27,521 - __main__ - INFO - Inserted batch: 261000/3335827 rows
+2025-06-07 12:05:27,840 - __main__ - INFO - Inserted batch: 262000/3335827 rows
+2025-06-07 12:05:28,153 - __main__ - INFO - Inserted batch: 263000/3335827 rows
+2025-06-07 12:05:28,481 - __main__ - INFO - Inserted batch: 264000/3335827 rows
+2025-06-07 12:05:28,815 - __main__ - INFO - Inserted batch: 265000/3335827 rows
+2025-06-07 12:05:29,162 - __main__ - INFO - Inserted batch: 266000/3335827 rows
+2025-06-07 12:05:29,509 - __main__ - INFO - Inserted batch: 267000/3335827 rows
+2025-06-07 12:05:29,883 - __main__ - INFO - Inserted batch: 268000/3335827 rows
+2025-06-07 12:05:30,196 - __main__ - INFO - Inserted batch: 269000/3335827 rows
+2025-06-07 12:05:30,511 - __main__ - INFO - Inserted batch: 270000/3335827 rows
+2025-06-07 12:05:30,835 - __main__ - INFO - Inserted batch: 271000/3335827 rows
+2025-06-07 12:05:31,151 - __main__ - INFO - Inserted batch: 272000/3335827 rows
+2025-06-07 12:05:31,469 - __main__ - INFO - Inserted batch: 273000/3335827 rows
+2025-06-07 12:05:31,784 - __main__ - INFO - Inserted batch: 274000/3335827 rows
+2025-06-07 12:05:32,100 - __main__ - INFO - Inserted batch: 275000/3335827 rows
+2025-06-07 12:05:32,413 - __main__ - INFO - Inserted batch: 276000/3335827 rows
+2025-06-07 12:05:32,740 - __main__ - INFO - Inserted batch: 277000/3335827 rows
+2025-06-07 12:05:33,059 - __main__ - INFO - Inserted batch: 278000/3335827 rows
+2025-06-07 12:05:33,395 - __main__ - INFO - Inserted batch: 279000/3335827 rows
+2025-06-07 12:05:33,736 - __main__ - INFO - Inserted batch: 280000/3335827 rows
+2025-06-07 12:05:34,059 - __main__ - INFO - Inserted batch: 281000/3335827 rows
+2025-06-07 12:05:34,390 - __main__ - INFO - Inserted batch: 282000/3335827 rows
+2025-06-07 12:05:34,720 - __main__ - INFO - Inserted batch: 283000/3335827 rows
+2025-06-07 12:05:35,034 - __main__ - INFO - Inserted batch: 284000/3335827 rows
+2025-06-07 12:05:35,351 - __main__ - INFO - Inserted batch: 285000/3335827 rows
+2025-06-07 12:05:35,668 - __main__ - INFO - Inserted batch: 286000/3335827 rows
+2025-06-07 12:05:35,987 - __main__ - INFO - Inserted batch: 287000/3335827 rows
+2025-06-07 12:05:36,305 - __main__ - INFO - Inserted batch: 288000/3335827 rows
+2025-06-07 12:05:36,631 - __main__ - INFO - Inserted batch: 289000/3335827 rows
+2025-06-07 12:05:36,945 - __main__ - INFO - Inserted batch: 290000/3335827 rows
+2025-06-07 12:05:37,267 - __main__ - INFO - Inserted batch: 291000/3335827 rows
+2025-06-07 12:05:37,588 - __main__ - INFO - Inserted batch: 292000/3335827 rows
+2025-06-07 12:05:37,914 - __main__ - INFO - Inserted batch: 293000/3335827 rows
+2025-06-07 12:05:38,235 - __main__ - INFO - Inserted batch: 294000/3335827 rows
+2025-06-07 12:05:38,561 - __main__ - INFO - Inserted batch: 295000/3335827 rows
+2025-06-07 12:05:38,889 - __main__ - INFO - Inserted batch: 296000/3335827 rows
+2025-06-07 12:05:39,215 - __main__ - INFO - Inserted batch: 297000/3335827 rows
+2025-06-07 12:05:39,717 - __main__ - INFO - Inserted batch: 298000/3335827 rows
+2025-06-07 12:05:40,038 - __main__ - INFO - Inserted batch: 299000/3335827 rows
+2025-06-07 12:05:40,364 - __main__ - INFO - Inserted batch: 300000/3335827 rows
+2025-06-07 12:05:40,693 - __main__ - INFO - Inserted batch: 301000/3335827 rows
+2025-06-07 12:05:41,007 - __main__ - INFO - Inserted batch: 302000/3335827 rows
+2025-06-07 12:05:41,337 - __main__ - INFO - Inserted batch: 303000/3335827 rows
+2025-06-07 12:05:41,659 - __main__ - INFO - Inserted batch: 304000/3335827 rows
+2025-06-07 12:05:41,972 - __main__ - INFO - Inserted batch: 305000/3335827 rows
+2025-06-07 12:05:42,289 - __main__ - INFO - Inserted batch: 306000/3335827 rows
+2025-06-07 12:05:42,622 - __main__ - INFO - Inserted batch: 307000/3335827 rows
+2025-06-07 12:05:43,135 - __main__ - INFO - Inserted batch: 308000/3335827 rows
+2025-06-07 12:05:43,458 - __main__ - INFO - Inserted batch: 309000/3335827 rows
+2025-06-07 12:05:43,788 - __main__ - INFO - Inserted batch: 310000/3335827 rows
+2025-06-07 12:05:44,105 - __main__ - INFO - Inserted batch: 311000/3335827 rows
+2025-06-07 12:05:44,430 - __main__ - INFO - Inserted batch: 312000/3335827 rows
+2025-06-07 12:05:44,990 - __main__ - INFO - Inserted batch: 313000/3335827 rows
+2025-06-07 12:05:45,376 - __main__ - INFO - Inserted batch: 314000/3335827 rows
+2025-06-07 12:05:45,939 - __main__ - INFO - Inserted batch: 315000/3335827 rows
+2025-06-07 12:05:46,467 - __main__ - INFO - Inserted batch: 316000/3335827 rows
+2025-06-07 12:05:46,819 - __main__ - INFO - Inserted batch: 317000/3335827 rows
+2025-06-07 12:05:47,163 - __main__ - INFO - Inserted batch: 318000/3335827 rows
+2025-06-07 12:05:47,512 - __main__ - INFO - Inserted batch: 319000/3335827 rows
+2025-06-07 12:05:47,857 - __main__ - INFO - Inserted batch: 320000/3335827 rows
+2025-06-07 12:05:48,222 - __main__ - INFO - Inserted batch: 321000/3335827 rows
+2025-06-07 12:05:48,669 - __main__ - INFO - Inserted batch: 322000/3335827 rows
+2025-06-07 12:05:49,259 - __main__ - INFO - Inserted batch: 323000/3335827 rows
+2025-06-07 12:05:49,582 - __main__ - INFO - Inserted batch: 324000/3335827 rows
+2025-06-07 12:05:49,908 - __main__ - INFO - Inserted batch: 325000/3335827 rows
+2025-06-07 12:05:50,223 - __main__ - INFO - Inserted batch: 326000/3335827 rows
+2025-06-07 12:05:50,538 - __main__ - INFO - Inserted batch: 327000/3335827 rows
+2025-06-07 12:05:50,871 - __main__ - INFO - Inserted batch: 328000/3335827 rows
+2025-06-07 12:05:51,193 - __main__ - INFO - Inserted batch: 329000/3335827 rows
+2025-06-07 12:05:51,512 - __main__ - INFO - Inserted batch: 330000/3335827 rows
+2025-06-07 12:05:51,832 - __main__ - INFO - Inserted batch: 331000/3335827 rows
+2025-06-07 12:05:52,151 - __main__ - INFO - Inserted batch: 332000/3335827 rows
+2025-06-07 12:05:52,472 - __main__ - INFO - Inserted batch: 333000/3335827 rows
+2025-06-07 12:05:52,806 - __main__ - INFO - Inserted batch: 334000/3335827 rows
+2025-06-07 12:05:53,119 - __main__ - INFO - Inserted batch: 335000/3335827 rows
+2025-06-07 12:05:53,436 - __main__ - INFO - Inserted batch: 336000/3335827 rows
+2025-06-07 12:05:53,757 - __main__ - INFO - Inserted batch: 337000/3335827 rows
+2025-06-07 12:05:54,071 - __main__ - INFO - Inserted batch: 338000/3335827 rows
+2025-06-07 12:05:54,388 - __main__ - INFO - Inserted batch: 339000/3335827 rows
+2025-06-07 12:05:54,709 - __main__ - INFO - Inserted batch: 340000/3335827 rows
+2025-06-07 12:05:55,054 - __main__ - INFO - Inserted batch: 341000/3335827 rows
+2025-06-07 12:05:55,379 - __main__ - INFO - Inserted batch: 342000/3335827 rows
+2025-06-07 12:05:55,698 - __main__ - INFO - Inserted batch: 343000/3335827 rows
+2025-06-07 12:05:56,019 - __main__ - INFO - Inserted batch: 344000/3335827 rows
+2025-06-07 12:05:56,336 - __main__ - INFO - Inserted batch: 345000/3335827 rows
+2025-06-07 12:05:56,659 - __main__ - INFO - Inserted batch: 346000/3335827 rows
+2025-06-07 12:05:56,974 - __main__ - INFO - Inserted batch: 347000/3335827 rows
+2025-06-07 12:05:57,290 - __main__ - INFO - Inserted batch: 348000/3335827 rows
+2025-06-07 12:05:57,606 - __main__ - INFO - Inserted batch: 349000/3335827 rows
+2025-06-07 12:05:57,931 - __main__ - INFO - Inserted batch: 350000/3335827 rows
+2025-06-07 12:05:58,249 - __main__ - INFO - Inserted batch: 351000/3335827 rows
+2025-06-07 12:05:58,572 - __main__ - INFO - Inserted batch: 352000/3335827 rows
+2025-06-07 12:05:58,898 - __main__ - INFO - Inserted batch: 353000/3335827 rows
+2025-06-07 12:05:59,218 - __main__ - INFO - Inserted batch: 354000/3335827 rows
+2025-06-07 12:05:59,534 - __main__ - INFO - Inserted batch: 355000/3335827 rows
+2025-06-07 12:05:59,856 - __main__ - INFO - Inserted batch: 356000/3335827 rows
+2025-06-07 12:06:00,177 - __main__ - INFO - Inserted batch: 357000/3335827 rows
+2025-06-07 12:06:00,496 - __main__ - INFO - Inserted batch: 358000/3335827 rows
+2025-06-07 12:06:00,818 - __main__ - INFO - Inserted batch: 359000/3335827 rows
+2025-06-07 12:06:01,428 - __main__ - INFO - Inserted batch: 360000/3335827 rows
+2025-06-07 12:06:01,743 - __main__ - INFO - Inserted batch: 361000/3335827 rows
+2025-06-07 12:06:02,067 - __main__ - INFO - Inserted batch: 362000/3335827 rows
+2025-06-07 12:06:02,388 - __main__ - INFO - Inserted batch: 363000/3335827 rows
+2025-06-07 12:06:02,732 - __main__ - INFO - Inserted batch: 364000/3335827 rows
+2025-06-07 12:06:03,061 - __main__ - INFO - Inserted batch: 365000/3335827 rows
+2025-06-07 12:06:03,376 - __main__ - INFO - Inserted batch: 366000/3335827 rows
+2025-06-07 12:06:03,704 - __main__ - INFO - Inserted batch: 367000/3335827 rows
+2025-06-07 12:06:04,027 - __main__ - INFO - Inserted batch: 368000/3335827 rows
+2025-06-07 12:06:04,344 - __main__ - INFO - Inserted batch: 369000/3335827 rows
+2025-06-07 12:06:04,670 - __main__ - INFO - Inserted batch: 370000/3335827 rows
+2025-06-07 12:06:05,603 - __main__ - INFO - Inserted batch: 371000/3335827 rows
+2025-06-07 12:06:07,413 - __main__ - INFO - Inserted batch: 372000/3335827 rows
+2025-06-07 12:06:08,248 - __main__ - INFO - Inserted batch: 373000/3335827 rows
+2025-06-07 12:06:08,561 - __main__ - INFO - Inserted batch: 374000/3335827 rows
+2025-06-07 12:06:08,884 - __main__ - INFO - Inserted batch: 375000/3335827 rows
+2025-06-07 12:06:09,202 - __main__ - INFO - Inserted batch: 376000/3335827 rows
+2025-06-07 12:06:09,542 - __main__ - INFO - Inserted batch: 377000/3335827 rows
+2025-06-07 12:06:09,860 - __main__ - INFO - Inserted batch: 378000/3335827 rows
+2025-06-07 12:06:10,174 - __main__ - INFO - Inserted batch: 379000/3335827 rows
+2025-06-07 12:06:10,495 - __main__ - INFO - Inserted batch: 380000/3335827 rows
+2025-06-07 12:06:10,828 - __main__ - INFO - Inserted batch: 381000/3335827 rows
+2025-06-07 12:06:11,179 - __main__ - INFO - Inserted batch: 382000/3335827 rows
+2025-06-07 12:06:11,546 - __main__ - INFO - Inserted batch: 383000/3335827 rows
+2025-06-07 12:06:11,867 - __main__ - INFO - Inserted batch: 384000/3335827 rows
+2025-06-07 12:06:12,186 - __main__ - INFO - Inserted batch: 385000/3335827 rows
+2025-06-07 12:06:12,520 - __main__ - INFO - Inserted batch: 386000/3335827 rows
+2025-06-07 12:06:12,850 - __main__ - INFO - Inserted batch: 387000/3335827 rows
+2025-06-07 12:06:13,436 - __main__ - INFO - Inserted batch: 388000/3335827 rows
+2025-06-07 12:06:13,751 - __main__ - INFO - Inserted batch: 389000/3335827 rows
+2025-06-07 12:06:14,065 - __main__ - INFO - Inserted batch: 390000/3335827 rows
+2025-06-07 12:06:14,385 - __main__ - INFO - Inserted batch: 391000/3335827 rows
+2025-06-07 12:06:14,722 - __main__ - INFO - Inserted batch: 392000/3335827 rows
+2025-06-07 12:06:16,456 - __main__ - INFO - Inserted batch: 393000/3335827 rows
+2025-06-07 12:06:17,964 - __main__ - INFO - Inserted batch: 394000/3335827 rows
+2025-06-07 12:06:18,288 - __main__ - INFO - Inserted batch: 395000/3335827 rows
+2025-06-07 12:06:18,605 - __main__ - INFO - Inserted batch: 396000/3335827 rows
+2025-06-07 12:06:18,927 - __main__ - INFO - Inserted batch: 397000/3335827 rows
+2025-06-07 12:06:19,245 - __main__ - INFO - Inserted batch: 398000/3335827 rows
+2025-06-07 12:06:19,568 - __main__ - INFO - Inserted batch: 399000/3335827 rows
+2025-06-07 12:06:20,455 - __main__ - INFO - Inserted batch: 400000/3335827 rows
+2025-06-07 12:06:20,779 - __main__ - INFO - Inserted batch: 401000/3335827 rows
+2025-06-07 12:06:21,102 - __main__ - INFO - Inserted batch: 402000/3335827 rows
+2025-06-07 12:06:21,419 - __main__ - INFO - Inserted batch: 403000/3335827 rows
+2025-06-07 12:06:21,743 - __main__ - INFO - Inserted batch: 404000/3335827 rows
+2025-06-07 12:06:22,060 - __main__ - INFO - Inserted batch: 405000/3335827 rows
+2025-06-07 12:06:22,377 - __main__ - INFO - Inserted batch: 406000/3335827 rows
+2025-06-07 12:06:22,942 - __main__ - INFO - Inserted batch: 407000/3335827 rows
+2025-06-07 12:06:24,764 - __main__ - INFO - Inserted batch: 408000/3335827 rows
+2025-06-07 12:06:25,970 - __main__ - INFO - Inserted batch: 409000/3335827 rows
+2025-06-07 12:06:26,298 - __main__ - INFO - Inserted batch: 410000/3335827 rows
+2025-06-07 12:06:26,619 - __main__ - INFO - Inserted batch: 411000/3335827 rows
+2025-06-07 12:06:26,946 - __main__ - INFO - Inserted batch: 412000/3335827 rows
+2025-06-07 12:06:27,268 - __main__ - INFO - Inserted batch: 413000/3335827 rows
+2025-06-07 12:06:27,585 - __main__ - INFO - Inserted batch: 414000/3335827 rows
+2025-06-07 12:06:27,910 - __main__ - INFO - Inserted batch: 415000/3335827 rows
+2025-06-07 12:06:28,239 - __main__ - INFO - Inserted batch: 416000/3335827 rows
+2025-06-07 12:06:28,571 - __main__ - INFO - Inserted batch: 417000/3335827 rows
+2025-06-07 12:06:28,972 - __main__ - INFO - Inserted batch: 418000/3335827 rows
+2025-06-07 12:06:29,291 - __main__ - INFO - Inserted batch: 419000/3335827 rows
+2025-06-07 12:06:29,612 - __main__ - INFO - Inserted batch: 420000/3335827 rows
+2025-06-07 12:06:29,932 - __main__ - INFO - Inserted batch: 421000/3335827 rows
+2025-06-07 12:06:30,250 - __main__ - INFO - Inserted batch: 422000/3335827 rows
+2025-06-07 12:06:30,710 - __main__ - INFO - Inserted batch: 423000/3335827 rows
+2025-06-07 12:06:33,294 - __main__ - INFO - Inserted batch: 424000/3335827 rows
+2025-06-07 12:06:33,939 - __main__ - INFO - Inserted batch: 425000/3335827 rows
+2025-06-07 12:06:34,271 - __main__ - INFO - Inserted batch: 426000/3335827 rows
+2025-06-07 12:06:34,593 - __main__ - INFO - Inserted batch: 427000/3335827 rows
+2025-06-07 12:06:34,922 - __main__ - INFO - Inserted batch: 428000/3335827 rows
+2025-06-07 12:06:35,897 - __main__ - INFO - Inserted batch: 429000/3335827 rows
+2025-06-07 12:06:37,746 - __main__ - INFO - Inserted batch: 430000/3335827 rows
+2025-06-07 12:06:38,463 - __main__ - INFO - Inserted batch: 431000/3335827 rows
+2025-06-07 12:06:38,798 - __main__ - INFO - Inserted batch: 432000/3335827 rows
+2025-06-07 12:06:39,667 - __main__ - INFO - Inserted batch: 433000/3335827 rows
+2025-06-07 12:06:41,484 - __main__ - INFO - Inserted batch: 434000/3335827 rows
+2025-06-07 12:06:42,348 - __main__ - INFO - Inserted batch: 435000/3335827 rows
+2025-06-07 12:06:43,447 - __main__ - INFO - Inserted batch: 436000/3335827 rows
+2025-06-07 12:06:43,761 - __main__ - INFO - Inserted batch: 437000/3335827 rows
+2025-06-07 12:06:44,079 - __main__ - INFO - Inserted batch: 438000/3335827 rows
+2025-06-07 12:06:44,397 - __main__ - INFO - Inserted batch: 439000/3335827 rows
+2025-06-07 12:06:44,722 - __main__ - INFO - Inserted batch: 440000/3335827 rows
+2025-06-07 12:06:45,045 - __main__ - INFO - Inserted batch: 441000/3335827 rows
+2025-06-07 12:06:45,363 - __main__ - INFO - Inserted batch: 442000/3335827 rows
+2025-06-07 12:06:45,890 - __main__ - INFO - Inserted batch: 443000/3335827 rows
+2025-06-07 12:06:46,211 - __main__ - INFO - Inserted batch: 444000/3335827 rows
+2025-06-07 12:06:46,531 - __main__ - INFO - Inserted batch: 445000/3335827 rows
+2025-06-07 12:06:46,852 - __main__ - INFO - Inserted batch: 446000/3335827 rows
+2025-06-07 12:06:47,173 - __main__ - INFO - Inserted batch: 447000/3335827 rows
+2025-06-07 12:06:47,492 - __main__ - INFO - Inserted batch: 448000/3335827 rows
+2025-06-07 12:06:47,820 - __main__ - INFO - Inserted batch: 449000/3335827 rows
+2025-06-07 12:06:48,142 - __main__ - INFO - Inserted batch: 450000/3335827 rows
+2025-06-07 12:06:48,458 - __main__ - INFO - Inserted batch: 451000/3335827 rows
+2025-06-07 12:06:48,783 - __main__ - INFO - Inserted batch: 452000/3335827 rows
+2025-06-07 12:06:49,103 - __main__ - INFO - Inserted batch: 453000/3335827 rows
+2025-06-07 12:06:49,426 - __main__ - INFO - Inserted batch: 454000/3335827 rows
+2025-06-07 12:06:49,872 - __main__ - INFO - Inserted batch: 455000/3335827 rows
+2025-06-07 12:06:50,268 - __main__ - INFO - Inserted batch: 456000/3335827 rows
+2025-06-07 12:06:50,601 - __main__ - INFO - Inserted batch: 457000/3335827 rows
+2025-06-07 12:06:50,946 - __main__ - INFO - Inserted batch: 458000/3335827 rows
+2025-06-07 12:06:51,292 - __main__ - INFO - Inserted batch: 459000/3335827 rows
+2025-06-07 12:06:51,629 - __main__ - INFO - Inserted batch: 460000/3335827 rows
+2025-06-07 12:06:51,973 - __main__ - INFO - Inserted batch: 461000/3335827 rows
+2025-06-07 12:06:52,319 - __main__ - INFO - Inserted batch: 462000/3335827 rows
+2025-06-07 12:06:52,676 - __main__ - INFO - Inserted batch: 463000/3335827 rows
+2025-06-07 12:06:53,023 - __main__ - INFO - Inserted batch: 464000/3335827 rows
+2025-06-07 12:06:53,371 - __main__ - INFO - Inserted batch: 465000/3335827 rows
+2025-06-07 12:06:53,706 - __main__ - INFO - Inserted batch: 466000/3335827 rows
+2025-06-07 12:06:54,053 - __main__ - INFO - Inserted batch: 467000/3335827 rows
+2025-06-07 12:06:54,399 - __main__ - INFO - Inserted batch: 468000/3335827 rows
+2025-06-07 12:06:54,741 - __main__ - INFO - Inserted batch: 469000/3335827 rows
+2025-06-07 12:06:55,104 - __main__ - INFO - Inserted batch: 470000/3335827 rows
+2025-06-07 12:06:55,426 - __main__ - INFO - Inserted batch: 471000/3335827 rows
+2025-06-07 12:06:55,745 - __main__ - INFO - Inserted batch: 472000/3335827 rows
+2025-06-07 12:06:56,063 - __main__ - INFO - Inserted batch: 473000/3335827 rows
+2025-06-07 12:06:56,381 - __main__ - INFO - Inserted batch: 474000/3335827 rows
+2025-06-07 12:06:56,699 - __main__ - INFO - Inserted batch: 475000/3335827 rows
+2025-06-07 12:06:57,016 - __main__ - INFO - Inserted batch: 476000/3335827 rows
+2025-06-07 12:06:57,335 - __main__ - INFO - Inserted batch: 477000/3335827 rows
+2025-06-07 12:06:57,655 - __main__ - INFO - Inserted batch: 478000/3335827 rows
+2025-06-07 12:06:57,997 - __main__ - INFO - Inserted batch: 479000/3335827 rows
+2025-06-07 12:06:58,320 - __main__ - INFO - Inserted batch: 480000/3335827 rows
+2025-06-07 12:06:58,652 - __main__ - INFO - Inserted batch: 481000/3335827 rows
+2025-06-07 12:06:58,970 - __main__ - INFO - Inserted batch: 482000/3335827 rows
+2025-06-07 12:06:59,289 - __main__ - INFO - Inserted batch: 483000/3335827 rows
+2025-06-07 12:06:59,606 - __main__ - INFO - Inserted batch: 484000/3335827 rows
+2025-06-07 12:06:59,939 - __main__ - INFO - Inserted batch: 485000/3335827 rows
+2025-06-07 12:07:00,271 - __main__ - INFO - Inserted batch: 486000/3335827 rows
+2025-06-07 12:07:00,655 - __main__ - INFO - Inserted batch: 487000/3335827 rows
+2025-06-07 12:07:01,048 - __main__ - INFO - Inserted batch: 488000/3335827 rows
+2025-06-07 12:07:01,731 - __main__ - INFO - Inserted batch: 489000/3335827 rows
+2025-06-07 12:07:02,046 - __main__ - INFO - Inserted batch: 490000/3335827 rows
+2025-06-07 12:07:02,367 - __main__ - INFO - Inserted batch: 491000/3335827 rows
+2025-06-07 12:07:02,687 - __main__ - INFO - Inserted batch: 492000/3335827 rows
+2025-06-07 12:07:03,011 - __main__ - INFO - Inserted batch: 493000/3335827 rows
+2025-06-07 12:07:03,337 - __main__ - INFO - Inserted batch: 494000/3335827 rows
+2025-06-07 12:07:03,667 - __main__ - INFO - Inserted batch: 495000/3335827 rows
+2025-06-07 12:07:03,994 - __main__ - INFO - Inserted batch: 496000/3335827 rows
+2025-06-07 12:07:04,322 - __main__ - INFO - Inserted batch: 497000/3335827 rows
+2025-06-07 12:07:04,641 - __main__ - INFO - Inserted batch: 498000/3335827 rows
+2025-06-07 12:07:04,956 - __main__ - INFO - Inserted batch: 499000/3335827 rows
+2025-06-07 12:07:05,271 - __main__ - INFO - Inserted batch: 500000/3335827 rows
+2025-06-07 12:07:05,593 - __main__ - INFO - Inserted batch: 501000/3335827 rows
+2025-06-07 12:07:06,876 - __main__ - INFO - Inserted batch: 502000/3335827 rows
+2025-06-07 12:07:07,193 - __main__ - INFO - Inserted batch: 503000/3335827 rows
+2025-06-07 12:07:07,515 - __main__ - INFO - Inserted batch: 504000/3335827 rows
+2025-06-07 12:07:07,847 - __main__ - INFO - Inserted batch: 505000/3335827 rows
+2025-06-07 12:07:08,165 - __main__ - INFO - Inserted batch: 506000/3335827 rows
+2025-06-07 12:07:08,490 - __main__ - INFO - Inserted batch: 507000/3335827 rows
+2025-06-07 12:07:08,811 - __main__ - INFO - Inserted batch: 508000/3335827 rows
+2025-06-07 12:07:09,128 - __main__ - INFO - Inserted batch: 509000/3335827 rows
+2025-06-07 12:07:09,451 - __main__ - INFO - Inserted batch: 510000/3335827 rows
+2025-06-07 12:07:09,769 - __main__ - INFO - Inserted batch: 511000/3335827 rows
+2025-06-07 12:07:10,085 - __main__ - INFO - Inserted batch: 512000/3335827 rows
+2025-06-07 12:07:10,418 - __main__ - INFO - Inserted batch: 513000/3335827 rows
+2025-06-07 12:07:10,743 - __main__ - INFO - Inserted batch: 514000/3335827 rows
+2025-06-07 12:07:11,065 - __main__ - INFO - Inserted batch: 515000/3335827 rows
+2025-06-07 12:07:11,402 - __main__ - INFO - Inserted batch: 516000/3335827 rows
+2025-06-07 12:07:12,613 - __main__ - INFO - Inserted batch: 517000/3335827 rows
+2025-06-07 12:07:12,936 - __main__ - INFO - Inserted batch: 518000/3335827 rows
+2025-06-07 12:07:13,252 - __main__ - INFO - Inserted batch: 519000/3335827 rows
+2025-06-07 12:07:13,569 - __main__ - INFO - Inserted batch: 520000/3335827 rows
+2025-06-07 12:07:13,886 - __main__ - INFO - Inserted batch: 521000/3335827 rows
+2025-06-07 12:07:14,203 - __main__ - INFO - Inserted batch: 522000/3335827 rows
+2025-06-07 12:07:14,521 - __main__ - INFO - Inserted batch: 523000/3335827 rows
+2025-06-07 12:07:14,854 - __main__ - INFO - Inserted batch: 524000/3335827 rows
+2025-06-07 12:07:15,176 - __main__ - INFO - Inserted batch: 525000/3335827 rows
+2025-06-07 12:07:15,495 - __main__ - INFO - Inserted batch: 526000/3335827 rows
+2025-06-07 12:07:15,819 - __main__ - INFO - Inserted batch: 527000/3335827 rows
+2025-06-07 12:07:16,134 - __main__ - INFO - Inserted batch: 528000/3335827 rows
+2025-06-07 12:07:16,455 - __main__ - INFO - Inserted batch: 529000/3335827 rows
+2025-06-07 12:07:16,786 - __main__ - INFO - Inserted batch: 530000/3335827 rows
+2025-06-07 12:07:17,101 - __main__ - INFO - Inserted batch: 531000/3335827 rows
+2025-06-07 12:07:17,422 - __main__ - INFO - Inserted batch: 532000/3335827 rows
+2025-06-07 12:07:17,751 - __main__ - INFO - Inserted batch: 533000/3335827 rows
+2025-06-07 12:07:18,162 - __main__ - INFO - Inserted batch: 534000/3335827 rows
+2025-06-07 12:07:18,485 - __main__ - INFO - Inserted batch: 535000/3335827 rows
+2025-06-07 12:07:18,806 - __main__ - INFO - Inserted batch: 536000/3335827 rows
+2025-06-07 12:07:19,127 - __main__ - INFO - Inserted batch: 537000/3335827 rows
+2025-06-07 12:07:19,444 - __main__ - INFO - Inserted batch: 538000/3335827 rows
+2025-06-07 12:07:19,768 - __main__ - INFO - Inserted batch: 539000/3335827 rows
+2025-06-07 12:07:20,094 - __main__ - INFO - Inserted batch: 540000/3335827 rows
+2025-06-07 12:07:20,411 - __main__ - INFO - Inserted batch: 541000/3335827 rows
+2025-06-07 12:07:20,736 - __main__ - INFO - Inserted batch: 542000/3335827 rows
+2025-06-07 12:07:21,647 - __main__ - INFO - Inserted batch: 543000/3335827 rows
+2025-06-07 12:07:21,971 - __main__ - INFO - Inserted batch: 544000/3335827 rows
+2025-06-07 12:07:22,295 - __main__ - INFO - Inserted batch: 545000/3335827 rows
+2025-06-07 12:07:22,645 - __main__ - INFO - Inserted batch: 546000/3335827 rows
+2025-06-07 12:07:23,070 - __main__ - INFO - Inserted batch: 547000/3335827 rows
+2025-06-07 12:07:23,391 - __main__ - INFO - Inserted batch: 548000/3335827 rows
+2025-06-07 12:07:23,714 - __main__ - INFO - Inserted batch: 549000/3335827 rows
+2025-06-07 12:07:24,033 - __main__ - INFO - Inserted batch: 550000/3335827 rows
+2025-06-07 12:07:24,352 - __main__ - INFO - Inserted batch: 551000/3335827 rows
+2025-06-07 12:07:24,673 - __main__ - INFO - Inserted batch: 552000/3335827 rows
+2025-06-07 12:07:24,992 - __main__ - INFO - Inserted batch: 553000/3335827 rows
+2025-06-07 12:07:25,307 - __main__ - INFO - Inserted batch: 554000/3335827 rows
+2025-06-07 12:07:25,627 - __main__ - INFO - Inserted batch: 555000/3335827 rows
+2025-06-07 12:07:25,950 - __main__ - INFO - Inserted batch: 556000/3335827 rows
+2025-06-07 12:07:26,266 - __main__ - INFO - Inserted batch: 557000/3335827 rows
+2025-06-07 12:07:26,582 - __main__ - INFO - Inserted batch: 558000/3335827 rows
+2025-06-07 12:07:26,906 - __main__ - INFO - Inserted batch: 559000/3335827 rows
+2025-06-07 12:07:27,239 - __main__ - INFO - Inserted batch: 560000/3335827 rows
+2025-06-07 12:07:27,559 - __main__ - INFO - Inserted batch: 561000/3335827 rows
+2025-06-07 12:07:27,881 - __main__ - INFO - Inserted batch: 562000/3335827 rows
+2025-06-07 12:07:28,198 - __main__ - INFO - Inserted batch: 563000/3335827 rows
+2025-06-07 12:07:28,513 - __main__ - INFO - Inserted batch: 564000/3335827 rows
+2025-06-07 12:07:28,847 - __main__ - INFO - Inserted batch: 565000/3335827 rows
+2025-06-07 12:07:30,085 - __main__ - INFO - Inserted batch: 566000/3335827 rows
+2025-06-07 12:07:30,399 - __main__ - INFO - Inserted batch: 567000/3335827 rows
+2025-06-07 12:07:30,722 - __main__ - INFO - Inserted batch: 568000/3335827 rows
+2025-06-07 12:07:31,038 - __main__ - INFO - Inserted batch: 569000/3335827 rows
+2025-06-07 12:07:31,355 - __main__ - INFO - Inserted batch: 570000/3335827 rows
+2025-06-07 12:07:31,683 - __main__ - INFO - Inserted batch: 571000/3335827 rows
+2025-06-07 12:07:32,003 - __main__ - INFO - Inserted batch: 572000/3335827 rows
+2025-06-07 12:07:32,317 - __main__ - INFO - Inserted batch: 573000/3335827 rows
+2025-06-07 12:07:32,634 - __main__ - INFO - Inserted batch: 574000/3335827 rows
+2025-06-07 12:07:32,984 - __main__ - INFO - Inserted batch: 575000/3335827 rows
+2025-06-07 12:07:33,319 - __main__ - INFO - Inserted batch: 576000/3335827 rows
+2025-06-07 12:07:33,636 - __main__ - INFO - Inserted batch: 577000/3335827 rows
+2025-06-07 12:07:33,954 - __main__ - INFO - Inserted batch: 578000/3335827 rows
+2025-06-07 12:07:34,274 - __main__ - INFO - Inserted batch: 579000/3335827 rows
+2025-06-07 12:07:34,596 - __main__ - INFO - Inserted batch: 580000/3335827 rows
+2025-06-07 12:07:34,923 - __main__ - INFO - Inserted batch: 581000/3335827 rows
+2025-06-07 12:07:35,241 - __main__ - INFO - Inserted batch: 582000/3335827 rows
+2025-06-07 12:07:35,567 - __main__ - INFO - Inserted batch: 583000/3335827 rows
+2025-06-07 12:07:35,884 - __main__ - INFO - Inserted batch: 584000/3335827 rows
+2025-06-07 12:07:36,200 - __main__ - INFO - Inserted batch: 585000/3335827 rows
+2025-06-07 12:07:36,520 - __main__ - INFO - Inserted batch: 586000/3335827 rows
+2025-06-07 12:07:36,844 - __main__ - INFO - Inserted batch: 587000/3335827 rows
+2025-06-07 12:07:37,165 - __main__ - INFO - Inserted batch: 588000/3335827 rows
+2025-06-07 12:07:37,485 - __main__ - INFO - Inserted batch: 589000/3335827 rows
+2025-06-07 12:07:37,816 - __main__ - INFO - Inserted batch: 590000/3335827 rows
+2025-06-07 12:07:38,135 - __main__ - INFO - Inserted batch: 591000/3335827 rows
+2025-06-07 12:07:38,449 - __main__ - INFO - Inserted batch: 592000/3335827 rows
+2025-06-07 12:07:38,775 - __main__ - INFO - Inserted batch: 593000/3335827 rows
+2025-06-07 12:07:39,091 - __main__ - INFO - Inserted batch: 594000/3335827 rows
+2025-06-07 12:07:39,411 - __main__ - INFO - Inserted batch: 595000/3335827 rows
+2025-06-07 12:07:39,734 - __main__ - INFO - Inserted batch: 596000/3335827 rows
+2025-06-07 12:07:40,056 - __main__ - INFO - Inserted batch: 597000/3335827 rows
+2025-06-07 12:07:40,378 - __main__ - INFO - Inserted batch: 598000/3335827 rows
+2025-06-07 12:07:40,714 - __main__ - INFO - Inserted batch: 599000/3335827 rows
+2025-06-07 12:07:41,033 - __main__ - INFO - Inserted batch: 600000/3335827 rows
+2025-06-07 12:07:41,380 - __main__ - INFO - Inserted batch: 601000/3335827 rows
+2025-06-07 12:07:41,729 - __main__ - INFO - Inserted batch: 602000/3335827 rows
+2025-06-07 12:07:42,064 - __main__ - INFO - Inserted batch: 603000/3335827 rows
+2025-06-07 12:07:42,398 - __main__ - INFO - Inserted batch: 604000/3335827 rows
+2025-06-07 12:07:42,750 - __main__ - INFO - Inserted batch: 605000/3335827 rows
+2025-06-07 12:07:43,084 - __main__ - INFO - Inserted batch: 606000/3335827 rows
+2025-06-07 12:07:43,488 - __main__ - INFO - Inserted batch: 607000/3335827 rows
+2025-06-07 12:07:45,444 - __main__ - INFO - Inserted batch: 608000/3335827 rows
+2025-06-07 12:07:46,901 - __main__ - INFO - Inserted batch: 609000/3335827 rows
+2025-06-07 12:07:48,048 - __main__ - INFO - Inserted batch: 610000/3335827 rows
+2025-06-07 12:07:49,894 - __main__ - INFO - Inserted batch: 611000/3335827 rows
+2025-06-07 12:07:50,703 - __main__ - INFO - Inserted batch: 612000/3335827 rows
+2025-06-07 12:07:51,023 - __main__ - INFO - Inserted batch: 613000/3335827 rows
+2025-06-07 12:07:51,354 - __main__ - INFO - Inserted batch: 614000/3335827 rows
+2025-06-07 12:07:51,684 - __main__ - INFO - Inserted batch: 615000/3335827 rows
+2025-06-07 12:07:52,003 - __main__ - INFO - Inserted batch: 616000/3335827 rows
+2025-06-07 12:07:52,329 - __main__ - INFO - Inserted batch: 617000/3335827 rows
+2025-06-07 12:07:52,651 - __main__ - INFO - Inserted batch: 618000/3335827 rows
+2025-06-07 12:07:52,993 - __main__ - INFO - Inserted batch: 619000/3335827 rows
+2025-06-07 12:07:53,318 - __main__ - INFO - Inserted batch: 620000/3335827 rows
+2025-06-07 12:07:53,653 - __main__ - INFO - Inserted batch: 621000/3335827 rows
+2025-06-07 12:07:54,202 - __main__ - INFO - Inserted batch: 622000/3335827 rows
+2025-06-07 12:07:54,544 - __main__ - INFO - Inserted batch: 623000/3335827 rows
+2025-06-07 12:07:54,867 - __main__ - INFO - Inserted batch: 624000/3335827 rows
+2025-06-07 12:07:55,190 - __main__ - INFO - Inserted batch: 625000/3335827 rows
+2025-06-07 12:07:55,519 - __main__ - INFO - Inserted batch: 626000/3335827 rows
+2025-06-07 12:07:55,878 - __main__ - INFO - Inserted batch: 627000/3335827 rows
+2025-06-07 12:07:56,203 - __main__ - INFO - Inserted batch: 628000/3335827 rows
+2025-06-07 12:07:56,892 - __main__ - INFO - Inserted batch: 629000/3335827 rows
+2025-06-07 12:07:57,241 - __main__ - INFO - Inserted batch: 630000/3335827 rows
+2025-06-07 12:07:57,785 - __main__ - INFO - Inserted batch: 631000/3335827 rows
+2025-06-07 12:07:58,190 - __main__ - INFO - Inserted batch: 632000/3335827 rows
+2025-06-07 12:07:58,593 - __main__ - INFO - Inserted batch: 633000/3335827 rows
+2025-06-07 12:07:58,978 - __main__ - INFO - Inserted batch: 634000/3335827 rows
+2025-06-07 12:07:59,348 - __main__ - INFO - Inserted batch: 635000/3335827 rows
+2025-06-07 12:08:00,408 - __main__ - INFO - Inserted batch: 636000/3335827 rows
+2025-06-07 12:08:00,899 - __main__ - INFO - Inserted batch: 637000/3335827 rows
+2025-06-07 12:08:01,217 - __main__ - INFO - Inserted batch: 638000/3335827 rows
+2025-06-07 12:08:01,534 - __main__ - INFO - Inserted batch: 639000/3335827 rows
+2025-06-07 12:08:01,858 - __main__ - INFO - Inserted batch: 640000/3335827 rows
+2025-06-07 12:08:02,178 - __main__ - INFO - Inserted batch: 641000/3335827 rows
+2025-06-07 12:08:02,503 - __main__ - INFO - Inserted batch: 642000/3335827 rows
+2025-06-07 12:08:02,836 - __main__ - INFO - Inserted batch: 643000/3335827 rows
+2025-06-07 12:08:03,154 - __main__ - INFO - Inserted batch: 644000/3335827 rows
+2025-06-07 12:08:03,475 - __main__ - INFO - Inserted batch: 645000/3335827 rows
+2025-06-07 12:08:03,793 - __main__ - INFO - Inserted batch: 646000/3335827 rows
+2025-06-07 12:08:04,109 - __main__ - INFO - Inserted batch: 647000/3335827 rows
+2025-06-07 12:08:04,456 - __main__ - INFO - Inserted batch: 648000/3335827 rows
+2025-06-07 12:08:04,792 - __main__ - INFO - Inserted batch: 649000/3335827 rows
+2025-06-07 12:08:05,109 - __main__ - INFO - Inserted batch: 650000/3335827 rows
+2025-06-07 12:08:05,430 - __main__ - INFO - Inserted batch: 651000/3335827 rows
+2025-06-07 12:08:05,748 - __main__ - INFO - Inserted batch: 652000/3335827 rows
+2025-06-07 12:08:06,064 - __main__ - INFO - Inserted batch: 653000/3335827 rows
+2025-06-07 12:08:06,384 - __main__ - INFO - Inserted batch: 654000/3335827 rows
+2025-06-07 12:08:06,709 - __main__ - INFO - Inserted batch: 655000/3335827 rows
+2025-06-07 12:08:07,024 - __main__ - INFO - Inserted batch: 656000/3335827 rows
+2025-06-07 12:08:07,341 - __main__ - INFO - Inserted batch: 657000/3335827 rows
+2025-06-07 12:08:07,661 - __main__ - INFO - Inserted batch: 658000/3335827 rows
+2025-06-07 12:08:07,992 - __main__ - INFO - Inserted batch: 659000/3335827 rows
+2025-06-07 12:08:08,312 - __main__ - INFO - Inserted batch: 660000/3335827 rows
+2025-06-07 12:08:08,634 - __main__ - INFO - Inserted batch: 661000/3335827 rows
+2025-06-07 12:08:08,954 - __main__ - INFO - Inserted batch: 662000/3335827 rows
+2025-06-07 12:08:09,276 - __main__ - INFO - Inserted batch: 663000/3335827 rows
+2025-06-07 12:08:09,595 - __main__ - INFO - Inserted batch: 664000/3335827 rows
+2025-06-07 12:08:09,914 - __main__ - INFO - Inserted batch: 665000/3335827 rows
+2025-06-07 12:08:10,245 - __main__ - INFO - Inserted batch: 666000/3335827 rows
+2025-06-07 12:08:10,566 - __main__ - INFO - Inserted batch: 667000/3335827 rows
+2025-06-07 12:08:10,894 - __main__ - INFO - Inserted batch: 668000/3335827 rows
+2025-06-07 12:08:11,214 - __main__ - INFO - Inserted batch: 669000/3335827 rows
+2025-06-07 12:08:11,536 - __main__ - INFO - Inserted batch: 670000/3335827 rows
+2025-06-07 12:08:11,921 - __main__ - INFO - Inserted batch: 671000/3335827 rows
+2025-06-07 12:08:12,240 - __main__ - INFO - Inserted batch: 672000/3335827 rows
+2025-06-07 12:08:12,570 - __main__ - INFO - Inserted batch: 673000/3335827 rows
+2025-06-07 12:08:12,899 - __main__ - INFO - Inserted batch: 674000/3335827 rows
+2025-06-07 12:08:13,219 - __main__ - INFO - Inserted batch: 675000/3335827 rows
+2025-06-07 12:08:13,551 - __main__ - INFO - Inserted batch: 676000/3335827 rows
+2025-06-07 12:08:13,877 - __main__ - INFO - Inserted batch: 677000/3335827 rows
+2025-06-07 12:08:14,196 - __main__ - INFO - Inserted batch: 678000/3335827 rows
+2025-06-07 12:08:14,522 - __main__ - INFO - Inserted batch: 679000/3335827 rows
+2025-06-07 12:08:14,879 - __main__ - INFO - Inserted batch: 680000/3335827 rows
+2025-06-07 12:08:15,196 - __main__ - INFO - Inserted batch: 681000/3335827 rows
+2025-06-07 12:08:15,523 - __main__ - INFO - Inserted batch: 682000/3335827 rows
+2025-06-07 12:08:15,845 - __main__ - INFO - Inserted batch: 683000/3335827 rows
+2025-06-07 12:08:16,171 - __main__ - INFO - Inserted batch: 684000/3335827 rows
+2025-06-07 12:08:16,507 - __main__ - INFO - Inserted batch: 685000/3335827 rows
+2025-06-07 12:08:16,839 - __main__ - INFO - Inserted batch: 686000/3335827 rows
+2025-06-07 12:08:17,159 - __main__ - INFO - Inserted batch: 687000/3335827 rows
+2025-06-07 12:08:17,484 - __main__ - INFO - Inserted batch: 688000/3335827 rows
+2025-06-07 12:08:17,818 - __main__ - INFO - Inserted batch: 689000/3335827 rows
+2025-06-07 12:08:18,156 - __main__ - INFO - Inserted batch: 690000/3335827 rows
+2025-06-07 12:08:18,536 - __main__ - INFO - Inserted batch: 691000/3335827 rows
+2025-06-07 12:08:19,861 - __main__ - INFO - Inserted batch: 692000/3335827 rows
+2025-06-07 12:08:21,674 - __main__ - INFO - Inserted batch: 693000/3335827 rows
+2025-06-07 12:08:22,133 - __main__ - INFO - Inserted batch: 694000/3335827 rows
+2025-06-07 12:08:22,479 - __main__ - INFO - Inserted batch: 695000/3335827 rows
+2025-06-07 12:08:22,815 - __main__ - INFO - Inserted batch: 696000/3335827 rows
+2025-06-07 12:08:23,144 - __main__ - INFO - Inserted batch: 697000/3335827 rows
+2025-06-07 12:08:23,474 - __main__ - INFO - Inserted batch: 698000/3335827 rows
+2025-06-07 12:08:23,793 - __main__ - INFO - Inserted batch: 699000/3335827 rows
+2025-06-07 12:08:24,117 - __main__ - INFO - Inserted batch: 700000/3335827 rows
+2025-06-07 12:08:24,459 - __main__ - INFO - Inserted batch: 701000/3335827 rows
+2025-06-07 12:08:26,038 - __main__ - INFO - Inserted batch: 702000/3335827 rows
+2025-06-07 12:08:27,703 - __main__ - INFO - Inserted batch: 703000/3335827 rows
+2025-06-07 12:08:28,020 - __main__ - INFO - Inserted batch: 704000/3335827 rows
+2025-06-07 12:08:28,337 - __main__ - INFO - Inserted batch: 705000/3335827 rows
+2025-06-07 12:08:28,656 - __main__ - INFO - Inserted batch: 706000/3335827 rows
+2025-06-07 12:08:28,976 - __main__ - INFO - Inserted batch: 707000/3335827 rows
+2025-06-07 12:08:29,294 - __main__ - INFO - Inserted batch: 708000/3335827 rows
+2025-06-07 12:08:29,618 - __main__ - INFO - Inserted batch: 709000/3335827 rows
+2025-06-07 12:08:29,937 - __main__ - INFO - Inserted batch: 710000/3335827 rows
+2025-06-07 12:08:30,258 - __main__ - INFO - Inserted batch: 711000/3335827 rows
+2025-06-07 12:08:30,576 - __main__ - INFO - Inserted batch: 712000/3335827 rows
+2025-06-07 12:08:30,903 - __main__ - INFO - Inserted batch: 713000/3335827 rows
+2025-06-07 12:08:31,221 - __main__ - INFO - Inserted batch: 714000/3335827 rows
+2025-06-07 12:08:31,540 - __main__ - INFO - Inserted batch: 715000/3335827 rows
+2025-06-07 12:08:31,855 - __main__ - INFO - Inserted batch: 716000/3335827 rows
+2025-06-07 12:08:32,177 - __main__ - INFO - Inserted batch: 717000/3335827 rows
+2025-06-07 12:08:32,499 - __main__ - INFO - Inserted batch: 718000/3335827 rows
+2025-06-07 12:08:32,834 - __main__ - INFO - Inserted batch: 719000/3335827 rows
+2025-06-07 12:08:33,151 - __main__ - INFO - Inserted batch: 720000/3335827 rows
+2025-06-07 12:08:33,470 - __main__ - INFO - Inserted batch: 721000/3335827 rows
+2025-06-07 12:08:33,792 - __main__ - INFO - Inserted batch: 722000/3335827 rows
+2025-06-07 12:08:34,123 - __main__ - INFO - Inserted batch: 723000/3335827 rows
+2025-06-07 12:08:34,447 - __main__ - INFO - Inserted batch: 724000/3335827 rows
+2025-06-07 12:08:34,778 - __main__ - INFO - Inserted batch: 725000/3335827 rows
+2025-06-07 12:08:35,097 - __main__ - INFO - Inserted batch: 726000/3335827 rows
+2025-06-07 12:08:35,418 - __main__ - INFO - Inserted batch: 727000/3335827 rows
+2025-06-07 12:08:35,732 - __main__ - INFO - Inserted batch: 728000/3335827 rows
+2025-06-07 12:08:36,053 - __main__ - INFO - Inserted batch: 729000/3335827 rows
+2025-06-07 12:08:36,374 - __main__ - INFO - Inserted batch: 730000/3335827 rows
+2025-06-07 12:08:36,732 - __main__ - INFO - Inserted batch: 731000/3335827 rows
+2025-06-07 12:08:37,054 - __main__ - INFO - Inserted batch: 732000/3335827 rows
+2025-06-07 12:08:37,640 - __main__ - INFO - Inserted batch: 733000/3335827 rows
+2025-06-07 12:08:39,463 - __main__ - INFO - Inserted batch: 734000/3335827 rows
+2025-06-07 12:08:40,667 - __main__ - INFO - Inserted batch: 735000/3335827 rows
+2025-06-07 12:08:40,990 - __main__ - INFO - Inserted batch: 736000/3335827 rows
+2025-06-07 12:08:41,307 - __main__ - INFO - Inserted batch: 737000/3335827 rows
+2025-06-07 12:08:41,634 - __main__ - INFO - Inserted batch: 738000/3335827 rows
+2025-06-07 12:08:41,951 - __main__ - INFO - Inserted batch: 739000/3335827 rows
+2025-06-07 12:08:42,275 - __main__ - INFO - Inserted batch: 740000/3335827 rows
+2025-06-07 12:08:42,594 - __main__ - INFO - Inserted batch: 741000/3335827 rows
+2025-06-07 12:08:42,929 - __main__ - INFO - Inserted batch: 742000/3335827 rows
+2025-06-07 12:08:43,255 - __main__ - INFO - Inserted batch: 743000/3335827 rows
+2025-06-07 12:08:43,586 - __main__ - INFO - Inserted batch: 744000/3335827 rows
+2025-06-07 12:08:43,909 - __main__ - INFO - Inserted batch: 745000/3335827 rows
+2025-06-07 12:08:44,229 - __main__ - INFO - Inserted batch: 746000/3335827 rows
+2025-06-07 12:08:44,545 - __main__ - INFO - Inserted batch: 747000/3335827 rows
+2025-06-07 12:08:44,876 - __main__ - INFO - Inserted batch: 748000/3335827 rows
+2025-06-07 12:08:45,204 - __main__ - INFO - Inserted batch: 749000/3335827 rows
+2025-06-07 12:08:45,528 - __main__ - INFO - Inserted batch: 750000/3335827 rows
+2025-06-07 12:08:45,854 - __main__ - INFO - Inserted batch: 751000/3335827 rows
+2025-06-07 12:08:46,171 - __main__ - INFO - Inserted batch: 752000/3335827 rows
+2025-06-07 12:08:46,492 - __main__ - INFO - Inserted batch: 753000/3335827 rows
+2025-06-07 12:08:46,815 - __main__ - INFO - Inserted batch: 754000/3335827 rows
+2025-06-07 12:08:47,154 - __main__ - INFO - Inserted batch: 755000/3335827 rows
+2025-06-07 12:08:47,477 - __main__ - INFO - Inserted batch: 756000/3335827 rows
+2025-06-07 12:08:47,813 - __main__ - INFO - Inserted batch: 757000/3335827 rows
+2025-06-07 12:08:48,132 - __main__ - INFO - Inserted batch: 758000/3335827 rows
+2025-06-07 12:08:48,453 - __main__ - INFO - Inserted batch: 759000/3335827 rows
+2025-06-07 12:08:48,782 - __main__ - INFO - Inserted batch: 760000/3335827 rows
+2025-06-07 12:08:49,102 - __main__ - INFO - Inserted batch: 761000/3335827 rows
+2025-06-07 12:08:49,424 - __main__ - INFO - Inserted batch: 762000/3335827 rows
+2025-06-07 12:08:49,744 - __main__ - INFO - Inserted batch: 763000/3335827 rows
+2025-06-07 12:08:50,077 - __main__ - INFO - Inserted batch: 764000/3335827 rows
+2025-06-07 12:08:50,402 - __main__ - INFO - Inserted batch: 765000/3335827 rows
+2025-06-07 12:08:50,731 - __main__ - INFO - Inserted batch: 766000/3335827 rows
+2025-06-07 12:08:51,252 - __main__ - INFO - Inserted batch: 767000/3335827 rows
+2025-06-07 12:08:51,571 - __main__ - INFO - Inserted batch: 768000/3335827 rows
+2025-06-07 12:08:51,891 - __main__ - INFO - Inserted batch: 769000/3335827 rows
+2025-06-07 12:08:52,208 - __main__ - INFO - Inserted batch: 770000/3335827 rows
+2025-06-07 12:08:52,526 - __main__ - INFO - Inserted batch: 771000/3335827 rows
+2025-06-07 12:08:52,859 - __main__ - INFO - Inserted batch: 772000/3335827 rows
+2025-06-07 12:08:53,186 - __main__ - INFO - Inserted batch: 773000/3335827 rows
+2025-06-07 12:08:53,506 - __main__ - INFO - Inserted batch: 774000/3335827 rows
+2025-06-07 12:08:53,832 - __main__ - INFO - Inserted batch: 775000/3335827 rows
+2025-06-07 12:08:54,148 - __main__ - INFO - Inserted batch: 776000/3335827 rows
+2025-06-07 12:08:54,465 - __main__ - INFO - Inserted batch: 777000/3335827 rows
+2025-06-07 12:08:54,785 - __main__ - INFO - Inserted batch: 778000/3335827 rows
+2025-06-07 12:08:55,109 - __main__ - INFO - Inserted batch: 779000/3335827 rows
+2025-06-07 12:08:55,426 - __main__ - INFO - Inserted batch: 780000/3335827 rows
+2025-06-07 12:08:55,747 - __main__ - INFO - Inserted batch: 781000/3335827 rows
+2025-06-07 12:08:56,071 - __main__ - INFO - Inserted batch: 782000/3335827 rows
+2025-06-07 12:08:56,388 - __main__ - INFO - Inserted batch: 783000/3335827 rows
+2025-06-07 12:08:56,710 - __main__ - INFO - Inserted batch: 784000/3335827 rows
+2025-06-07 12:08:57,030 - __main__ - INFO - Inserted batch: 785000/3335827 rows
+2025-06-07 12:08:57,364 - __main__ - INFO - Inserted batch: 786000/3335827 rows
+2025-06-07 12:08:57,706 - __main__ - INFO - Inserted batch: 787000/3335827 rows
+2025-06-07 12:08:58,024 - __main__ - INFO - Inserted batch: 788000/3335827 rows
+2025-06-07 12:08:58,357 - __main__ - INFO - Inserted batch: 789000/3335827 rows
+2025-06-07 12:08:58,675 - __main__ - INFO - Inserted batch: 790000/3335827 rows
+2025-06-07 12:08:59,004 - __main__ - INFO - Inserted batch: 791000/3335827 rows
+2025-06-07 12:08:59,326 - __main__ - INFO - Inserted batch: 792000/3335827 rows
+2025-06-07 12:08:59,645 - __main__ - INFO - Inserted batch: 793000/3335827 rows
+2025-06-07 12:08:59,966 - __main__ - INFO - Inserted batch: 794000/3335827 rows
+2025-06-07 12:09:00,290 - __main__ - INFO - Inserted batch: 795000/3335827 rows
+2025-06-07 12:09:00,612 - __main__ - INFO - Inserted batch: 796000/3335827 rows
+2025-06-07 12:09:00,934 - __main__ - INFO - Inserted batch: 797000/3335827 rows
+2025-06-07 12:09:02,145 - __main__ - INFO - Inserted batch: 798000/3335827 rows
+2025-06-07 12:09:02,513 - __main__ - INFO - Inserted batch: 799000/3335827 rows
+2025-06-07 12:09:02,875 - __main__ - INFO - Inserted batch: 800000/3335827 rows
+2025-06-07 12:09:03,245 - __main__ - INFO - Inserted batch: 801000/3335827 rows
+2025-06-07 12:09:03,594 - __main__ - INFO - Inserted batch: 802000/3335827 rows
+2025-06-07 12:09:03,948 - __main__ - INFO - Inserted batch: 803000/3335827 rows
+2025-06-07 12:09:04,287 - __main__ - INFO - Inserted batch: 804000/3335827 rows
+2025-06-07 12:09:04,641 - __main__ - INFO - Inserted batch: 805000/3335827 rows
+2025-06-07 12:09:04,986 - __main__ - INFO - Inserted batch: 806000/3335827 rows
+2025-06-07 12:09:05,383 - __main__ - INFO - Inserted batch: 807000/3335827 rows
+2025-06-07 12:09:05,946 - __main__ - INFO - Inserted batch: 808000/3335827 rows
+2025-06-07 12:09:06,273 - __main__ - INFO - Inserted batch: 809000/3335827 rows
+2025-06-07 12:09:06,593 - __main__ - INFO - Inserted batch: 810000/3335827 rows
+2025-06-07 12:09:06,918 - __main__ - INFO - Inserted batch: 811000/3335827 rows
+2025-06-07 12:09:07,251 - __main__ - INFO - Inserted batch: 812000/3335827 rows
+2025-06-07 12:09:07,582 - __main__ - INFO - Inserted batch: 813000/3335827 rows
+2025-06-07 12:09:07,925 - __main__ - INFO - Inserted batch: 814000/3335827 rows
+2025-06-07 12:09:08,246 - __main__ - INFO - Inserted batch: 815000/3335827 rows
+2025-06-07 12:09:08,570 - __main__ - INFO - Inserted batch: 816000/3335827 rows
+2025-06-07 12:09:08,895 - __main__ - INFO - Inserted batch: 817000/3335827 rows
+2025-06-07 12:09:09,216 - __main__ - INFO - Inserted batch: 818000/3335827 rows
+2025-06-07 12:09:09,535 - __main__ - INFO - Inserted batch: 819000/3335827 rows
+2025-06-07 12:09:09,858 - __main__ - INFO - Inserted batch: 820000/3335827 rows
+2025-06-07 12:09:10,185 - __main__ - INFO - Inserted batch: 821000/3335827 rows
+2025-06-07 12:09:10,501 - __main__ - INFO - Inserted batch: 822000/3335827 rows
+2025-06-07 12:09:10,822 - __main__ - INFO - Inserted batch: 823000/3335827 rows
+2025-06-07 12:09:11,148 - __main__ - INFO - Inserted batch: 824000/3335827 rows
+2025-06-07 12:09:11,469 - __main__ - INFO - Inserted batch: 825000/3335827 rows
+2025-06-07 12:09:11,787 - __main__ - INFO - Inserted batch: 826000/3335827 rows
+2025-06-07 12:09:12,111 - __main__ - INFO - Inserted batch: 827000/3335827 rows
+2025-06-07 12:09:12,443 - __main__ - INFO - Inserted batch: 828000/3335827 rows
+2025-06-07 12:09:12,775 - __main__ - INFO - Inserted batch: 829000/3335827 rows
+2025-06-07 12:09:13,097 - __main__ - INFO - Inserted batch: 830000/3335827 rows
+2025-06-07 12:09:13,415 - __main__ - INFO - Inserted batch: 831000/3335827 rows
+2025-06-07 12:09:13,729 - __main__ - INFO - Inserted batch: 832000/3335827 rows
+2025-06-07 12:09:14,050 - __main__ - INFO - Inserted batch: 833000/3335827 rows
+2025-06-07 12:09:14,374 - __main__ - INFO - Inserted batch: 834000/3335827 rows
+2025-06-07 12:09:14,694 - __main__ - INFO - Inserted batch: 835000/3335827 rows
+2025-06-07 12:09:15,007 - __main__ - INFO - Inserted batch: 836000/3335827 rows
+2025-06-07 12:09:15,324 - __main__ - INFO - Inserted batch: 837000/3335827 rows
+2025-06-07 12:09:15,636 - __main__ - INFO - Inserted batch: 838000/3335827 rows
+2025-06-07 12:09:15,952 - __main__ - INFO - Inserted batch: 839000/3335827 rows
+2025-06-07 12:09:16,273 - __main__ - INFO - Inserted batch: 840000/3335827 rows
+2025-06-07 12:09:16,589 - __main__ - INFO - Inserted batch: 841000/3335827 rows
+2025-06-07 12:09:16,912 - __main__ - INFO - Inserted batch: 842000/3335827 rows
+2025-06-07 12:09:17,240 - __main__ - INFO - Inserted batch: 843000/3335827 rows
+2025-06-07 12:09:17,561 - __main__ - INFO - Inserted batch: 844000/3335827 rows
+2025-06-07 12:09:17,909 - __main__ - INFO - Inserted batch: 845000/3335827 rows
+2025-06-07 12:09:18,247 - __main__ - INFO - Inserted batch: 846000/3335827 rows
+2025-06-07 12:09:18,564 - __main__ - INFO - Inserted batch: 847000/3335827 rows
+2025-06-07 12:09:18,885 - __main__ - INFO - Inserted batch: 848000/3335827 rows
+2025-06-07 12:09:19,207 - __main__ - INFO - Inserted batch: 849000/3335827 rows
+2025-06-07 12:09:19,523 - __main__ - INFO - Inserted batch: 850000/3335827 rows
+2025-06-07 12:09:19,838 - __main__ - INFO - Inserted batch: 851000/3335827 rows
+2025-06-07 12:09:20,154 - __main__ - INFO - Inserted batch: 852000/3335827 rows
+2025-06-07 12:09:20,470 - __main__ - INFO - Inserted batch: 853000/3335827 rows
+2025-06-07 12:09:20,789 - __main__ - INFO - Inserted batch: 854000/3335827 rows
+2025-06-07 12:09:21,113 - __main__ - INFO - Inserted batch: 855000/3335827 rows
+2025-06-07 12:09:21,429 - __main__ - INFO - Inserted batch: 856000/3335827 rows
+2025-06-07 12:09:21,750 - __main__ - INFO - Inserted batch: 857000/3335827 rows
+2025-06-07 12:09:22,069 - __main__ - INFO - Inserted batch: 858000/3335827 rows
+2025-06-07 12:09:22,390 - __main__ - INFO - Inserted batch: 859000/3335827 rows
+2025-06-07 12:09:22,722 - __main__ - INFO - Inserted batch: 860000/3335827 rows
+2025-06-07 12:09:23,037 - __main__ - INFO - Inserted batch: 861000/3335827 rows
+2025-06-07 12:09:23,361 - __main__ - INFO - Inserted batch: 862000/3335827 rows
+2025-06-07 12:09:23,681 - __main__ - INFO - Inserted batch: 863000/3335827 rows
+2025-06-07 12:09:24,007 - __main__ - INFO - Inserted batch: 864000/3335827 rows
+2025-06-07 12:09:24,327 - __main__ - INFO - Inserted batch: 865000/3335827 rows
+2025-06-07 12:09:24,665 - __main__ - INFO - Inserted batch: 866000/3335827 rows
+2025-06-07 12:09:24,993 - __main__ - INFO - Inserted batch: 867000/3335827 rows
+2025-06-07 12:09:25,429 - __main__ - INFO - Inserted batch: 868000/3335827 rows
+2025-06-07 12:09:27,253 - __main__ - INFO - Inserted batch: 869000/3335827 rows
+2025-06-07 12:09:28,561 - __main__ - INFO - Inserted batch: 870000/3335827 rows
+2025-06-07 12:09:28,886 - __main__ - INFO - Inserted batch: 871000/3335827 rows
+2025-06-07 12:09:29,205 - __main__ - INFO - Inserted batch: 872000/3335827 rows
+2025-06-07 12:09:29,523 - __main__ - INFO - Inserted batch: 873000/3335827 rows
+2025-06-07 12:09:29,850 - __main__ - INFO - Inserted batch: 874000/3335827 rows
+2025-06-07 12:09:30,178 - __main__ - INFO - Inserted batch: 875000/3335827 rows
+2025-06-07 12:09:30,501 - __main__ - INFO - Inserted batch: 876000/3335827 rows
+2025-06-07 12:09:30,840 - __main__ - INFO - Inserted batch: 877000/3335827 rows
+2025-06-07 12:09:31,169 - __main__ - INFO - Inserted batch: 878000/3335827 rows
+2025-06-07 12:09:31,497 - __main__ - INFO - Inserted batch: 879000/3335827 rows
+2025-06-07 12:09:31,823 - __main__ - INFO - Inserted batch: 880000/3335827 rows
+2025-06-07 12:09:32,159 - __main__ - INFO - Inserted batch: 881000/3335827 rows
+2025-06-07 12:09:32,480 - __main__ - INFO - Inserted batch: 882000/3335827 rows
+2025-06-07 12:09:32,815 - __main__ - INFO - Inserted batch: 883000/3335827 rows
+2025-06-07 12:09:33,130 - __main__ - INFO - Inserted batch: 884000/3335827 rows
+2025-06-07 12:09:33,462 - __main__ - INFO - Inserted batch: 885000/3335827 rows
+2025-06-07 12:09:33,784 - __main__ - INFO - Inserted batch: 886000/3335827 rows
+2025-06-07 12:09:34,105 - __main__ - INFO - Inserted batch: 887000/3335827 rows
+2025-06-07 12:09:34,425 - __main__ - INFO - Inserted batch: 888000/3335827 rows
+2025-06-07 12:09:34,746 - __main__ - INFO - Inserted batch: 889000/3335827 rows
+2025-06-07 12:09:35,070 - __main__ - INFO - Inserted batch: 890000/3335827 rows
+2025-06-07 12:09:35,388 - __main__ - INFO - Inserted batch: 891000/3335827 rows
+2025-06-07 12:09:35,706 - __main__ - INFO - Inserted batch: 892000/3335827 rows
+2025-06-07 12:09:36,035 - __main__ - INFO - Inserted batch: 893000/3335827 rows
+2025-06-07 12:09:36,353 - __main__ - INFO - Inserted batch: 894000/3335827 rows
+2025-06-07 12:09:36,675 - __main__ - INFO - Inserted batch: 895000/3335827 rows
+2025-06-07 12:09:36,999 - __main__ - INFO - Inserted batch: 896000/3335827 rows
+2025-06-07 12:09:37,318 - __main__ - INFO - Inserted batch: 897000/3335827 rows
+2025-06-07 12:09:37,633 - __main__ - INFO - Inserted batch: 898000/3335827 rows
+2025-06-07 12:09:37,961 - __main__ - INFO - Inserted batch: 899000/3335827 rows
+2025-06-07 12:09:38,280 - __main__ - INFO - Inserted batch: 900000/3335827 rows
+2025-06-07 12:09:38,600 - __main__ - INFO - Inserted batch: 901000/3335827 rows
+2025-06-07 12:09:38,961 - __main__ - INFO - Inserted batch: 902000/3335827 rows
+2025-06-07 12:09:39,278 - __main__ - INFO - Inserted batch: 903000/3335827 rows
+2025-06-07 12:09:39,596 - __main__ - INFO - Inserted batch: 904000/3335827 rows
+2025-06-07 12:09:39,917 - __main__ - INFO - Inserted batch: 905000/3335827 rows
+2025-06-07 12:09:40,232 - __main__ - INFO - Inserted batch: 906000/3335827 rows
+2025-06-07 12:09:40,552 - __main__ - INFO - Inserted batch: 907000/3335827 rows
+2025-06-07 12:09:40,875 - __main__ - INFO - Inserted batch: 908000/3335827 rows
+2025-06-07 12:09:41,195 - __main__ - INFO - Inserted batch: 909000/3335827 rows
+2025-06-07 12:09:41,520 - __main__ - INFO - Inserted batch: 910000/3335827 rows
+2025-06-07 12:09:41,837 - __main__ - INFO - Inserted batch: 911000/3335827 rows
+2025-06-07 12:09:42,156 - __main__ - INFO - Inserted batch: 912000/3335827 rows
+2025-06-07 12:09:42,472 - __main__ - INFO - Inserted batch: 913000/3335827 rows
+2025-06-07 12:09:42,806 - __main__ - INFO - Inserted batch: 914000/3335827 rows
+2025-06-07 12:09:43,124 - __main__ - INFO - Inserted batch: 915000/3335827 rows
+2025-06-07 12:09:43,682 - __main__ - INFO - Inserted batch: 916000/3335827 rows
+2025-06-07 12:09:44,005 - __main__ - INFO - Inserted batch: 917000/3335827 rows
+2025-06-07 12:09:44,326 - __main__ - INFO - Inserted batch: 918000/3335827 rows
+2025-06-07 12:09:44,649 - __main__ - INFO - Inserted batch: 919000/3335827 rows
+2025-06-07 12:09:44,970 - __main__ - INFO - Inserted batch: 920000/3335827 rows
+2025-06-07 12:09:45,292 - __main__ - INFO - Inserted batch: 921000/3335827 rows
+2025-06-07 12:09:45,608 - __main__ - INFO - Inserted batch: 922000/3335827 rows
+2025-06-07 12:09:45,928 - __main__ - INFO - Inserted batch: 923000/3335827 rows
+2025-06-07 12:09:46,252 - __main__ - INFO - Inserted batch: 924000/3335827 rows
+2025-06-07 12:09:46,576 - __main__ - INFO - Inserted batch: 925000/3335827 rows
+2025-06-07 12:09:49,671 - __main__ - INFO - Inserted batch: 926000/3335827 rows
+2025-06-07 12:09:49,986 - __main__ - INFO - Inserted batch: 927000/3335827 rows
+2025-06-07 12:09:50,316 - __main__ - INFO - Inserted batch: 928000/3335827 rows
+2025-06-07 12:09:50,637 - __main__ - INFO - Inserted batch: 929000/3335827 rows
+2025-06-07 12:09:50,958 - __main__ - INFO - Inserted batch: 930000/3335827 rows
+2025-06-07 12:09:51,282 - __main__ - INFO - Inserted batch: 931000/3335827 rows
+2025-06-07 12:09:51,609 - __main__ - INFO - Inserted batch: 932000/3335827 rows
+2025-06-07 12:09:51,929 - __main__ - INFO - Inserted batch: 933000/3335827 rows
+2025-06-07 12:09:52,255 - __main__ - INFO - Inserted batch: 934000/3335827 rows
+2025-06-07 12:09:52,576 - __main__ - INFO - Inserted batch: 935000/3335827 rows
+2025-06-07 12:09:52,906 - __main__ - INFO - Inserted batch: 936000/3335827 rows
+2025-06-07 12:09:53,225 - __main__ - INFO - Inserted batch: 937000/3335827 rows
+2025-06-07 12:09:53,550 - __main__ - INFO - Inserted batch: 938000/3335827 rows
+2025-06-07 12:09:53,868 - __main__ - INFO - Inserted batch: 939000/3335827 rows
+2025-06-07 12:09:54,186 - __main__ - INFO - Inserted batch: 940000/3335827 rows
+2025-06-07 12:09:54,505 - __main__ - INFO - Inserted batch: 941000/3335827 rows
+2025-06-07 12:09:54,826 - __main__ - INFO - Inserted batch: 942000/3335827 rows
+2025-06-07 12:09:55,146 - __main__ - INFO - Inserted batch: 943000/3335827 rows
+2025-06-07 12:09:55,474 - __main__ - INFO - Inserted batch: 944000/3335827 rows
+2025-06-07 12:09:55,790 - __main__ - INFO - Inserted batch: 945000/3335827 rows
+2025-06-07 12:09:56,108 - __main__ - INFO - Inserted batch: 946000/3335827 rows
+2025-06-07 12:09:56,430 - __main__ - INFO - Inserted batch: 947000/3335827 rows
+2025-06-07 12:09:56,750 - __main__ - INFO - Inserted batch: 948000/3335827 rows
+2025-06-07 12:09:57,065 - __main__ - INFO - Inserted batch: 949000/3335827 rows
+2025-06-07 12:09:57,385 - __main__ - INFO - Inserted batch: 950000/3335827 rows
+2025-06-07 12:09:57,707 - __main__ - INFO - Inserted batch: 951000/3335827 rows
+2025-06-07 12:09:58,024 - __main__ - INFO - Inserted batch: 952000/3335827 rows
+2025-06-07 12:09:58,350 - __main__ - INFO - Inserted batch: 953000/3335827 rows
+2025-06-07 12:09:58,684 - __main__ - INFO - Inserted batch: 954000/3335827 rows
+2025-06-07 12:09:59,000 - __main__ - INFO - Inserted batch: 955000/3335827 rows
+2025-06-07 12:09:59,357 - __main__ - INFO - Inserted batch: 956000/3335827 rows
+2025-06-07 12:09:59,675 - __main__ - INFO - Inserted batch: 957000/3335827 rows
+2025-06-07 12:09:59,992 - __main__ - INFO - Inserted batch: 958000/3335827 rows
+2025-06-07 12:10:00,325 - __main__ - INFO - Inserted batch: 959000/3335827 rows
+2025-06-07 12:10:00,654 - __main__ - INFO - Inserted batch: 960000/3335827 rows
+2025-06-07 12:10:00,974 - __main__ - INFO - Inserted batch: 961000/3335827 rows
+2025-06-07 12:10:01,293 - __main__ - INFO - Inserted batch: 962000/3335827 rows
+2025-06-07 12:10:01,617 - __main__ - INFO - Inserted batch: 963000/3335827 rows
+2025-06-07 12:10:01,934 - __main__ - INFO - Inserted batch: 964000/3335827 rows
+2025-06-07 12:10:02,251 - __main__ - INFO - Inserted batch: 965000/3335827 rows
+2025-06-07 12:10:02,571 - __main__ - INFO - Inserted batch: 966000/3335827 rows
+2025-06-07 12:10:02,899 - __main__ - INFO - Inserted batch: 967000/3335827 rows
+2025-06-07 12:10:03,215 - __main__ - INFO - Inserted batch: 968000/3335827 rows
+2025-06-07 12:10:03,534 - __main__ - INFO - Inserted batch: 969000/3335827 rows
+2025-06-07 12:10:03,852 - __main__ - INFO - Inserted batch: 970000/3335827 rows
+2025-06-07 12:10:04,172 - __main__ - INFO - Inserted batch: 971000/3335827 rows
+2025-06-07 12:10:04,489 - __main__ - INFO - Inserted batch: 972000/3335827 rows
+2025-06-07 12:10:04,810 - __main__ - INFO - Inserted batch: 973000/3335827 rows
+2025-06-07 12:10:05,124 - __main__ - INFO - Inserted batch: 974000/3335827 rows
+2025-06-07 12:10:05,446 - __main__ - INFO - Inserted batch: 975000/3335827 rows
+2025-06-07 12:10:05,764 - __main__ - INFO - Inserted batch: 976000/3335827 rows
+2025-06-07 12:10:06,080 - __main__ - INFO - Inserted batch: 977000/3335827 rows
+2025-06-07 12:10:06,398 - __main__ - INFO - Inserted batch: 978000/3335827 rows
+2025-06-07 12:10:06,735 - __main__ - INFO - Inserted batch: 979000/3335827 rows
+2025-06-07 12:10:07,089 - __main__ - INFO - Inserted batch: 980000/3335827 rows
+2025-06-07 12:10:07,575 - __main__ - INFO - Inserted batch: 981000/3335827 rows
+2025-06-07 12:10:08,255 - __main__ - INFO - Inserted batch: 982000/3335827 rows
+2025-06-07 12:10:08,624 - __main__ - INFO - Inserted batch: 983000/3335827 rows
+2025-06-07 12:10:08,967 - __main__ - INFO - Inserted batch: 984000/3335827 rows
+2025-06-07 12:10:09,319 - __main__ - INFO - Inserted batch: 985000/3335827 rows
+2025-06-07 12:10:09,717 - __main__ - INFO - Inserted batch: 986000/3335827 rows
+2025-06-07 12:10:10,049 - __main__ - INFO - Inserted batch: 987000/3335827 rows
+2025-06-07 12:10:10,394 - __main__ - INFO - Inserted batch: 988000/3335827 rows
+2025-06-07 12:10:10,816 - __main__ - INFO - Inserted batch: 989000/3335827 rows
+2025-06-07 12:10:11,245 - __main__ - INFO - Inserted batch: 990000/3335827 rows
+2025-06-07 12:10:11,758 - __main__ - INFO - Inserted batch: 991000/3335827 rows
+2025-06-07 12:10:12,078 - __main__ - INFO - Inserted batch: 992000/3335827 rows
+2025-06-07 12:10:12,399 - __main__ - INFO - Inserted batch: 993000/3335827 rows
+2025-06-07 12:10:12,731 - __main__ - INFO - Inserted batch: 994000/3335827 rows
+2025-06-07 12:10:13,048 - __main__ - INFO - Inserted batch: 995000/3335827 rows
+2025-06-07 12:10:13,367 - __main__ - INFO - Inserted batch: 996000/3335827 rows
+2025-06-07 12:10:13,688 - __main__ - INFO - Inserted batch: 997000/3335827 rows
+2025-06-07 12:10:14,008 - __main__ - INFO - Inserted batch: 998000/3335827 rows
+2025-06-07 12:10:14,330 - __main__ - INFO - Inserted batch: 999000/3335827 rows
+2025-06-07 12:10:14,660 - __main__ - INFO - Inserted batch: 1000000/3335827 rows
+2025-06-07 12:10:14,976 - __main__ - INFO - Inserted batch: 1001000/3335827 rows
+2025-06-07 12:10:15,292 - __main__ - INFO - Inserted batch: 1002000/3335827 rows
+2025-06-07 12:10:15,613 - __main__ - INFO - Inserted batch: 1003000/3335827 rows
+2025-06-07 12:10:15,929 - __main__ - INFO - Inserted batch: 1004000/3335827 rows
+2025-06-07 12:10:16,246 - __main__ - INFO - Inserted batch: 1005000/3335827 rows
+2025-06-07 12:10:16,565 - __main__ - INFO - Inserted batch: 1006000/3335827 rows
+2025-06-07 12:10:16,887 - __main__ - INFO - Inserted batch: 1007000/3335827 rows
+2025-06-07 12:10:17,206 - __main__ - INFO - Inserted batch: 1008000/3335827 rows
+2025-06-07 12:10:17,529 - __main__ - INFO - Inserted batch: 1009000/3335827 rows
+2025-06-07 12:10:17,866 - __main__ - INFO - Inserted batch: 1010000/3335827 rows
+2025-06-07 12:10:18,180 - __main__ - INFO - Inserted batch: 1011000/3335827 rows
+2025-06-07 12:10:18,499 - __main__ - INFO - Inserted batch: 1012000/3335827 rows
+2025-06-07 12:10:18,818 - __main__ - INFO - Inserted batch: 1013000/3335827 rows
+2025-06-07 12:10:19,137 - __main__ - INFO - Inserted batch: 1014000/3335827 rows
+2025-06-07 12:10:19,457 - __main__ - INFO - Inserted batch: 1015000/3335827 rows
+2025-06-07 12:10:19,802 - __main__ - INFO - Inserted batch: 1016000/3335827 rows
+2025-06-07 12:10:20,152 - __main__ - INFO - Inserted batch: 1017000/3335827 rows
+2025-06-07 12:10:20,478 - __main__ - INFO - Inserted batch: 1018000/3335827 rows
+2025-06-07 12:10:20,808 - __main__ - INFO - Inserted batch: 1019000/3335827 rows
+2025-06-07 12:10:21,128 - __main__ - INFO - Inserted batch: 1020000/3335827 rows
+2025-06-07 12:10:21,453 - __main__ - INFO - Inserted batch: 1021000/3335827 rows
+2025-06-07 12:10:21,777 - __main__ - INFO - Inserted batch: 1022000/3335827 rows
+2025-06-07 12:10:22,093 - __main__ - INFO - Inserted batch: 1023000/3335827 rows
+2025-06-07 12:10:22,410 - __main__ - INFO - Inserted batch: 1024000/3335827 rows
+2025-06-07 12:10:22,752 - __main__ - INFO - Inserted batch: 1025000/3335827 rows
+2025-06-07 12:10:23,078 - __main__ - INFO - Inserted batch: 1026000/3335827 rows
+2025-06-07 12:10:23,408 - __main__ - INFO - Inserted batch: 1027000/3335827 rows
+2025-06-07 12:10:23,738 - __main__ - INFO - Inserted batch: 1028000/3335827 rows
+2025-06-07 12:10:24,073 - __main__ - INFO - Inserted batch: 1029000/3335827 rows
+2025-06-07 12:10:24,392 - __main__ - INFO - Inserted batch: 1030000/3335827 rows
+2025-06-07 12:10:24,733 - __main__ - INFO - Inserted batch: 1031000/3335827 rows
+2025-06-07 12:10:25,128 - __main__ - INFO - Inserted batch: 1032000/3335827 rows
+2025-06-07 12:10:25,452 - __main__ - INFO - Inserted batch: 1033000/3335827 rows
+2025-06-07 12:10:25,773 - __main__ - INFO - Inserted batch: 1034000/3335827 rows
+2025-06-07 12:10:26,088 - __main__ - INFO - Inserted batch: 1035000/3335827 rows
+2025-06-07 12:10:26,417 - __main__ - INFO - Inserted batch: 1036000/3335827 rows
+2025-06-07 12:10:26,747 - __main__ - INFO - Inserted batch: 1037000/3335827 rows
+2025-06-07 12:10:27,072 - __main__ - INFO - Inserted batch: 1038000/3335827 rows
+2025-06-07 12:10:27,402 - __main__ - INFO - Inserted batch: 1039000/3335827 rows
+2025-06-07 12:10:27,737 - __main__ - INFO - Inserted batch: 1040000/3335827 rows
+2025-06-07 12:10:28,067 - __main__ - INFO - Inserted batch: 1041000/3335827 rows
+2025-06-07 12:10:28,387 - __main__ - INFO - Inserted batch: 1042000/3335827 rows
+2025-06-07 12:10:28,709 - __main__ - INFO - Inserted batch: 1043000/3335827 rows
+2025-06-07 12:10:29,030 - __main__ - INFO - Inserted batch: 1044000/3335827 rows
+2025-06-07 12:10:29,352 - __main__ - INFO - Inserted batch: 1045000/3335827 rows
+2025-06-07 12:10:29,677 - __main__ - INFO - Inserted batch: 1046000/3335827 rows
+2025-06-07 12:10:30,002 - __main__ - INFO - Inserted batch: 1047000/3335827 rows
+2025-06-07 12:10:30,342 - __main__ - INFO - Inserted batch: 1048000/3335827 rows
+2025-06-07 12:10:31,863 - __main__ - INFO - Inserted batch: 1049000/3335827 rows
+2025-06-07 12:10:33,547 - __main__ - INFO - Inserted batch: 1050000/3335827 rows
+2025-06-07 12:10:33,866 - __main__ - INFO - Inserted batch: 1051000/3335827 rows
+2025-06-07 12:10:34,187 - __main__ - INFO - Inserted batch: 1052000/3335827 rows
+2025-06-07 12:10:34,722 - __main__ - INFO - Inserted batch: 1053000/3335827 rows
+2025-06-07 12:10:35,045 - __main__ - INFO - Inserted batch: 1054000/3335827 rows
+2025-06-07 12:10:35,367 - __main__ - INFO - Inserted batch: 1055000/3335827 rows
+2025-06-07 12:10:35,687 - __main__ - INFO - Inserted batch: 1056000/3335827 rows
+2025-06-07 12:10:36,007 - __main__ - INFO - Inserted batch: 1057000/3335827 rows
+2025-06-07 12:10:36,332 - __main__ - INFO - Inserted batch: 1058000/3335827 rows
+2025-06-07 12:10:36,657 - __main__ - INFO - Inserted batch: 1059000/3335827 rows
+2025-06-07 12:10:36,977 - __main__ - INFO - Inserted batch: 1060000/3335827 rows
+2025-06-07 12:10:37,303 - __main__ - INFO - Inserted batch: 1061000/3335827 rows
+2025-06-07 12:10:37,621 - __main__ - INFO - Inserted batch: 1062000/3335827 rows
+2025-06-07 12:10:38,132 - __main__ - INFO - Inserted batch: 1063000/3335827 rows
+2025-06-07 12:10:38,462 - __main__ - INFO - Inserted batch: 1064000/3335827 rows
+2025-06-07 12:10:38,787 - __main__ - INFO - Inserted batch: 1065000/3335827 rows
+2025-06-07 12:10:39,112 - __main__ - INFO - Inserted batch: 1066000/3335827 rows
+2025-06-07 12:10:39,431 - __main__ - INFO - Inserted batch: 1067000/3335827 rows
+2025-06-07 12:10:39,749 - __main__ - INFO - Inserted batch: 1068000/3335827 rows
+2025-06-07 12:10:40,072 - __main__ - INFO - Inserted batch: 1069000/3335827 rows
+2025-06-07 12:10:40,406 - __main__ - INFO - Inserted batch: 1070000/3335827 rows
+2025-06-07 12:10:40,747 - __main__ - INFO - Inserted batch: 1071000/3335827 rows
+2025-06-07 12:10:41,067 - __main__ - INFO - Inserted batch: 1072000/3335827 rows
+2025-06-07 12:10:41,391 - __main__ - INFO - Inserted batch: 1073000/3335827 rows
+2025-06-07 12:10:41,716 - __main__ - INFO - Inserted batch: 1074000/3335827 rows
+2025-06-07 12:10:42,042 - __main__ - INFO - Inserted batch: 1075000/3335827 rows
+2025-06-07 12:10:42,372 - __main__ - INFO - Inserted batch: 1076000/3335827 rows
+2025-06-07 12:10:42,727 - __main__ - INFO - Inserted batch: 1077000/3335827 rows
+2025-06-07 12:10:43,045 - __main__ - INFO - Inserted batch: 1078000/3335827 rows
+2025-06-07 12:10:43,366 - __main__ - INFO - Inserted batch: 1079000/3335827 rows
+2025-06-07 12:10:43,692 - __main__ - INFO - Inserted batch: 1080000/3335827 rows
+2025-06-07 12:10:44,016 - __main__ - INFO - Inserted batch: 1081000/3335827 rows
+2025-06-07 12:10:44,342 - __main__ - INFO - Inserted batch: 1082000/3335827 rows
+2025-06-07 12:10:44,820 - __main__ - INFO - Inserted batch: 1083000/3335827 rows
+2025-06-07 12:10:45,146 - __main__ - INFO - Inserted batch: 1084000/3335827 rows
+2025-06-07 12:10:45,472 - __main__ - INFO - Inserted batch: 1085000/3335827 rows
+2025-06-07 12:10:45,792 - __main__ - INFO - Inserted batch: 1086000/3335827 rows
+2025-06-07 12:10:46,112 - __main__ - INFO - Inserted batch: 1087000/3335827 rows
+2025-06-07 12:10:46,431 - __main__ - INFO - Inserted batch: 1088000/3335827 rows
+2025-06-07 12:10:46,751 - __main__ - INFO - Inserted batch: 1089000/3335827 rows
+2025-06-07 12:10:47,068 - __main__ - INFO - Inserted batch: 1090000/3335827 rows
+2025-06-07 12:10:47,386 - __main__ - INFO - Inserted batch: 1091000/3335827 rows
+2025-06-07 12:10:47,727 - __main__ - INFO - Inserted batch: 1092000/3335827 rows
+2025-06-07 12:10:48,045 - __main__ - INFO - Inserted batch: 1093000/3335827 rows
+2025-06-07 12:10:48,363 - __main__ - INFO - Inserted batch: 1094000/3335827 rows
+2025-06-07 12:10:48,686 - __main__ - INFO - Inserted batch: 1095000/3335827 rows
+2025-06-07 12:10:49,011 - __main__ - INFO - Inserted batch: 1096000/3335827 rows
+2025-06-07 12:10:49,336 - __main__ - INFO - Inserted batch: 1097000/3335827 rows
+2025-06-07 12:10:49,667 - __main__ - INFO - Inserted batch: 1098000/3335827 rows
+2025-06-07 12:10:49,991 - __main__ - INFO - Inserted batch: 1099000/3335827 rows
+2025-06-07 12:10:50,312 - __main__ - INFO - Inserted batch: 1100000/3335827 rows
+2025-06-07 12:10:50,656 - __main__ - INFO - Inserted batch: 1101000/3335827 rows
+2025-06-07 12:10:51,017 - __main__ - INFO - Inserted batch: 1102000/3335827 rows
+2025-06-07 12:10:51,331 - __main__ - INFO - Inserted batch: 1103000/3335827 rows
+2025-06-07 12:10:51,662 - __main__ - INFO - Inserted batch: 1104000/3335827 rows
+2025-06-07 12:10:51,992 - __main__ - INFO - Inserted batch: 1105000/3335827 rows
+2025-06-07 12:10:52,337 - __main__ - INFO - Inserted batch: 1106000/3335827 rows
+2025-06-07 12:10:52,665 - __main__ - INFO - Inserted batch: 1107000/3335827 rows
+2025-06-07 12:10:53,213 - __main__ - INFO - Inserted batch: 1108000/3335827 rows
+2025-06-07 12:10:53,541 - __main__ - INFO - Inserted batch: 1109000/3335827 rows
+2025-06-07 12:10:53,871 - __main__ - INFO - Inserted batch: 1110000/3335827 rows
+2025-06-07 12:10:54,191 - __main__ - INFO - Inserted batch: 1111000/3335827 rows
+2025-06-07 12:10:54,527 - __main__ - INFO - Inserted batch: 1112000/3335827 rows
+2025-06-07 12:10:54,856 - __main__ - INFO - Inserted batch: 1113000/3335827 rows
+2025-06-07 12:10:55,180 - __main__ - INFO - Inserted batch: 1114000/3335827 rows
+2025-06-07 12:10:55,506 - __main__ - INFO - Inserted batch: 1115000/3335827 rows
+2025-06-07 12:10:55,828 - __main__ - INFO - Inserted batch: 1116000/3335827 rows
+2025-06-07 12:10:56,157 - __main__ - INFO - Inserted batch: 1117000/3335827 rows
+2025-06-07 12:10:56,476 - __main__ - INFO - Inserted batch: 1118000/3335827 rows
+2025-06-07 12:10:56,811 - __main__ - INFO - Inserted batch: 1119000/3335827 rows
+2025-06-07 12:10:57,136 - __main__ - INFO - Inserted batch: 1120000/3335827 rows
+2025-06-07 12:10:57,461 - __main__ - INFO - Inserted batch: 1121000/3335827 rows
+2025-06-07 12:10:57,796 - __main__ - INFO - Inserted batch: 1122000/3335827 rows
+2025-06-07 12:10:58,126 - __main__ - INFO - Inserted batch: 1123000/3335827 rows
+2025-06-07 12:10:58,446 - __main__ - INFO - Inserted batch: 1124000/3335827 rows
+2025-06-07 12:10:58,774 - __main__ - INFO - Inserted batch: 1125000/3335827 rows
+2025-06-07 12:10:59,101 - __main__ - INFO - Inserted batch: 1126000/3335827 rows
+2025-06-07 12:10:59,426 - __main__ - INFO - Inserted batch: 1127000/3335827 rows
+2025-06-07 12:10:59,767 - __main__ - INFO - Inserted batch: 1128000/3335827 rows
+2025-06-07 12:11:00,101 - __main__ - INFO - Inserted batch: 1129000/3335827 rows
+2025-06-07 12:11:00,431 - __main__ - INFO - Inserted batch: 1130000/3335827 rows
+2025-06-07 12:11:00,761 - __main__ - INFO - Inserted batch: 1131000/3335827 rows
+2025-06-07 12:11:01,101 - __main__ - INFO - Inserted batch: 1132000/3335827 rows
+2025-06-07 12:11:01,432 - __main__ - INFO - Inserted batch: 1133000/3335827 rows
+2025-06-07 12:11:01,767 - __main__ - INFO - Inserted batch: 1134000/3335827 rows
+2025-06-07 12:11:02,096 - __main__ - INFO - Inserted batch: 1135000/3335827 rows
+2025-06-07 12:11:02,420 - __main__ - INFO - Inserted batch: 1136000/3335827 rows
+2025-06-07 12:11:02,761 - __main__ - INFO - Inserted batch: 1137000/3335827 rows
+2025-06-07 12:11:03,086 - __main__ - INFO - Inserted batch: 1138000/3335827 rows
+2025-06-07 12:11:03,406 - __main__ - INFO - Inserted batch: 1139000/3335827 rows
+2025-06-07 12:11:03,736 - __main__ - INFO - Inserted batch: 1140000/3335827 rows
+2025-06-07 12:11:04,055 - __main__ - INFO - Inserted batch: 1141000/3335827 rows
+2025-06-07 12:11:04,376 - __main__ - INFO - Inserted batch: 1142000/3335827 rows
+2025-06-07 12:11:04,706 - __main__ - INFO - Inserted batch: 1143000/3335827 rows
+2025-06-07 12:11:05,031 - __main__ - INFO - Inserted batch: 1144000/3335827 rows
+2025-06-07 12:11:05,351 - __main__ - INFO - Inserted batch: 1145000/3335827 rows
+2025-06-07 12:11:05,676 - __main__ - INFO - Inserted batch: 1146000/3335827 rows
+2025-06-07 12:11:06,001 - __main__ - INFO - Inserted batch: 1147000/3335827 rows
+2025-06-07 12:11:06,317 - __main__ - INFO - Inserted batch: 1148000/3335827 rows
+2025-06-07 12:11:06,640 - __main__ - INFO - Inserted batch: 1149000/3335827 rows
+2025-06-07 12:11:06,970 - __main__ - INFO - Inserted batch: 1150000/3335827 rows
+2025-06-07 12:11:07,291 - __main__ - INFO - Inserted batch: 1151000/3335827 rows
+2025-06-07 12:11:07,609 - __main__ - INFO - Inserted batch: 1152000/3335827 rows
+2025-06-07 12:11:07,935 - __main__ - INFO - Inserted batch: 1153000/3335827 rows
+2025-06-07 12:11:08,257 - __main__ - INFO - Inserted batch: 1154000/3335827 rows
+2025-06-07 12:11:08,590 - __main__ - INFO - Inserted batch: 1155000/3335827 rows
+2025-06-07 12:11:08,915 - __main__ - INFO - Inserted batch: 1156000/3335827 rows
+2025-06-07 12:11:09,235 - __main__ - INFO - Inserted batch: 1157000/3335827 rows
+2025-06-07 12:11:09,561 - __main__ - INFO - Inserted batch: 1158000/3335827 rows
+2025-06-07 12:11:09,898 - __main__ - INFO - Inserted batch: 1159000/3335827 rows
+2025-06-07 12:11:10,220 - __main__ - INFO - Inserted batch: 1160000/3335827 rows
+2025-06-07 12:11:10,755 - __main__ - INFO - Inserted batch: 1161000/3335827 rows
+2025-06-07 12:11:11,841 - __main__ - INFO - Inserted batch: 1162000/3335827 rows
+2025-06-07 12:11:13,766 - __main__ - INFO - Inserted batch: 1163000/3335827 rows
+2025-06-07 12:11:14,337 - __main__ - INFO - Inserted batch: 1164000/3335827 rows
+2025-06-07 12:11:14,681 - __main__ - INFO - Inserted batch: 1165000/3335827 rows
+2025-06-07 12:11:15,056 - __main__ - INFO - Inserted batch: 1166000/3335827 rows
+2025-06-07 12:11:15,395 - __main__ - INFO - Inserted batch: 1167000/3335827 rows
+2025-06-07 12:11:15,772 - __main__ - INFO - Inserted batch: 1168000/3335827 rows
+2025-06-07 12:11:16,115 - __main__ - INFO - Inserted batch: 1169000/3335827 rows
+2025-06-07 12:11:16,470 - __main__ - INFO - Inserted batch: 1170000/3335827 rows
+2025-06-07 12:11:16,820 - __main__ - INFO - Inserted batch: 1171000/3335827 rows
+2025-06-07 12:11:17,554 - __main__ - INFO - Inserted batch: 1172000/3335827 rows
+2025-06-07 12:11:17,895 - __main__ - INFO - Inserted batch: 1173000/3335827 rows
+2025-06-07 12:11:18,215 - __main__ - INFO - Inserted batch: 1174000/3335827 rows
+2025-06-07 12:11:18,535 - __main__ - INFO - Inserted batch: 1175000/3335827 rows
+2025-06-07 12:11:18,860 - __main__ - INFO - Inserted batch: 1176000/3335827 rows
+2025-06-07 12:11:19,180 - __main__ - INFO - Inserted batch: 1177000/3335827 rows
+2025-06-07 12:11:19,503 - __main__ - INFO - Inserted batch: 1178000/3335827 rows
+2025-06-07 12:11:19,825 - __main__ - INFO - Inserted batch: 1179000/3335827 rows
+2025-06-07 12:11:20,144 - __main__ - INFO - Inserted batch: 1180000/3335827 rows
+2025-06-07 12:11:20,465 - __main__ - INFO - Inserted batch: 1181000/3335827 rows
+2025-06-07 12:11:20,793 - __main__ - INFO - Inserted batch: 1182000/3335827 rows
+2025-06-07 12:11:21,115 - __main__ - INFO - Inserted batch: 1183000/3335827 rows
+2025-06-07 12:11:21,435 - __main__ - INFO - Inserted batch: 1184000/3335827 rows
+2025-06-07 12:11:21,775 - __main__ - INFO - Inserted batch: 1185000/3335827 rows
+2025-06-07 12:11:22,101 - __main__ - INFO - Inserted batch: 1186000/3335827 rows
+2025-06-07 12:11:22,440 - __main__ - INFO - Inserted batch: 1187000/3335827 rows
+2025-06-07 12:11:22,783 - __main__ - INFO - Inserted batch: 1188000/3335827 rows
+2025-06-07 12:11:23,100 - __main__ - INFO - Inserted batch: 1189000/3335827 rows
+2025-06-07 12:11:23,420 - __main__ - INFO - Inserted batch: 1190000/3335827 rows
+2025-06-07 12:11:23,743 - __main__ - INFO - Inserted batch: 1191000/3335827 rows
+2025-06-07 12:11:24,060 - __main__ - INFO - Inserted batch: 1192000/3335827 rows
+2025-06-07 12:11:24,385 - __main__ - INFO - Inserted batch: 1193000/3335827 rows
+2025-06-07 12:11:24,713 - __main__ - INFO - Inserted batch: 1194000/3335827 rows
+2025-06-07 12:11:25,035 - __main__ - INFO - Inserted batch: 1195000/3335827 rows
+2025-06-07 12:11:25,355 - __main__ - INFO - Inserted batch: 1196000/3335827 rows
+2025-06-07 12:11:25,680 - __main__ - INFO - Inserted batch: 1197000/3335827 rows
+2025-06-07 12:11:26,090 - __main__ - INFO - Inserted batch: 1198000/3335827 rows
+2025-06-07 12:11:26,415 - __main__ - INFO - Inserted batch: 1199000/3335827 rows
+2025-06-07 12:11:26,743 - __main__ - INFO - Inserted batch: 1200000/3335827 rows
+2025-06-07 12:11:27,197 - __main__ - INFO - Inserted batch: 1201000/3335827 rows
+2025-06-07 12:11:27,728 - __main__ - INFO - Inserted batch: 1202000/3335827 rows
+2025-06-07 12:11:28,087 - __main__ - INFO - Inserted batch: 1203000/3335827 rows
+2025-06-07 12:11:28,487 - __main__ - INFO - Inserted batch: 1204000/3335827 rows
+2025-06-07 12:11:28,838 - __main__ - INFO - Inserted batch: 1205000/3335827 rows
+2025-06-07 12:11:29,194 - __main__ - INFO - Inserted batch: 1206000/3335827 rows
+2025-06-07 12:11:29,583 - __main__ - INFO - Inserted batch: 1207000/3335827 rows
+2025-06-07 12:11:29,933 - __main__ - INFO - Inserted batch: 1208000/3335827 rows
+2025-06-07 12:11:30,252 - __main__ - INFO - Inserted batch: 1209000/3335827 rows
+2025-06-07 12:11:30,683 - __main__ - INFO - Inserted batch: 1210000/3335827 rows
+2025-06-07 12:11:31,030 - __main__ - INFO - Inserted batch: 1211000/3335827 rows
+2025-06-07 12:11:31,774 - __main__ - INFO - Inserted batch: 1212000/3335827 rows
+2025-06-07 12:11:32,166 - __main__ - INFO - Inserted batch: 1213000/3335827 rows
+2025-06-07 12:11:32,515 - __main__ - INFO - Inserted batch: 1214000/3335827 rows
+2025-06-07 12:11:32,902 - __main__ - INFO - Inserted batch: 1215000/3335827 rows
+2025-06-07 12:11:33,219 - __main__ - INFO - Inserted batch: 1216000/3335827 rows
+2025-06-07 12:11:33,539 - __main__ - INFO - Inserted batch: 1217000/3335827 rows
+2025-06-07 12:11:33,865 - __main__ - INFO - Inserted batch: 1218000/3335827 rows
+2025-06-07 12:11:34,184 - __main__ - INFO - Inserted batch: 1219000/3335827 rows
+2025-06-07 12:11:34,504 - __main__ - INFO - Inserted batch: 1220000/3335827 rows
+2025-06-07 12:11:34,829 - __main__ - INFO - Inserted batch: 1221000/3335827 rows
+2025-06-07 12:11:35,149 - __main__ - INFO - Inserted batch: 1222000/3335827 rows
+2025-06-07 12:11:35,469 - __main__ - INFO - Inserted batch: 1223000/3335827 rows
+2025-06-07 12:11:35,794 - __main__ - INFO - Inserted batch: 1224000/3335827 rows
+2025-06-07 12:11:36,114 - __main__ - INFO - Inserted batch: 1225000/3335827 rows
+2025-06-07 12:11:36,440 - __main__ - INFO - Inserted batch: 1226000/3335827 rows
+2025-06-07 12:11:36,764 - __main__ - INFO - Inserted batch: 1227000/3335827 rows
+2025-06-07 12:11:37,084 - __main__ - INFO - Inserted batch: 1228000/3335827 rows
+2025-06-07 12:11:37,404 - __main__ - INFO - Inserted batch: 1229000/3335827 rows
+2025-06-07 12:11:37,731 - __main__ - INFO - Inserted batch: 1230000/3335827 rows
+2025-06-07 12:11:38,049 - __main__ - INFO - Inserted batch: 1231000/3335827 rows
+2025-06-07 12:11:38,543 - __main__ - INFO - Inserted batch: 1232000/3335827 rows
+2025-06-07 12:11:38,870 - __main__ - INFO - Inserted batch: 1233000/3335827 rows
+2025-06-07 12:11:39,188 - __main__ - INFO - Inserted batch: 1234000/3335827 rows
+2025-06-07 12:11:39,503 - __main__ - INFO - Inserted batch: 1235000/3335827 rows
+2025-06-07 12:11:39,825 - __main__ - INFO - Inserted batch: 1236000/3335827 rows
+2025-06-07 12:11:40,149 - __main__ - INFO - Inserted batch: 1237000/3335827 rows
+2025-06-07 12:11:40,472 - __main__ - INFO - Inserted batch: 1238000/3335827 rows
+2025-06-07 12:11:40,795 - __main__ - INFO - Inserted batch: 1239000/3335827 rows
+2025-06-07 12:11:41,111 - __main__ - INFO - Inserted batch: 1240000/3335827 rows
+2025-06-07 12:11:41,438 - __main__ - INFO - Inserted batch: 1241000/3335827 rows
+2025-06-07 12:11:41,765 - __main__ - INFO - Inserted batch: 1242000/3335827 rows
+2025-06-07 12:11:42,080 - __main__ - INFO - Inserted batch: 1243000/3335827 rows
+2025-06-07 12:11:42,400 - __main__ - INFO - Inserted batch: 1244000/3335827 rows
+2025-06-07 12:11:42,738 - __main__ - INFO - Inserted batch: 1245000/3335827 rows
+2025-06-07 12:11:43,084 - __main__ - INFO - Inserted batch: 1246000/3335827 rows
+2025-06-07 12:11:43,402 - __main__ - INFO - Inserted batch: 1247000/3335827 rows
+2025-06-07 12:11:43,726 - __main__ - INFO - Inserted batch: 1248000/3335827 rows
+2025-06-07 12:11:44,043 - __main__ - INFO - Inserted batch: 1249000/3335827 rows
+2025-06-07 12:11:44,362 - __main__ - INFO - Inserted batch: 1250000/3335827 rows
+2025-06-07 12:11:44,687 - __main__ - INFO - Inserted batch: 1251000/3335827 rows
+2025-06-07 12:11:45,007 - __main__ - INFO - Inserted batch: 1252000/3335827 rows
+2025-06-07 12:11:45,320 - __main__ - INFO - Inserted batch: 1253000/3335827 rows
+2025-06-07 12:11:45,632 - __main__ - INFO - Inserted batch: 1254000/3335827 rows
+2025-06-07 12:11:45,954 - __main__ - INFO - Inserted batch: 1255000/3335827 rows
+2025-06-07 12:11:46,272 - __main__ - INFO - Inserted batch: 1256000/3335827 rows
+2025-06-07 12:11:46,589 - __main__ - INFO - Inserted batch: 1257000/3335827 rows
+2025-06-07 12:11:46,914 - __main__ - INFO - Inserted batch: 1258000/3335827 rows
+2025-06-07 12:11:47,234 - __main__ - INFO - Inserted batch: 1259000/3335827 rows
+2025-06-07 12:11:47,553 - __main__ - INFO - Inserted batch: 1260000/3335827 rows
+2025-06-07 12:11:47,883 - __main__ - INFO - Inserted batch: 1261000/3335827 rows
+2025-06-07 12:11:48,207 - __main__ - INFO - Inserted batch: 1262000/3335827 rows
+2025-06-07 12:11:48,530 - __main__ - INFO - Inserted batch: 1263000/3335827 rows
+2025-06-07 12:11:48,856 - __main__ - INFO - Inserted batch: 1264000/3335827 rows
+2025-06-07 12:11:49,846 - __main__ - INFO - Inserted batch: 1265000/3335827 rows
+2025-06-07 12:11:51,615 - __main__ - INFO - Inserted batch: 1266000/3335827 rows
+2025-06-07 12:11:52,406 - __main__ - INFO - Inserted batch: 1267000/3335827 rows
+2025-06-07 12:11:52,743 - __main__ - INFO - Inserted batch: 1268000/3335827 rows
+2025-06-07 12:11:53,074 - __main__ - INFO - Inserted batch: 1269000/3335827 rows
+2025-06-07 12:11:54,689 - __main__ - INFO - Inserted batch: 1270000/3335827 rows
+2025-06-07 12:11:56,343 - __main__ - INFO - Inserted batch: 1271000/3335827 rows
+2025-06-07 12:11:56,665 - __main__ - INFO - Inserted batch: 1272000/3335827 rows
+2025-06-07 12:11:56,983 - __main__ - INFO - Inserted batch: 1273000/3335827 rows
+2025-06-07 12:11:57,308 - __main__ - INFO - Inserted batch: 1274000/3335827 rows
+2025-06-07 12:11:57,638 - __main__ - INFO - Inserted batch: 1275000/3335827 rows
+2025-06-07 12:11:57,968 - __main__ - INFO - Inserted batch: 1276000/3335827 rows
+2025-06-07 12:11:58,292 - __main__ - INFO - Inserted batch: 1277000/3335827 rows
+2025-06-07 12:11:58,619 - __main__ - INFO - Inserted batch: 1278000/3335827 rows
+2025-06-07 12:11:58,937 - __main__ - INFO - Inserted batch: 1279000/3335827 rows
+2025-06-07 12:11:59,256 - __main__ - INFO - Inserted batch: 1280000/3335827 rows
+2025-06-07 12:11:59,579 - __main__ - INFO - Inserted batch: 1281000/3335827 rows
+2025-06-07 12:11:59,901 - __main__ - INFO - Inserted batch: 1282000/3335827 rows
+2025-06-07 12:12:00,227 - __main__ - INFO - Inserted batch: 1283000/3335827 rows
+2025-06-07 12:12:00,548 - __main__ - INFO - Inserted batch: 1284000/3335827 rows
+2025-06-07 12:12:00,876 - __main__ - INFO - Inserted batch: 1285000/3335827 rows
+2025-06-07 12:12:01,192 - __main__ - INFO - Inserted batch: 1286000/3335827 rows
+2025-06-07 12:12:01,518 - __main__ - INFO - Inserted batch: 1287000/3335827 rows
+2025-06-07 12:12:01,844 - __main__ - INFO - Inserted batch: 1288000/3335827 rows
+2025-06-07 12:12:02,161 - __main__ - INFO - Inserted batch: 1289000/3335827 rows
+2025-06-07 12:12:02,480 - __main__ - INFO - Inserted batch: 1290000/3335827 rows
+2025-06-07 12:12:02,812 - __main__ - INFO - Inserted batch: 1291000/3335827 rows
+2025-06-07 12:12:03,134 - __main__ - INFO - Inserted batch: 1292000/3335827 rows
+2025-06-07 12:12:03,452 - __main__ - INFO - Inserted batch: 1293000/3335827 rows
+2025-06-07 12:12:03,773 - __main__ - INFO - Inserted batch: 1294000/3335827 rows
+2025-06-07 12:12:04,104 - __main__ - INFO - Inserted batch: 1295000/3335827 rows
+2025-06-07 12:12:08,185 - __main__ - INFO - Inserted batch: 1296000/3335827 rows
+2025-06-07 12:12:08,512 - __main__ - INFO - Inserted batch: 1297000/3335827 rows
+2025-06-07 12:12:08,853 - __main__ - INFO - Inserted batch: 1298000/3335827 rows
+2025-06-07 12:12:09,191 - __main__ - INFO - Inserted batch: 1299000/3335827 rows
+2025-06-07 12:12:09,510 - __main__ - INFO - Inserted batch: 1300000/3335827 rows
+2025-06-07 12:12:09,851 - __main__ - INFO - Inserted batch: 1301000/3335827 rows
+2025-06-07 12:12:10,169 - __main__ - INFO - Inserted batch: 1302000/3335827 rows
+2025-06-07 12:12:10,498 - __main__ - INFO - Inserted batch: 1303000/3335827 rows
+2025-06-07 12:12:10,831 - __main__ - INFO - Inserted batch: 1304000/3335827 rows
+2025-06-07 12:12:11,149 - __main__ - INFO - Inserted batch: 1305000/3335827 rows
+2025-06-07 12:12:11,468 - __main__ - INFO - Inserted batch: 1306000/3335827 rows
+2025-06-07 12:12:11,806 - __main__ - INFO - Inserted batch: 1307000/3335827 rows
+2025-06-07 12:12:12,139 - __main__ - INFO - Inserted batch: 1308000/3335827 rows
+2025-06-07 12:12:13,108 - __main__ - ERROR - Error inserting facts to staging: ('42000', "[42000] [Microsoft][ODBC SQL Server Driver][SQL Server]Could not allocate space for object 'dbo.staging_fact_energy_weather'.'PK__staging___4BCDFB431D6450A9' in database 'EnergyWeatherDW' because the 'PRIMARY' filegroup is full. Create disk space by deleting unneeded files, dropping objects in the filegroup, adding additional files to the filegroup, or setting autogrowth on for existing files in the filegroup. (1105) (SQLExecDirectW)")
+2025-06-07 12:12:13,333 - __main__ - ERROR - Traceback (most recent call last):
+  File "D:\hurtownie\Integration Services Project1\PythonScripts\FactProcessor.py", line 902, in insert_facts_to_staging
+    cursor.execute(insert_sql, values)
+pyodbc.ProgrammingError: ('42000', "[42000] [Microsoft][ODBC SQL Server Driver][SQL Server]Could not allocate space for object 'dbo.staging_fact_energy_weather'.'PK__staging___4BCDFB431D6450A9' in database 'EnergyWeatherDW' because the 'PRIMARY' filegroup is full. Create disk space by deleting unneeded files, dropping objects in the filegroup, adding additional files to the filegroup, or setting autogrowth on for existing files in the filegroup. (1105) (SQLExecDirectW)")
+
+2025-06-07 12:12:20,868 - FactProcessorMain - ERROR - Error occurred during fact processing
+2025-06-07 12:40:06,216 - FactProcessorMain - INFO - Starting Fact Processor
+2025-06-07 12:40:06,217 - FactProcessorMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-07 12:40:06,218 - __main__ - INFO - Starting fact processing
+2025-06-07 12:40:10,301 - __main__ - ERROR - Error logging process: <built-in function connect> returned a result with an error set
+2025-06-07 12:40:10,302 - __main__ - INFO - Loading dimension mappings from staging tables
+2025-06-07 12:40:10,471 - __main__ - INFO - Loaded 1099 date dimension records
+2025-06-07 12:40:10,474 - __main__ - INFO - Loaded 24 time dimension records
+2025-06-07 12:40:10,478 - __main__ - INFO - Loaded 121 bidding zone dimension records
+2025-06-07 12:40:10,480 - __main__ - INFO - Loaded 25 weather zone dimension records
+2025-06-07 12:40:10,482 - __main__ - INFO - Loaded 18 generation type dimension records
+2025-06-07 12:40:10,484 - __main__ - INFO - Loaded 14 weather condition dimension records
+2025-06-07 12:40:10,488 - __main__ - INFO - Loaded 120 socioeconomic profile dimension records
+2025-06-07 12:40:10,495 - __main__ - INFO - Loading data from staging tables
+2025-06-07 12:40:10,542 - __main__ - INFO - Loaded 4050 actual load records
+2025-06-07 12:40:11,226 - __main__ - INFO - Loaded 53950 generation records
+2025-06-07 12:40:11,284 - __main__ - INFO - Loaded 5160 forecast records
+2025-06-07 12:40:11,598 - __main__ - INFO - Loaded 8160 weather records
+2025-06-07 12:40:11,612 - __main__ - INFO - Loaded 356 climate records
+2025-06-07 12:40:11,613 - __main__ - INFO - Merging energy and weather data
+2025-06-07 12:40:11,613 - __main__ - INFO - Processing 4050 actual load records
+2025-06-07 12:40:14,106 - __main__ - INFO - Processing 53950 generation records
+2025-06-07 12:40:50,817 - __main__ - INFO - Processing 5160 forecast records
+2025-06-07 12:41:04,747 - __main__ - INFO - Prepared 44636 energy data records
+2025-06-07 12:41:04,782 - __main__ - INFO - Processing 8160 weather records
+2025-06-07 12:41:04,786 - __main__ - INFO - Merging with 356 climate records
+2025-06-07 12:41:04,827 - __main__ - INFO - Prepared 27360 weather data records
+2025-06-07 12:41:04,931 - __main__ - INFO - Merged data contains 265822 records
+2025-06-07 12:41:04,935 - __main__ - INFO - Calculating derived metrics
+2025-06-07 12:41:42,007 - __main__ - INFO - Derived metrics calculated successfully
+2025-06-07 12:41:42,112 - __main__ - INFO - Mapping data to dimension keys
+2025-06-07 12:41:47,069 - __main__ - INFO - Dimension keys mapped successfully
+2025-06-07 12:41:47,070 - __main__ - INFO - Inserting 265822 facts to staging table
+2025-06-07 12:41:51,170 - __main__ - INFO - Creating staging fact table
+2025-06-07 12:41:51,172 - __main__ - INFO - staging_fact_energy_weather table already exists
+2025-06-07 12:41:51,173 - __main__ - INFO - Truncating staging fact table
+2025-06-07 12:41:51,186 - __main__ - INFO - Truncated staging_fact_energy_weather table
+2025-06-07 12:41:51,580 - __main__ - INFO - Inserted batch: 1000/265822 rows
+2025-06-07 12:41:51,935 - __main__ - INFO - Inserted batch: 2000/265822 rows
+2025-06-07 12:41:52,311 - __main__ - INFO - Inserted batch: 3000/265822 rows
+2025-06-07 12:41:52,692 - __main__ - INFO - Inserted batch: 4000/265822 rows
+2025-06-07 12:41:53,039 - __main__ - INFO - Inserted batch: 5000/265822 rows
+2025-06-07 12:41:53,389 - __main__ - INFO - Inserted batch: 6000/265822 rows
+2025-06-07 12:41:53,773 - __main__ - INFO - Inserted batch: 7000/265822 rows
+2025-06-07 12:41:54,128 - __main__ - INFO - Inserted batch: 8000/265822 rows
+2025-06-07 12:41:54,477 - __main__ - INFO - Inserted batch: 9000/265822 rows
+2025-06-07 12:41:54,841 - __main__ - INFO - Inserted batch: 10000/265822 rows
+2025-06-07 12:41:55,224 - __main__ - INFO - Inserted batch: 11000/265822 rows
+2025-06-07 12:41:55,632 - __main__ - INFO - Inserted batch: 12000/265822 rows
+2025-06-07 12:41:55,985 - __main__ - INFO - Inserted batch: 13000/265822 rows
+2025-06-07 12:41:56,351 - __main__ - INFO - Inserted batch: 14000/265822 rows
+2025-06-07 12:41:56,701 - __main__ - INFO - Inserted batch: 15000/265822 rows
+2025-06-07 12:41:57,054 - __main__ - INFO - Inserted batch: 16000/265822 rows
+2025-06-07 12:41:57,407 - __main__ - INFO - Inserted batch: 17000/265822 rows
+2025-06-07 12:41:57,799 - __main__ - INFO - Inserted batch: 18000/265822 rows
+2025-06-07 12:41:58,217 - __main__ - INFO - Inserted batch: 19000/265822 rows
+2025-06-07 12:41:58,672 - __main__ - INFO - Inserted batch: 20000/265822 rows
+2025-06-07 12:41:59,106 - __main__ - INFO - Inserted batch: 21000/265822 rows
+2025-06-07 12:41:59,695 - __main__ - INFO - Inserted batch: 22000/265822 rows
+2025-06-07 12:42:00,131 - __main__ - INFO - Inserted batch: 23000/265822 rows
+2025-06-07 12:42:00,748 - __main__ - INFO - Inserted batch: 24000/265822 rows
+2025-06-07 12:42:01,383 - __main__ - INFO - Inserted batch: 25000/265822 rows
+2025-06-07 12:42:01,871 - __main__ - INFO - Inserted batch: 26000/265822 rows
+2025-06-07 12:42:02,308 - __main__ - INFO - Inserted batch: 27000/265822 rows
+2025-06-07 12:42:02,787 - __main__ - INFO - Inserted batch: 28000/265822 rows
+2025-06-07 12:42:03,170 - __main__ - INFO - Inserted batch: 29000/265822 rows
+2025-06-07 12:42:03,494 - __main__ - INFO - Inserted batch: 30000/265822 rows
+2025-06-07 12:42:03,823 - __main__ - INFO - Inserted batch: 31000/265822 rows
+2025-06-07 12:42:04,202 - __main__ - INFO - Inserted batch: 32000/265822 rows
+2025-06-07 12:42:04,578 - __main__ - INFO - Inserted batch: 33000/265822 rows
+2025-06-07 12:42:04,966 - __main__ - INFO - Inserted batch: 34000/265822 rows
+2025-06-07 12:42:05,370 - __main__ - INFO - Inserted batch: 35000/265822 rows
+2025-06-07 12:42:05,826 - __main__ - INFO - Inserted batch: 36000/265822 rows
+2025-06-07 12:42:06,252 - __main__ - INFO - Inserted batch: 37000/265822 rows
+2025-06-07 12:42:06,698 - __main__ - INFO - Inserted batch: 38000/265822 rows
+2025-06-07 12:42:07,040 - __main__ - INFO - Inserted batch: 39000/265822 rows
+2025-06-07 12:42:07,377 - __main__ - INFO - Inserted batch: 40000/265822 rows
+2025-06-07 12:42:07,717 - __main__ - INFO - Inserted batch: 41000/265822 rows
+2025-06-07 12:42:08,084 - __main__ - INFO - Inserted batch: 42000/265822 rows
+2025-06-07 12:42:08,465 - __main__ - INFO - Inserted batch: 43000/265822 rows
+2025-06-07 12:42:08,850 - __main__ - INFO - Inserted batch: 44000/265822 rows
+2025-06-07 12:42:09,278 - __main__ - INFO - Inserted batch: 45000/265822 rows
+2025-06-07 12:42:09,721 - __main__ - INFO - Inserted batch: 46000/265822 rows
+2025-06-07 12:42:10,148 - __main__ - INFO - Inserted batch: 47000/265822 rows
+2025-06-07 12:42:10,580 - __main__ - INFO - Inserted batch: 48000/265822 rows
+2025-06-07 12:42:10,940 - __main__ - INFO - Inserted batch: 49000/265822 rows
+2025-06-07 12:42:11,261 - __main__ - INFO - Inserted batch: 50000/265822 rows
+2025-06-07 12:42:11,595 - __main__ - INFO - Inserted batch: 51000/265822 rows
+2025-06-07 12:42:11,935 - __main__ - INFO - Inserted batch: 52000/265822 rows
+2025-06-07 12:42:12,266 - __main__ - INFO - Inserted batch: 53000/265822 rows
+2025-06-07 12:42:12,589 - __main__ - INFO - Inserted batch: 54000/265822 rows
+2025-06-07 12:42:12,937 - __main__ - INFO - Inserted batch: 55000/265822 rows
+2025-06-07 12:42:13,319 - __main__ - INFO - Inserted batch: 56000/265822 rows
+2025-06-07 12:42:13,679 - __main__ - INFO - Inserted batch: 57000/265822 rows
+2025-06-07 12:42:14,002 - __main__ - INFO - Inserted batch: 58000/265822 rows
+2025-06-07 12:42:14,368 - __main__ - INFO - Inserted batch: 59000/265822 rows
+2025-06-07 12:42:14,696 - __main__ - INFO - Inserted batch: 60000/265822 rows
+2025-06-07 12:42:15,020 - __main__ - INFO - Inserted batch: 61000/265822 rows
+2025-06-07 12:42:15,345 - __main__ - INFO - Inserted batch: 62000/265822 rows
+2025-06-07 12:42:15,666 - __main__ - INFO - Inserted batch: 63000/265822 rows
+2025-06-07 12:42:15,992 - __main__ - INFO - Inserted batch: 64000/265822 rows
+2025-06-07 12:42:16,324 - __main__ - INFO - Inserted batch: 65000/265822 rows
+2025-06-07 12:42:16,680 - __main__ - INFO - Inserted batch: 66000/265822 rows
+2025-06-07 12:42:17,111 - __main__ - INFO - Inserted batch: 67000/265822 rows
+2025-06-07 12:42:17,542 - __main__ - INFO - Inserted batch: 68000/265822 rows
+2025-06-07 12:42:17,978 - __main__ - INFO - Inserted batch: 69000/265822 rows
+2025-06-07 12:42:18,418 - __main__ - INFO - Inserted batch: 70000/265822 rows
+2025-06-07 12:42:18,843 - __main__ - INFO - Inserted batch: 71000/265822 rows
+2025-06-07 12:42:19,168 - __main__ - INFO - Inserted batch: 72000/265822 rows
+2025-06-07 12:42:19,498 - __main__ - INFO - Inserted batch: 73000/265822 rows
+2025-06-07 12:42:19,839 - __main__ - INFO - Inserted batch: 74000/265822 rows
+2025-06-07 12:42:20,247 - __main__ - INFO - Inserted batch: 75000/265822 rows
+2025-06-07 12:42:20,640 - __main__ - INFO - Inserted batch: 76000/265822 rows
+2025-06-07 12:42:21,016 - __main__ - INFO - Inserted batch: 77000/265822 rows
+2025-06-07 12:42:21,438 - __main__ - INFO - Inserted batch: 78000/265822 rows
+2025-06-07 12:42:21,867 - __main__ - INFO - Inserted batch: 79000/265822 rows
+2025-06-07 12:42:22,272 - __main__ - INFO - Inserted batch: 80000/265822 rows
+2025-06-07 12:42:22,626 - __main__ - INFO - Inserted batch: 81000/265822 rows
+2025-06-07 12:42:22,977 - __main__ - INFO - Inserted batch: 82000/265822 rows
+2025-06-07 12:42:23,411 - __main__ - INFO - Inserted batch: 83000/265822 rows
+2025-06-07 12:42:23,844 - __main__ - INFO - Inserted batch: 84000/265822 rows
+2025-06-07 12:42:24,283 - __main__ - INFO - Inserted batch: 85000/265822 rows
+2025-06-07 12:42:24,786 - __main__ - INFO - Inserted batch: 86000/265822 rows
+2025-06-07 12:42:25,218 - __main__ - INFO - Inserted batch: 87000/265822 rows
+2025-06-07 12:42:25,640 - __main__ - INFO - Inserted batch: 88000/265822 rows
+2025-06-07 12:42:25,996 - __main__ - INFO - Inserted batch: 89000/265822 rows
+2025-06-07 12:42:26,324 - __main__ - INFO - Inserted batch: 90000/265822 rows
+2025-06-07 12:42:26,673 - __main__ - INFO - Inserted batch: 91000/265822 rows
+2025-06-07 12:42:27,004 - __main__ - INFO - Inserted batch: 92000/265822 rows
+2025-06-07 12:42:27,335 - __main__ - INFO - Inserted batch: 93000/265822 rows
+2025-06-07 12:42:27,662 - __main__ - INFO - Inserted batch: 94000/265822 rows
+2025-06-07 12:42:27,997 - __main__ - INFO - Inserted batch: 95000/265822 rows
+2025-06-07 12:42:28,356 - __main__ - INFO - Inserted batch: 96000/265822 rows
+2025-06-07 12:42:28,685 - __main__ - INFO - Inserted batch: 97000/265822 rows
+2025-06-07 12:42:29,017 - __main__ - INFO - Inserted batch: 98000/265822 rows
+2025-06-07 12:42:29,358 - __main__ - INFO - Inserted batch: 99000/265822 rows
+2025-06-07 12:42:29,689 - __main__ - INFO - Inserted batch: 100000/265822 rows
+2025-06-07 12:42:30,023 - __main__ - INFO - Inserted batch: 101000/265822 rows
+2025-06-07 12:42:30,358 - __main__ - INFO - Inserted batch: 102000/265822 rows
+2025-06-07 12:42:30,681 - __main__ - INFO - Inserted batch: 103000/265822 rows
+2025-06-07 12:42:31,014 - __main__ - INFO - Inserted batch: 104000/265822 rows
+2025-06-07 12:42:31,349 - __main__ - INFO - Inserted batch: 105000/265822 rows
+2025-06-07 12:42:31,673 - __main__ - INFO - Inserted batch: 106000/265822 rows
+2025-06-07 12:42:32,009 - __main__ - INFO - Inserted batch: 107000/265822 rows
+2025-06-07 12:42:32,345 - __main__ - INFO - Inserted batch: 108000/265822 rows
+2025-06-07 12:42:32,688 - __main__ - INFO - Inserted batch: 109000/265822 rows
+2025-06-07 12:42:33,095 - __main__ - INFO - Inserted batch: 110000/265822 rows
+2025-06-07 12:42:33,534 - __main__ - INFO - Inserted batch: 111000/265822 rows
+2025-06-07 12:42:33,972 - __main__ - INFO - Inserted batch: 112000/265822 rows
+2025-06-07 12:42:34,417 - __main__ - INFO - Inserted batch: 113000/265822 rows
+2025-06-07 12:42:34,906 - __main__ - INFO - Inserted batch: 114000/265822 rows
+2025-06-07 12:42:35,324 - __main__ - INFO - Inserted batch: 115000/265822 rows
+2025-06-07 12:42:35,645 - __main__ - INFO - Inserted batch: 116000/265822 rows
+2025-06-07 12:42:35,977 - __main__ - INFO - Inserted batch: 117000/265822 rows
+2025-06-07 12:42:36,306 - __main__ - INFO - Inserted batch: 118000/265822 rows
+2025-06-07 12:42:36,659 - __main__ - INFO - Inserted batch: 119000/265822 rows
+2025-06-07 12:42:37,044 - __main__ - INFO - Inserted batch: 120000/265822 rows
+2025-06-07 12:42:37,373 - __main__ - INFO - Inserted batch: 121000/265822 rows
+2025-06-07 12:42:37,708 - __main__ - INFO - Inserted batch: 122000/265822 rows
+2025-06-07 12:42:38,038 - __main__ - INFO - Inserted batch: 123000/265822 rows
+2025-06-07 12:42:38,365 - __main__ - INFO - Inserted batch: 124000/265822 rows
+2025-06-07 12:42:38,720 - __main__ - INFO - Inserted batch: 125000/265822 rows
+2025-06-07 12:42:39,092 - __main__ - INFO - Inserted batch: 126000/265822 rows
+2025-06-07 12:42:39,456 - __main__ - INFO - Inserted batch: 127000/265822 rows
+2025-06-07 12:42:39,839 - __main__ - INFO - Inserted batch: 128000/265822 rows
+2025-06-07 12:42:40,268 - __main__ - INFO - Inserted batch: 129000/265822 rows
+2025-06-07 12:42:40,708 - __main__ - INFO - Inserted batch: 130000/265822 rows
+2025-06-07 12:42:41,139 - __main__ - INFO - Inserted batch: 131000/265822 rows
+2025-06-07 12:42:41,569 - __main__ - INFO - Inserted batch: 132000/265822 rows
+2025-06-07 12:42:41,984 - __main__ - INFO - Inserted batch: 133000/265822 rows
+2025-06-07 12:42:42,306 - __main__ - INFO - Inserted batch: 134000/265822 rows
+2025-06-07 12:42:42,636 - __main__ - INFO - Inserted batch: 135000/265822 rows
+2025-06-07 12:42:42,993 - __main__ - INFO - Inserted batch: 136000/265822 rows
+2025-06-07 12:42:43,457 - __main__ - INFO - Inserted batch: 137000/265822 rows
+2025-06-07 12:42:44,019 - __main__ - INFO - Inserted batch: 138000/265822 rows
+2025-06-07 12:42:44,460 - __main__ - INFO - Inserted batch: 139000/265822 rows
+2025-06-07 12:42:44,896 - __main__ - INFO - Inserted batch: 140000/265822 rows
+2025-06-07 12:42:45,400 - __main__ - INFO - Inserted batch: 141000/265822 rows
+2025-06-07 12:42:45,763 - __main__ - INFO - Inserted batch: 142000/265822 rows
+2025-06-07 12:42:46,086 - __main__ - INFO - Inserted batch: 143000/265822 rows
+2025-06-07 12:42:46,410 - __main__ - INFO - Inserted batch: 144000/265822 rows
+2025-06-07 12:42:46,742 - __main__ - INFO - Inserted batch: 145000/265822 rows
+2025-06-07 12:42:47,098 - __main__ - INFO - Inserted batch: 146000/265822 rows
+2025-06-07 12:42:47,461 - __main__ - INFO - Inserted batch: 147000/265822 rows
+2025-06-07 12:42:47,863 - __main__ - INFO - Inserted batch: 148000/265822 rows
+2025-06-07 12:42:48,355 - __main__ - INFO - Inserted batch: 149000/265822 rows
+2025-06-07 12:42:48,719 - __main__ - INFO - Inserted batch: 150000/265822 rows
+2025-06-07 12:42:49,142 - __main__ - INFO - Inserted batch: 151000/265822 rows
+2025-06-07 12:42:49,628 - __main__ - INFO - Inserted batch: 152000/265822 rows
+2025-06-07 12:42:50,059 - __main__ - INFO - Inserted batch: 153000/265822 rows
+2025-06-07 12:42:50,459 - __main__ - INFO - Inserted batch: 154000/265822 rows
+2025-06-07 12:42:50,800 - __main__ - INFO - Inserted batch: 155000/265822 rows
+2025-06-07 12:42:51,139 - __main__ - INFO - Inserted batch: 156000/265822 rows
+2025-06-07 12:42:51,563 - __main__ - INFO - Inserted batch: 157000/265822 rows
+2025-06-07 12:42:51,991 - __main__ - INFO - Inserted batch: 158000/265822 rows
+2025-06-07 12:42:52,392 - __main__ - INFO - Inserted batch: 159000/265822 rows
+2025-06-07 12:42:52,824 - __main__ - INFO - Inserted batch: 160000/265822 rows
+2025-06-07 12:42:53,255 - __main__ - INFO - Inserted batch: 161000/265822 rows
+2025-06-07 12:42:53,679 - __main__ - INFO - Inserted batch: 162000/265822 rows
+2025-06-07 12:42:54,111 - __main__ - INFO - Inserted batch: 163000/265822 rows
+2025-06-07 12:42:54,590 - __main__ - INFO - Inserted batch: 164000/265822 rows
+2025-06-07 12:42:55,075 - __main__ - INFO - Inserted batch: 165000/265822 rows
+2025-06-07 12:42:55,619 - __main__ - INFO - Inserted batch: 166000/265822 rows
+2025-06-07 12:42:56,076 - __main__ - INFO - Inserted batch: 167000/265822 rows
+2025-06-07 12:42:56,519 - __main__ - INFO - Inserted batch: 168000/265822 rows
+2025-06-07 12:42:56,984 - __main__ - INFO - Inserted batch: 169000/265822 rows
+2025-06-07 12:42:57,426 - __main__ - INFO - Inserted batch: 170000/265822 rows
+2025-06-07 12:42:57,858 - __main__ - INFO - Inserted batch: 171000/265822 rows
+2025-06-07 12:42:58,349 - __main__ - INFO - Inserted batch: 172000/265822 rows
+2025-06-07 12:42:58,716 - __main__ - INFO - Inserted batch: 173000/265822 rows
+2025-06-07 12:42:59,051 - __main__ - INFO - Inserted batch: 174000/265822 rows
+2025-06-07 12:42:59,392 - __main__ - INFO - Inserted batch: 175000/265822 rows
+2025-06-07 12:42:59,743 - __main__ - INFO - Inserted batch: 176000/265822 rows
+2025-06-07 12:43:00,104 - __main__ - INFO - Inserted batch: 177000/265822 rows
+2025-06-07 12:43:00,424 - __main__ - INFO - Inserted batch: 178000/265822 rows
+2025-06-07 12:43:00,763 - __main__ - INFO - Inserted batch: 179000/265822 rows
+2025-06-07 12:43:01,087 - __main__ - INFO - Inserted batch: 180000/265822 rows
+2025-06-07 12:43:01,418 - __main__ - INFO - Inserted batch: 181000/265822 rows
+2025-06-07 12:43:01,851 - __main__ - INFO - Inserted batch: 182000/265822 rows
+2025-06-07 12:43:02,189 - __main__ - INFO - Inserted batch: 183000/265822 rows
+2025-06-07 12:43:02,550 - __main__ - INFO - Inserted batch: 184000/265822 rows
+2025-06-07 12:43:02,912 - __main__ - INFO - Inserted batch: 185000/265822 rows
+2025-06-07 12:43:03,259 - __main__ - INFO - Inserted batch: 186000/265822 rows
+2025-06-07 12:43:03,767 - __main__ - INFO - Inserted batch: 187000/265822 rows
+2025-06-07 12:43:04,207 - __main__ - INFO - Inserted batch: 188000/265822 rows
+2025-06-07 12:43:04,636 - __main__ - INFO - Inserted batch: 189000/265822 rows
+2025-06-07 12:43:05,034 - __main__ - INFO - Inserted batch: 190000/265822 rows
+2025-06-07 12:43:05,594 - __main__ - INFO - Inserted batch: 191000/265822 rows
+2025-06-07 12:43:06,030 - __main__ - INFO - Inserted batch: 192000/265822 rows
+2025-06-07 12:43:06,449 - __main__ - INFO - Inserted batch: 193000/265822 rows
+2025-06-07 12:43:06,855 - __main__ - INFO - Inserted batch: 194000/265822 rows
+2025-06-07 12:43:07,254 - __main__ - INFO - Inserted batch: 195000/265822 rows
+2025-06-07 12:43:07,673 - __main__ - INFO - Inserted batch: 196000/265822 rows
+2025-06-07 12:43:08,089 - __main__ - INFO - Inserted batch: 197000/265822 rows
+2025-06-07 12:43:08,498 - __main__ - INFO - Inserted batch: 198000/265822 rows
+2025-06-07 12:43:08,853 - __main__ - INFO - Inserted batch: 199000/265822 rows
+2025-06-07 12:43:09,239 - __main__ - INFO - Inserted batch: 200000/265822 rows
+2025-06-07 12:43:09,593 - __main__ - INFO - Inserted batch: 201000/265822 rows
+2025-06-07 12:43:09,948 - __main__ - INFO - Inserted batch: 202000/265822 rows
+2025-06-07 12:43:10,299 - __main__ - INFO - Inserted batch: 203000/265822 rows
+2025-06-07 12:43:10,652 - __main__ - INFO - Inserted batch: 204000/265822 rows
+2025-06-07 12:43:10,992 - __main__ - INFO - Inserted batch: 205000/265822 rows
+2025-06-07 12:43:11,331 - __main__ - INFO - Inserted batch: 206000/265822 rows
+2025-06-07 12:43:11,947 - __main__ - INFO - Inserted batch: 207000/265822 rows
+2025-06-07 12:43:12,297 - __main__ - INFO - Inserted batch: 208000/265822 rows
+2025-06-07 12:43:12,652 - __main__ - INFO - Inserted batch: 209000/265822 rows
+2025-06-07 12:43:12,998 - __main__ - INFO - Inserted batch: 210000/265822 rows
+2025-06-07 12:43:13,452 - __main__ - INFO - Inserted batch: 211000/265822 rows
+2025-06-07 12:43:13,833 - __main__ - INFO - Inserted batch: 212000/265822 rows
+2025-06-07 12:43:14,198 - __main__ - INFO - Inserted batch: 213000/265822 rows
+2025-06-07 12:43:14,586 - __main__ - INFO - Inserted batch: 214000/265822 rows
+2025-06-07 12:43:14,952 - __main__ - INFO - Inserted batch: 215000/265822 rows
+2025-06-07 12:43:15,371 - __main__ - INFO - Inserted batch: 216000/265822 rows
+2025-06-07 12:43:15,744 - __main__ - INFO - Inserted batch: 217000/265822 rows
+2025-06-07 12:43:16,161 - __main__ - INFO - Inserted batch: 218000/265822 rows
+2025-06-07 12:43:16,513 - __main__ - INFO - Inserted batch: 219000/265822 rows
+2025-06-07 12:43:16,866 - __main__ - INFO - Inserted batch: 220000/265822 rows
+2025-06-07 12:43:17,202 - __main__ - INFO - Inserted batch: 221000/265822 rows
+2025-06-07 12:43:17,542 - __main__ - INFO - Inserted batch: 222000/265822 rows
+2025-06-07 12:43:17,883 - __main__ - INFO - Inserted batch: 223000/265822 rows
+2025-06-07 12:43:18,208 - __main__ - INFO - Inserted batch: 224000/265822 rows
+2025-06-07 12:43:18,528 - __main__ - INFO - Inserted batch: 225000/265822 rows
+2025-06-07 12:43:18,866 - __main__ - INFO - Inserted batch: 226000/265822 rows
+2025-06-07 12:43:19,201 - __main__ - INFO - Inserted batch: 227000/265822 rows
+2025-06-07 12:43:19,527 - __main__ - INFO - Inserted batch: 228000/265822 rows
+2025-06-07 12:43:19,893 - __main__ - INFO - Inserted batch: 229000/265822 rows
+2025-06-07 12:43:20,279 - __main__ - INFO - Inserted batch: 230000/265822 rows
+2025-06-07 12:43:20,669 - __main__ - INFO - Inserted batch: 231000/265822 rows
+2025-06-07 12:43:21,100 - __main__ - INFO - Inserted batch: 232000/265822 rows
+2025-06-07 12:43:21,537 - __main__ - INFO - Inserted batch: 233000/265822 rows
+2025-06-07 12:43:21,985 - __main__ - INFO - Inserted batch: 234000/265822 rows
+2025-06-07 12:43:22,359 - __main__ - INFO - Inserted batch: 235000/265822 rows
+2025-06-07 12:43:22,718 - __main__ - INFO - Inserted batch: 236000/265822 rows
+2025-06-07 12:43:23,093 - __main__ - INFO - Inserted batch: 237000/265822 rows
+2025-06-07 12:43:23,427 - __main__ - INFO - Inserted batch: 238000/265822 rows
+2025-06-07 12:43:23,760 - __main__ - INFO - Inserted batch: 239000/265822 rows
+2025-06-07 12:43:24,089 - __main__ - INFO - Inserted batch: 240000/265822 rows
+2025-06-07 12:43:24,450 - __main__ - INFO - Inserted batch: 241000/265822 rows
+2025-06-07 12:43:24,825 - __main__ - INFO - Inserted batch: 242000/265822 rows
+2025-06-07 12:43:25,155 - __main__ - INFO - Inserted batch: 243000/265822 rows
+2025-06-07 12:43:25,589 - __main__ - INFO - Inserted batch: 244000/265822 rows
+2025-06-07 12:43:26,319 - __main__ - INFO - Inserted batch: 245000/265822 rows
+2025-06-07 12:43:27,073 - __main__ - INFO - Inserted batch: 246000/265822 rows
+2025-06-07 12:43:27,828 - __main__ - INFO - Inserted batch: 247000/265822 rows
+2025-06-07 12:43:28,726 - __main__ - INFO - Inserted batch: 248000/265822 rows
+2025-06-07 12:43:29,592 - __main__ - INFO - Inserted batch: 249000/265822 rows
+2025-06-07 12:43:30,512 - __main__ - INFO - Inserted batch: 250000/265822 rows
+2025-06-07 12:43:31,387 - __main__ - INFO - Inserted batch: 251000/265822 rows
+2025-06-07 12:43:32,355 - __main__ - INFO - Inserted batch: 252000/265822 rows
+2025-06-07 12:43:33,212 - __main__ - INFO - Inserted batch: 253000/265822 rows
+2025-06-07 12:43:34,016 - __main__ - INFO - Inserted batch: 254000/265822 rows
+2025-06-07 12:43:34,856 - __main__ - INFO - Inserted batch: 255000/265822 rows
+2025-06-07 12:43:35,727 - __main__ - INFO - Inserted batch: 256000/265822 rows
+2025-06-07 12:43:36,562 - __main__ - INFO - Inserted batch: 257000/265822 rows
+2025-06-07 12:43:37,566 - __main__ - INFO - Inserted batch: 258000/265822 rows
+2025-06-07 12:43:38,521 - __main__ - INFO - Inserted batch: 259000/265822 rows
+2025-06-07 12:43:39,567 - __main__ - INFO - Inserted batch: 260000/265822 rows
+2025-06-07 12:43:40,597 - __main__ - INFO - Inserted batch: 261000/265822 rows
+2025-06-07 12:43:41,339 - __main__ - INFO - Inserted batch: 262000/265822 rows
+2025-06-07 12:43:42,059 - __main__ - INFO - Inserted batch: 263000/265822 rows
+2025-06-07 12:43:42,783 - __main__ - INFO - Inserted batch: 264000/265822 rows
+2025-06-07 12:43:43,503 - __main__ - INFO - Inserted batch: 265000/265822 rows
+2025-06-07 12:43:44,086 - __main__ - INFO - Inserted batch: 265822/265822 rows
+2025-06-07 12:43:44,086 - __main__ - INFO - Successfully inserted 265822 fact records to staging
+2025-06-07 12:43:44,308 - __main__ - INFO - Successfully processed 265822 fact records
+2025-06-07 12:43:44,368 - FactProcessorMain - INFO - Fact processing completed successfully
+2025-06-07 12:45:31,119 - FactProcessorMain - INFO - Starting Fact Processor
+2025-06-07 12:45:31,119 - FactProcessorMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-07 12:45:31,121 - __main__ - INFO - Starting fact processing
+2025-06-07 12:45:35,572 - __main__ - INFO - Loading dimension mappings from staging tables
+2025-06-07 12:45:35,723 - __main__ - INFO - Loaded 1099 date dimension records
+2025-06-07 12:45:35,727 - __main__ - INFO - Loaded 24 time dimension records
+2025-06-07 12:45:35,730 - __main__ - INFO - Loaded 121 bidding zone dimension records
+2025-06-07 12:45:35,736 - __main__ - INFO - Loaded 25 weather zone dimension records
+2025-06-07 12:45:35,738 - __main__ - INFO - Loaded 18 generation type dimension records
+2025-06-07 12:45:35,742 - __main__ - INFO - Loaded 14 weather condition dimension records
+2025-06-07 12:45:35,749 - __main__ - INFO - Loaded 120 socioeconomic profile dimension records
+2025-06-07 12:45:35,750 - __main__ - INFO - Loading data from staging tables
+2025-06-07 12:45:35,798 - __main__ - INFO - Loaded 4050 actual load records
+2025-06-07 12:45:36,383 - __main__ - INFO - Loaded 53950 generation records
+2025-06-07 12:45:36,441 - __main__ - INFO - Loaded 5160 forecast records
+2025-06-07 12:45:36,783 - __main__ - INFO - Loaded 8160 weather records
+2025-06-07 12:45:36,799 - __main__ - INFO - Loaded 356 climate records
+2025-06-07 12:45:36,801 - __main__ - INFO - Merging energy and weather data
+2025-06-07 12:45:36,803 - __main__ - INFO - Processing 4050 actual load records
+2025-06-07 12:45:36,805 - __main__ - INFO - Processing 5160 forecast records
+2025-06-07 12:45:36,812 - __main__ - INFO - Processing 53950 generation records
+2025-06-07 12:45:36,812 - __main__ - INFO - Processing generation batch 1/1
+2025-06-07 12:45:36,880 - __main__ - INFO - Aggregating energy data (total records: 63160)
+2025-06-07 12:45:36,932 - __main__ - INFO - Prepared 44075 energy data records
+2025-06-07 12:45:36,933 - __main__ - INFO - Processing 8160 weather records
+2025-06-07 12:45:36,937 - __main__ - INFO - Merging with 356 climate records
+2025-06-07 12:45:36,976 - __main__ - INFO - Prepared 27360 weather data records
+2025-06-07 12:45:36,977 - __main__ - INFO - Processing data in 1 batches of 50000 records
+2025-06-07 12:45:36,981 - __main__ - INFO - Processing batch 1/1: 44075 records
+2025-06-07 12:45:37,241 - __main__ - INFO - Saved partial results to file (batch 1)
+2025-06-07 12:45:37,265 - __main__ - INFO - Merged data contains 262027 records
+2025-06-07 12:45:37,458 - __main__ - INFO - Saved checkpoint after merging data
+2025-06-07 12:45:37,458 - __main__ - INFO - Calculating derived metrics
+2025-06-07 12:45:37,628 - __main__ - INFO - Saved data before metrics calculation
+2025-06-07 12:45:37,629 - __main__ - INFO - Calculating metrics for batch 1/3: records 0 to 100000
+2025-06-07 12:45:37,642 - __main__ - ERROR - Error processing facts: 
+2025-06-07 12:45:37,647 - __main__ - ERROR - Traceback (most recent call last):
+  File "D:\hurtownie\Integration Services Project1\PythonScripts\FactProcessor.py", line 924, in process_facts
+    processed_data = self.calculate_derived_metrics(merged_data)
+  File "D:\hurtownie\Integration Services Project1\PythonScripts\FactProcessor.py", line 467, in calculate_derived_metrics
+    (merged_data.loc[mask, 'forecasted_consumption'] - merged_data.loc[mask, 'actual_consumption']) /
+  File "C:\Users\jakub\anaconda3\lib\site-packages\pandas\core\indexing.py", line 1184, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\jakub\anaconda3\lib\site-packages\pandas\core\indexing.py", line 1377, in _getitem_tuple
+    return self._getitem_tuple_same_dim(tup)
+  File "C:\Users\jakub\anaconda3\lib\site-packages\pandas\core\indexing.py", line 1023, in _getitem_tuple_same_dim
+    assert retval.ndim == self.ndim
+AssertionError
+
+2025-06-07 12:45:37,690 - FactProcessorMain - ERROR - Error occurred during fact processing
+2025-06-07 12:48:25,870 - FactProcessorMain - INFO - Starting Fact Processor
+2025-06-07 12:48:25,870 - FactProcessorMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-07 12:48:25,871 - __main__ - INFO - Starting fact processing
+2025-06-07 12:48:30,201 - __main__ - INFO - Loading dimension mappings from staging tables
+2025-06-07 12:48:30,409 - __main__ - INFO - Loaded 1099 date dimension records
+2025-06-07 12:48:30,411 - __main__ - INFO - Loaded 24 time dimension records
+2025-06-07 12:48:30,420 - __main__ - INFO - Loaded 121 bidding zone dimension records
+2025-06-07 12:48:30,423 - __main__ - INFO - Loaded 25 weather zone dimension records
+2025-06-07 12:48:30,425 - __main__ - INFO - Loaded 18 generation type dimension records
+2025-06-07 12:48:30,428 - __main__ - INFO - Loaded 14 weather condition dimension records
+2025-06-07 12:48:30,438 - __main__ - INFO - Loaded 120 socioeconomic profile dimension records
+2025-06-07 12:48:30,439 - __main__ - INFO - Loading data from staging tables
+2025-06-07 12:48:30,487 - __main__ - INFO - Loaded 4050 actual load records
+2025-06-07 12:48:31,084 - __main__ - INFO - Loaded 53950 generation records
+2025-06-07 12:48:31,141 - __main__ - INFO - Loaded 5160 forecast records
+2025-06-07 12:48:31,453 - __main__ - INFO - Loaded 8160 weather records
+2025-06-07 12:48:31,468 - __main__ - INFO - Loaded 356 climate records
+2025-06-07 12:48:31,469 - __main__ - INFO - Merging energy and weather data
+2025-06-07 12:48:31,470 - __main__ - INFO - Processing 4050 actual load records
+2025-06-07 12:48:31,473 - __main__ - INFO - Processing 5160 forecast records
+2025-06-07 12:48:31,476 - __main__ - INFO - Processing 53950 generation records
+2025-06-07 12:48:31,476 - __main__ - INFO - Processing generation batch 1/1
+2025-06-07 12:48:31,546 - __main__ - INFO - Aggregating energy data (total records: 63160)
+2025-06-07 12:48:31,591 - __main__ - INFO - Prepared 44075 energy data records
+2025-06-07 12:48:31,592 - __main__ - INFO - Processing 8160 weather records
+2025-06-07 12:48:31,597 - __main__ - INFO - Merging with 356 climate records
+2025-06-07 12:48:31,640 - __main__ - INFO - Prepared 27360 weather data records
+2025-06-07 12:48:31,640 - __main__ - INFO - Processing data in 1 batches of 50000 records
+2025-06-07 12:48:31,645 - __main__ - INFO - Processing batch 1/1: 44075 records
+2025-06-07 12:48:31,967 - __main__ - INFO - Saved partial results to file (batch 1)
+2025-06-07 12:48:31,994 - __main__ - INFO - Merged data contains 262027 records
+2025-06-07 12:48:32,164 - __main__ - INFO - Saved checkpoint after merging data
+2025-06-07 12:48:32,164 - __main__ - INFO - Calculating derived metrics
+2025-06-07 12:48:32,683 - __main__ - INFO - Saved data before metrics calculation
+2025-06-07 12:48:33,048 - __main__ - INFO - Saved data after metrics calculation
+2025-06-07 12:48:33,049 - __main__ - INFO - Derived metrics calculated successfully
+2025-06-07 12:48:33,140 - __main__ - INFO - Saved checkpoint after calculating metrics
+2025-06-07 12:48:33,140 - __main__ - INFO - Mapping data to dimension keys
+2025-06-07 12:48:38,336 - __main__ - INFO - Dimension keys mapped successfully
+2025-06-07 12:48:39,057 - __main__ - INFO - Saved checkpoint after mapping to dimension keys
+2025-06-07 12:48:39,057 - __main__ - INFO - Inserting facts into staging table
+2025-06-07 12:48:39,059 - __main__ - INFO - Inserting 262027 facts to staging table
+2025-06-07 12:48:39,059 - __main__ - INFO - Creating staging fact table
+2025-06-07 12:48:39,060 - __main__ - INFO - staging_fact_energy_weather table already exists
+2025-06-07 12:48:39,061 - __main__ - INFO - Truncating staging fact table
+2025-06-07 12:48:39,067 - __main__ - INFO - Truncated staging_fact_energy_weather table
+2025-06-07 12:48:41,924 - __main__ - INFO - Inserted and committed 10000/262027 rows (3.8%)
+2025-06-07 12:48:43,327 - __main__ - INFO - Inserted and committed 20000/262027 rows (7.6%)
+2025-06-07 12:48:44,816 - __main__ - INFO - Inserted and committed 30000/262027 rows (11.4%)
+2025-06-07 12:48:46,318 - __main__ - INFO - Inserted and committed 40000/262027 rows (15.3%)
+2025-06-07 12:48:47,822 - __main__ - INFO - Inserted and committed 50000/262027 rows (19.1%)
+2025-06-07 12:48:49,416 - __main__ - INFO - Inserted and committed 60000/262027 rows (22.9%)
+2025-06-07 12:48:50,911 - __main__ - INFO - Inserted and committed 70000/262027 rows (26.7%)
+2025-06-07 12:48:52,552 - __main__ - INFO - Inserted and committed 80000/262027 rows (30.5%)
+2025-06-07 12:48:54,140 - __main__ - INFO - Inserted and committed 90000/262027 rows (34.3%)
+2025-06-07 12:48:55,856 - __main__ - INFO - Inserted and committed 100000/262027 rows (38.2%)
+2025-06-07 12:48:57,450 - __main__ - INFO - Inserted and committed 110000/262027 rows (42.0%)
+2025-06-07 12:48:59,033 - __main__ - INFO - Inserted and committed 120000/262027 rows (45.8%)
+2025-06-07 12:49:00,541 - __main__ - INFO - Inserted and committed 130000/262027 rows (49.6%)
+2025-06-07 12:49:02,269 - __main__ - INFO - Inserted and committed 140000/262027 rows (53.4%)
+2025-06-07 12:49:03,903 - __main__ - INFO - Inserted and committed 150000/262027 rows (57.2%)
+2025-06-07 12:49:05,518 - __main__ - INFO - Inserted and committed 160000/262027 rows (61.1%)
+2025-06-07 12:49:07,103 - __main__ - INFO - Inserted and committed 170000/262027 rows (64.9%)
+2025-06-07 12:49:08,580 - __main__ - INFO - Inserted and committed 180000/262027 rows (68.7%)
+2025-06-07 12:49:10,231 - __main__ - INFO - Inserted and committed 190000/262027 rows (72.5%)
+2025-06-07 12:49:11,994 - __main__ - INFO - Inserted and committed 200000/262027 rows (76.3%)
+2025-06-07 12:49:13,742 - __main__ - INFO - Inserted and committed 210000/262027 rows (80.1%)
+2025-06-07 12:49:15,296 - __main__ - INFO - Inserted and committed 220000/262027 rows (84.0%)
+2025-06-07 12:49:16,896 - __main__ - INFO - Inserted and committed 230000/262027 rows (87.8%)
+2025-06-07 12:49:18,403 - __main__ - INFO - Inserted and committed 240000/262027 rows (91.6%)
+2025-06-07 12:49:19,974 - __main__ - INFO - Inserted and committed 250000/262027 rows (95.4%)
+2025-06-07 12:49:21,584 - __main__ - INFO - Inserted and committed 260000/262027 rows (99.2%)
+2025-06-07 12:49:21,894 - __main__ - INFO - Inserted and committed 262027/262027 rows (100.0%)
+2025-06-07 12:49:21,895 - __main__ - INFO - Successfully inserted 262027 fact records to staging
+2025-06-07 12:49:22,077 - __main__ - INFO - Successfully processed 262027 fact records
+2025-06-07 12:49:22,137 - FactProcessorMain - INFO - Fact processing completed successfully
+2025-06-07 16:27:23,564 - FactProcessorMain - INFO - Starting Fact Processor
+2025-06-07 16:27:23,569 - FactProcessorMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-07 16:27:23,569 - __main__ - INFO - Starting fact processing
+2025-06-07 16:27:29,461 - __main__ - INFO - Loading dimension mappings from staging tables
+2025-06-07 16:27:30,008 - __main__ - INFO - Loaded 1099 date dimension records
+2025-06-07 16:27:30,033 - __main__ - INFO - Loaded 24 time dimension records
+2025-06-07 16:27:30,068 - __main__ - INFO - Loaded 121 bidding zone dimension records
+2025-06-07 16:27:30,075 - __main__ - INFO - Loaded 25 weather zone dimension records
+2025-06-07 16:27:30,079 - __main__ - INFO - Loaded 18 generation type dimension records
+2025-06-07 16:27:30,103 - __main__ - INFO - Loaded 14 weather condition dimension records
+2025-06-07 16:27:30,110 - __main__ - INFO - Loaded 120 socioeconomic profile dimension records
+2025-06-07 16:27:30,111 - __main__ - INFO - Loading data from staging tables
+2025-06-07 16:27:30,160 - __main__ - INFO - Loaded 4050 actual load records
+2025-06-07 16:27:30,735 - __main__ - INFO - Loaded 53950 generation records
+2025-06-07 16:27:30,792 - __main__ - INFO - Loaded 5160 forecast records
+2025-06-07 16:27:31,092 - __main__ - INFO - Loaded 8160 weather records
+2025-06-07 16:27:31,108 - __main__ - INFO - Loaded 356 climate records
+2025-06-07 16:27:31,110 - __main__ - INFO - Merging energy and weather data
+2025-06-07 16:27:31,111 - __main__ - INFO - Processing 4050 actual load records
+2025-06-07 16:27:33,337 - __main__ - INFO - Processing 53950 generation records
+2025-06-07 16:28:02,737 - __main__ - INFO - Processing 5160 forecast records
+2025-06-07 16:28:12,927 - __main__ - INFO - Saved sample of 100 energy records to energy_data_sample.csv
+2025-06-07 16:28:12,927 - __main__ - INFO - Prepared 44636 energy data records
+2025-06-07 16:28:12,958 - __main__ - INFO - Processing 8160 weather records
+2025-06-07 16:28:12,966 - __main__ - INFO - Merging with 356 climate records
+2025-06-07 16:28:13,010 - __main__ - INFO - Prepared 27360 weather data records
+2025-06-07 16:28:13,010 - __main__ - INFO - Processing data in 1 batches of 50000 records
+2025-06-07 16:28:13,015 - __main__ - INFO - Processing batch 1/1: 44636 records
+2025-06-07 16:28:13,361 - __main__ - INFO - Saved partial results to file (batch 1)
+2025-06-07 16:28:13,384 - __main__ - INFO - Merged data contains 265822 records
+2025-06-07 16:28:13,714 - __main__ - INFO - Saved checkpoint after merging data
+2025-06-07 16:28:13,714 - __main__ - INFO - Calculating derived metrics
+2025-06-07 16:28:14,071 - __main__ - INFO - Saved data before metrics calculation
+2025-06-07 16:28:14,473 - __main__ - INFO - Saved data after metrics calculation
+2025-06-07 16:28:14,473 - __main__ - INFO - Derived metrics calculated successfully
+2025-06-07 16:28:14,962 - __main__ - INFO - Saved checkpoint after calculating metrics
+2025-06-07 16:28:14,962 - __main__ - INFO - Mapping data to dimension keys
+2025-06-07 16:30:39,221 - __main__ - INFO - Dimension keys mapped successfully
+2025-06-07 16:30:39,616 - __main__ - INFO - Saved checkpoint after mapping to dimension keys
+2025-06-07 16:30:39,617 - __main__ - INFO - Inserting facts into staging table
+2025-06-07 16:30:39,618 - __main__ - INFO - Inserting 265822 facts to staging table
+2025-06-07 16:30:43,776 - __main__ - INFO - Creating staging fact table
+2025-06-07 16:30:43,781 - __main__ - INFO - staging_fact_energy_weather table already exists
+2025-06-07 16:30:43,781 - __main__ - INFO - Truncating staging fact table
+2025-06-07 16:30:43,880 - __main__ - INFO - Truncated staging_fact_energy_weather table
+2025-06-07 16:30:47,931 - __main__ - INFO - Inserted and committed 10000/265822 rows (3.8%)
+2025-06-07 16:30:50,138 - __main__ - INFO - Inserted and committed 20000/265822 rows (7.5%)
+2025-06-07 16:30:51,549 - __main__ - INFO - Inserted and committed 30000/265822 rows (11.3%)
+2025-06-07 16:30:53,143 - __main__ - INFO - Inserted and committed 40000/265822 rows (15.0%)
+2025-06-07 16:30:54,623 - __main__ - INFO - Inserted and committed 50000/265822 rows (18.8%)
+2025-06-07 16:30:56,095 - __main__ - INFO - Inserted and committed 60000/265822 rows (22.6%)
+2025-06-07 16:30:57,568 - __main__ - INFO - Inserted and committed 70000/265822 rows (26.3%)
+2025-06-07 16:30:59,072 - __main__ - INFO - Inserted and committed 80000/265822 rows (30.1%)
+2025-06-07 16:31:00,466 - __main__ - INFO - Inserted and committed 90000/265822 rows (33.9%)
+2025-06-07 16:31:01,886 - __main__ - INFO - Inserted and committed 100000/265822 rows (37.6%)
+2025-06-07 16:31:03,371 - __main__ - INFO - Inserted and committed 110000/265822 rows (41.4%)
+2025-06-07 16:31:04,797 - __main__ - INFO - Inserted and committed 120000/265822 rows (45.1%)
+2025-06-07 16:31:06,176 - __main__ - INFO - Inserted and committed 130000/265822 rows (48.9%)
+2025-06-07 16:31:07,543 - __main__ - INFO - Inserted and committed 140000/265822 rows (52.7%)
+2025-06-07 16:31:09,017 - __main__ - INFO - Inserted and committed 150000/265822 rows (56.4%)
+2025-06-07 16:31:10,416 - __main__ - INFO - Inserted and committed 160000/265822 rows (60.2%)
+2025-06-07 16:31:11,830 - __main__ - INFO - Inserted and committed 170000/265822 rows (64.0%)
+2025-06-07 16:31:13,216 - __main__ - INFO - Inserted and committed 180000/265822 rows (67.7%)
+2025-06-07 16:31:14,596 - __main__ - INFO - Inserted and committed 190000/265822 rows (71.5%)
+2025-06-07 16:31:15,957 - __main__ - INFO - Inserted and committed 200000/265822 rows (75.2%)
+2025-06-07 16:31:17,315 - __main__ - INFO - Inserted and committed 210000/265822 rows (79.0%)
+2025-06-07 16:31:18,702 - __main__ - INFO - Inserted and committed 220000/265822 rows (82.8%)
+2025-06-07 16:31:20,348 - __main__ - INFO - Inserted and committed 230000/265822 rows (86.5%)
+2025-06-07 16:31:21,954 - __main__ - INFO - Inserted and committed 240000/265822 rows (90.3%)
+2025-06-07 16:31:23,455 - __main__ - INFO - Inserted and committed 250000/265822 rows (94.0%)
+2025-06-07 16:31:25,044 - __main__ - INFO - Inserted and committed 260000/265822 rows (97.8%)
+2025-06-07 16:31:25,918 - __main__ - INFO - Inserted and committed 265822/265822 rows (100.0%)
+2025-06-07 16:31:25,919 - __main__ - INFO - Successfully inserted 265822 fact records to staging
+2025-06-07 16:31:26,163 - __main__ - INFO - Successfully processed 265822 fact records
+2025-06-07 16:31:26,207 - FactProcessorMain - INFO - Fact processing completed successfully
+2025-06-07 16:54:49,223 - FactProcessorMain - INFO - Starting Fact Processor
+2025-06-07 16:54:49,224 - FactProcessorMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-07 16:54:49,225 - __main__ - INFO - Starting fact processing
+2025-06-07 16:54:53,688 - __main__ - INFO - Loading dimension mappings from staging tables
+2025-06-07 16:54:53,930 - __main__ - INFO - Loaded 1099 date dimension records
+2025-06-07 16:54:53,935 - __main__ - INFO - Loaded 24 time dimension records
+2025-06-07 16:54:53,941 - __main__ - INFO - Loaded 121 bidding zone dimension records
+2025-06-07 16:54:53,945 - __main__ - INFO - Loaded 25 weather zone dimension records
+2025-06-07 16:54:53,949 - __main__ - INFO - Loaded 18 generation type dimension records
+2025-06-07 16:54:53,953 - __main__ - INFO - Loaded 14 weather condition dimension records
+2025-06-07 16:54:53,958 - __main__ - INFO - Loaded 120 socioeconomic profile dimension records
+2025-06-07 16:54:53,959 - __main__ - INFO - Loading data from staging tables
+2025-06-07 16:54:54,050 - __main__ - INFO - Loaded 4050 actual load records
+2025-06-07 16:54:55,805 - __main__ - INFO - Loaded 53950 generation records
+2025-06-07 16:54:55,897 - __main__ - INFO - Loaded 5160 forecast records
+2025-06-07 16:54:56,209 - __main__ - INFO - Loaded 8160 weather records
+2025-06-07 16:54:56,227 - __main__ - INFO - Loaded 356 climate records
+2025-06-07 16:54:56,229 - __main__ - INFO - Merging energy and weather data
+2025-06-07 16:54:56,229 - __main__ - INFO - Processing 4050 actual load records
+2025-06-07 16:54:58,572 - __main__ - INFO - Processing 53950 generation records
+2025-06-07 16:55:27,748 - __main__ - INFO - Processing 5160 forecast records
+2025-06-07 16:55:38,483 - __main__ - INFO - Saved sample of 100 energy records to energy_data_sample.csv
+2025-06-07 16:55:38,483 - __main__ - INFO - Prepared 44636 energy data records
+2025-06-07 16:55:38,514 - __main__ - INFO - Processing 8160 weather records
+2025-06-07 16:55:38,518 - __main__ - INFO - Merging with 356 climate records
+2025-06-07 16:55:38,547 - __main__ - INFO - Prepared 27360 weather data records
+2025-06-07 16:55:38,547 - __main__ - INFO - Processing data in 1 batches of 50000 records
+2025-06-07 16:55:38,553 - __main__ - INFO - Processing batch 1/1: 44636 records
+2025-06-07 16:55:38,837 - __main__ - INFO - Saved partial results to file (batch 1)
+2025-06-07 16:55:38,857 - __main__ - INFO - Merged data contains 265822 records
+2025-06-07 16:55:39,051 - __main__ - INFO - Saved checkpoint after merging data
+2025-06-07 16:55:39,051 - __main__ - INFO - Calculating derived metrics
+2025-06-07 16:55:39,228 - __main__ - INFO - Saved data before metrics calculation
+2025-06-07 16:55:39,663 - __main__ - INFO - Saved data after metrics calculation
+2025-06-07 16:55:39,664 - __main__ - INFO - Derived metrics calculated successfully
+2025-06-07 16:55:39,755 - __main__ - INFO - Saved checkpoint after calculating metrics
+2025-06-07 16:55:39,756 - __main__ - INFO - Mapping data to dimension keys
+2025-06-07 16:58:14,615 - __main__ - INFO - Dimension keys mapped successfully
+2025-06-07 16:58:15,058 - __main__ - INFO - Saved checkpoint after mapping to dimension keys
+2025-06-07 16:58:15,059 - __main__ - INFO - Inserting facts into staging table
+2025-06-07 16:58:15,059 - __main__ - INFO - Inserting 265822 facts to staging table
+2025-06-07 16:58:19,175 - __main__ - INFO - Creating staging fact table
+2025-06-07 16:58:19,176 - __main__ - INFO - staging_fact_energy_weather table already exists
+2025-06-07 16:58:19,177 - __main__ - INFO - Truncating staging fact table
+2025-06-07 16:58:19,225 - __main__ - INFO - Truncated staging_fact_energy_weather table
+2025-06-07 16:58:20,697 - __main__ - INFO - Inserted and committed 10000/265822 rows (3.8%)
+2025-06-07 16:58:22,153 - __main__ - INFO - Inserted and committed 20000/265822 rows (7.5%)
+2025-06-07 16:58:23,597 - __main__ - INFO - Inserted and committed 30000/265822 rows (11.3%)
+2025-06-07 16:58:24,985 - __main__ - INFO - Inserted and committed 40000/265822 rows (15.0%)
+2025-06-07 16:58:26,388 - __main__ - INFO - Inserted and committed 50000/265822 rows (18.8%)
+2025-06-07 16:58:27,810 - __main__ - INFO - Inserted and committed 60000/265822 rows (22.6%)
+2025-06-07 16:58:29,317 - __main__ - INFO - Inserted and committed 70000/265822 rows (26.3%)
+2025-06-07 16:58:30,825 - __main__ - INFO - Inserted and committed 80000/265822 rows (30.1%)
+2025-06-07 16:58:32,287 - __main__ - INFO - Inserted and committed 90000/265822 rows (33.9%)
+2025-06-07 16:58:33,668 - __main__ - INFO - Inserted and committed 100000/265822 rows (37.6%)
+2025-06-07 16:58:35,120 - __main__ - INFO - Inserted and committed 110000/265822 rows (41.4%)
+2025-06-07 16:58:36,537 - __main__ - INFO - Inserted and committed 120000/265822 rows (45.1%)
+2025-06-07 16:58:38,314 - __main__ - INFO - Inserted and committed 130000/265822 rows (48.9%)
+2025-06-07 16:58:41,039 - __main__ - INFO - Inserted and committed 140000/265822 rows (52.7%)
+2025-06-07 16:58:42,906 - __main__ - INFO - Inserted and committed 150000/265822 rows (56.4%)
+2025-06-07 16:58:44,293 - __main__ - INFO - Inserted and committed 160000/265822 rows (60.2%)
+2025-06-07 16:58:45,758 - __main__ - INFO - Inserted and committed 170000/265822 rows (64.0%)
+2025-06-07 16:58:47,444 - __main__ - INFO - Inserted and committed 180000/265822 rows (67.7%)
+2025-06-07 16:58:48,890 - __main__ - INFO - Inserted and committed 190000/265822 rows (71.5%)
+2025-06-07 16:58:50,329 - __main__ - INFO - Inserted and committed 200000/265822 rows (75.2%)
+2025-06-07 16:58:51,940 - __main__ - INFO - Inserted and committed 210000/265822 rows (79.0%)
+2025-06-07 16:58:53,404 - __main__ - INFO - Inserted and committed 220000/265822 rows (82.8%)
+2025-06-07 16:58:54,932 - __main__ - INFO - Inserted and committed 230000/265822 rows (86.5%)
+2025-06-07 16:58:56,390 - __main__ - INFO - Inserted and committed 240000/265822 rows (90.3%)
+2025-06-07 16:58:57,956 - __main__ - INFO - Inserted and committed 250000/265822 rows (94.0%)
+2025-06-07 16:58:59,393 - __main__ - INFO - Inserted and committed 260000/265822 rows (97.8%)
+2025-06-07 16:59:00,241 - __main__ - INFO - Inserted and committed 265822/265822 rows (100.0%)
+2025-06-07 16:59:00,242 - __main__ - INFO - Successfully inserted 265822 fact records to staging
+2025-06-07 16:59:00,514 - __main__ - INFO - Successfully processed 265822 fact records
+2025-06-07 16:59:00,553 - FactProcessorMain - INFO - Fact processing completed successfully
+2025-06-07 20:03:57,761 - FactProcessorMain - INFO - Starting Fact Processor
+2025-06-07 20:03:57,768 - FactProcessorMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-07 20:03:57,768 - __main__ - INFO - Starting fact processing
+2025-06-07 20:04:01,946 - __main__ - INFO - Loading dimension mappings from staging tables
+2025-06-07 20:04:02,100 - __main__ - INFO - Loaded 1098 date dimension records
+2025-06-07 20:04:02,102 - __main__ - INFO - Loaded 24 time dimension records
+2025-06-07 20:04:02,106 - __main__ - INFO - Loaded 57 bidding zone dimension records
+2025-06-07 20:04:02,109 - __main__ - INFO - Loaded 25 weather zone dimension records
+2025-06-07 20:04:02,113 - __main__ - INFO - Loaded 18 generation type dimension records
+2025-06-07 20:04:02,115 - __main__ - INFO - Loaded 14 weather condition dimension records
+2025-06-07 20:04:02,118 - __main__ - INFO - Loaded 40 socioeconomic profile dimension records
+2025-06-07 20:04:02,119 - __main__ - INFO - Loading data from staging tables
+2025-06-07 20:04:02,163 - __main__ - INFO - Loaded 4050 actual load records
+2025-06-07 20:04:02,752 - __main__ - INFO - Loaded 53950 generation records
+2025-06-07 20:04:02,806 - __main__ - INFO - Loaded 5160 forecast records
+2025-06-07 20:04:03,165 - __main__ - INFO - Loaded 8544 weather records
+2025-06-07 20:04:03,179 - __main__ - INFO - Loaded 356 climate records
+2025-06-07 20:04:03,181 - __main__ - INFO - Merging energy and weather data
+2025-06-07 20:04:03,181 - __main__ - INFO - Processing 4050 actual load records
+2025-06-07 20:04:05,620 - __main__ - INFO - Processing 53950 generation records
+2025-06-07 20:04:39,774 - __main__ - INFO - Processing 5160 forecast records
+2025-06-07 20:04:54,952 - __main__ - INFO - Saved sample of 100 energy records to energy_data_sample.csv
+2025-06-07 20:04:54,953 - __main__ - INFO - Prepared 44636 energy data records
+2025-06-07 20:04:55,063 - __main__ - INFO - Processing 8544 weather records
+2025-06-07 20:04:55,067 - __main__ - INFO - Merging with 356 climate records
+2025-06-07 20:04:55,139 - __main__ - INFO - Prepared 28704 weather data records
+2025-06-07 20:04:55,139 - __main__ - INFO - Processing data in 1 batches of 50000 records
+2025-06-07 20:04:55,145 - __main__ - INFO - Processing batch 1/1: 44636 records
+2025-06-07 20:04:55,965 - __main__ - INFO - Saved partial results to file (batch 1)
+2025-06-07 20:04:56,009 - __main__ - INFO - Merged data contains 283216 records
+2025-06-07 20:04:56,248 - __main__ - INFO - Saved checkpoint after merging data
+2025-06-07 20:04:56,248 - __main__ - INFO - Calculating derived metrics
+2025-06-07 20:04:56,715 - __main__ - INFO - Saved data before metrics calculation
+2025-06-07 20:04:57,421 - __main__ - INFO - Saved data after metrics calculation
+2025-06-07 20:04:57,422 - __main__ - INFO - Derived metrics calculated successfully
+2025-06-07 20:04:59,031 - __main__ - INFO - Saved checkpoint after calculating metrics
+2025-06-07 20:04:59,031 - __main__ - INFO - Mapping data to dimension keys
+2025-06-07 20:07:14,626 - __main__ - INFO - Dimension keys mapped successfully
+2025-06-07 20:07:16,151 - __main__ - INFO - Saved checkpoint after mapping to dimension keys
+2025-06-07 20:07:16,151 - __main__ - INFO - Inserting facts into staging table
+2025-06-07 20:07:16,152 - __main__ - INFO - Inserting 283216 facts to staging table
+2025-06-07 20:07:20,385 - __main__ - INFO - Creating staging fact table
+2025-06-07 20:07:20,583 - __main__ - INFO - Created new staging_fact_energy_weather table
+2025-06-07 20:07:20,584 - __main__ - INFO - Truncating staging fact table
+2025-06-07 20:07:20,600 - __main__ - INFO - Truncated staging_fact_energy_weather table
+2025-06-07 20:07:25,852 - __main__ - INFO - Inserted and committed 10000/283216 rows (3.5%)
+2025-06-07 20:07:29,779 - __main__ - INFO - Inserted and committed 20000/283216 rows (7.1%)
+2025-06-07 20:07:33,264 - __main__ - INFO - Inserted and committed 30000/283216 rows (10.6%)
+2025-06-07 20:07:37,118 - __main__ - INFO - Inserted and committed 40000/283216 rows (14.1%)
+2025-06-07 20:07:41,632 - __main__ - INFO - Inserted and committed 50000/283216 rows (17.7%)
+2025-06-07 20:07:44,245 - __main__ - INFO - Inserted and committed 60000/283216 rows (21.2%)
+2025-06-07 20:07:47,470 - __main__ - INFO - Inserted and committed 70000/283216 rows (24.7%)
+2025-06-07 20:07:51,656 - __main__ - INFO - Inserted and committed 80000/283216 rows (28.2%)
+2025-06-07 20:07:55,553 - __main__ - INFO - Inserted and committed 90000/283216 rows (31.8%)
+2025-06-07 20:07:59,263 - __main__ - INFO - Inserted and committed 100000/283216 rows (35.3%)
+2025-06-07 20:08:03,038 - __main__ - INFO - Inserted and committed 110000/283216 rows (38.8%)
+2025-06-07 20:08:06,469 - __main__ - INFO - Inserted and committed 120000/283216 rows (42.4%)
+2025-06-07 20:08:10,466 - __main__ - INFO - Inserted and committed 130000/283216 rows (45.9%)
+2025-06-07 20:08:14,719 - __main__ - INFO - Inserted and committed 140000/283216 rows (49.4%)
+2025-06-07 20:08:17,029 - __main__ - INFO - Inserted and committed 150000/283216 rows (53.0%)
+2025-06-07 20:08:20,366 - __main__ - INFO - Inserted and committed 160000/283216 rows (56.5%)
+2025-06-07 20:08:23,876 - __main__ - INFO - Inserted and committed 170000/283216 rows (60.0%)
+2025-06-07 20:08:26,995 - __main__ - INFO - Inserted and committed 180000/283216 rows (63.6%)
+2025-06-07 20:08:30,111 - __main__ - INFO - Inserted and committed 190000/283216 rows (67.1%)
+2025-06-07 20:08:40,345 - __main__ - INFO - Inserted and committed 200000/283216 rows (70.6%)
+2025-06-07 20:08:43,429 - __main__ - INFO - Inserted and committed 210000/283216 rows (74.1%)
+2025-06-07 20:08:47,944 - __main__ - INFO - Inserted and committed 220000/283216 rows (77.7%)
+2025-06-07 20:08:50,091 - __main__ - INFO - Inserted and committed 230000/283216 rows (81.2%)
+2025-06-07 20:08:52,665 - __main__ - INFO - Inserted and committed 240000/283216 rows (84.7%)
+2025-06-07 20:08:55,054 - __main__ - INFO - Inserted and committed 250000/283216 rows (88.3%)
+2025-06-07 20:08:57,756 - __main__ - INFO - Inserted and committed 260000/283216 rows (91.8%)
+2025-06-07 20:09:00,438 - __main__ - INFO - Inserted and committed 270000/283216 rows (95.3%)
+2025-06-07 20:09:04,123 - __main__ - INFO - Inserted and committed 280000/283216 rows (98.9%)
+2025-06-07 20:09:04,793 - __main__ - INFO - Inserted and committed 283216/283216 rows (100.0%)
+2025-06-07 20:09:04,794 - __main__ - INFO - Successfully inserted 283216 fact records to staging
+2025-06-07 20:09:07,439 - __main__ - INFO - Successfully processed 283216 fact records
+2025-06-07 20:09:07,499 - FactProcessorMain - INFO - Fact processing completed successfully

@@ -26,11 +26,12 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-CJAL8FG</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1uBfdC5MnESsUj8oakBFFAAAAAACAAAAAAAQZgAAAAEAACAAAACyxMqe8gIyZjwwOgauTvej/+0U/FRHbwMtc+pD7xk5EQAAAAAOgAAAAAIAACAAAACgEMeTeNoZd5o2qhi4K4kJc6pYE70Di5lZD/YXeWIropAAAACOwhZRBiGKK6/wXiiHf1lXUdpLPHkruv26ey0u4crXxiDEr8EEHzk7tDnJYMKxgcKl5kGt0K5r+FWnLe+zTmVOnUjA688N49dtxq4Z5d7VqqzXtWyJQ0Gr7jT+waRVTAiqTrtDRm3oqnsdV+VHgmgul1aWKfihb41V10qv7YzKxGpHIVqMqlEuSIDis+aZjztAAAAAdF+EHH5xQpImS/k2CBL4VdPTa4YbKlDf8o7zjCXc1xIuofcCZ7/oQWaxTbXxfvnsVI7WcRHIJJ/hORhDio/eYw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1uBfdC5MnESsUj8oakBFFAAAAAACAAAAAAAQZgAAAAEAACAAAAA4/dRsOE7Pw8+prOxjPmLhWoV06b8EpPe4ZoCBBFE8hAAAAAAOgAAAAAIAACAAAACYiN6AIEf24FT2GfZyUlMVBHl3nqUu3vzhGmGb7oW44ZAAAAB6GMlhkiEkLvGHpOD2kN/+5ndOIxUwtlDkHFLFqu7/wgoytN9Or1L3nuf4s70dPsboPfz5zvWAJMrzqIRBlQv/CQNzVVTFh/Zubx3j2UH3exC8oE2Lx89h6WyH31sU37SKRKn+20mw1cqXyEly/5JO3Rue0/Hb7Lmh9609NuKtPORKfyjEcOnl5F7gc87+fIBAAAAACZx0fnLhfv51PQQorzBUNdhSXs8OFNhNQHx6KjUb7oQ28SDx+Cs+do+G2K4qIlM6LlLlN0ob4e3atdUGprI+4w==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="ENTSO_Weather_Main.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Main_ETL_Process.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="localhost.EntsoeWeatherDW.sa.conmgr" />
@@ -64,7 +65,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=localhost;User ID=sa;Initial Catalog=EntsoeWeatherDW;Provider=SQLNCLI11.1;Application Name=SSIS-Integration Services Project1-{AA7E84A8-E9A3-4EB5-9AB7-65AA9F4430BE}localhost.EntsoeWeatherDW.sa;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=localhost;Initial Catalog=EnergyWeatherDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Integration Services Project1-{AA7E84A8-E9A3-4EB5-9AB7-65AA9F4430BE}localhost.EntsoeWeatherDW.sa;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -124,7 +125,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">EntsoeWeatherDW</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">EnergyWeatherDW</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -183,7 +184,6 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">sa</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -225,10 +225,27 @@
                 <SSIS:Property SSIS:Name="Name">ENTSO_Weather_Main</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">32</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">42</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{AC915696-2C41-4515-86A5-3E880428C032}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9BA9AC07-1BFB-48E5-BF49-FD469173A79B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Main_ETL_Process.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{95855F71-1227-4686-BF53-319766D70941}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Main_ETL_Process</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">10</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7A897800-2BD7-42AD-8FBD-7D444D925406}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

@@ -1,348 +1,296 @@
-# data_integration_fixed.py - Integracja danych ENTSO-E i pogodowych - poprawiona wersja
+# entso_weather_integration.py - Integracja danych energetycznych i pogodowych
 import sys
 import pandas as pd
-import pyodbc
-from utils import connect_to_sql, load_dataframe_to_sql
+import logging
+from datetime import datetime, timedelta
+from utils import setup_logging, connect_to_sql, load_dataframe_to_sql
 from config import CONFIG
 
-def integrate_data():
-    """Integracja danych z tablic przejściowych do tablic wymiarów i faktów"""
-    conn = connect_to_sql()
+def integrate_energy_weather_data(start_date=None, end_date=None):
+    """Integracja danych energetycznych z pogodowymi"""
+    setup_logging('integration')
+    
+    # Ustalenie zakresu dat, jeśli nie podano
+    if not start_date:
+        start_date = (datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d')
+    if not end_date:
+        end_date = datetime.now().strftime('%Y-%m-%d')
+    
+    logging.info(f"Rozpoczęcie integracji danych dla okresu {start_date} do {end_date}")
     
     try:
-        # Utworzenie tabeli wymiarów czasu, jeśli nie istnieje
-        create_time_dimension(conn)
+        conn = connect_to_sql()
         
-        # Utworzenie tabeli wymiarów lokalizacji, jeśli nie istnieje
-        create_location_dimension(conn)
-        
-        # Utworzenie tabeli wymiarów kategorii pogodowych, jeśli nie istnieje
-        create_weather_dimension(conn)
-        
-        # Integracja danych do tabeli faktów
-        integrate_to_fact_table(conn)
-        
-        print("Integracja danych zakończona sukcesem")
-        return 0
-    except Exception as e:
-        print(f"Błąd podczas integracji danych: {str(e)}")
-        return 1
-    finally:
-        conn.close()
-
-def create_time_dimension(conn):
-    """Utworzenie i aktualizacja tabeli wymiarów czasu"""
-    cursor = conn.cursor()
-    
-    # Utworzenie tabeli, jeśli nie istnieje
-    cursor.execute("""
-    IF OBJECT_ID('DimTime', 'U') IS NULL
-    CREATE TABLE DimTime (
-        TimeKey INT IDENTITY(1,1) PRIMARY KEY,
-        DateTime DATETIME NOT NULL,
-        Year INT NOT NULL,
-        Quarter INT NOT NULL,
-        Month INT NOT NULL,
-        MonthName VARCHAR(10) NOT NULL,
-        Day INT NOT NULL,
-        DayOfWeek INT NOT NULL,
-        DayName VARCHAR(10) NOT NULL,
-        Hour INT NOT NULL,
-        IsWeekend BIT NOT NULL,
-        IsHoliday BIT NOT NULL
-    )
-    """)
-    conn.commit()
-    
-    # Pobieranie dat z tabel przejściowych
-    cursor.execute("""
-    SELECT DISTINCT DateTime 
-    FROM (
-        SELECT DateTime FROM StagingLoad
-        UNION
-        SELECT DateTime FROM StagingPrice
-        UNION
-        SELECT DateTime FROM StagingWeather
-    ) AS CombinedDates
-    WHERE DateTime NOT IN (SELECT DateTime FROM DimTime)
-    """)
-    
-    dates = cursor.fetchall()
-    
-    # Wstawianie nowych dat do wymiaru czasu
-    if dates:
-        print(f"Dodawanie {len(dates)} nowych dat do wymiaru czasu")
-        
-        for date_row in dates:
-            dt = date_row[0]
-            cursor.execute("""
-            INSERT INTO DimTime (DateTime, Year, Quarter, Month, MonthName, Day, DayOfWeek, DayName, Hour, IsWeekend, IsHoliday)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, 
-            dt, 
-            dt.year, 
-            (dt.month - 1) // 3 + 1,  # Kwartał
-            dt.month,
-            dt.strftime('%B'),  # Nazwa miesiąca
-            dt.day,
-            dt.weekday(),  # Dzień tygodnia (0=poniedziałek, 6=niedziela)
-            dt.strftime('%A'),  # Nazwa dnia
-            dt.hour,
-            1 if dt.weekday() >= 5 else 0,  # Czy weekend
-            0  # Placeholder dla świąt (do uzupełnienia osobno)
-            )
-        
-        conn.commit()
-
-def create_location_dimension(conn):
-    """Utworzenie i aktualizacja tabeli wymiarów lokalizacji"""
-    cursor = conn.cursor()
-    
-    # Utworzenie tabeli, jeśli nie istnieje
-    cursor.execute("""
-    IF OBJECT_ID('DimLocation', 'U') IS NULL
-    CREATE TABLE DimLocation (
-        LocationKey INT IDENTITY(1,1) PRIMARY KEY,
-        LocationName NVARCHAR(50) NOT NULL,
-        CountryCode NVARCHAR(10) NOT NULL,
-        Latitude FLOAT NOT NULL,
-        Longitude FLOAT NOT NULL
-    )
-    """)
-    conn.commit()
-    
-    # Dodanie domyślnej lokalizacji kraju, jeśli nie istnieje
-    cursor.execute("SELECT COUNT(*) FROM DimLocation WHERE CountryCode = ?", CONFIG['country_code'])
-    if cursor.fetchone()[0] == 0:
-        cursor.execute("""
-        INSERT INTO DimLocation (LocationName, CountryCode, Latitude, Longitude)
-        VALUES (?, ?, ?, ?)
-        """, 
-        CONFIG['country_code'] + " (ogółem)", 
-        CONFIG['country_code'],
-        0,  # Placeholder dla współrzędnych kraju
-        0
-        )
-        conn.commit()
-    
-    # Dodanie lokalizacji z konfiguracji, jeśli nie istnieją
-    for location in CONFIG['locations']:
-        cursor.execute("SELECT COUNT(*) FROM DimLocation WHERE LocationName = ?", location['name'])
-        if cursor.fetchone()[0] == 0:
-            cursor.execute("""
-            INSERT INTO DimLocation (LocationName, CountryCode, Latitude, Longitude)
-            VALUES (?, ?, ?, ?)
-            """, 
-            location['name'], 
-            CONFIG['country_code'],
-            location['latitude'],
-            location['longitude']
-            )
-            conn.commit()
-
-def create_weather_dimension(conn):
-    """Utworzenie i aktualizacja tabeli wymiarów kategorii pogodowych"""
-    cursor = conn.cursor()
-    
-    # Utworzenie tabeli, jeśli nie istnieje
-    cursor.execute("""
-    IF OBJECT_ID('DimWeather', 'U') IS NULL
-    CREATE TABLE DimWeather (
-        WeatherKey INT IDENTITY(1,1) PRIMARY KEY,
-        TemperatureCategory NVARCHAR(20) NOT NULL,
-        HumidityCategory NVARCHAR(20) NOT NULL,
-        PrecipitationCategory NVARCHAR(20) NOT NULL,
-        WindCategory NVARCHAR(20) NOT NULL,
-        TemperatureMin FLOAT NOT NULL,
-        TemperatureMax FLOAT NOT NULL,
-        HumidityMin FLOAT NOT NULL,
-        HumidityMax FLOAT NOT NULL,
-        PrecipitationMin FLOAT NOT NULL,
-        PrecipitationMax FLOAT NOT NULL,
-        WindMin FLOAT NOT NULL,
-        WindMax FLOAT NOT NULL
-    )
-    """)
-    conn.commit()
-    
-    # Definiowanie kategorii pogodowych, jeśli nie istnieją
-    categories = [
-        # Temp, Humidity, Precip, Wind, TempMin, TempMax, HumMin, HumMax, PrecipMin, PrecipMax, WindMin, WindMax
-        ("Bardzo zimno", "Sucho", "Brak", "Spokojnie", -50, 0, 0, 30, 0, 0.1, 0, 5),
-        ("Zimno", "Sucho", "Brak", "Lekki wiatr", 0, 10, 0, 30, 0, 0.1, 5, 15),
-        ("Zimno", "Wilgotno", "Słabe", "Lekki wiatr", 0, 10, 30, 70, 0.1, 2, 5, 15),
-        ("Zimno", "Bardzo wilgotno", "Umiarkowane", "Umiarkowany wiatr", 0, 10, 70, 100, 2, 10, 15, 30),
-        ("Umiarkowanie", "Sucho", "Brak", "Spokojnie", 10, 20, 0, 30, 0, 0.1, 0, 5),
-        ("Umiarkowanie", "Wilgotno", "Słabe", "Lekki wiatr", 10, 20, 30, 70, 0.1, 2, 5, 15),
-        ("Umiarkowanie", "Bardzo wilgotno", "Umiarkowane", "Umiarkowany wiatr", 10, 20, 70, 100, 2, 10, 15, 30),
-        ("Ciepło", "Sucho", "Brak", "Spokojnie", 20, 30, 0, 30, 0, 0.1, 0, 5),
-        ("Ciepło", "Wilgotno", "Słabe", "Lekki wiatr", 20, 30, 30, 70, 0.1, 2, 5, 15),
-        ("Ciepło", "Bardzo wilgotno", "Umiarkowane", "Umiarkowany wiatr", 20, 30, 70, 100, 2, 10, 15, 30),
-        ("Gorąco", "Sucho", "Brak", "Spokojnie", 30, 50, 0, 30, 0, 0.1, 0, 5),
-        ("Gorąco", "Wilgotno", "Słabe", "Lekki wiatr", 30, 50, 30, 70, 0.1, 2, 5, 15),
-        ("Gorąco", "Bardzo wilgotno", "Silne", "Silny wiatr", 30, 50, 70, 100, 10, 100, 30, 100)
-    ]
-    
-    # Sprawdzenie, czy tabela jest pusta
-    cursor.execute("SELECT COUNT(*) FROM DimWeather")
-    if cursor.fetchone()[0] == 0:
-        # Wstawianie kategorii
-        for category in categories:
-            cursor.execute("""
-            INSERT INTO DimWeather (
-                TemperatureCategory, HumidityCategory, PrecipitationCategory, WindCategory,
-                TemperatureMin, TemperatureMax, HumidityMin, HumidityMax,
-                PrecipitationMin, PrecipitationMax, WindMin, WindMax
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, category)
-        
-        conn.commit()
-
-def integrate_to_fact_table(conn):
-    """Integracja danych do tabeli faktów"""
-    cursor = conn.cursor()
-    
-    # Utworzenie tabeli faktów, jeśli nie istnieje
-    cursor.execute("""
-    IF OBJECT_ID('FactEnergyWeather', 'U') IS NULL
-    CREATE TABLE FactEnergyWeather (
-        FactKey INT IDENTITY(1,1) PRIMARY KEY,
-        TimeKey INT FOREIGN KEY REFERENCES DimTime(TimeKey),
-        LocationKey INT FOREIGN KEY REFERENCES DimLocation(LocationKey),
-        WeatherKey INT FOREIGN KEY REFERENCES DimWeather(WeatherKey),
-        Load FLOAT NULL,
-        Price FLOAT NULL,
-        Temperature FLOAT NULL,
-        Humidity FLOAT NULL,
-        Precipitation FLOAT NULL,
-        WindSpeed FLOAT NULL,
-        CloudCover FLOAT NULL,
-        Radiation FLOAT NULL
-    )
-    """)
-    conn.commit()
-    
-    # Pobieranie danych z tablic przejściowych i łączenie
-    cursor.execute("""
-    -- Pomocnicze CTE do znalezienia klucza WeatherKey
-    WITH WeatherCategories AS (
-        SELECT 
-            w.DateTime,
-            w.Location,
-            w.temperature,
-            w.humidity,
-            w.precipitation,
-            w.wind_speed,
-            w.cloud_cover,
-            w.radiation,
-            (SELECT TOP 1 WeatherKey FROM DimWeather 
-             WHERE w.temperature BETWEEN TemperatureMin AND TemperatureMax
-             AND w.humidity BETWEEN HumidityMin AND HumidityMax
-             AND w.precipitation BETWEEN PrecipitationMin AND PrecipitationMax
-             AND w.wind_speed BETWEEN WindMin AND WindMax) AS WeatherKey
-        FROM StagingWeather w
-    ),
-    -- Agregacja danych obciążenia
-    LoadData AS (
-        SELECT DateTime, AVG([Actual Load]) AS LoadValue
-        FROM StagingLoad
-        GROUP BY DateTime
-    ),
-    -- Agregacja danych cen
-    PriceData AS (
-        SELECT DateTime, AVG(Price) AS PriceValue
-        FROM StagingPrice
-        GROUP BY DateTime
-    )
-    
-    -- Wybieranie danych do integracji
-    SELECT 
-        t.TimeKey,
-        loc.LocationKey,
-        ISNULL(wc.WeatherKey, 1) AS WeatherKey,  -- 1 to domyślna wartość, jeśli nie ma dopasowania
-        ld.LoadValue,
-        pd.PriceValue,
-        wc.temperature,
-        wc.humidity,
-        wc.precipitation,
-        wc.wind_speed,
-        wc.cloud_cover,
-        wc.radiation
-    FROM DimTime t
-    JOIN DimLocation loc ON loc.CountryCode = ?
-    LEFT JOIN LoadData ld ON t.DateTime = ld.DateTime
-    LEFT JOIN PriceData pd ON t.DateTime = pd.DateTime
-    LEFT JOIN WeatherCategories wc ON t.DateTime = wc.DateTime AND loc.LocationName = wc.Location
-    WHERE t.DateTime >= ?
-    AND t.DateTime <= ?
-    AND NOT EXISTS (
-        SELECT 1 
-        FROM FactEnergyWeather f 
-        WHERE f.TimeKey = t.TimeKey 
-        AND f.LocationKey = loc.LocationKey
-    )
-    """, CONFIG['country_code'], 
-    # ZMIANA: Używamy zakresu dat odpowiadającego danym w tabelach przejściowych
-    pd.Timestamp('2020-01-01'),  # Data początkowa
-    pd.Timestamp('2024-12-31'))  # Data końcowa
-    
-    rows = cursor.fetchall()
-    
-    # Wstawianie danych do tabeli faktów
-    if rows:
-        print(f"Dodawanie {len(rows)} nowych wierszy do tabeli faktów")
-        
-        # Dodajemy informację diagnostyczną
-        print(f"Zakres dat: od {pd.Timestamp('2020-01-01')} do {pd.Timestamp('2024-12-31')}")
-        
-        # Aby uniknąć problemów z dużą ilością danych, przetwarzamy je partiami
-        batch_size = 1000
-        total_rows = len(rows)
-        processed = 0
-        
-        while processed < total_rows:
-            batch = rows[processed:processed + batch_size]
-            for row in batch:
-                cursor.execute("""
-                INSERT INTO FactEnergyWeather (
-                    TimeKey, LocationKey, WeatherKey, Load, Price,
-                    Temperature, Humidity, Precipitation, WindSpeed, CloudCover, Radiation
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """, row)
+        # 1. Przygotowanie map wymiaru daty i czasu
+        logging.info("Przygotowanie wymiarów daty i czasu")
+        with conn:
+            cursor = conn.cursor()
             
-            conn.commit()
-            processed += len(batch)
-            print(f"Przetworzono {processed}/{total_rows} wierszy ({(processed/total_rows)*100:.1f}%)")
+            # Aktualizacja wymiaru daty
+            cursor.execute("""
+                MERGE INTO dim_date AS target
+                USING (
+                    SELECT DISTINCT 
+                        CAST(FORMAT(DateTime, 'yyyyMMdd') AS INT) AS date_id,
+                        CAST(DateTime AS DATE) AS full_date,
+                        DATENAME(WEEKDAY, DateTime) AS day_of_week,
+                        DAY(DateTime) AS day_of_month,
+                        MONTH(DateTime) AS month,
+                        DATENAME(MONTH, DateTime) AS month_name,
+                        DATEPART(QUARTER, DateTime) AS quarter,
+                        YEAR(DateTime) AS year,
+                        CASE 
+                            WHEN MONTH(DateTime) IN (12, 1, 2) THEN 'Winter'
+                            WHEN MONTH(DateTime) IN (3, 4, 5) THEN 'Spring'
+                            WHEN MONTH(DateTime) IN (6, 7, 8) THEN 'Summer'
+                            ELSE 'Fall'
+                        END AS season,
+                        0 AS is_holiday, -- Placeholder, można zaktualizować później
+                        NULL AS holiday_name,
+                        NULL AS holiday_type,
+                        CASE 
+                            WHEN DATENAME(WEEKDAY, DateTime) IN ('Saturday', 'Sunday') THEN 0 ELSE 1
+                        END AS is_school_day,
+                        CASE 
+                            WHEN DATENAME(WEEKDAY, DateTime) IN ('Saturday', 'Sunday') THEN 1 ELSE 0
+                        END AS is_weekend
+                    FROM (
+                        SELECT DateTime FROM StagingLoad
+                        UNION
+                        SELECT DateTime FROM StagingGeneration
+                        UNION
+                        SELECT DateTime FROM StagingPrice
+                    ) AS combined_dates
+                    WHERE DateTime BETWEEN ? AND ?
+                ) AS source
+                ON target.date_id = source.date_id
+                WHEN NOT MATCHED THEN
+                    INSERT (
+                        date_id, full_date, day_of_week, day_of_month, month,
+                        month_name, quarter, year, season, is_holiday, 
+                        holiday_name, holiday_type, is_school_day, is_weekend
+                    )
+                    VALUES (
+                        source.date_id, source.full_date, source.day_of_week, source.day_of_month, source.month,
+                        source.month_name, source.quarter, source.year, source.season, source.is_holiday,
+                        source.holiday_name, source.holiday_type, source.is_school_day, source.is_weekend
+                    );
+            """, start_date, end_date)
+            
+            # Aktualizacja wymiaru czasu
+            cursor.execute("""
+                MERGE INTO dim_time AS target
+                USING (
+                    SELECT DISTINCT 
+                        DATEPART(HOUR, DateTime) * 60 + DATEPART(MINUTE, DateTime) AS time_id,
+                        DATEPART(HOUR, DateTime) AS hour,
+                        DATEPART(MINUTE, DateTime) AS minute,
+                        CASE 
+                            WHEN DATEPART(HOUR, DateTime) < 6 THEN 'Night'
+                            WHEN DATEPART(HOUR, DateTime) < 12 THEN 'Morning'
+                            WHEN DATEPART(HOUR, DateTime) < 18 THEN 'Afternoon'
+                            ELSE 'Evening'
+                        END AS day_period,
+                        CASE 
+                            WHEN DATEPART(HOUR, DateTime) BETWEEN 7 AND 9 OR 
+                                 DATEPART(HOUR, DateTime) BETWEEN 16 AND 18 THEN 1
+                            ELSE 0
+                        END AS is_peak_hour
+                    FROM (
+                        SELECT DateTime FROM StagingLoad
+                        UNION
+                        SELECT DateTime FROM StagingGeneration
+                        UNION
+                        SELECT DateTime FROM StagingPrice
+                    ) AS combined_times
+                    WHERE DateTime BETWEEN ? AND ?
+                ) AS source
+                ON target.time_id = source.time_id
+                WHEN NOT MATCHED THEN
+                    INSERT (time_id, hour, minute, day_period, is_peak_hour)
+                    VALUES (source.time_id, source.hour, source.minute, source.day_period, source.is_peak_hour);
+            """, start_date, end_date)
+            
+            # 2. Aktualizacja wymiarów strefy ofertowej i typów generacji
+            logging.info("Aktualizacja wymiarów strefy ofertowej i typów generacji")
+            
+            # Aktualizacja dim_bidding_zone
+            for zone in CONFIG['bidding_zones']:
+                cursor.execute("""
+                    IF NOT EXISTS (SELECT 1 FROM dim_bidding_zone WHERE bidding_zone_code = ?)
+                    BEGIN
+                        INSERT INTO dim_bidding_zone (
+                            bidding_zone_id, bidding_zone_code, bidding_zone_name, 
+                            primary_country, timezone
+                        )
+                        VALUES (
+                            NEXT VALUE FOR bidding_zone_seq, ?, ?, ?, 'Europe/Warsaw'
+                        )
+                    END
+                """, zone['code'], zone['code'], zone['name'], zone['name'].split(' ')[0])
+            
+            # Aktualizacja dim_generation_type
+            # Lista typów generacji z ENTSO-E
+            generation_types = [
+                ('Biomass', 'renewable', 'Biomass', 0, 'Biomass'),
+                ('Fossil Brown coal/Lignite', 'conventional', 'Coal', 0, 'Lignite'),
+                ('Fossil Coal-derived gas', 'conventional', 'Gas', 0, 'Coal gas'),
+                ('Fossil Gas', 'conventional', 'Gas', 0, 'Natural gas'),
+                ('Fossil Hard coal', 'conventional', 'Coal', 0, 'Hard coal'),
+                ('Fossil Oil', 'conventional', 'Oil', 0, 'Oil'),
+                ('Fossil Oil shale', 'conventional', 'Oil', 0, 'Oil shale'),
+                ('Fossil Peat', 'conventional', 'Peat', 0, 'Peat'),
+                ('Geothermal', 'renewable', 'Geothermal', 0, 'Geothermal'),
+                ('Hydro Pumped Storage', 'conventional', 'Hydro', 0, 'Water'),
+                ('Hydro Run-of-river and poundage', 'renewable', 'Hydro', 0, 'Water'),
+                ('Hydro Water Reservoir', 'renewable', 'Hydro', 0, 'Water'),
+                ('Marine', 'renewable', 'Marine', 1, 'Water'),
+                ('Nuclear', 'conventional', 'Nuclear', 0, 'Nuclear'),
+                ('Other', 'conventional', 'Other', 0, 'Various'),
+                ('Other renewable', 'renewable', 'Other renewable', 1, 'Various'),
+                ('Solar', 'renewable', 'Solar', 1, 'Solar'),
+                ('Waste', 'conventional', 'Waste', 0, 'Waste'),
+                ('Wind Offshore', 'renewable', 'Wind', 1, 'Wind'),
+                ('Wind Onshore', 'renewable', 'Wind', 1, 'Wind')
+            ]
+            
+            for i, (production_type, category, type_group, is_intermittent, fuel) in enumerate(generation_types, 1):
+                cursor.execute("""
+                    IF NOT EXISTS (SELECT 1 FROM dim_generation_type WHERE generation_type = ?)
+                    BEGIN
+                        INSERT INTO dim_generation_type (
+                            generation_type_id, generation_category, generation_type, 
+                            is_intermittent, fuel_source
+                        )
+                        VALUES (?, ?, ?, ?, ?)
+                    END
+                """, production_type, i, category, production_type, is_intermittent, fuel)
+            
+            # 3. Aktualizacja tabeli faktów
+            logging.info("Aktualizacja tabeli faktów")
+            
+            # Integracja danych obciążenia i cen
+            cursor.execute("""
+                INSERT INTO fact_energy_weather (
+                    date_id, time_id, bidding_zone_id, 
+                    actual_consumption, forecasted_consumption, temperature_avg
+                )
+                SELECT 
+                    CAST(FORMAT(l.DateTime, 'yyyyMMdd') AS INT) AS date_id,
+                    DATEPART(HOUR, l.DateTime) * 60 + DATEPART(MINUTE, l.DateTime) AS time_id,
+                    bz.bidding_zone_id,
+                    l.ActualLoad AS actual_consumption,
+                    l.ForecastedLoad AS forecasted_consumption,
+                    w.temperature AS temperature_avg
+                FROM 
+                    StagingLoad l
+                    JOIN dim_bidding_zone bz ON l.CountryCode = bz.bidding_zone_code
+                    LEFT JOIN StagingWeather w ON 
+                        CAST(l.DateTime AS DATE) = CAST(w.DateTime AS DATE) 
+                        AND DATEPART(HOUR, l.DateTime) = DATEPART(HOUR, w.DateTime)
+                        AND w.location IN (
+                            SELECT TOP 1 name FROM CONFIG.locations 
+                            WHERE country = l.CountryCode
+                        )
+                WHERE 
+                    l.DateTime BETWEEN ? AND ?
+                    AND NOT EXISTS (
+                        SELECT 1 FROM fact_energy_weather f
+                        JOIN dim_date d ON f.date_id = d.date_id
+                        JOIN dim_time t ON f.time_id = t.time_id
+                        WHERE 
+                            d.full_date = CAST(l.DateTime AS DATE)
+                            AND t.hour = DATEPART(HOUR, l.DateTime)
+                            AND t.minute = DATEPART(MINUTE, l.DateTime)
+                            AND f.bidding_zone_id = bz.bidding_zone_id
+                    )
+            """, start_date, end_date)
+            
+            # Aktualizacja danych generacji
+            cursor.execute("""
+                MERGE INTO fact_energy_weather AS target
+                USING (
+                    SELECT 
+                        CAST(FORMAT(g.DateTime, 'yyyyMMdd') AS INT) AS date_id,
+                        DATEPART(HOUR, g.DateTime) * 60 + DATEPART(MINUTE, g.DateTime) AS time_id,
+                        bz.bidding_zone_id,
+                        gt.generation_type_id,
+                        g.Generation AS generation_amount,
+                        NULL AS capacity_factor -- Placeholder
+                    FROM 
+                        StagingGeneration g
+                        JOIN dim_bidding_zone bz ON g.CountryCode = bz.bidding_zone_code
+                        JOIN dim_generation_type gt ON g.ProductionType = gt.generation_type
+                    WHERE 
+                        g.DateTime BETWEEN ? AND ?
+                ) AS source
+                ON (
+                    target.date_id = source.date_id
+                    AND target.time_id = source.time_id
+                    AND target.bidding_zone_id = source.bidding_zone_id
+                    AND (target.generation_type_id = source.generation_type_id OR (target.generation_type_id IS NULL AND source.generation_type_id IS NULL))
+                )
+                WHEN MATCHED THEN
+                    UPDATE SET 
+                        target.generation_amount = source.generation_amount,
+                        target.capacity_factor = source.capacity_factor
+                WHEN NOT MATCHED THEN
+                    INSERT (
+                        date_id, time_id, bidding_zone_id, generation_type_id,
+                        generation_amount, capacity_factor
+                    )
+                    VALUES (
+                        source.date_id, source.time_id, source.bidding_zone_id, source.generation_type_id,
+                        source.generation_amount, source.capacity_factor
+                    );
+            """, start_date, end_date)
+            
+            # Aktualizacja danych cenowych
+            cursor.execute("""
+                MERGE INTO fact_energy_weather AS target
+                USING (
+                    SELECT 
+                        CAST(FORMAT(p.DateTime, 'yyyyMMdd') AS INT) AS date_id,
+                        DATEPART(HOUR, p.DateTime) * 60 + DATEPART(MINUTE, p.DateTime) AS time_id,
+                        bz.bidding_zone_id,
+                        p.Price
+                    FROM 
+                        StagingPrice p
+                        JOIN dim_bidding_zone bz ON p.CountryCode = bz.bidding_zone_code
+                    WHERE 
+                        p.DateTime BETWEEN ? AND ?
+                ) AS source
+                ON (
+                    target.date_id = source.date_id
+                    AND target.time_id = source.time_id
+                    AND target.bidding_zone_id = source.bidding_zone_id
+                )
+                WHEN MATCHED THEN
+                    UPDATE SET 
+                        target.electricity_price = source.Price
+                WHEN NOT MATCHED THEN
+                    INSERT (
+                        date_id, time_id, bidding_zone_id, electricity_price
+                    )
+                    VALUES (
+                        source.date_id, source.time_id, source.bidding_zone_id, source.Price
+                    );
+            """, start_date, end_date)
         
-        print("Dane zintegrowane pomyślnie")
-    else:
-        print("Brak nowych danych do dodania")
-        # Dodajemy diagnostykę
-        print("Sprawdzamy czy istnieją dane w tabelach przejściowych:")
-        cursor.execute("SELECT COUNT(*) FROM StagingLoad")
-        load_count = cursor.fetchone()[0]
-        print(f"StagingLoad: {load_count} wierszy")
+        logging.info("Zakończono integrację danych")
+        return 0
         
-        cursor.execute("SELECT COUNT(*) FROM StagingPrice")
-        price_count = cursor.fetchone()[0]
-        print(f"StagingPrice: {price_count} wierszy")
-        
-        cursor.execute("SELECT COUNT(*) FROM StagingWeather")
-        weather_count = cursor.fetchone()[0]
-        print(f"StagingWeather: {weather_count} wierszy")
-        
-        # Sprawdzamy czy tabele wymiarów mają dane
-        cursor.execute("SELECT COUNT(*) FROM DimTime")
-        time_count = cursor.fetchone()[0]
-        print(f"DimTime: {time_count} wierszy")
-        
-        cursor.execute("SELECT COUNT(*) FROM DimLocation")
-        loc_count = cursor.fetchone()[0]
-        print(f"DimLocation: {loc_count} wierszy")
-        
-        cursor.execute("SELECT COUNT(*) FROM DimWeather")
-        weather_dim_count = cursor.fetchone()[0]
-        print(f"DimWeather: {weather_dim_count} wierszy")
+    except Exception as e:
+        logging.error(f"Błąd podczas integracji danych: {str(e)}")
+        return 1
 
 if __name__ == "__main__":
-    sys.exit(integrate_data())
+    # Parsowanie argumentów
+    if len(sys.argv) >= 3:
+        start_date = sys.argv[1]
+        end_date = sys.argv[2]
+    else:
+        start_date = None
+        end_date = None
+    
+    sys.exit(integrate_energy_weather_data(start_date, end_date))
