@@ -1057,7 +1057,7 @@ def main():
     
     # Parametry z zmiennych środowiskowych z wartościami domyślnymi
     connection_string = os.getenv('DW_CONNECTION_STRING', 
-                                 "Driver={ODBC Driver 17 for SQL Server};Server=localhost;Database=EnergyWeatherDW1;Trusted_Connection=yes;")
+                                 "Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;")
     max_connections = int(os.getenv('DW_MAX_CONNECTIONS', '3'))
     batch_size = int(os.getenv('DW_BATCH_SIZE', '5000'))
     

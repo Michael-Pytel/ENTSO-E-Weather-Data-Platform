@@ -1271,7 +1271,7 @@ def main():
     connection_string = os.getenv('DW_CONNECTION_STRING', '')
     
     if not connection_string:
-        connection_string = "Driver={ODBC Driver 17 for SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;"
+        connection_string = "Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;"
         logger.info(f"Using default connection string")
     
     try:

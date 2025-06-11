@@ -1,0 +1,936 @@
+2025-06-10 14:14:11,752 - NullValuesFixerMain - INFO - Starting NULL Values Fix
+2025-06-10 14:14:11,752 - NullValuesFixerMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-10 14:14:11,752 - __main__ - INFO - Starting full NULL values fix
+2025-06-10 14:14:15,982 - __main__ - INFO - Found 18 tables to process
+2025-06-10 14:14:15,983 - __main__ - INFO - Processing table: config_bidding_zones
+2025-06-10 14:14:16,124 - __main__ - INFO - No NULL values found in table config_bidding_zones
+2025-06-10 14:14:16,124 - __main__ - INFO - Processing table: config_generation_types
+2025-06-10 14:14:16,212 - __main__ - INFO - No NULL values found in table config_generation_types
+2025-06-10 14:14:16,213 - __main__ - INFO - Processing table: dim_bidding_zone
+2025-06-10 14:14:16,317 - __main__ - INFO -   Updating 8 NULL values in column energy_intensity with 0.0
+2025-06-10 14:14:16,336 - __main__ - INFO -   Updated 8 rows in column energy_intensity
+2025-06-10 14:14:16,336 - __main__ - INFO -   Updating 17 NULL values in column year with 0
+2025-06-10 14:14:16,364 - __main__ - INFO -   Updated 17 rows in column year
+2025-06-10 14:14:16,366 - __main__ - INFO - Completed table dim_bidding_zone. Total updates: 25
+2025-06-10 14:14:16,367 - __main__ - INFO - Processing table: dim_date
+2025-06-10 14:14:16,507 - __main__ - INFO - No NULL values found in table dim_date
+2025-06-10 14:14:16,507 - __main__ - INFO - Processing table: dim_generation_type
+2025-06-10 14:14:16,566 - __main__ - INFO - No NULL values found in table dim_generation_type
+2025-06-10 14:14:16,566 - __main__ - INFO - Processing table: dim_socioeconomic_profile
+2025-06-10 14:14:16,648 - __main__ - INFO - No NULL values found in table dim_socioeconomic_profile
+2025-06-10 14:14:16,648 - __main__ - INFO - Processing table: dim_time
+2025-06-10 14:14:16,714 - __main__ - INFO - No NULL values found in table dim_time
+2025-06-10 14:14:16,715 - __main__ - INFO - Processing table: dim_weather_condition
+2025-06-10 14:14:16,754 - __main__ - INFO - No NULL values found in table dim_weather_condition
+2025-06-10 14:14:16,754 - __main__ - INFO - Processing table: dim_weather_zone
+2025-06-10 14:14:16,782 - __main__ - INFO - No NULL values found in table dim_weather_zone
+2025-06-10 14:14:16,782 - __main__ - INFO - Processing table: etl_log
+2025-06-10 14:14:16,843 - __main__ - INFO -   Updating 6 NULL values in column error_message with 'Unknown'
+2025-06-10 14:14:16,845 - __main__ - INFO -   Updated 6 rows in column error_message
+2025-06-10 14:14:16,845 - __main__ - INFO -   Updating 10 NULL values in column execution_details with 'Unknown'
+2025-06-10 14:14:16,851 - __main__ - INFO -   Updated 10 rows in column execution_details
+2025-06-10 14:14:16,852 - __main__ - INFO - Completed table etl_log. Total updates: 16
+2025-06-10 14:14:16,852 - __main__ - INFO - Processing table: fact_energy_weather
+2025-06-10 14:14:23,233 - __main__ - INFO -   Updating 38040 NULL values in column cloud_cover with 0.0
+2025-06-10 14:14:23,436 - __main__ - INFO -   Updated 38040 rows in column cloud_cover
+2025-06-10 14:14:23,647 - __main__ - INFO - Completed table fact_energy_weather. Total updates: 38040
+2025-06-10 14:14:23,649 - __main__ - INFO - Processing table: src_climate_data
+2025-06-10 14:14:23,741 - __main__ - INFO - No NULL values found in table src_climate_data
+2025-06-10 14:14:23,741 - __main__ - INFO - Processing table: src_entso_actual_load
+2025-06-10 14:14:23,863 - __main__ - INFO -   Updating 4050 NULL values in column bidding_zone with 'Unknown'
+2025-06-10 14:14:23,889 - __main__ - INFO -   Updated 4050 rows in column bidding_zone
+2025-06-10 14:14:24,453 - __main__ - INFO - Completed table src_entso_actual_load. Total updates: 4050
+2025-06-10 14:14:24,453 - __main__ - INFO - Processing table: src_entso_forecast
+2025-06-10 14:14:24,538 - __main__ - INFO -   Updating 5160 NULL values in column bidding_zone with 'Unknown'
+2025-06-10 14:14:24,564 - __main__ - INFO -   Updated 5160 rows in column bidding_zone
+2025-06-10 14:14:24,643 - __main__ - INFO - Completed table src_entso_forecast. Total updates: 5160
+2025-06-10 14:14:24,643 - __main__ - INFO - Processing table: src_entso_generation
+2025-06-10 14:14:25,003 - __main__ - INFO -   Updating 53950 NULL values in column bidding_zone with 'Unknown'
+2025-06-10 14:14:25,265 - __main__ - INFO -   Updated 53950 rows in column bidding_zone
+2025-06-10 14:14:25,295 - __main__ - INFO - Completed table src_entso_generation. Total updates: 53950
+2025-06-10 14:14:25,295 - __main__ - INFO - Processing table: src_eurostat_integrated
+2025-06-10 14:14:25,384 - __main__ - INFO -   Updating 8 NULL values in column energy_intensity with 0.0
+2025-06-10 14:14:25,387 - __main__ - INFO -   Updated 8 rows in column energy_intensity
+2025-06-10 14:14:25,387 - __main__ - INFO -   Updating 3 NULL values in column service_sector_percentage with 0.0
+2025-06-10 14:14:25,394 - __main__ - INFO -   Updated 3 rows in column service_sector_percentage
+2025-06-10 14:14:25,394 - __main__ - INFO -   Updating 5 NULL values in column primary_heating_type with 'Unknown'
+2025-06-10 14:14:25,396 - __main__ - INFO -   Updated 5 rows in column primary_heating_type
+2025-06-10 14:14:25,397 - __main__ - INFO - Completed table src_eurostat_integrated. Total updates: 16
+2025-06-10 14:14:25,398 - __main__ - INFO - Processing table: src_weather_data
+2025-06-10 14:14:25,568 - __main__ - INFO - No NULL values found in table src_weather_data
+2025-06-10 14:14:25,568 - __main__ - INFO - Processing table: sysdiagrams
+2025-06-10 14:14:25,595 - __main__ - INFO - No NULL values found in table sysdiagrams
+2025-06-10 14:14:25,595 - __main__ - INFO - Successfully processed 18/18 tables
+2025-06-10 14:14:25,597 - __main__ - INFO - Setting columns to NOT NULL
+2025-06-10 14:14:25,602 - __main__ - INFO - Setting columns to NOT NULL in table: config_bidding_zones
+2025-06-10 14:14:25,680 - __main__ - INFO -   Set latitude to NOT NULL
+2025-06-10 14:14:25,684 - __main__ - INFO -   Set longitude to NOT NULL
+2025-06-10 14:14:25,685 - __main__ - INFO - Setting columns to NOT NULL in table: config_generation_types
+2025-06-10 14:14:25,704 - __main__ - INFO - Setting columns to NOT NULL in table: dim_bidding_zone
+2025-06-10 14:14:25,762 - __main__ - INFO -   Set bidding_zone_code to NOT NULL
+2025-06-10 14:14:25,766 - __main__ - INFO -   Set bidding_zone_name to NOT NULL
+2025-06-10 14:14:25,771 - __main__ - INFO -   Set primary_country to NOT NULL
+2025-06-10 14:14:25,775 - __main__ - INFO -   Set secondary_countries to NOT NULL
+2025-06-10 14:14:25,778 - __main__ - INFO -   Set control_area to NOT NULL
+2025-06-10 14:14:25,780 - __main__ - INFO -   Set timezone to NOT NULL
+2025-06-10 14:14:25,785 - __main__ - INFO -   Set population to NOT NULL
+2025-06-10 14:14:25,788 - __main__ - INFO -   Set gdp_per_capita to NOT NULL
+2025-06-10 14:14:25,793 - __main__ - INFO -   Set energy_intensity to NOT NULL
+2025-06-10 14:14:25,795 - __main__ - INFO -   Set electricity_price_avg to NOT NULL
+2025-06-10 14:14:25,801 - __main__ - INFO -   Set year to NOT NULL
+2025-06-10 14:14:25,801 - __main__ - INFO - Setting columns to NOT NULL in table: dim_date
+2025-06-10 14:14:25,838 - __main__ - INFO -   Set day_of_week to NOT NULL
+2025-06-10 14:14:25,844 - __main__ - INFO -   Set day_of_month to NOT NULL
+2025-06-10 14:14:25,849 - __main__ - INFO -   Set month to NOT NULL
+2025-06-10 14:14:25,853 - __main__ - INFO -   Set month_name to NOT NULL
+2025-06-10 14:14:25,857 - __main__ - INFO -   Set quarter to NOT NULL
+2025-06-10 14:14:25,864 - __main__ - INFO -   Set year to NOT NULL
+2025-06-10 14:14:25,868 - __main__ - INFO -   Set season to NOT NULL
+2025-06-10 14:14:25,872 - __main__ - INFO -   Set is_holiday to NOT NULL
+2025-06-10 14:14:25,881 - __main__ - INFO -   Set holiday_name to NOT NULL
+2025-06-10 14:14:25,886 - __main__ - INFO -   Set holiday_type to NOT NULL
+2025-06-10 14:14:25,893 - __main__ - INFO -   Set is_school_day to NOT NULL
+2025-06-10 14:14:25,899 - __main__ - INFO -   Set is_weekend to NOT NULL
+2025-06-10 14:14:25,899 - __main__ - INFO - Setting columns to NOT NULL in table: dim_generation_type
+2025-06-10 14:14:25,924 - __main__ - INFO -   Set entso_code to NOT NULL
+2025-06-10 14:14:25,928 - __main__ - INFO -   Set generation_category to NOT NULL
+2025-06-10 14:14:25,933 - __main__ - INFO -   Set generation_type to NOT NULL
+2025-06-10 14:14:25,935 - __main__ - INFO -   Set is_intermittent to NOT NULL
+2025-06-10 14:14:25,941 - __main__ - INFO -   Set fuel_source to NOT NULL
+2025-06-10 14:14:25,942 - __main__ - INFO - Setting columns to NOT NULL in table: dim_socioeconomic_profile
+2025-06-10 14:14:25,975 - __main__ - INFO -   Set bidding_zone_code to NOT NULL
+2025-06-10 14:14:25,979 - __main__ - INFO -   Set country_code to NOT NULL
+2025-06-10 14:14:25,985 - __main__ - INFO -   Set country_name to NOT NULL
+2025-06-10 14:14:25,988 - __main__ - INFO -   Set year to NOT NULL
+2025-06-10 14:14:25,992 - __main__ - INFO -   Set avg_income_level to NOT NULL
+2025-06-10 14:14:25,995 - __main__ - INFO -   Set unemployment_rate to NOT NULL
+2025-06-10 14:14:25,997 - __main__ - INFO -   Set urbanization_rate to NOT NULL
+2025-06-10 14:14:26,003 - __main__ - INFO -   Set service_sector_percentage to NOT NULL
+2025-06-10 14:14:26,007 - __main__ - INFO -   Set industry_sector_percentage to NOT NULL
+2025-06-10 14:14:26,010 - __main__ - INFO -   Set energy_poverty_rate to NOT NULL
+2025-06-10 14:14:26,012 - __main__ - INFO -   Set residential_percentage to NOT NULL
+2025-06-10 14:14:26,019 - __main__ - INFO -   Set commercial_percentage to NOT NULL
+2025-06-10 14:14:26,023 - __main__ - INFO -   Set industrial_percentage to NOT NULL
+2025-06-10 14:14:26,027 - __main__ - INFO -   Set avg_household_size to NOT NULL
+2025-06-10 14:14:26,030 - __main__ - INFO -   Set primary_heating_type to NOT NULL
+2025-06-10 14:14:26,034 - __main__ - INFO -   Set population to NOT NULL
+2025-06-10 14:14:26,034 - __main__ - INFO - Setting columns to NOT NULL in table: dim_time
+2025-06-10 14:14:26,055 - __main__ - INFO -   Set hour to NOT NULL
+2025-06-10 14:14:26,059 - __main__ - INFO -   Set minute to NOT NULL
+2025-06-10 14:14:26,066 - __main__ - INFO -   Set day_period to NOT NULL
+2025-06-10 14:14:26,070 - __main__ - INFO -   Set is_peak_hour to NOT NULL
+2025-06-10 14:14:26,070 - __main__ - INFO - Setting columns to NOT NULL in table: dim_weather_condition
+2025-06-10 14:14:26,092 - __main__ - INFO -   Set condition_type to NOT NULL
+2025-06-10 14:14:26,097 - __main__ - INFO -   Set condition_severity to NOT NULL
+2025-06-10 14:14:26,100 - __main__ - INFO -   Set is_extreme_weather to NOT NULL
+2025-06-10 14:14:26,104 - __main__ - INFO -   Set extreme_weather_type to NOT NULL
+2025-06-10 14:14:26,104 - __main__ - INFO - Setting columns to NOT NULL in table: dim_weather_zone
+2025-06-10 14:14:26,157 - __main__ - INFO -   Set weather_zone_name to NOT NULL
+2025-06-10 14:14:26,161 - __main__ - INFO -   Set climate_zone to NOT NULL
+2025-06-10 14:14:26,164 - __main__ - INFO -   Set elevation_avg to NOT NULL
+2025-06-10 14:14:26,168 - __main__ - INFO -   Set coastal_proximity to NOT NULL
+2025-06-10 14:14:26,170 - __main__ - INFO -   Set urbanization_level to NOT NULL
+2025-06-10 14:14:26,170 - __main__ - INFO - Setting columns to NOT NULL in table: etl_log
+2025-06-10 14:14:26,229 - __main__ - INFO -   Set end_time to NOT NULL
+2025-06-10 14:14:26,234 - __main__ - INFO -   Set records_processed to NOT NULL
+2025-06-10 14:14:26,238 - __main__ - INFO -   Set error_message to NOT NULL
+2025-06-10 14:14:26,241 - __main__ - INFO -   Set execution_details to NOT NULL
+2025-06-10 14:14:26,242 - __main__ - INFO - Setting columns to NOT NULL in table: fact_energy_weather
+2025-06-10 14:14:26,367 - __main__ - INFO -   Set actual_consumption to NOT NULL
+2025-06-10 14:14:26,457 - __main__ - INFO -   Set forecasted_consumption to NOT NULL
+2025-06-10 14:14:26,547 - __main__ - INFO -   Set consumption_deviation to NOT NULL
+2025-06-10 14:14:26,636 - __main__ - INFO -   Set generation_amount to NOT NULL
+2025-06-10 14:14:26,741 - __main__ - INFO -   Set capacity_factor to NOT NULL
+2025-06-10 14:14:26,828 - __main__ - INFO -   Set renewable_percentage to NOT NULL
+2025-06-10 14:14:26,931 - __main__ - INFO -   Set per_capita_consumption to NOT NULL
+2025-06-10 14:14:27,032 - __main__ - INFO -   Set temperature_avg to NOT NULL
+2025-06-10 14:14:27,119 - __main__ - INFO -   Set temperature_min to NOT NULL
+2025-06-10 14:14:27,217 - __main__ - INFO -   Set temperature_max to NOT NULL
+2025-06-10 14:14:27,311 - __main__ - INFO -   Set humidity to NOT NULL
+2025-06-10 14:14:27,407 - __main__ - INFO -   Set precipitation to NOT NULL
+2025-06-10 14:14:27,494 - __main__ - INFO -   Set wind_speed to NOT NULL
+2025-06-10 14:14:27,591 - __main__ - INFO -   Set wind_direction to NOT NULL
+2025-06-10 14:14:27,682 - __main__ - INFO -   Set cloud_cover to NOT NULL
+2025-06-10 14:14:27,772 - __main__ - INFO -   Set solar_radiation to NOT NULL
+2025-06-10 14:14:27,862 - __main__ - INFO -   Set air_pressure to NOT NULL
+2025-06-10 14:14:27,957 - __main__ - INFO -   Set heating_degree_days to NOT NULL
+2025-06-10 14:14:28,052 - __main__ - INFO -   Set cooling_degree_days to NOT NULL
+2025-06-10 14:14:28,052 - __main__ - INFO - Setting columns to NOT NULL in table: src_climate_data
+2025-06-10 14:14:28,084 - __main__ - INFO -   Set date to NOT NULL
+2025-06-10 14:14:28,099 - __main__ - INFO -   Set subzone_code to NOT NULL
+2025-06-10 14:14:28,114 - __main__ - INFO -   Set subzone_name to NOT NULL
+2025-06-10 14:14:28,118 - __main__ - INFO -   Set country_code to NOT NULL
+2025-06-10 14:14:28,126 - __main__ - INFO -   Set zone_name to NOT NULL
+2025-06-10 14:14:28,130 - __main__ - INFO -   Set heating_degree_days to NOT NULL
+2025-06-10 14:14:28,133 - __main__ - INFO -   Set cooling_degree_days to NOT NULL
+2025-06-10 14:14:28,137 - __main__ - INFO -   Set temperature_mean to NOT NULL
+2025-06-10 14:14:28,141 - __main__ - INFO -   Set temperature_min to NOT NULL
+2025-06-10 14:14:28,146 - __main__ - INFO -   Set temperature_max to NOT NULL
+2025-06-10 14:14:28,148 - __main__ - INFO -   Set latitude to NOT NULL
+2025-06-10 14:14:28,152 - __main__ - INFO -   Set longitude to NOT NULL
+2025-06-10 14:14:28,153 - __main__ - INFO - Setting columns to NOT NULL in table: src_entso_actual_load
+2025-06-10 14:14:28,179 - __main__ - INFO -   Set timestamp to NOT NULL
+2025-06-10 14:14:28,184 - __main__ - INFO -   Set quantity to NOT NULL
+2025-06-10 14:14:28,229 - __main__ - INFO -   Set bidding_zone to NOT NULL
+2025-06-10 14:14:28,247 - __main__ - INFO -   Set zone_code to NOT NULL
+2025-06-10 14:14:28,268 - __main__ - INFO -   Set country to NOT NULL
+2025-06-10 14:14:28,298 - __main__ - INFO -   Set data_type to NOT NULL
+2025-06-10 14:14:28,299 - __main__ - INFO - Setting columns to NOT NULL in table: src_entso_forecast
+2025-06-10 14:14:28,327 - __main__ - INFO -   Set timestamp to NOT NULL
+2025-06-10 14:14:28,333 - __main__ - INFO -   Set quantity to NOT NULL
+2025-06-10 14:14:28,375 - __main__ - INFO -   Set bidding_zone to NOT NULL
+2025-06-10 14:14:28,390 - __main__ - INFO -   Set zone_code to NOT NULL
+2025-06-10 14:14:28,408 - __main__ - INFO -   Set country to NOT NULL
+2025-06-10 14:14:28,443 - __main__ - INFO -   Set data_type to NOT NULL
+2025-06-10 14:14:28,444 - __main__ - INFO - Setting columns to NOT NULL in table: src_entso_generation
+2025-06-10 14:14:28,497 - __main__ - INFO -   Set timestamp to NOT NULL
+2025-06-10 14:14:28,532 - __main__ - INFO -   Set quantity to NOT NULL
+2025-06-10 14:14:29,265 - __main__ - INFO -   Set bidding_zone to NOT NULL
+2025-06-10 14:14:29,452 - __main__ - INFO -   Set zone_code to NOT NULL
+2025-06-10 14:14:29,674 - __main__ - INFO -   Set country to NOT NULL
+2025-06-10 14:14:30,798 - __main__ - INFO -   Set generation_type to NOT NULL
+2025-06-10 14:14:31,555 - __main__ - INFO -   Set data_type to NOT NULL
+2025-06-10 14:14:31,555 - __main__ - INFO - Setting columns to NOT NULL in table: src_eurostat_integrated
+2025-06-10 14:14:31,579 - __main__ - INFO -   Set country_code to NOT NULL
+2025-06-10 14:14:31,584 - __main__ - INFO -   Set country_name to NOT NULL
+2025-06-10 14:14:31,587 - __main__ - INFO -   Set year to NOT NULL
+2025-06-10 14:14:31,592 - __main__ - INFO -   Set population to NOT NULL
+2025-06-10 14:14:31,596 - __main__ - INFO -   Set gdp_per_capita to NOT NULL
+2025-06-10 14:14:31,600 - __main__ - INFO -   Set electricity_price_avg to NOT NULL
+2025-06-10 14:14:31,603 - __main__ - INFO -   Set energy_intensity to NOT NULL
+2025-06-10 14:14:31,607 - __main__ - INFO -   Set unemployment_rate to NOT NULL
+2025-06-10 14:14:31,612 - __main__ - INFO -   Set poverty_by_degree_of_urbanization to NOT NULL
+2025-06-10 14:14:31,616 - __main__ - INFO -   Set service_sector_percentage to NOT NULL
+2025-06-10 14:14:31,618 - __main__ - INFO -   Set industry_sector_percentage to NOT NULL
+2025-06-10 14:14:31,622 - __main__ - INFO -   Set avg_household_size to NOT NULL
+2025-06-10 14:14:31,629 - __main__ - INFO -   Set energy_poverty_rate to NOT NULL
+2025-06-10 14:14:31,633 - __main__ - INFO -   Set primary_heating_type to NOT NULL
+2025-06-10 14:14:31,636 - __main__ - INFO -   Set data_quality_score to NOT NULL
+2025-06-10 14:14:31,636 - __main__ - INFO - Setting columns to NOT NULL in table: src_weather_data
+2025-06-10 14:14:31,663 - __main__ - INFO -   Set timestamp to NOT NULL
+2025-06-10 14:14:31,699 - __main__ - INFO -   Set subzone_code to NOT NULL
+2025-06-10 14:14:31,721 - __main__ - INFO -   Set subzone_name to NOT NULL
+2025-06-10 14:14:31,747 - __main__ - INFO -   Set country_code to NOT NULL
+2025-06-10 14:14:31,774 - __main__ - INFO -   Set zone_name to NOT NULL
+2025-06-10 14:14:31,782 - __main__ - INFO -   Set temperature_avg to NOT NULL
+2025-06-10 14:14:31,791 - __main__ - INFO -   Set temperature_min to NOT NULL
+2025-06-10 14:14:31,798 - __main__ - INFO -   Set temperature_max to NOT NULL
+2025-06-10 14:14:31,807 - __main__ - INFO -   Set humidity to NOT NULL
+2025-06-10 14:14:31,814 - __main__ - INFO -   Set precipitation to NOT NULL
+2025-06-10 14:14:31,824 - __main__ - INFO -   Set wind_speed to NOT NULL
+2025-06-10 14:14:31,831 - __main__ - INFO -   Set wind_direction to NOT NULL
+2025-06-10 14:14:31,839 - __main__ - INFO -   Set air_pressure to NOT NULL
+2025-06-10 14:14:31,848 - __main__ - INFO -   Set cloud_cover to NOT NULL
+2025-06-10 14:14:31,856 - __main__ - INFO -   Set solar_radiation to NOT NULL
+2025-06-10 14:14:31,901 - __main__ - INFO -   Set weather_condition to NOT NULL
+2025-06-10 14:14:31,910 - __main__ - INFO -   Set latitude to NOT NULL
+2025-06-10 14:14:31,917 - __main__ - INFO -   Set longitude to NOT NULL
+2025-06-10 14:14:31,918 - __main__ - INFO - Setting columns to NOT NULL in table: sysdiagrams
+2025-06-10 14:14:31,957 - __main__ - INFO -   Set version to NOT NULL
+2025-06-10 14:14:31,961 - __main__ - INFO -   Set definition to NOT NULL
+2025-06-10 14:14:31,962 - __main__ - INFO - Verifying that no NULL values remain
+2025-06-10 14:14:32,019 - __main__ - INFO - Found 18 tables to process
+2025-06-10 14:14:32,319 - __main__ - INFO - Verification successful: No NULL values found
+2025-06-10 14:14:32,319 - __main__ - INFO - NULL values fix completed successfully
+2025-06-10 14:14:32,325 - NullValuesFixerMain - INFO - NULL values fix completed successfully
+2025-06-10 14:27:40,103 - NullValuesFixerMain - INFO - Starting NULL Values Fix for Dimension and Fact Tables
+2025-06-10 14:27:40,104 - NullValuesFixerMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-10 14:27:40,104 - __main__ - INFO - Starting full NULL values fix for dimension and fact tables
+2025-06-10 14:27:44,799 - __main__ - INFO - Found 8 dimension and fact tables to process
+2025-06-10 14:27:44,799 - __main__ - INFO - Processing 8 tables: dim_bidding_zone, dim_date, dim_generation_type, dim_socioeconomic_profile, dim_time, dim_weather_condition, dim_weather_zone, fact_energy_weather
+2025-06-10 14:27:44,800 - __main__ - INFO - Processing table: dim_bidding_zone
+2025-06-10 14:27:44,983 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_bidding_zone
+2025-06-10 14:27:44,983 - __main__ - INFO -   Column bidding_zone_code already NOT NULL
+2025-06-10 14:27:44,983 - __main__ - INFO -   Column bidding_zone_name already NOT NULL
+2025-06-10 14:27:44,983 - __main__ - INFO -   Column primary_country already NOT NULL
+2025-06-10 14:27:44,984 - __main__ - INFO -   Column secondary_countries already NOT NULL
+2025-06-10 14:27:44,984 - __main__ - INFO -   Column control_area already NOT NULL
+2025-06-10 14:27:44,984 - __main__ - INFO -   Column timezone already NOT NULL
+2025-06-10 14:27:44,984 - __main__ - INFO -   Column population already NOT NULL
+2025-06-10 14:27:44,984 - __main__ - INFO -   Column gdp_per_capita already NOT NULL
+2025-06-10 14:27:44,984 - __main__ - INFO -   Column energy_intensity already NOT NULL
+2025-06-10 14:27:44,984 - __main__ - INFO -   Column electricity_price_avg already NOT NULL
+2025-06-10 14:27:44,984 - __main__ - INFO -   Column year already NOT NULL
+2025-06-10 14:27:44,985 - __main__ - INFO - Completed table dim_bidding_zone. Total NULL updates: 0
+2025-06-10 14:27:44,985 - __main__ - INFO - Processing table: dim_date
+2025-06-10 14:27:45,171 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_date
+2025-06-10 14:27:45,171 - __main__ - INFO -   Column full_date already NOT NULL
+2025-06-10 14:27:45,171 - __main__ - INFO -   Column day_of_week already NOT NULL
+2025-06-10 14:27:45,172 - __main__ - INFO -   Column day_of_month already NOT NULL
+2025-06-10 14:27:45,172 - __main__ - INFO -   Column month already NOT NULL
+2025-06-10 14:27:45,172 - __main__ - INFO -   Column month_name already NOT NULL
+2025-06-10 14:27:45,172 - __main__ - INFO -   Column quarter already NOT NULL
+2025-06-10 14:27:45,173 - __main__ - INFO -   Column year already NOT NULL
+2025-06-10 14:27:45,173 - __main__ - INFO -   Column season already NOT NULL
+2025-06-10 14:27:45,174 - __main__ - INFO -   Column is_holiday already NOT NULL
+2025-06-10 14:27:45,174 - __main__ - INFO -   Column holiday_name already NOT NULL
+2025-06-10 14:27:45,175 - __main__ - INFO -   Column holiday_type already NOT NULL
+2025-06-10 14:27:45,175 - __main__ - INFO -   Column is_school_day already NOT NULL
+2025-06-10 14:27:45,176 - __main__ - INFO -   Column is_weekend already NOT NULL
+2025-06-10 14:27:45,177 - __main__ - INFO - Completed table dim_date. Total NULL updates: 0
+2025-06-10 14:27:45,177 - __main__ - INFO - Processing table: dim_generation_type
+2025-06-10 14:27:45,231 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_generation_type
+2025-06-10 14:27:45,231 - __main__ - INFO -   Column entso_code already NOT NULL
+2025-06-10 14:27:45,233 - __main__ - INFO -   Column generation_category already NOT NULL
+2025-06-10 14:27:45,238 - __main__ - INFO -   Column generation_type already NOT NULL
+2025-06-10 14:27:45,238 - __main__ - INFO -   Column is_intermittent already NOT NULL
+2025-06-10 14:27:45,239 - __main__ - INFO -   Column fuel_source already NOT NULL
+2025-06-10 14:27:45,240 - __main__ - INFO - Completed table dim_generation_type. Total NULL updates: 0
+2025-06-10 14:27:45,240 - __main__ - INFO - Processing table: dim_socioeconomic_profile
+2025-06-10 14:27:45,274 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_socioeconomic_profile
+2025-06-10 14:27:45,275 - __main__ - INFO -   Column bidding_zone_code already NOT NULL
+2025-06-10 14:27:45,278 - __main__ - INFO -   Column country_code already NOT NULL
+2025-06-10 14:27:45,283 - __main__ - INFO -   Column country_name already NOT NULL
+2025-06-10 14:27:45,283 - __main__ - INFO -   Column year already NOT NULL
+2025-06-10 14:27:45,284 - __main__ - INFO -   Column avg_income_level already NOT NULL
+2025-06-10 14:27:45,284 - __main__ - INFO -   Column unemployment_rate already NOT NULL
+2025-06-10 14:27:45,285 - __main__ - INFO -   Column urbanization_rate already NOT NULL
+2025-06-10 14:27:45,285 - __main__ - INFO -   Column service_sector_percentage already NOT NULL
+2025-06-10 14:27:45,285 - __main__ - INFO -   Column industry_sector_percentage already NOT NULL
+2025-06-10 14:27:45,286 - __main__ - INFO -   Column energy_poverty_rate already NOT NULL
+2025-06-10 14:27:45,286 - __main__ - INFO -   Column residential_percentage already NOT NULL
+2025-06-10 14:27:45,287 - __main__ - INFO -   Column commercial_percentage already NOT NULL
+2025-06-10 14:27:45,290 - __main__ - INFO -   Column industrial_percentage already NOT NULL
+2025-06-10 14:27:45,296 - __main__ - INFO -   Column avg_household_size already NOT NULL
+2025-06-10 14:27:45,296 - __main__ - INFO -   Column primary_heating_type already NOT NULL
+2025-06-10 14:27:45,297 - __main__ - INFO -   Column population already NOT NULL
+2025-06-10 14:27:45,298 - __main__ - INFO - Completed table dim_socioeconomic_profile. Total NULL updates: 0
+2025-06-10 14:27:45,298 - __main__ - INFO - Processing table: dim_time
+2025-06-10 14:27:45,320 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_time
+2025-06-10 14:27:45,320 - __main__ - INFO -   Column hour already NOT NULL
+2025-06-10 14:27:45,322 - __main__ - INFO -   Column minute already NOT NULL
+2025-06-10 14:27:45,322 - __main__ - INFO -   Column day_period already NOT NULL
+2025-06-10 14:27:45,330 - __main__ - INFO -   Column is_peak_hour already NOT NULL
+2025-06-10 14:27:45,330 - __main__ - INFO - Completed table dim_time. Total NULL updates: 0
+2025-06-10 14:27:45,331 - __main__ - INFO - Processing table: dim_weather_condition
+2025-06-10 14:27:45,352 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_weather_condition
+2025-06-10 14:27:45,352 - __main__ - INFO -   Column condition_type already NOT NULL
+2025-06-10 14:27:45,354 - __main__ - INFO -   Column condition_severity already NOT NULL
+2025-06-10 14:27:45,354 - __main__ - INFO -   Column is_extreme_weather already NOT NULL
+2025-06-10 14:27:45,358 - __main__ - INFO -   Column extreme_weather_type already NOT NULL
+2025-06-10 14:27:45,361 - __main__ - INFO - Completed table dim_weather_condition. Total NULL updates: 0
+2025-06-10 14:27:45,362 - __main__ - INFO - Processing table: dim_weather_zone
+2025-06-10 14:27:45,406 - __main__ - INFO -   Updating 25 NULL values in column bidding_zone_id with 0
+2025-06-10 14:27:45,414 - __main__ - INFO -   Updated 25 rows in column bidding_zone_id
+2025-06-10 14:27:45,415 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_weather_zone
+2025-06-10 14:27:45,415 - __main__ - INFO -   Column weather_zone_name already NOT NULL
+2025-06-10 14:27:45,420 - __main__ - INFO -   Set bidding_zone_id to NOT NULL
+2025-06-10 14:27:45,420 - __main__ - INFO -   Column climate_zone already NOT NULL
+2025-06-10 14:27:45,421 - __main__ - INFO -   Column elevation_avg already NOT NULL
+2025-06-10 14:27:45,421 - __main__ - INFO -   Column coastal_proximity already NOT NULL
+2025-06-10 14:27:45,421 - __main__ - INFO -   Column urbanization_level already NOT NULL
+2025-06-10 14:27:45,422 - __main__ - INFO - Completed table dim_weather_zone. Total NULL updates: 25
+2025-06-10 14:27:45,422 - __main__ - INFO - Processing table: fact_energy_weather
+2025-06-10 14:29:14,350 - __main__ - INFO - Setting ALL columns to NOT NULL in table fact_energy_weather
+2025-06-10 14:29:14,350 - __main__ - INFO -   Column date_id already NOT NULL
+2025-06-10 14:29:14,352 - __main__ - INFO -   Column time_id already NOT NULL
+2025-06-10 14:29:14,357 - __main__ - INFO -   Column bidding_zone_id already NOT NULL
+2025-06-10 14:29:14,358 - __main__ - INFO -   Column weather_zone_id already NOT NULL
+2025-06-10 14:29:45,684 - __main__ - INFO -   Set generation_type_id to NOT NULL
+2025-06-10 14:29:56,360 - __main__ - INFO -   Set weather_condition_id to NOT NULL
+2025-06-10 14:30:09,695 - __main__ - INFO -   Set socioeconomic_profile_id to NOT NULL
+2025-06-10 14:30:09,695 - __main__ - INFO -   Column actual_consumption already NOT NULL
+2025-06-10 14:30:09,697 - __main__ - INFO -   Column forecasted_consumption already NOT NULL
+2025-06-10 14:30:09,701 - __main__ - INFO -   Column consumption_deviation already NOT NULL
+2025-06-10 14:30:09,701 - __main__ - INFO -   Column generation_amount already NOT NULL
+2025-06-10 14:30:09,702 - __main__ - INFO -   Column capacity_factor already NOT NULL
+2025-06-10 14:30:09,702 - __main__ - INFO -   Column renewable_percentage already NOT NULL
+2025-06-10 14:30:09,703 - __main__ - INFO -   Column per_capita_consumption already NOT NULL
+2025-06-10 14:30:09,703 - __main__ - INFO -   Column temperature_avg already NOT NULL
+2025-06-10 14:30:09,704 - __main__ - INFO -   Column temperature_min already NOT NULL
+2025-06-10 14:30:09,704 - __main__ - INFO -   Column temperature_max already NOT NULL
+2025-06-10 14:30:09,705 - __main__ - INFO -   Column humidity already NOT NULL
+2025-06-10 14:30:09,706 - __main__ - INFO -   Column precipitation already NOT NULL
+2025-06-10 14:30:09,706 - __main__ - INFO -   Column wind_speed already NOT NULL
+2025-06-10 14:30:09,708 - __main__ - INFO -   Column wind_direction already NOT NULL
+2025-06-10 14:30:09,715 - __main__ - INFO -   Column cloud_cover already NOT NULL
+2025-06-10 14:30:09,716 - __main__ - INFO -   Column solar_radiation already NOT NULL
+2025-06-10 14:30:09,716 - __main__ - INFO -   Column air_pressure already NOT NULL
+2025-06-10 14:30:09,716 - __main__ - INFO -   Column heating_degree_days already NOT NULL
+2025-06-10 14:30:09,717 - __main__ - INFO -   Column cooling_degree_days already NOT NULL
+2025-06-10 14:30:09,718 - __main__ - INFO - Completed table fact_energy_weather. Total NULL updates: 0
+2025-06-10 14:30:09,718 - __main__ - INFO - Successfully processed 8/8 tables
+2025-06-10 14:30:09,718 - __main__ - INFO - Verifying that no NULL values remain and all columns are NOT NULL
+2025-06-10 14:30:09,868 - __main__ - INFO - Found 8 dimension and fact tables to process
+2025-06-10 14:30:09,868 - __main__ - INFO - Verifying table: dim_bidding_zone
+2025-06-10 14:30:10,355 - __main__ - INFO - Verifying table: dim_date
+2025-06-10 14:30:10,405 - __main__ - INFO - Verifying table: dim_generation_type
+2025-06-10 14:30:10,448 - __main__ - INFO - Verifying table: dim_socioeconomic_profile
+2025-06-10 14:30:10,498 - __main__ - INFO - Verifying table: dim_time
+2025-06-10 14:30:10,514 - __main__ - INFO - Verifying table: dim_weather_condition
+2025-06-10 14:30:10,554 - __main__ - INFO - Verifying table: dim_weather_zone
+2025-06-10 14:30:10,587 - __main__ - INFO - Verifying table: fact_energy_weather
+2025-06-10 14:30:10,669 - __main__ - INFO - Verification successful: All columns are NOT NULL and contain no NULL values
+2025-06-10 14:30:10,669 - __main__ - INFO - NULL values fix completed successfully - all columns are NOT NULL
+2025-06-10 14:43:21,433 - NullValuesFixerMain - INFO - Starting NULL Values Fix for Dimension and Fact Tables
+2025-06-10 14:43:21,433 - NullValuesFixerMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-10 14:43:21,433 - __main__ - INFO - Starting full NULL values fix for dimension and fact tables
+2025-06-10 14:43:26,610 - __main__ - INFO - Found 8 dimension and fact tables to process
+2025-06-10 14:43:26,610 - __main__ - INFO - Processing 8 tables: dim_bidding_zone, dim_date, dim_generation_type, dim_socioeconomic_profile, dim_time, dim_weather_condition, dim_weather_zone, fact_energy_weather
+2025-06-10 14:43:26,610 - __main__ - INFO - Processing table: dim_bidding_zone
+2025-06-10 14:43:26,723 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_bidding_zone
+2025-06-10 14:43:26,723 - __main__ - INFO -   Column bidding_zone_code already NOT NULL
+2025-06-10 14:43:26,724 - __main__ - INFO -   Column bidding_zone_name already NOT NULL
+2025-06-10 14:43:26,724 - __main__ - INFO -   Column primary_country already NOT NULL
+2025-06-10 14:43:26,724 - __main__ - INFO -   Column secondary_countries already NOT NULL
+2025-06-10 14:43:26,724 - __main__ - INFO -   Column control_area already NOT NULL
+2025-06-10 14:43:26,724 - __main__ - INFO -   Column timezone already NOT NULL
+2025-06-10 14:43:26,724 - __main__ - INFO -   Column population already NOT NULL
+2025-06-10 14:43:26,724 - __main__ - INFO -   Column gdp_per_capita already NOT NULL
+2025-06-10 14:43:26,725 - __main__ - INFO -   Column energy_intensity already NOT NULL
+2025-06-10 14:43:26,725 - __main__ - INFO -   Column electricity_price_avg already NOT NULL
+2025-06-10 14:43:26,725 - __main__ - INFO -   Column year already NOT NULL
+2025-06-10 14:43:26,725 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-10 14:43:26,781 - __main__ - INFO - Completed table dim_bidding_zone. Total NULL updates: 0
+2025-06-10 14:43:26,781 - __main__ - INFO - Processing table: dim_date
+2025-06-10 14:43:27,020 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_date
+2025-06-10 14:43:27,020 - __main__ - INFO -   Column full_date already NOT NULL
+2025-06-10 14:43:27,024 - __main__ - INFO -   Column day_of_week already NOT NULL
+2025-06-10 14:43:27,029 - __main__ - INFO -   Column day_of_month already NOT NULL
+2025-06-10 14:43:27,030 - __main__ - INFO -   Column month already NOT NULL
+2025-06-10 14:43:27,030 - __main__ - INFO -   Column month_name already NOT NULL
+2025-06-10 14:43:27,031 - __main__ - INFO -   Column quarter already NOT NULL
+2025-06-10 14:43:27,031 - __main__ - INFO -   Column year already NOT NULL
+2025-06-10 14:43:27,032 - __main__ - INFO -   Column season already NOT NULL
+2025-06-10 14:43:27,032 - __main__ - INFO -   Column is_holiday already NOT NULL
+2025-06-10 14:43:27,033 - __main__ - INFO -   Column holiday_name already NOT NULL
+2025-06-10 14:43:27,033 - __main__ - INFO -   Column holiday_type already NOT NULL
+2025-06-10 14:43:27,033 - __main__ - INFO -   Column is_school_day already NOT NULL
+2025-06-10 14:43:27,034 - __main__ - INFO -   Column is_weekend already NOT NULL
+2025-06-10 14:43:27,034 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-10 14:43:27,121 - __main__ - INFO - Completed table dim_date. Total NULL updates: 0
+2025-06-10 14:43:27,122 - __main__ - INFO - Processing table: dim_generation_type
+2025-06-10 14:43:27,273 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_generation_type
+2025-06-10 14:43:27,273 - __main__ - INFO -   Column entso_code already NOT NULL
+2025-06-10 14:43:27,275 - __main__ - INFO -   Column generation_category already NOT NULL
+2025-06-10 14:43:27,275 - __main__ - INFO -   Column generation_type already NOT NULL
+2025-06-10 14:43:27,280 - __main__ - INFO -   Column is_intermittent already NOT NULL
+2025-06-10 14:43:27,281 - __main__ - INFO -   Column fuel_source already NOT NULL
+2025-06-10 14:43:27,281 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-10 14:43:27,725 - __main__ - INFO - Completed table dim_generation_type. Total NULL updates: 0
+2025-06-10 14:43:27,728 - __main__ - INFO - Processing table: dim_socioeconomic_profile
+2025-06-10 14:43:27,811 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_socioeconomic_profile
+2025-06-10 14:43:27,811 - __main__ - INFO -   Column bidding_zone_code already NOT NULL
+2025-06-10 14:43:27,813 - __main__ - INFO -   Column country_code already NOT NULL
+2025-06-10 14:43:27,817 - __main__ - INFO -   Column country_name already NOT NULL
+2025-06-10 14:43:27,817 - __main__ - INFO -   Column year already NOT NULL
+2025-06-10 14:43:27,818 - __main__ - INFO -   Column avg_income_level already NOT NULL
+2025-06-10 14:43:27,818 - __main__ - INFO -   Column unemployment_rate already NOT NULL
+2025-06-10 14:43:27,819 - __main__ - INFO -   Column urbanization_rate already NOT NULL
+2025-06-10 14:43:27,819 - __main__ - INFO -   Column service_sector_percentage already NOT NULL
+2025-06-10 14:43:27,819 - __main__ - INFO -   Column industry_sector_percentage already NOT NULL
+2025-06-10 14:43:27,820 - __main__ - INFO -   Column energy_poverty_rate already NOT NULL
+2025-06-10 14:43:27,820 - __main__ - INFO -   Column residential_percentage already NOT NULL
+2025-06-10 14:43:27,821 - __main__ - INFO -   Column commercial_percentage already NOT NULL
+2025-06-10 14:43:27,821 - __main__ - INFO -   Column industrial_percentage already NOT NULL
+2025-06-10 14:43:27,822 - __main__ - INFO -   Column avg_household_size already NOT NULL
+2025-06-10 14:43:27,822 - __main__ - INFO -   Column primary_heating_type already NOT NULL
+2025-06-10 14:43:27,822 - __main__ - INFO -   Column population already NOT NULL
+2025-06-10 14:43:27,824 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-10 14:43:27,912 - __main__ - INFO - Completed table dim_socioeconomic_profile. Total NULL updates: 0
+2025-06-10 14:43:27,913 - __main__ - INFO - Processing table: dim_time
+2025-06-10 14:43:28,467 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_time
+2025-06-10 14:43:28,467 - __main__ - INFO -   Column hour already NOT NULL
+2025-06-10 14:43:28,469 - __main__ - INFO -   Column minute already NOT NULL
+2025-06-10 14:43:28,473 - __main__ - INFO -   Column day_period already NOT NULL
+2025-06-10 14:43:28,474 - __main__ - INFO -   Column is_peak_hour already NOT NULL
+2025-06-10 14:43:28,474 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-10 14:43:28,702 - __main__ - INFO - Completed table dim_time. Total NULL updates: 0
+2025-06-10 14:43:28,703 - __main__ - INFO - Processing table: dim_weather_condition
+2025-06-10 14:43:29,363 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_weather_condition
+2025-06-10 14:43:29,363 - __main__ - INFO -   Column condition_type already NOT NULL
+2025-06-10 14:43:29,365 - __main__ - INFO -   Column condition_severity already NOT NULL
+2025-06-10 14:43:29,366 - __main__ - INFO -   Column is_extreme_weather already NOT NULL
+2025-06-10 14:43:29,370 - __main__ - INFO -   Column extreme_weather_type already NOT NULL
+2025-06-10 14:43:29,370 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-10 14:43:29,439 - __main__ - INFO - Completed table dim_weather_condition. Total NULL updates: 0
+2025-06-10 14:43:29,449 - __main__ - INFO - Processing table: dim_weather_zone
+2025-06-10 14:43:29,589 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_weather_zone
+2025-06-10 14:43:29,590 - __main__ - INFO -   Column weather_zone_name already NOT NULL
+2025-06-10 14:43:29,591 - __main__ - INFO -   Column bidding_zone_id already NOT NULL
+2025-06-10 14:43:29,596 - __main__ - INFO -   Column climate_zone already NOT NULL
+2025-06-10 14:43:29,597 - __main__ - INFO -   Column elevation_avg already NOT NULL
+2025-06-10 14:43:29,597 - __main__ - INFO -   Column coastal_proximity already NOT NULL
+2025-06-10 14:43:29,598 - __main__ - INFO -   Column urbanization_level already NOT NULL
+2025-06-10 14:43:29,598 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-10 14:43:29,620 - __main__ - INFO - Completed table dim_weather_zone. Total NULL updates: 0
+2025-06-10 14:43:29,620 - __main__ - INFO - Processing table: fact_energy_weather
+2025-06-10 14:43:57,314 - __main__ - INFO - Setting ALL columns to NOT NULL in table fact_energy_weather
+2025-06-10 14:43:57,315 - __main__ - INFO -   Column date_id already NOT NULL
+2025-06-10 14:43:57,317 - __main__ - INFO -   Column time_id already NOT NULL
+2025-06-10 14:43:57,322 - __main__ - INFO -   Column bidding_zone_id already NOT NULL
+2025-06-10 14:43:57,322 - __main__ - INFO -   Column weather_zone_id already NOT NULL
+2025-06-10 14:43:57,323 - __main__ - INFO -   Column generation_type_id already NOT NULL
+2025-06-10 14:43:57,324 - __main__ - INFO -   Column weather_condition_id already NOT NULL
+2025-06-10 14:43:57,324 - __main__ - INFO -   Column socioeconomic_profile_id already NOT NULL
+2025-06-10 14:43:57,324 - __main__ - INFO -   Column actual_consumption already NOT NULL
+2025-06-10 14:43:57,325 - __main__ - INFO -   Column forecasted_consumption already NOT NULL
+2025-06-10 14:43:57,334 - __main__ - INFO -   Column consumption_deviation already NOT NULL
+2025-06-10 14:43:57,342 - __main__ - INFO -   Column generation_amount already NOT NULL
+2025-06-10 14:43:57,342 - __main__ - INFO -   Column capacity_factor already NOT NULL
+2025-06-10 14:43:57,343 - __main__ - INFO -   Column renewable_percentage already NOT NULL
+2025-06-10 14:43:57,343 - __main__ - INFO -   Column per_capita_consumption already NOT NULL
+2025-06-10 14:43:57,343 - __main__ - INFO -   Column temperature_avg already NOT NULL
+2025-06-10 14:43:57,344 - __main__ - INFO -   Column temperature_min already NOT NULL
+2025-06-10 14:43:57,344 - __main__ - INFO -   Column temperature_max already NOT NULL
+2025-06-10 14:43:57,345 - __main__ - INFO -   Column humidity already NOT NULL
+2025-06-10 14:43:57,345 - __main__ - INFO -   Column precipitation already NOT NULL
+2025-06-10 14:43:57,346 - __main__ - INFO -   Column wind_speed already NOT NULL
+2025-06-10 14:43:57,346 - __main__ - INFO -   Column wind_direction already NOT NULL
+2025-06-10 14:43:57,346 - __main__ - INFO -   Column cloud_cover already NOT NULL
+2025-06-10 14:43:57,350 - __main__ - INFO -   Column solar_radiation already NOT NULL
+2025-06-10 14:43:57,355 - __main__ - INFO -   Column air_pressure already NOT NULL
+2025-06-10 14:43:57,356 - __main__ - INFO -   Column heating_degree_days already NOT NULL
+2025-06-10 14:43:57,357 - __main__ - INFO -   Column cooling_degree_days already NOT NULL
+2025-06-10 14:43:57,358 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-10 14:44:09,265 - __main__ - INFO - Completed table fact_energy_weather. Total NULL updates: 0
+2025-06-10 14:44:09,275 - __main__ - INFO - Successfully processed 8/8 tables
+2025-06-10 14:44:09,276 - __main__ - INFO - Verifying that no NULL values remain and all columns are NOT NULL
+2025-06-10 14:44:10,093 - __main__ - INFO - Found 8 dimension and fact tables to process
+2025-06-10 14:44:10,093 - __main__ - INFO - Verifying table: dim_bidding_zone
+2025-06-10 14:44:10,570 - __main__ - INFO - Verifying table: dim_date
+2025-06-10 14:44:10,640 - __main__ - INFO - Verifying table: dim_generation_type
+2025-06-10 14:44:10,697 - __main__ - INFO - Verifying table: dim_socioeconomic_profile
+2025-06-10 14:44:10,815 - __main__ - INFO - Verifying table: dim_time
+2025-06-10 14:44:10,860 - __main__ - INFO - Verifying table: dim_weather_condition
+2025-06-10 14:44:10,882 - __main__ - INFO - Verifying table: dim_weather_zone
+2025-06-10 14:44:10,906 - __main__ - INFO - Verifying table: fact_energy_weather
+2025-06-10 14:44:10,986 - __main__ - INFO - Verification successful: All columns are NOT NULL and contain no NULL values
+2025-06-10 14:44:10,986 - __main__ - INFO - NULL values fix completed successfully - all columns are NOT NULL
+2025-06-10 14:52:20,125 - NullValuesFixerMain - INFO - Starting NULL Values Fix for Dimension and Fact Tables
+2025-06-10 14:52:20,136 - NullValuesFixerMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-10 14:52:20,138 - __main__ - INFO - Starting full NULL values fix for dimension and fact tables
+2025-06-10 14:52:24,897 - __main__ - INFO - Found 8 dimension and fact tables to process
+2025-06-10 14:52:24,898 - __main__ - INFO - Processing 8 tables: dim_bidding_zone, dim_date, dim_generation_type, dim_socioeconomic_profile, dim_time, dim_weather_condition, dim_weather_zone, fact_energy_weather
+2025-06-10 14:52:24,900 - __main__ - INFO - === DIAGNOSING TABLE: dim_bidding_zone ===
+2025-06-10 14:52:24,954 - __main__ - INFO - Table dim_bidding_zone has 13 columns:
+2025-06-10 14:52:24,958 - __main__ - INFO -   bidding_zone_id:
+2025-06-10 14:52:24,958 - __main__ - INFO -     Type: int(10)
+2025-06-10 14:52:24,959 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:24,963 - __main__ - INFO -     Identity: True
+2025-06-10 14:52:24,963 - __main__ - INFO -     Default: None
+2025-06-10 14:52:24,964 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:24,966 - __main__ - INFO -   bidding_zone_code:
+2025-06-10 14:52:24,966 - __main__ - INFO -     Type: varchar(50)
+2025-06-10 14:52:24,970 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:24,974 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:24,974 - __main__ - INFO -     Default: None
+2025-06-10 14:52:24,975 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:24,977 - __main__ - INFO -   bidding_zone_name:
+2025-06-10 14:52:24,977 - __main__ - INFO -     Type: varchar(100)
+2025-06-10 14:52:24,978 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:24,979 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:24,980 - __main__ - INFO -     Default: None
+2025-06-10 14:52:24,981 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:24,985 - __main__ - INFO -   primary_country:
+2025-06-10 14:52:24,985 - __main__ - INFO -     Type: varchar(50)
+2025-06-10 14:52:24,989 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:24,989 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:24,990 - __main__ - INFO -     Default: None
+2025-06-10 14:52:24,990 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:24,993 - __main__ - INFO -   secondary_countries:
+2025-06-10 14:52:24,993 - __main__ - INFO -     Type: varchar(100)
+2025-06-10 14:52:24,994 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:24,994 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:24,994 - __main__ - INFO -     Default: None
+2025-06-10 14:52:24,996 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,004 - __main__ - INFO -   control_area:
+2025-06-10 14:52:25,005 - __main__ - INFO -     Type: varchar(50)
+2025-06-10 14:52:25,005 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,006 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,006 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,007 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,009 - __main__ - INFO -   timezone:
+2025-06-10 14:52:25,009 - __main__ - INFO -     Type: varchar(50)
+2025-06-10 14:52:25,010 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,010 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,011 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,011 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,032 - __main__ - INFO -   population:
+2025-06-10 14:52:25,032 - __main__ - INFO -     Type: bigint(19)
+2025-06-10 14:52:25,033 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,033 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,034 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,034 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,084 - __main__ - INFO -   gdp_per_capita:
+2025-06-10 14:52:25,084 - __main__ - INFO -     Type: decimal(15)
+2025-06-10 14:52:25,086 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,090 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,091 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,091 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,103 - __main__ - INFO -   energy_intensity:
+2025-06-10 14:52:25,104 - __main__ - INFO -     Type: decimal(15)
+2025-06-10 14:52:25,104 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,105 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,114 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,120 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,124 - __main__ - INFO -   electricity_price_avg:
+2025-06-10 14:52:25,124 - __main__ - INFO -     Type: decimal(10)
+2025-06-10 14:52:25,125 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,125 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,126 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,126 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,127 - __main__ - INFO -   year:
+2025-06-10 14:52:25,127 - __main__ - INFO -     Type: int(10)
+2025-06-10 14:52:25,128 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,130 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,131 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,131 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,133 - __main__ - INFO -   created_at:
+2025-06-10 14:52:25,134 - __main__ - INFO -     Type: datetime2(default)
+2025-06-10 14:52:25,134 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,135 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,135 - __main__ - INFO -     Default: (getdate())
+2025-06-10 14:52:25,135 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,229 - __main__ - INFO - Processing table: dim_bidding_zone
+2025-06-10 14:52:25,265 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_bidding_zone
+2025-06-10 14:52:25,265 - __main__ - INFO -   Column bidding_zone_code already NOT NULL
+2025-06-10 14:52:25,267 - __main__ - INFO -   Column bidding_zone_name already NOT NULL
+2025-06-10 14:52:25,268 - __main__ - INFO -   Column primary_country already NOT NULL
+2025-06-10 14:52:25,272 - __main__ - INFO -   Column secondary_countries already NOT NULL
+2025-06-10 14:52:25,272 - __main__ - INFO -   Column control_area already NOT NULL
+2025-06-10 14:52:25,272 - __main__ - INFO -   Column timezone already NOT NULL
+2025-06-10 14:52:25,273 - __main__ - INFO -   Column population already NOT NULL
+2025-06-10 14:52:25,274 - __main__ - INFO -   Column gdp_per_capita already NOT NULL
+2025-06-10 14:52:25,274 - __main__ - INFO -   Column energy_intensity already NOT NULL
+2025-06-10 14:52:25,275 - __main__ - INFO -   Column electricity_price_avg already NOT NULL
+2025-06-10 14:52:25,275 - __main__ - INFO -   Column year already NOT NULL
+2025-06-10 14:52:25,275 - __main__ - INFO -   Column created_at already NOT NULL
+2025-06-10 14:52:25,276 - __main__ - INFO - Completed table dim_bidding_zone. Total NULL updates: 0
+2025-06-10 14:52:25,276 - __main__ - INFO - Processing table: dim_date
+2025-06-10 14:52:25,312 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_date
+2025-06-10 14:52:25,312 - __main__ - INFO -   Column full_date already NOT NULL
+2025-06-10 14:52:25,316 - __main__ - INFO -   Column day_of_week already NOT NULL
+2025-06-10 14:52:25,320 - __main__ - INFO -   Column day_of_month already NOT NULL
+2025-06-10 14:52:25,321 - __main__ - INFO -   Column month already NOT NULL
+2025-06-10 14:52:25,321 - __main__ - INFO -   Column month_name already NOT NULL
+2025-06-10 14:52:25,322 - __main__ - INFO -   Column quarter already NOT NULL
+2025-06-10 14:52:25,322 - __main__ - INFO -   Column year already NOT NULL
+2025-06-10 14:52:25,323 - __main__ - INFO -   Column season already NOT NULL
+2025-06-10 14:52:25,323 - __main__ - INFO -   Column is_holiday already NOT NULL
+2025-06-10 14:52:25,323 - __main__ - INFO -   Column holiday_name already NOT NULL
+2025-06-10 14:52:25,324 - __main__ - INFO -   Column holiday_type already NOT NULL
+2025-06-10 14:52:25,324 - __main__ - INFO -   Column is_school_day already NOT NULL
+2025-06-10 14:52:25,325 - __main__ - INFO -   Column is_weekend already NOT NULL
+2025-06-10 14:52:25,325 - __main__ - INFO -   Column created_at already NOT NULL
+2025-06-10 14:52:25,326 - __main__ - INFO - Completed table dim_date. Total NULL updates: 0
+2025-06-10 14:52:25,326 - __main__ - INFO - Processing table: dim_generation_type
+2025-06-10 14:52:25,352 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_generation_type
+2025-06-10 14:52:25,352 - __main__ - INFO -   Column entso_code already NOT NULL
+2025-06-10 14:52:25,353 - __main__ - INFO -   Column generation_category already NOT NULL
+2025-06-10 14:52:25,353 - __main__ - INFO -   Column generation_type already NOT NULL
+2025-06-10 14:52:25,354 - __main__ - INFO -   Column is_intermittent already NOT NULL
+2025-06-10 14:52:25,354 - __main__ - INFO -   Column fuel_source already NOT NULL
+2025-06-10 14:52:25,368 - __main__ - INFO -   Column created_at already NOT NULL
+2025-06-10 14:52:25,375 - __main__ - INFO - Completed table dim_generation_type. Total NULL updates: 0
+2025-06-10 14:52:25,375 - __main__ - INFO - Processing table: dim_socioeconomic_profile
+2025-06-10 14:52:25,402 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_socioeconomic_profile
+2025-06-10 14:52:25,402 - __main__ - INFO -   Column bidding_zone_code already NOT NULL
+2025-06-10 14:52:25,403 - __main__ - INFO -   Column country_code already NOT NULL
+2025-06-10 14:52:25,405 - __main__ - INFO -   Column country_name already NOT NULL
+2025-06-10 14:52:25,410 - __main__ - INFO -   Column year already NOT NULL
+2025-06-10 14:52:25,410 - __main__ - INFO -   Column avg_income_level already NOT NULL
+2025-06-10 14:52:25,411 - __main__ - INFO -   Column unemployment_rate already NOT NULL
+2025-06-10 14:52:25,411 - __main__ - INFO -   Column urbanization_rate already NOT NULL
+2025-06-10 14:52:25,414 - __main__ - INFO -   Column service_sector_percentage already NOT NULL
+2025-06-10 14:52:25,415 - __main__ - INFO -   Column industry_sector_percentage already NOT NULL
+2025-06-10 14:52:25,415 - __main__ - INFO -   Column energy_poverty_rate already NOT NULL
+2025-06-10 14:52:25,416 - __main__ - INFO -   Column residential_percentage already NOT NULL
+2025-06-10 14:52:25,416 - __main__ - INFO -   Column commercial_percentage already NOT NULL
+2025-06-10 14:52:25,417 - __main__ - INFO -   Column industrial_percentage already NOT NULL
+2025-06-10 14:52:25,417 - __main__ - INFO -   Column avg_household_size already NOT NULL
+2025-06-10 14:52:25,417 - __main__ - INFO -   Column primary_heating_type already NOT NULL
+2025-06-10 14:52:25,421 - __main__ - INFO -   Column population already NOT NULL
+2025-06-10 14:52:25,425 - __main__ - INFO -   Column created_at already NOT NULL
+2025-06-10 14:52:25,426 - __main__ - INFO - Completed table dim_socioeconomic_profile. Total NULL updates: 0
+2025-06-10 14:52:25,426 - __main__ - INFO - Processing table: dim_time
+2025-06-10 14:52:25,453 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_time
+2025-06-10 14:52:25,453 - __main__ - INFO -   Column hour already NOT NULL
+2025-06-10 14:52:25,455 - __main__ - INFO -   Column minute already NOT NULL
+2025-06-10 14:52:25,455 - __main__ - INFO -   Column day_period already NOT NULL
+2025-06-10 14:52:25,460 - __main__ - INFO -   Column is_peak_hour already NOT NULL
+2025-06-10 14:52:25,460 - __main__ - INFO -   Column created_at already NOT NULL
+2025-06-10 14:52:25,461 - __main__ - INFO - Completed table dim_time. Total NULL updates: 0
+2025-06-10 14:52:25,461 - __main__ - INFO - Processing table: dim_weather_condition
+2025-06-10 14:52:25,488 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_weather_condition
+2025-06-10 14:52:25,489 - __main__ - INFO -   Column condition_type already NOT NULL
+2025-06-10 14:52:25,490 - __main__ - INFO -   Column condition_severity already NOT NULL
+2025-06-10 14:52:25,495 - __main__ - INFO -   Column is_extreme_weather already NOT NULL
+2025-06-10 14:52:25,496 - __main__ - INFO -   Column extreme_weather_type already NOT NULL
+2025-06-10 14:52:25,499 - __main__ - INFO -   Column created_at already NOT NULL
+2025-06-10 14:52:25,500 - __main__ - INFO - Completed table dim_weather_condition. Total NULL updates: 0
+2025-06-10 14:52:25,500 - __main__ - INFO - Processing table: dim_weather_zone
+2025-06-10 14:52:25,525 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_weather_zone
+2025-06-10 14:52:25,526 - __main__ - INFO -   Column weather_zone_name already NOT NULL
+2025-06-10 14:52:25,526 - __main__ - INFO -   Column bidding_zone_id already NOT NULL
+2025-06-10 14:52:25,528 - __main__ - INFO -   Column climate_zone already NOT NULL
+2025-06-10 14:52:25,532 - __main__ - INFO -   Column elevation_avg already NOT NULL
+2025-06-10 14:52:25,532 - __main__ - INFO -   Column coastal_proximity already NOT NULL
+2025-06-10 14:52:25,536 - __main__ - INFO -   Column urbanization_level already NOT NULL
+2025-06-10 14:52:25,537 - __main__ - INFO -   Column created_at already NOT NULL
+2025-06-10 14:52:25,538 - __main__ - INFO - Completed table dim_weather_zone. Total NULL updates: 0
+2025-06-10 14:52:25,538 - __main__ - INFO - Processing table: fact_energy_weather
+2025-06-10 14:52:25,583 - __main__ - INFO - Setting ALL columns to NOT NULL in table fact_energy_weather
+2025-06-10 14:52:25,583 - __main__ - INFO -   Column date_id already NOT NULL
+2025-06-10 14:52:25,584 - __main__ - INFO -   Column time_id already NOT NULL
+2025-06-10 14:52:25,585 - __main__ - INFO -   Column bidding_zone_id already NOT NULL
+2025-06-10 14:52:25,590 - __main__ - INFO -   Column weather_zone_id already NOT NULL
+2025-06-10 14:52:25,590 - __main__ - INFO -   Column generation_type_id already NOT NULL
+2025-06-10 14:52:25,591 - __main__ - INFO -   Column weather_condition_id already NOT NULL
+2025-06-10 14:52:25,591 - __main__ - INFO -   Column socioeconomic_profile_id already NOT NULL
+2025-06-10 14:52:25,592 - __main__ - INFO -   Column actual_consumption already NOT NULL
+2025-06-10 14:52:25,592 - __main__ - INFO -   Column forecasted_consumption already NOT NULL
+2025-06-10 14:52:25,593 - __main__ - INFO -   Column consumption_deviation already NOT NULL
+2025-06-10 14:52:25,593 - __main__ - INFO -   Column generation_amount already NOT NULL
+2025-06-10 14:52:25,593 - __main__ - INFO -   Column capacity_factor already NOT NULL
+2025-06-10 14:52:25,594 - __main__ - INFO -   Column renewable_percentage already NOT NULL
+2025-06-10 14:52:25,594 - __main__ - INFO -   Column per_capita_consumption already NOT NULL
+2025-06-10 14:52:25,595 - __main__ - INFO -   Column temperature_avg already NOT NULL
+2025-06-10 14:52:25,596 - __main__ - INFO -   Column temperature_min already NOT NULL
+2025-06-10 14:52:25,598 - __main__ - INFO -   Column temperature_max already NOT NULL
+2025-06-10 14:52:25,598 - __main__ - INFO -   Column humidity already NOT NULL
+2025-06-10 14:52:25,599 - __main__ - INFO -   Column precipitation already NOT NULL
+2025-06-10 14:52:25,600 - __main__ - INFO -   Column wind_speed already NOT NULL
+2025-06-10 14:52:25,600 - __main__ - INFO -   Column wind_direction already NOT NULL
+2025-06-10 14:52:25,601 - __main__ - INFO -   Column cloud_cover already NOT NULL
+2025-06-10 14:52:25,601 - __main__ - INFO -   Column solar_radiation already NOT NULL
+2025-06-10 14:52:25,601 - __main__ - INFO -   Column air_pressure already NOT NULL
+2025-06-10 14:52:25,619 - __main__ - INFO -   Column heating_degree_days already NOT NULL
+2025-06-10 14:52:25,624 - __main__ - INFO -   Column cooling_degree_days already NOT NULL
+2025-06-10 14:52:25,627 - __main__ - INFO -   Column created_at already NOT NULL
+2025-06-10 14:52:25,629 - __main__ - INFO - Completed table fact_energy_weather. Total NULL updates: 0
+2025-06-10 14:52:25,630 - __main__ - INFO - Successfully processed 8/8 tables
+2025-06-10 14:52:25,631 - __main__ - INFO - === POST-PROCESSING DIAGNOSIS ===
+2025-06-10 14:52:25,631 - __main__ - INFO - === DIAGNOSING TABLE: dim_bidding_zone ===
+2025-06-10 14:52:25,652 - __main__ - INFO - Table dim_bidding_zone has 13 columns:
+2025-06-10 14:52:25,654 - __main__ - INFO -   bidding_zone_id:
+2025-06-10 14:52:25,656 - __main__ - INFO -     Type: int(10)
+2025-06-10 14:52:25,661 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,662 - __main__ - INFO -     Identity: True
+2025-06-10 14:52:25,663 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,665 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,666 - __main__ - INFO -   bidding_zone_code:
+2025-06-10 14:52:25,667 - __main__ - INFO -     Type: varchar(50)
+2025-06-10 14:52:25,667 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,667 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,671 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,675 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,676 - __main__ - INFO -   bidding_zone_name:
+2025-06-10 14:52:25,677 - __main__ - INFO -     Type: varchar(100)
+2025-06-10 14:52:25,677 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,678 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,679 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,680 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,682 - __main__ - INFO -   primary_country:
+2025-06-10 14:52:25,682 - __main__ - INFO -     Type: varchar(50)
+2025-06-10 14:52:25,684 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,690 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,691 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,691 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,693 - __main__ - INFO -   secondary_countries:
+2025-06-10 14:52:25,693 - __main__ - INFO -     Type: varchar(100)
+2025-06-10 14:52:25,693 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,694 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,694 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,695 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,698 - __main__ - INFO -   control_area:
+2025-06-10 14:52:25,701 - __main__ - INFO -     Type: varchar(50)
+2025-06-10 14:52:25,705 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,705 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,706 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,706 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,708 - __main__ - INFO -   timezone:
+2025-06-10 14:52:25,708 - __main__ - INFO -     Type: varchar(50)
+2025-06-10 14:52:25,709 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,709 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,709 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,710 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,714 - __main__ - INFO -   population:
+2025-06-10 14:52:25,717 - __main__ - INFO -     Type: bigint(19)
+2025-06-10 14:52:25,721 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,721 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,722 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,722 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,724 - __main__ - INFO -   gdp_per_capita:
+2025-06-10 14:52:25,724 - __main__ - INFO -     Type: decimal(15)
+2025-06-10 14:52:25,726 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,726 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,727 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,727 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,731 - __main__ - INFO -   energy_intensity:
+2025-06-10 14:52:25,736 - __main__ - INFO -     Type: decimal(15)
+2025-06-10 14:52:25,737 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,738 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,738 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,739 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,740 - __main__ - INFO -   electricity_price_avg:
+2025-06-10 14:52:25,741 - __main__ - INFO -     Type: decimal(10)
+2025-06-10 14:52:25,741 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,742 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,742 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,742 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,745 - __main__ - INFO -   year:
+2025-06-10 14:52:25,752 - __main__ - INFO -     Type: int(10)
+2025-06-10 14:52:25,752 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,753 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,753 - __main__ - INFO -     Default: None
+2025-06-10 14:52:25,754 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,755 - __main__ - INFO -   created_at:
+2025-06-10 14:52:25,756 - __main__ - INFO -     Type: datetime2(default)
+2025-06-10 14:52:25,756 - __main__ - INFO -     Nullable: NO
+2025-06-10 14:52:25,756 - __main__ - INFO -     Identity: False
+2025-06-10 14:52:25,757 - __main__ - INFO -     Default: (getdate())
+2025-06-10 14:52:25,757 - __main__ - INFO -     NULL count: 0/58
+2025-06-10 14:52:25,758 - __main__ - INFO - Verifying that no NULL values remain and all columns are NOT NULL
+2025-06-10 14:52:25,785 - __main__ - INFO - Found 8 dimension and fact tables to process
+2025-06-10 14:52:25,786 - __main__ - INFO - Verifying table: dim_bidding_zone
+2025-06-10 14:52:25,821 - __main__ - INFO - Verifying table: dim_date
+2025-06-10 14:52:25,844 - __main__ - INFO - Verifying table: dim_generation_type
+2025-06-10 14:52:25,865 - __main__ - INFO - Verifying table: dim_socioeconomic_profile
+2025-06-10 14:52:25,892 - __main__ - INFO - Verifying table: dim_time
+2025-06-10 14:52:25,910 - __main__ - INFO - Verifying table: dim_weather_condition
+2025-06-10 14:52:25,926 - __main__ - INFO - Verifying table: dim_weather_zone
+2025-06-10 14:52:25,948 - __main__ - INFO - Verifying table: fact_energy_weather
+2025-06-10 14:52:26,014 - __main__ - INFO - Verification successful: All columns are NOT NULL and contain no NULL values
+2025-06-10 14:52:26,026 - __main__ - INFO - NULL values fix completed successfully - all columns are NOT NULL
+2025-06-11 10:44:17,089 - NullValuesFixerMain - INFO - Starting NULL Values Fix for Dimension and Fact Tables
+2025-06-11 10:44:17,108 - NullValuesFixerMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-11 10:44:17,109 - __main__ - INFO - Starting full NULL values fix for dimension and fact tables
+2025-06-11 10:44:22,209 - __main__ - INFO - Found 8 dimension and fact tables to process
+2025-06-11 10:44:22,209 - __main__ - INFO - Processing 8 tables: dim_bidding_zone, dim_date, dim_generation_type, dim_socioeconomic_profile, dim_time, dim_weather_condition, dim_weather_zone, fact_energy_weather
+2025-06-11 10:44:22,209 - __main__ - INFO - Processing table: dim_bidding_zone
+2025-06-11 10:44:22,822 - __main__ - INFO -   Updating 8 NULL values in column energy_intensity with -99.99
+2025-06-11 10:44:22,865 - __main__ - INFO -   Updated 8 rows in column energy_intensity
+2025-06-11 10:44:22,866 - __main__ - INFO -   Updating 17 NULL values in column year with 0
+2025-06-11 10:44:22,868 - __main__ - INFO -   Updated 17 rows in column year
+2025-06-11 10:44:22,869 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_bidding_zone
+2025-06-11 10:44:22,869 - __main__ - INFO -   Attempting to set bidding_zone_code (varchar(50)) to NOT NULL
+2025-06-11 10:44:23,097 - __main__ - INFO -   Attempting to set bidding_zone_name (varchar(100)) to NOT NULL
+2025-06-11 10:44:23,109 - __main__ - INFO -   Attempting to set primary_country (varchar(50)) to NOT NULL
+2025-06-11 10:44:23,120 - __main__ - INFO -   Attempting to set secondary_countries (varchar(100)) to NOT NULL
+2025-06-11 10:44:23,126 - __main__ - INFO -   Attempting to set control_area (varchar(50)) to NOT NULL
+2025-06-11 10:44:23,138 - __main__ - INFO -   Attempting to set timezone (varchar(50)) to NOT NULL
+2025-06-11 10:44:23,151 - __main__ - INFO -   Attempting to set population (bigint) to NOT NULL
+2025-06-11 10:44:23,161 - __main__ - INFO -   Attempting to set gdp_per_capita (decimal(15,2)) to NOT NULL
+2025-06-11 10:44:23,170 - __main__ - INFO -   Attempting to set energy_intensity (decimal(15,2)) to NOT NULL
+2025-06-11 10:44:23,181 - __main__ - INFO -   Attempting to set electricity_price_avg (decimal(10,2)) to NOT NULL
+2025-06-11 10:44:23,198 - __main__ - INFO -   Attempting to set year (int) to NOT NULL
+2025-06-11 10:44:23,212 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-11 10:44:23,223 - __main__ - INFO - Completed table dim_bidding_zone. Total NULL updates: 25
+2025-06-11 10:44:23,223 - __main__ - INFO - Processing table: dim_date
+2025-06-11 10:44:23,333 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_date
+2025-06-11 10:44:23,333 - __main__ - INFO -   Column full_date already NOT NULL
+2025-06-11 10:44:23,334 - __main__ - INFO -   Attempting to set day_of_week (varchar(10)) to NOT NULL
+2025-06-11 10:44:23,503 - __main__ - INFO -   Attempting to set day_of_month (int) to NOT NULL
+2025-06-11 10:44:23,511 - __main__ - INFO -   Attempting to set month (int) to NOT NULL
+2025-06-11 10:44:23,521 - __main__ - INFO -   Attempting to set month_name (varchar(20)) to NOT NULL
+2025-06-11 10:44:23,534 - __main__ - INFO -   Attempting to set quarter (int) to NOT NULL
+2025-06-11 10:44:23,541 - __main__ - INFO -   Attempting to set year (int) to NOT NULL
+2025-06-11 10:44:23,550 - __main__ - INFO -   Attempting to set season (varchar(20)) to NOT NULL
+2025-06-11 10:44:23,564 - __main__ - INFO -   Attempting to set is_holiday (varchar(3)) to NOT NULL
+2025-06-11 10:44:23,572 - __main__ - INFO -   Attempting to set holiday_name (varchar(100)) to NOT NULL
+2025-06-11 10:44:23,581 - __main__ - INFO -   Attempting to set holiday_type (varchar(50)) to NOT NULL
+2025-06-11 10:44:23,592 - __main__ - INFO -   Attempting to set is_school_day (varchar(3)) to NOT NULL
+2025-06-11 10:44:23,602 - __main__ - INFO -   Attempting to set is_weekend (varchar(3)) to NOT NULL
+2025-06-11 10:44:23,613 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-11 10:44:23,620 - __main__ - INFO - Completed table dim_date. Total NULL updates: 0
+2025-06-11 10:44:23,623 - __main__ - INFO - Processing table: dim_generation_type
+2025-06-11 10:44:23,673 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_generation_type
+2025-06-11 10:44:23,673 - __main__ - INFO -   Attempting to set entso_code (varchar(5)) to NOT NULL
+2025-06-11 10:44:23,683 - __main__ - INFO -   Attempting to set generation_category (varchar(50)) to NOT NULL
+2025-06-11 10:44:23,691 - __main__ - INFO -   Attempting to set generation_type (varchar(50)) to NOT NULL
+2025-06-11 10:44:23,701 - __main__ - INFO -   Attempting to set is_intermittent (varchar(3)) to NOT NULL
+2025-06-11 10:44:23,708 - __main__ - INFO -   Attempting to set fuel_source (varchar(50)) to NOT NULL
+2025-06-11 10:44:23,720 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-11 10:44:23,732 - __main__ - INFO - Completed table dim_generation_type. Total NULL updates: 0
+2025-06-11 10:44:23,733 - __main__ - INFO - Processing table: dim_socioeconomic_profile
+2025-06-11 10:44:23,856 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_socioeconomic_profile
+2025-06-11 10:44:23,856 - __main__ - INFO -   Attempting to set bidding_zone_code (varchar(50)) to NOT NULL
+2025-06-11 10:44:23,868 - __main__ - INFO -   Attempting to set country_code (varchar(5)) to NOT NULL
+2025-06-11 10:44:23,875 - __main__ - INFO -   Attempting to set country_name (varchar(100)) to NOT NULL
+2025-06-11 10:44:23,886 - __main__ - INFO -   Attempting to set year (int) to NOT NULL
+2025-06-11 10:44:23,893 - __main__ - INFO -   Attempting to set avg_income_level (decimal(12,2)) to NOT NULL
+2025-06-11 10:44:23,904 - __main__ - INFO -   Attempting to set unemployment_rate (decimal(5,2)) to NOT NULL
+2025-06-11 10:44:23,915 - __main__ - INFO -   Attempting to set urbanization_rate (decimal(5,2)) to NOT NULL
+2025-06-11 10:44:23,923 - __main__ - INFO -   Attempting to set service_sector_percentage (decimal(5,2)) to NOT NULL
+2025-06-11 10:44:23,933 - __main__ - INFO -   Attempting to set industry_sector_percentage (decimal(5,2)) to NOT NULL
+2025-06-11 10:44:23,941 - __main__ - INFO -   Attempting to set energy_poverty_rate (decimal(5,2)) to NOT NULL
+2025-06-11 10:44:23,953 - __main__ - INFO -   Attempting to set residential_percentage (decimal(5,2)) to NOT NULL
+2025-06-11 10:44:23,967 - __main__ - INFO -   Attempting to set commercial_percentage (decimal(5,2)) to NOT NULL
+2025-06-11 10:44:23,979 - __main__ - INFO -   Attempting to set industrial_percentage (decimal(5,2)) to NOT NULL
+2025-06-11 10:44:24,012 - __main__ - INFO -   Attempting to set avg_household_size (decimal(5,2)) to NOT NULL
+2025-06-11 10:44:24,023 - __main__ - INFO -   Attempting to set primary_heating_type (varchar(50)) to NOT NULL
+2025-06-11 10:44:24,031 - __main__ - INFO -   Attempting to set population (bigint) to NOT NULL
+2025-06-11 10:44:24,044 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-11 10:44:24,055 - __main__ - INFO - Completed table dim_socioeconomic_profile. Total NULL updates: 0
+2025-06-11 10:44:24,055 - __main__ - INFO - Processing table: dim_time
+2025-06-11 10:44:24,088 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_time
+2025-06-11 10:44:24,088 - __main__ - INFO -   Attempting to set hour (int) to NOT NULL
+2025-06-11 10:44:24,124 - __main__ - INFO -   Attempting to set minute (int) to NOT NULL
+2025-06-11 10:44:24,134 - __main__ - INFO -   Attempting to set day_period (varchar(10)) to NOT NULL
+2025-06-11 10:44:24,144 - __main__ - INFO -   Attempting to set is_peak_hour (varchar(3)) to NOT NULL
+2025-06-11 10:44:24,152 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-11 10:44:24,161 - __main__ - INFO - Completed table dim_time. Total NULL updates: 0
+2025-06-11 10:44:24,161 - __main__ - INFO - Processing table: dim_weather_condition
+2025-06-11 10:44:24,189 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_weather_condition
+2025-06-11 10:44:24,189 - __main__ - INFO -   Attempting to set condition_type (varchar(30)) to NOT NULL
+2025-06-11 10:44:24,198 - __main__ - INFO -   Attempting to set condition_severity (varchar(20)) to NOT NULL
+2025-06-11 10:44:24,208 - __main__ - INFO -   Attempting to set is_extreme_weather (varchar(3)) to NOT NULL
+2025-06-11 10:44:24,216 - __main__ - INFO -   Attempting to set extreme_weather_type (varchar(30)) to NOT NULL
+2025-06-11 10:44:24,226 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-11 10:44:24,236 - __main__ - INFO - Completed table dim_weather_condition. Total NULL updates: 0
+2025-06-11 10:44:24,237 - __main__ - INFO - Processing table: dim_weather_zone
+2025-06-11 10:44:24,357 - __main__ - INFO - Setting ALL columns to NOT NULL in table dim_weather_zone
+2025-06-11 10:44:24,357 - __main__ - INFO -   Attempting to set weather_zone_name (varchar(100)) to NOT NULL
+2025-06-11 10:44:24,367 - __main__ - INFO -   Attempting to set bidding_zone_id (int) to NOT NULL
+2025-06-11 10:44:24,377 - __main__ - INFO -   Attempting to set climate_zone (varchar(50)) to NOT NULL
+2025-06-11 10:44:24,384 - __main__ - INFO -   Attempting to set elevation_avg (decimal(8,2)) to NOT NULL
+2025-06-11 10:44:24,393 - __main__ - INFO -   Attempting to set coastal_proximity (varchar(20)) to NOT NULL
+2025-06-11 10:44:24,401 - __main__ - INFO -   Attempting to set urbanization_level (varchar(20)) to NOT NULL
+2025-06-11 10:44:24,412 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-11 10:44:24,424 - __main__ - INFO - Completed table dim_weather_zone. Total NULL updates: 0
+2025-06-11 10:44:24,424 - __main__ - INFO - Processing table: fact_energy_weather
+2025-06-11 10:51:06,215 - __main__ - INFO -   Updating 38040 NULL values in column cloud_cover with -99.99
+2025-06-11 10:51:06,341 - __main__ - INFO -   Updated 38040 rows in column cloud_cover
+2025-06-11 10:51:06,348 - __main__ - INFO - Setting ALL columns to NOT NULL in table fact_energy_weather
+2025-06-11 10:51:06,348 - __main__ - INFO -   Column date_id already NOT NULL
+2025-06-11 10:51:06,349 - __main__ - INFO -   Column time_id already NOT NULL
+2025-06-11 10:51:06,349 - __main__ - INFO -   Column bidding_zone_id already NOT NULL
+2025-06-11 10:51:06,350 - __main__ - INFO -   Column weather_zone_id already NOT NULL
+2025-06-11 10:51:06,350 - __main__ - INFO -   Attempting to set generation_type_id (int) to NOT NULL
+2025-06-11 10:51:06,450 - __main__ - INFO -   Attempting to set weather_condition_id (int) to NOT NULL
+2025-06-11 10:51:06,543 - __main__ - INFO -   Attempting to set socioeconomic_profile_id (int) to NOT NULL
+2025-06-11 10:51:06,641 - __main__ - INFO -   Attempting to set actual_consumption (decimal(18,2)) to NOT NULL
+2025-06-11 10:51:06,734 - __main__ - INFO -   Attempting to set forecasted_consumption (decimal(18,2)) to NOT NULL
+2025-06-11 10:51:06,827 - __main__ - INFO -   Attempting to set consumption_deviation (decimal(10,2)) to NOT NULL
+2025-06-11 10:51:06,920 - __main__ - INFO -   Attempting to set generation_amount (decimal(18,2)) to NOT NULL
+2025-06-11 10:51:07,015 - __main__ - INFO -   Attempting to set capacity_factor (decimal(5,2)) to NOT NULL
+2025-06-11 10:51:07,107 - __main__ - INFO -   Attempting to set renewable_percentage (decimal(5,2)) to NOT NULL
+2025-06-11 10:51:07,201 - __main__ - INFO -   Attempting to set per_capita_consumption (decimal(18,6)) to NOT NULL
+2025-06-11 10:51:07,296 - __main__ - INFO -   Attempting to set temperature_avg (decimal(5,2)) to NOT NULL
+2025-06-11 10:51:07,389 - __main__ - INFO -   Attempting to set temperature_min (decimal(5,2)) to NOT NULL
+2025-06-11 10:51:07,482 - __main__ - INFO -   Attempting to set temperature_max (decimal(5,2)) to NOT NULL
+2025-06-11 10:51:07,575 - __main__ - INFO -   Attempting to set humidity (decimal(5,2)) to NOT NULL
+2025-06-11 10:51:07,701 - __main__ - INFO -   Attempting to set precipitation (decimal(8,2)) to NOT NULL
+2025-06-11 10:51:07,796 - __main__ - INFO -   Attempting to set wind_speed (decimal(5,2)) to NOT NULL
+2025-06-11 10:51:07,890 - __main__ - INFO -   Attempting to set wind_direction (int) to NOT NULL
+2025-06-11 10:51:07,987 - __main__ - INFO -   Attempting to set cloud_cover (decimal(5,2)) to NOT NULL
+2025-06-11 10:51:08,086 - __main__ - INFO -   Attempting to set solar_radiation (decimal(8,2)) to NOT NULL
+2025-06-11 10:51:08,178 - __main__ - INFO -   Attempting to set air_pressure (decimal(8,2)) to NOT NULL
+2025-06-11 10:51:08,271 - __main__ - INFO -   Attempting to set heating_degree_days (decimal(5,2)) to NOT NULL
+2025-06-11 10:51:08,365 - __main__ - INFO -   Attempting to set cooling_degree_days (decimal(5,2)) to NOT NULL
+2025-06-11 10:51:08,457 - __main__ - INFO -   Attempting to set created_at (datetime2) to NOT NULL
+2025-06-11 10:51:08,550 - __main__ - INFO - Completed table fact_energy_weather. Total NULL updates: 38040
+2025-06-11 10:51:08,550 - __main__ - INFO - Successfully processed 8/8 tables
+2025-06-11 10:51:08,550 - __main__ - INFO - Verifying that no NULL values remain and all columns are NOT NULL
+2025-06-11 10:51:08,648 - __main__ - INFO - Found 8 dimension and fact tables to process
+2025-06-11 10:51:08,650 - __main__ - INFO - Verifying table: dim_bidding_zone
+2025-06-11 10:51:08,712 - __main__ - INFO - Verifying table: dim_date
+2025-06-11 10:51:08,739 - __main__ - INFO - Verifying table: dim_generation_type
+2025-06-11 10:51:08,759 - __main__ - INFO - Verifying table: dim_socioeconomic_profile
+2025-06-11 10:51:08,785 - __main__ - INFO - Verifying table: dim_time
+2025-06-11 10:51:08,801 - __main__ - INFO - Verifying table: dim_weather_condition
+2025-06-11 10:51:08,818 - __main__ - INFO - Verifying table: dim_weather_zone
+2025-06-11 10:51:08,835 - __main__ - INFO - Verifying table: fact_energy_weather
+2025-06-11 10:51:08,872 - __main__ - INFO - Verification successful: All columns are NOT NULL and contain no NULL values
+2025-06-11 10:51:08,872 - __main__ - INFO - NULL values fix completed successfully - all columns are NOT NULL

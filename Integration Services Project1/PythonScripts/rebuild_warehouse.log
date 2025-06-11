@@ -1,0 +1,78 @@
+2025-06-10 13:38:27,573 - WarehouseBuilderMain - INFO - Starting Warehouse Rebuild
+2025-06-10 13:38:27,573 - WarehouseBuilderMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-10 13:38:27,576 - __main__ - INFO - Starting full warehouse rebuild
+2025-06-10 13:38:27,580 - __main__ - INFO - Dropping existing tables
+2025-06-10 13:38:31,951 - __main__ - INFO - Dropping foreign key constraints
+2025-06-10 13:38:32,005 - __main__ - INFO - Dropping foreign key FK__fact_ener__date___00200768 from fact_energy_weather
+2025-06-10 13:38:32,326 - __main__ - INFO - Dropping foreign key FK__fact_ener__time___01142BA1 from fact_energy_weather
+2025-06-10 13:38:32,331 - __main__ - INFO - Dropping foreign key FK__fact_ener__biddi__02084FDA from fact_energy_weather
+2025-06-10 13:38:32,343 - __main__ - INFO - Dropping foreign key FK__fact_ener__weath__02FC7413 from fact_energy_weather
+2025-06-10 13:38:32,367 - __main__ - INFO - Dropping foreign key FK__fact_ener__gener__03F0984C from fact_energy_weather
+2025-06-10 13:38:32,382 - __main__ - INFO - Dropping foreign key FK__fact_ener__socio__04E4BC85 from fact_energy_weather
+2025-06-10 13:38:32,395 - __main__ - INFO - Dropping foreign key FK__fact_ener__weath__05D8E0BE from fact_energy_weather
+2025-06-10 13:38:32,428 - __main__ - INFO - Dropping foreign key FK__dim_weath__biddi__4AB81AF0 from dim_weather_zone
+2025-06-10 13:38:32,454 - __main__ - INFO - Dropping foreign key FK__dim_socio__biddi__656C112C from dim_socioeconomic_profile
+2025-06-10 13:38:32,719 - __main__ - INFO - Dropped table fact_energy_weather
+2025-06-10 13:38:32,795 - __main__ - INFO - Dropped table dim_date
+2025-06-10 13:38:32,815 - __main__ - INFO - Dropped table dim_time
+2025-06-10 13:38:32,836 - __main__ - INFO - Dropped table dim_bidding_zone
+2025-06-10 13:38:32,872 - __main__ - INFO - Dropped table dim_weather_zone
+2025-06-10 13:38:32,889 - __main__ - INFO - Dropped table dim_generation_type
+2025-06-10 13:38:32,918 - __main__ - INFO - Dropped table dim_weather_condition
+2025-06-10 13:38:32,951 - __main__ - INFO - Dropped table dim_socioeconomic_profile
+2025-06-10 13:38:32,990 - __main__ - INFO - Dropped table src_entso_actual_load
+2025-06-10 13:38:33,021 - __main__ - INFO - Dropped table src_entso_generation
+2025-06-10 13:38:33,023 - __main__ - INFO - Dropped table src_entso_forecast
+2025-06-10 13:38:33,027 - __main__ - INFO - Dropped table src_weather_data
+2025-06-10 13:38:33,074 - __main__ - INFO - Dropped table src_climate_data
+2025-06-10 13:38:33,105 - __main__ - INFO - Dropped table src_eurostat_integrated
+2025-06-10 13:38:33,105 - __main__ - INFO - Creating dimension tables
+2025-06-10 13:38:33,107 - __main__ - INFO - Creating dim_date table
+2025-06-10 13:38:33,208 - __main__ - INFO - Creating dim_time table
+2025-06-10 13:38:33,214 - __main__ - INFO - Creating dim_bidding_zone table
+2025-06-10 13:38:33,217 - __main__ - INFO - Creating dim_weather_zone table
+2025-06-10 13:38:33,218 - __main__ - INFO - Creating dim_generation_type table
+2025-06-10 13:38:33,230 - __main__ - INFO - Creating dim_weather_condition table
+2025-06-10 13:38:33,232 - __main__ - INFO - Creating dim_socioeconomic_profile table
+2025-06-10 13:38:33,238 - __main__ - INFO - Inserting default dimension records
+2025-06-10 13:38:33,238 - __main__ - INFO - Inserting default record for dim_date
+2025-06-10 13:38:33,259 - __main__ - INFO - Inserting default record for dim_time
+2025-06-10 13:38:33,274 - __main__ - INFO - Inserting default record for dim_bidding_zone
+2025-06-10 13:38:33,307 - __main__ - INFO - Inserting default record for dim_weather_zone
+2025-06-10 13:38:33,335 - __main__ - INFO - Inserting default record for dim_generation_type
+2025-06-10 13:38:33,351 - __main__ - INFO - Inserting default record for dim_weather_condition
+2025-06-10 13:38:33,381 - __main__ - INFO - Inserting default record for dim_socioeconomic_profile
+2025-06-10 13:38:33,429 - __main__ - INFO - Creating source tables
+2025-06-10 13:38:33,479 - __main__ - INFO - Creating fact table
+2025-06-10 13:38:33,525 - __main__ - INFO - Loading data from staging
+2025-06-10 13:38:33,568 - __main__ - INFO - Loading 1098 records from staging_dim_date to dim_date
+2025-06-10 13:38:33,640 - __main__ - INFO - Successfully loaded 1098 records to dim_date
+2025-06-10 13:38:33,641 - __main__ - INFO - Loading 24 records from staging_dim_time to dim_time
+2025-06-10 13:38:33,700 - __main__ - INFO - Successfully loaded 24 records to dim_time
+2025-06-10 13:38:33,702 - __main__ - INFO - Loading 57 records from staging_dim_bidding_zone to dim_bidding_zone
+2025-06-10 13:38:33,759 - __main__ - INFO - Successfully loaded 57 records to dim_bidding_zone
+2025-06-10 13:38:33,761 - __main__ - INFO - Loading 25 records from staging_dim_weather_zone to dim_weather_zone
+2025-06-10 13:38:33,836 - __main__ - INFO - Successfully loaded 25 records to dim_weather_zone
+2025-06-10 13:38:33,838 - __main__ - INFO - Loading 18 records from staging_dim_generation_type to dim_generation_type
+2025-06-10 13:38:33,914 - __main__ - INFO - Successfully loaded 18 records to dim_generation_type
+2025-06-10 13:38:33,937 - __main__ - INFO - Loading 14 records from staging_dim_weather_condition to dim_weather_condition
+2025-06-10 13:38:34,017 - __main__ - INFO - Successfully loaded 14 records to dim_weather_condition
+2025-06-10 13:38:34,055 - __main__ - INFO - Loading 40 records from staging_dim_socioeconomic_profile to dim_socioeconomic_profile
+2025-06-10 13:38:34,135 - __main__ - INFO - Successfully loaded 40 records to dim_socioeconomic_profile
+2025-06-10 13:38:34,157 - __main__ - INFO - Loading 4050 records from staging_entso_actual_load to src_entso_actual_load
+2025-06-10 13:38:34,280 - __main__ - INFO - Successfully loaded 4050 records to src_entso_actual_load
+2025-06-10 13:38:34,435 - __main__ - INFO - Loading 53950 records from staging_entso_generation to src_entso_generation
+2025-06-10 13:38:36,530 - __main__ - INFO - Successfully loaded 53950 records to src_entso_generation
+2025-06-10 13:38:36,544 - __main__ - INFO - Loading 5160 records from staging_entso_forecast to src_entso_forecast
+2025-06-10 13:38:37,170 - __main__ - INFO - Successfully loaded 5160 records to src_entso_forecast
+2025-06-10 13:38:37,225 - __main__ - INFO - Loading 8544 records from staging_weather_data to src_weather_data
+2025-06-10 13:38:37,355 - __main__ - INFO - Successfully loaded 8544 records to src_weather_data
+2025-06-10 13:38:37,360 - __main__ - INFO - Loading 356 records from staging_climate_data to src_climate_data
+2025-06-10 13:38:37,414 - __main__ - INFO - Successfully loaded 356 records to src_climate_data
+2025-06-10 13:38:37,427 - __main__ - INFO - Loading 40 records from staging_eurostat_integrated to src_eurostat_integrated
+2025-06-10 13:38:37,491 - __main__ - INFO - Successfully loaded 40 records to src_eurostat_integrated
+2025-06-10 13:38:37,491 - __main__ - INFO - Loading fact data
+2025-06-10 13:38:45,655 - __main__ - INFO - Loading 174995 records from staging_fact_energy_weather to fact_energy_weather
+2025-06-10 13:41:46,286 - __main__ - INFO - Successfully loaded 174995 records to fact_energy_weather
+2025-06-10 13:53:08,624 - __main__ - INFO - Warehouse rebuild completed successfully
+2025-06-10 13:53:08,624 - WarehouseBuilderMain - INFO - Warehouse rebuild completed successfully

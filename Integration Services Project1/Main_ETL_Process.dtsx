@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Main_ETL_Process"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{12101126-BF76-436E-A4A8-FED1776381B0}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{97CBA931-B0DB-4E01-8D44-30BBE0FD5531}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -131,6 +131,24 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Execute DataCleaner Task"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{EDCB81F6-AC7D-4D90-B978-143AC158A3DC}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute DataCleaner Task"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Users\jakub\anaconda3\python.exe"
+          Arguments="DataCleaner.py"
+          WorkingDirectory="D:\hurtownie\Integration Services Project1\PythonScripts" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Execute DimensionProcessor"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
@@ -184,7 +202,25 @@
       <DTS:ObjectData>
         <ExecuteProcessData
           Executable="C:\Users\jakub\anaconda3\python.exe"
-          Arguments="FactProcessor.py"
+          Arguments="optimized_fact_processor.py"
+          WorkingDirectory="D:\hurtownie\Integration Services Project1\PythonScripts" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute NullHandling Task"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{8A0D8C41-8693-4126-98B5-99491344FD91}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute NullHandling Task"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Users\jakub\anaconda3\python.exe"
+          Arguments="fix_null_values.py"
           WorkingDirectory="D:\hurtownie\Integration Services Project1\PythonScripts" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -272,6 +308,22 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Execute FactProcessor" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{2F5A908D-AD1F-45AD-A99A-7943B4830851}"
+      DTS:From="Package\Execute FactProcessor"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Execute DataCleaner Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{C488C3B3-EE5C-4BB3-A2D9-7F04954680C2}"
+      DTS:From="Package\Execute DataCleaner Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Execute NullHandling Task" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -290,13 +342,17 @@
           Id="Package\DW_connection"
           TopLeft="350.000000745058,138.411764584559" />
         <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Execute DimensionProcessor"
+          TopLeft="323.571429260227,454.105882058682" />
+        <NodeLayout
           Size="183.2,41.6"
           Id="Package\Execute Eurostat Data"
           TopLeft="325.00000069184,383.988235005221" />
         <NodeLayout
-          Size="179.2,41.6"
-          Id="Package\Execute DimensionProcessor"
-          TopLeft="323.571429260227,454.105882058682" />
+          Size="183.2,41.6"
+          Id="Package\Execute FactProcessor"
+          TopLeft="327.142857839258,530.811764425029" />
         <NodeLayout
           Size="184,41.6"
           Id="Package\Execute Weather Data"
@@ -393,10 +449,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\Execute FactProcessor"
-          TopLeft="327.142857839258,530.811764425029" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="414.957143549743,495.705882058682">
@@ -411,6 +463,82 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,27.6058823663474" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Execute DataCleaner Task"
+          TopLeft="312.142857807327,621.364705665177" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="418.742857839258,572.411764425029">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.0000000319309,48.9529412401484"
+              Start="0,0"
+              End="-17.0000000319309,41.4529412401484">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4764706200742" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.4764706200742"
+                    Point2="0,24.4764706200742"
+                    Point3="-4,24.4764706200742" />
+                  <mssgle:LineSegment
+                    End="-13.0000000319309,24.4764706200742" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.0000000319309,24.4764706200742"
+                    Point2="-17.0000000319309,24.4764706200742"
+                    Point3="-17.0000000319309,28.4764706200742" />
+                  <mssgle:LineSegment
+                    End="-17.0000000319309,41.4529412401484" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\Execute NullHandling Task"
+          TopLeft="339.285715007965,713.305882058682" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="401.742857807327,662.964705665177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.1428572006374,50.3411763935045"
+              Start="0,0"
+              End="27.1428572006374,42.8411763935045">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.1705881967522" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.1705881967522"
+                    Point2="0,25.1705881967522"
+                    Point3="4,25.1705881967522" />
+                  <mssgle:LineSegment
+                    End="23.1428572006374,25.1705881967522" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.1428572006374,25.1705881967522"
+                    Point2="27.1428572006374,25.1705881967522"
+                    Point3="27.1428572006374,29.1705881967522" />
+                  <mssgle:LineSegment
+                    End="27.1428572006374,42.8411763935045" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

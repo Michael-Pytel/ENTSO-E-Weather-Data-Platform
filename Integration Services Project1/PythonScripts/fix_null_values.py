@@ -578,7 +578,7 @@ def main():
     
     # Jeśli nie podano connection_string, użyj domyślnego
     if not connection_string:
-        connection_string = "Driver={ODBC Driver 17 for SQL Server};Server=localhost;Database=EnergyWeatherDW1;Trusted_Connection=yes;"
+        connection_string = "Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;"
         logger.info(f"Using default connection string: {connection_string}")
     
     try:

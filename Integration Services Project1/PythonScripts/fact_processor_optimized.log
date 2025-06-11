@@ -4148,3 +4148,462 @@ TypeError: Cannot setitem on a Categorical with a new category (0), set the cate
 2025-06-08 20:05:22,931 - __main__ - INFO - Memory usage: 2.4% (375.0 MB)
 2025-06-08 20:05:22,931 - __main__ - INFO - Garbage collection: collected 14 objects, memory usage: 2.4%
 2025-06-08 20:05:22,945 - OptimizedFactProcessorMain - ERROR - Error occurred during memory-optimized fact processing
+2025-06-11 10:38:25,940 - OptimizedFactProcessorMain - INFO - Starting Memory-Optimized Fact Processor
+2025-06-11 10:38:25,977 - OptimizedFactProcessorMain - INFO - System memory: 7.9GB total, 0.8GB available, 89.7% used
+2025-06-11 10:38:25,977 - OptimizedFactProcessorMain - INFO - Using default connection string
+2025-06-11 10:38:25,977 - __main__ - INFO - Starting memory-optimized fact processing
+2025-06-11 10:38:25,978 - __main__ - INFO - Memory usage: 0.9% (72.5 MB)
+2025-06-11 10:38:25,978 - __main__ - INFO - Initial memory usage: 0.9%
+2025-06-11 10:38:30,373 - __main__ - ERROR - Error logging process: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Cannot insert the value NULL into column 'error_message', table 'EnergyWeatherDW.dbo.etl_log'; column does not allow nulls. INSERT fails. (515) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-06-11 10:38:30,400 - __main__ - INFO - Memory usage: 1.0% (77.0 MB)
+2025-06-11 10:38:30,401 - __main__ - INFO - Garbage collection: collected 0 objects, memory usage: 1.0%
+2025-06-11 10:38:30,401 - __main__ - INFO - Loading dimension mappings with memory optimization
+2025-06-11 10:38:30,575 - __main__ - INFO - Memory optimization: 0.1MB -> 0.1MB (reduced by 26.2%)
+2025-06-11 10:38:30,575 - __main__ - INFO - Loaded 1098 date dimension records
+2025-06-11 10:38:30,575 - __main__ - INFO - Memory usage: 1.1% (88.4 MB)
+2025-06-11 10:38:30,580 - __main__ - INFO - Memory optimization: 0.0MB -> 0.0MB (reduced by 71.6%)
+2025-06-11 10:38:30,580 - __main__ - INFO - Loaded 24 time dimension records
+2025-06-11 10:38:30,581 - __main__ - INFO - Memory usage: 1.1% (88.4 MB)
+2025-06-11 10:38:30,592 - __main__ - INFO - Memory optimization: 0.0MB -> 0.0MB (reduced by 45.2%)
+2025-06-11 10:38:30,592 - __main__ - INFO - Loaded 57 bidding_zone dimension records
+2025-06-11 10:38:30,593 - __main__ - INFO - Memory usage: 1.1% (88.7 MB)
+2025-06-11 10:38:30,599 - __main__ - INFO - Memory optimization: 0.0MB -> 0.0MB (reduced by 14.2%)
+2025-06-11 10:38:30,599 - __main__ - INFO - Loaded 25 weather_zone dimension records
+2025-06-11 10:38:30,599 - __main__ - INFO - Memory usage: 1.1% (88.7 MB)
+2025-06-11 10:38:30,605 - __main__ - INFO - Memory optimization: 0.0MB -> 0.0MB (reduced by 22.8%)
+2025-06-11 10:38:30,605 - __main__ - INFO - Loaded 18 generation_type dimension records
+2025-06-11 10:38:30,605 - __main__ - INFO - Memory usage: 1.1% (88.7 MB)
+2025-06-11 10:38:30,613 - __main__ - INFO - Memory optimization: 0.0MB -> 0.0MB (reduced by 33.1%)
+2025-06-11 10:38:30,614 - __main__ - INFO - Loaded 14 weather_condition dimension records
+2025-06-11 10:38:30,614 - __main__ - INFO - Memory usage: 1.1% (88.7 MB)
+2025-06-11 10:38:30,621 - __main__ - INFO - Memory optimization: 0.0MB -> 0.0MB (reduced by 68.2%)
+2025-06-11 10:38:30,621 - __main__ - INFO - Loaded 40 socioeconomic_profile dimension records
+2025-06-11 10:38:30,622 - __main__ - INFO - Memory usage: 1.1% (88.7 MB)
+2025-06-11 10:38:30,626 - __main__ - INFO - Loading data from staging tables with memory optimization
+2025-06-11 10:38:30,626 - __main__ - INFO - Loading staging_entso_actual_load...
+2025-06-11 10:38:30,627 - __main__ - INFO - Memory usage: 1.1% (88.7 MB)
+2025-06-11 10:38:30,627 - __main__ - INFO - Loading data from staging_entso_actual_load in chunks of 50000
+2025-06-11 10:38:30,688 - __main__ - INFO - Total rows in staging_entso_actual_load: 4050
+2025-06-11 10:38:30,688 - __main__ - INFO - Memory usage: 1.1% (88.7 MB)
+2025-06-11 10:38:30,734 - __main__ - INFO - Memory usage: 1.1% (92.3 MB)
+2025-06-11 10:38:30,734 - __main__ - INFO - Loaded chunk 1 from staging_entso_actual_load (4050 rows)
+2025-06-11 10:38:30,774 - __main__ - INFO - Memory optimization: 1.7MB -> 0.4MB (reduced by 75.3%)
+2025-06-11 10:38:30,774 - __main__ - INFO - Loaded and optimized 4050 records from staging_entso_actual_load
+2025-06-11 10:38:30,776 - __main__ - INFO - Memory usage: 1.1% (92.4 MB)
+2025-06-11 10:38:30,778 - __main__ - INFO - Memory usage after loading staging_entso_actual_load: 1.1%
+2025-06-11 10:38:30,778 - __main__ - INFO - Loading staging_entso_generation...
+2025-06-11 10:38:30,779 - __main__ - INFO - Memory usage: 1.1% (92.4 MB)
+2025-06-11 10:38:30,779 - __main__ - INFO - Loading data from staging_entso_generation in chunks of 50000
+2025-06-11 10:38:31,040 - __main__ - INFO - Total rows in staging_entso_generation: 53950
+2025-06-11 10:38:31,041 - __main__ - INFO - Memory usage: 1.1% (92.4 MB)
+2025-06-11 10:38:37,970 - __main__ - INFO - Memory usage: 1.7% (133.2 MB)
+2025-06-11 10:38:37,970 - __main__ - INFO - Loaded chunk 1 from staging_entso_generation (50000 rows)
+2025-06-11 10:38:38,207 - __main__ - INFO - Loaded chunk 2 from staging_entso_generation (3950 rows)
+2025-06-11 10:38:38,438 - __main__ - INFO - Memory optimization: 26.1MB -> 5.6MB (reduced by 78.6%)
+2025-06-11 10:38:38,438 - __main__ - INFO - Loaded and optimized 53950 records from staging_entso_generation
+2025-06-11 10:38:38,439 - __main__ - INFO - Memory usage: 1.6% (128.2 MB)
+2025-06-11 10:38:38,441 - __main__ - INFO - Memory usage after loading staging_entso_generation: 1.6%
+2025-06-11 10:38:38,441 - __main__ - INFO - Loading staging_entso_forecast...
+2025-06-11 10:38:38,442 - __main__ - INFO - Memory usage: 1.6% (128.2 MB)
+2025-06-11 10:38:38,442 - __main__ - INFO - Loading data from staging_entso_forecast in chunks of 50000
+2025-06-11 10:38:38,498 - __main__ - INFO - Total rows in staging_entso_forecast: 5160
+2025-06-11 10:38:38,498 - __main__ - INFO - Memory usage: 1.6% (128.2 MB)
+2025-06-11 10:38:38,553 - __main__ - INFO - Memory usage: 1.6% (129.9 MB)
+2025-06-11 10:38:38,553 - __main__ - INFO - Loaded chunk 1 from staging_entso_forecast (5160 rows)
+2025-06-11 10:38:38,592 - __main__ - INFO - Memory optimization: 2.2MB -> 0.5MB (reduced by 75.8%)
+2025-06-11 10:38:38,592 - __main__ - INFO - Loaded and optimized 5160 records from staging_entso_forecast
+2025-06-11 10:38:38,593 - __main__ - INFO - Memory usage: 1.6% (130.0 MB)
+2025-06-11 10:38:38,595 - __main__ - INFO - Memory usage after loading staging_entso_forecast: 1.6%
+2025-06-11 10:38:38,596 - __main__ - INFO - Loading staging_weather_data...
+2025-06-11 10:38:38,596 - __main__ - INFO - Memory usage: 1.6% (130.0 MB)
+2025-06-11 10:38:38,596 - __main__ - INFO - Loading data from staging_weather_data in chunks of 50000
+2025-06-11 10:38:38,612 - __main__ - INFO - Total rows in staging_weather_data: 8544
+2025-06-11 10:38:38,612 - __main__ - INFO - Memory usage: 1.6% (130.0 MB)
+2025-06-11 10:38:38,923 - __main__ - INFO - Memory usage: 1.6% (131.9 MB)
+2025-06-11 10:38:38,926 - __main__ - INFO - Loaded chunk 1 from staging_weather_data (8544 rows)
+2025-06-11 10:38:38,998 - __main__ - INFO - Memory optimization: 4.8MB -> 1.3MB (reduced by 73.5%)
+2025-06-11 10:38:38,999 - __main__ - INFO - Loaded and optimized 8544 records from staging_weather_data
+2025-06-11 10:38:39,000 - __main__ - INFO - Memory usage: 1.6% (131.0 MB)
+2025-06-11 10:38:39,001 - __main__ - INFO - Memory usage after loading staging_weather_data: 1.6%
+2025-06-11 10:38:39,002 - __main__ - INFO - Loading staging_climate_data...
+2025-06-11 10:38:39,002 - __main__ - INFO - Memory usage: 1.6% (131.0 MB)
+2025-06-11 10:38:39,002 - __main__ - INFO - Loading data from staging_climate_data in chunks of 50000
+2025-06-11 10:38:39,007 - __main__ - INFO - Total rows in staging_climate_data: 356
+2025-06-11 10:38:39,007 - __main__ - INFO - Memory usage: 1.6% (131.0 MB)
+2025-06-11 10:38:39,024 - __main__ - INFO - Memory usage: 1.6% (131.0 MB)
+2025-06-11 10:38:39,024 - __main__ - INFO - Loaded chunk 1 from staging_climate_data (356 rows)
+2025-06-11 10:38:39,062 - __main__ - INFO - Memory optimization: 0.2MB -> 0.1MB (reduced by 62.3%)
+2025-06-11 10:38:39,062 - __main__ - INFO - Loaded and optimized 356 records from staging_climate_data
+2025-06-11 10:38:39,063 - __main__ - INFO - Memory usage: 1.6% (131.0 MB)
+2025-06-11 10:38:39,065 - __main__ - INFO - Memory usage after loading staging_climate_data: 1.6%
+2025-06-11 10:38:39,067 - __main__ - INFO - Merging energy and weather data with memory optimization
+2025-06-11 10:38:39,067 - __main__ - INFO - Preparing energy data with memory optimization
+2025-06-11 10:38:39,068 - __main__ - INFO - Processing 4050 entso_actual_load records
+2025-06-11 10:38:39,071 - __main__ - INFO - Memory optimization: 0.4MB -> 0.4MB (reduced by 0.0%)
+2025-06-11 10:38:41,448 - __main__ - INFO - Memory usage: 1.6% (131.4 MB)
+2025-06-11 10:38:41,469 - __main__ - INFO - Processing 53950 entso_generation records
+2025-06-11 10:38:41,492 - __main__ - INFO - Memory optimization: 5.6MB -> 5.6MB (reduced by 0.0%)
+2025-06-11 10:38:56,050 - __main__ - INFO - Memory usage: 1.7% (134.1 MB)
+2025-06-11 10:39:12,635 - __main__ - INFO - Processing 5160 entso_forecast records
+2025-06-11 10:39:12,639 - __main__ - INFO - Memory optimization: 0.5MB -> 0.5MB (reduced by 0.0%)
+2025-06-11 10:39:15,530 - __main__ - INFO - Memory usage: 1.8% (146.3 MB)
+2025-06-11 10:39:15,741 - __main__ - INFO - Memory optimization: 13.2MB -> 1.4MB (reduced by 89.4%)
+2025-06-11 10:39:32,422 - __main__ - INFO - Memory usage: 1.9% (150.8 MB)
+2025-06-11 10:39:32,624 - __main__ - INFO - Memory optimization: 16.9MB -> 1.7MB (reduced by 89.7%)
+2025-06-11 10:39:32,626 - __main__ - INFO - Prepared 79181 energy data records
+2025-06-11 10:39:32,628 - __main__ - INFO - Processing 8544 weather records with memory optimization
+2025-06-11 10:39:32,634 - __main__ - INFO - Memory optimization: 1.3MB -> 1.3MB (reduced by 0.0%)
+2025-06-11 10:39:32,642 - __main__ - INFO - Memory optimization: 0.1MB -> 0.1MB (reduced by 0.0%)
+2025-06-11 10:39:32,642 - __main__ - INFO - Merging 356 climate records with weather data
+2025-06-11 10:39:33,440 - __main__ - INFO - Memory optimization: 0.8MB -> 0.7MB (reduced by 8.4%)
+2025-06-11 10:39:33,442 - __main__ - INFO - Memory optimization: 1.7MB -> 1.7MB (reduced by 0.0%)
+2025-06-11 10:39:33,445 - __main__ - INFO - Memory optimization: 0.7MB -> 0.7MB (reduced by 0.0%)
+2025-06-11 10:39:33,455 - __main__ - INFO - Memory usage: 1.7% (139.6 MB)
+2025-06-11 10:39:33,459 - __main__ - INFO - Processing data in 8 batches of 10000 records
+2025-06-11 10:39:33,459 - __main__ - INFO - Memory usage: 1.7% (139.8 MB)
+2025-06-11 10:39:33,460 - __main__ - INFO - Processing batch 1/8: 10000 records (memory: 1.7%)
+2025-06-11 10:39:33,505 - __main__ - INFO - Memory optimization: 3.2MB -> 2.9MB (reduced by 7.9%)
+2025-06-11 10:39:33,506 - __main__ - INFO - Memory usage: 1.8% (142.0 MB)
+2025-06-11 10:39:33,507 - __main__ - INFO - Processing batch 2/8: 10000 records (memory: 1.8%)
+2025-06-11 10:39:33,537 - __main__ - INFO - Memory optimization: 3.1MB -> 2.9MB (reduced by 7.9%)
+2025-06-11 10:39:33,538 - __main__ - INFO - Memory usage: 1.8% (144.8 MB)
+2025-06-11 10:39:33,539 - __main__ - INFO - Processing batch 3/8: 10000 records (memory: 1.8%)
+2025-06-11 10:39:33,567 - __main__ - INFO - Memory optimization: 3.1MB -> 2.8MB (reduced by 7.9%)
+2025-06-11 10:39:33,568 - __main__ - INFO - Memory usage: 1.8% (147.3 MB)
+2025-06-11 10:39:33,571 - __main__ - INFO - Processing batch 4/8: 10000 records (memory: 1.8%)
+2025-06-11 10:39:33,596 - __main__ - INFO - Memory optimization: 3.1MB -> 2.8MB (reduced by 7.9%)
+2025-06-11 10:39:33,597 - __main__ - INFO - Memory usage: 1.9% (149.8 MB)
+2025-06-11 10:39:33,601 - __main__ - INFO - Processing batch 5/8: 10000 records (memory: 1.9%)
+2025-06-11 10:39:33,625 - __main__ - INFO - Memory optimization: 1.7MB -> 1.6MB (reduced by 7.6%)
+2025-06-11 10:39:33,644 - __main__ - INFO - Memory usage: 1.9% (151.0 MB)
+2025-06-11 10:39:33,645 - __main__ - INFO - Garbage collection: collected 23 objects, memory usage: 1.9%
+2025-06-11 10:39:33,646 - __main__ - INFO - Memory usage: 1.9% (151.0 MB)
+2025-06-11 10:39:33,648 - __main__ - INFO - Processing batch 6/8: 10000 records (memory: 1.9%)
+2025-06-11 10:39:33,666 - __main__ - INFO - Memory optimization: 1.1MB -> 1.1MB (reduced by 0.0%)
+2025-06-11 10:39:33,669 - __main__ - INFO - Memory usage: 1.9% (151.9 MB)
+2025-06-11 10:39:33,669 - __main__ - INFO - Processing batch 7/8: 10000 records (memory: 1.9%)
+2025-06-11 10:39:33,689 - __main__ - INFO - Memory optimization: 1.1MB -> 1.1MB (reduced by 0.0%)
+2025-06-11 10:39:33,690 - __main__ - INFO - Memory usage: 1.9% (155.7 MB)
+2025-06-11 10:39:33,691 - __main__ - INFO - Processing batch 8/8: 9181 records (memory: 1.9%)
+2025-06-11 10:39:33,708 - __main__ - INFO - Memory optimization: 1.0MB -> 1.0MB (reduced by 0.0%)
+2025-06-11 10:39:33,849 - __main__ - INFO - Saved partial results to file (batch 8), memory freed
+2025-06-11 10:39:33,883 - __main__ - INFO - Merged data contains 174995 records
+2025-06-11 10:39:33,909 - __main__ - INFO - Memory usage: 1.7% (136.9 MB)
+2025-06-11 10:39:33,909 - __main__ - INFO - Garbage collection: collected 26 objects, memory usage: 1.7%
+2025-06-11 10:39:33,910 - __main__ - INFO - Calculating derived metrics with memory optimization
+2025-06-11 10:39:33,912 - __main__ - INFO - Memory usage: 1.7% (136.9 MB)
+2025-06-11 10:39:34,042 - __main__ - INFO - Memory usage: 2.2% (173.9 MB)
+2025-06-11 10:39:34,042 - __main__ - INFO - Derived metrics calculated successfully
+2025-06-11 10:39:34,062 - __main__ - INFO - Memory usage: 1.9% (153.2 MB)
+2025-06-11 10:39:34,063 - __main__ - INFO - Garbage collection: collected 0 objects, memory usage: 1.9%
+2025-06-11 10:39:34,063 - __main__ - INFO - Mapping data to dimension keys
+2025-06-11 10:40:45,681 - __main__ - INFO - Dimension keys mapped successfully
+2025-06-11 10:40:45,702 - __main__ - INFO - Memory usage: 2.0% (164.8 MB)
+2025-06-11 10:40:45,702 - __main__ - INFO - Garbage collection: collected 0 objects, memory usage: 2.0%
+2025-06-11 10:40:45,703 - __main__ - INFO - Inserting facts into staging table
+2025-06-11 10:40:45,703 - __main__ - INFO - Inserting 174995 facts to staging table with memory optimization
+2025-06-11 10:40:49,914 - __main__ - INFO - Creating staging fact table
+2025-06-11 10:40:49,919 - __main__ - INFO - staging_fact_energy_weather table already exists
+2025-06-11 10:40:49,920 - __main__ - INFO - Truncating staging fact table
+2025-06-11 10:40:50,122 - __main__ - INFO - Truncated staging_fact_energy_weather table
+2025-06-11 10:40:50,123 - __main__ - INFO - Memory usage: 2.1% (165.1 MB)
+2025-06-11 10:40:51,370 - __main__ - INFO - Memory usage: 2.1% (166.1 MB)
+2025-06-11 10:40:52,247 - __main__ - INFO - Memory usage: 2.1% (165.5 MB)
+2025-06-11 10:40:52,702 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:40:53,398 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:40:54,244 - __main__ - INFO - Inserted and committed 10000/174995 rows (5.7%)
+2025-06-11 10:40:54,262 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:40:55,179 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:40:55,600 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:40:55,914 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:40:56,509 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:40:56,894 - __main__ - INFO - Inserted and committed 20000/174995 rows (11.4%)
+2025-06-11 10:40:56,914 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:40:57,352 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:40:58,033 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:40:58,610 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:40:59,294 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:00,252 - __main__ - INFO - Inserted and committed 30000/174995 rows (17.1%)
+2025-06-11 10:41:00,272 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:00,842 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:01,392 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:01,922 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:02,612 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:03,281 - __main__ - INFO - Inserted and committed 40000/174995 rows (22.9%)
+2025-06-11 10:41:03,304 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:03,948 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:04,511 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:04,873 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:05,316 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:06,039 - __main__ - INFO - Inserted and committed 50000/174995 rows (28.6%)
+2025-06-11 10:41:06,060 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:06,589 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:07,087 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:07,701 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:08,347 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:08,733 - __main__ - INFO - Inserted and committed 60000/174995 rows (34.3%)
+2025-06-11 10:41:08,752 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:09,253 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:09,782 - __main__ - INFO - Memory usage: 2.1% (166.9 MB)
+2025-06-11 10:41:10,254 - __main__ - INFO - Memory usage: 2.1% (166.3 MB)
+2025-06-11 10:41:10,557 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:11,222 - __main__ - INFO - Inserted and committed 70000/174995 rows (40.0%)
+2025-06-11 10:41:11,243 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:11,842 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:12,590 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:13,043 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:13,639 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:14,536 - __main__ - INFO - Inserted and committed 80000/174995 rows (45.7%)
+2025-06-11 10:41:14,557 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:15,078 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:15,804 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:16,134 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:16,650 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:17,006 - __main__ - INFO - Inserted and committed 90000/174995 rows (51.4%)
+2025-06-11 10:41:17,023 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:17,687 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:18,471 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:19,020 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:19,477 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:20,051 - __main__ - INFO - Inserted and committed 100000/174995 rows (57.1%)
+2025-06-11 10:41:20,073 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:20,408 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:21,166 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:21,710 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:22,281 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:22,588 - __main__ - INFO - Inserted and committed 110000/174995 rows (62.9%)
+2025-06-11 10:41:22,610 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:22,944 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:23,410 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:24,038 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:24,626 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:25,169 - __main__ - INFO - Inserted and committed 120000/174995 rows (68.6%)
+2025-06-11 10:41:25,187 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:25,725 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:26,046 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:26,523 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:26,917 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:27,394 - __main__ - INFO - Inserted and committed 130000/174995 rows (74.3%)
+2025-06-11 10:41:27,415 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:28,029 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:28,575 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:29,028 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:29,330 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:29,679 - __main__ - INFO - Inserted and committed 140000/174995 rows (80.0%)
+2025-06-11 10:41:29,700 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:30,168 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:30,581 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:31,239 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:31,841 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:32,258 - __main__ - INFO - Inserted and committed 150000/174995 rows (85.7%)
+2025-06-11 10:41:32,280 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:32,779 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:33,168 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:33,740 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:34,347 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:34,909 - __main__ - INFO - Inserted and committed 160000/174995 rows (91.4%)
+2025-06-11 10:41:34,930 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:35,503 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:35,968 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:36,387 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:36,958 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:37,385 - __main__ - INFO - Inserted and committed 170000/174995 rows (97.1%)
+2025-06-11 10:41:37,407 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:37,871 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:38,526 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:38,696 - __main__ - INFO - Inserted and committed 174995/174995 rows (100.0%)
+2025-06-11 10:41:38,717 - __main__ - INFO - Successfully inserted 174995 fact records to staging
+2025-06-11 10:41:38,910 - __main__ - INFO - Successfully processed 174995 fact records
+2025-06-11 10:41:38,910 - __main__ - INFO - Memory usage: 2.1% (167.6 MB)
+2025-06-11 10:41:38,911 - __main__ - INFO - Final memory usage: 2.1% (change: +1.2%)
+2025-06-11 10:41:38,931 - __main__ - INFO - Memory usage: 2.1% (167.1 MB)
+2025-06-11 10:41:38,931 - __main__ - INFO - Garbage collection: collected 0 objects, memory usage: 2.1%
+2025-06-11 10:41:38,938 - OptimizedFactProcessorMain - INFO - Memory-optimized fact processing completed successfully
+2025-06-11 17:51:39,997 - OptimizedFactProcessorMain - INFO - Starting Memory-Optimized Fact Processor
+2025-06-11 17:51:40,014 - OptimizedFactProcessorMain - INFO - System memory: 7.9GB total, 1.0GB available, 86.8% used
+2025-06-11 17:51:40,019 - OptimizedFactProcessorMain - INFO - Using default connection string
+2025-06-11 17:51:40,020 - __main__ - INFO - Starting memory-optimized fact processing
+2025-06-11 17:51:40,020 - __main__ - INFO - Memory usage: 0.9% (72.5 MB)
+2025-06-11 17:51:40,021 - __main__ - INFO - Initial memory usage: 0.9%
+2025-06-11 17:51:44,436 - __main__ - ERROR - Error logging process: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Cannot insert the value NULL into column 'error_message', table 'EnergyWeatherDW.dbo.etl_log'; column does not allow nulls. INSERT fails. (515) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-06-11 17:51:44,459 - __main__ - INFO - Memory usage: 1.0% (77.1 MB)
+2025-06-11 17:51:44,460 - __main__ - INFO - Garbage collection: collected 0 objects, memory usage: 1.0%
+2025-06-11 17:51:44,460 - __main__ - INFO - Loading dimension mappings with memory optimization
+2025-06-11 17:51:44,668 - __main__ - INFO - Memory optimization: 0.1MB -> 0.1MB (reduced by 26.2%)
+2025-06-11 17:51:44,669 - __main__ - INFO - Loaded 1099 date dimension records
+2025-06-11 17:51:44,670 - __main__ - INFO - Memory usage: 1.1% (88.4 MB)
+2025-06-11 17:51:44,680 - __main__ - INFO - Memory optimization: 0.0MB -> 0.0MB (reduced by 71.6%)
+2025-06-11 17:51:44,684 - __main__ - INFO - Loaded 24 time dimension records
+2025-06-11 17:51:44,686 - __main__ - INFO - Memory usage: 1.1% (88.4 MB)
+2025-06-11 17:51:44,703 - __main__ - INFO - Memory optimization: 0.0MB -> 0.0MB (reduced by 45.2%)
+2025-06-11 17:51:44,703 - __main__ - INFO - Loaded 57 bidding_zone dimension records
+2025-06-11 17:51:44,704 - __main__ - INFO - Memory usage: 1.1% (88.7 MB)
+2025-06-11 17:51:44,721 - __main__ - INFO - Memory optimization: 0.0MB -> 0.0MB (reduced by 14.2%)
+2025-06-11 17:51:44,721 - __main__ - INFO - Loaded 25 weather_zone dimension records
+2025-06-11 17:51:44,722 - __main__ - INFO - Memory usage: 1.1% (88.7 MB)
+2025-06-11 17:51:44,727 - __main__ - INFO - Memory optimization: 0.0MB -> 0.0MB (reduced by 22.8%)
+2025-06-11 17:51:44,730 - __main__ - INFO - Loaded 18 generation_type dimension records
+2025-06-11 17:51:44,734 - __main__ - INFO - Memory usage: 1.1% (88.7 MB)
+2025-06-11 17:51:44,740 - __main__ - INFO - Memory optimization: 0.0MB -> 0.0MB (reduced by 33.1%)
+2025-06-11 17:51:44,740 - __main__ - INFO - Loaded 14 weather_condition dimension records
+2025-06-11 17:51:44,740 - __main__ - INFO - Memory usage: 1.1% (88.7 MB)
+2025-06-11 17:51:44,751 - __main__ - INFO - Memory optimization: 0.0MB -> 0.0MB (reduced by 68.2%)
+2025-06-11 17:51:44,751 - __main__ - INFO - Loaded 40 socioeconomic_profile dimension records
+2025-06-11 17:51:44,752 - __main__ - INFO - Memory usage: 1.1% (88.7 MB)
+2025-06-11 17:51:44,753 - __main__ - INFO - Loading data from staging tables with memory optimization
+2025-06-11 17:51:44,753 - __main__ - INFO - Loading staging_entso_actual_load...
+2025-06-11 17:51:44,753 - __main__ - INFO - Memory usage: 1.1% (88.7 MB)
+2025-06-11 17:51:44,754 - __main__ - INFO - Loading data from staging_entso_actual_load in chunks of 50000
+2025-06-11 17:51:44,755 - __main__ - INFO - Total rows in staging_entso_actual_load: 1362
+2025-06-11 17:51:44,755 - __main__ - INFO - Memory usage: 1.1% (88.7 MB)
+2025-06-11 17:51:44,776 - __main__ - INFO - Memory usage: 1.1% (90.0 MB)
+2025-06-11 17:51:44,776 - __main__ - INFO - Loaded chunk 1 from staging_entso_actual_load (1362 rows)
+2025-06-11 17:51:44,811 - __main__ - INFO - Memory optimization: 0.6MB -> 0.1MB (reduced by 74.3%)
+2025-06-11 17:51:44,812 - __main__ - INFO - Loaded and optimized 1362 records from staging_entso_actual_load
+2025-06-11 17:51:44,814 - __main__ - INFO - Memory usage: 1.1% (90.0 MB)
+2025-06-11 17:51:44,818 - __main__ - INFO - Memory usage after loading staging_entso_actual_load: 1.1%
+2025-06-11 17:51:44,818 - __main__ - INFO - Loading staging_entso_generation...
+2025-06-11 17:51:44,819 - __main__ - INFO - Memory usage: 1.1% (90.0 MB)
+2025-06-11 17:51:44,819 - __main__ - INFO - Loading data from staging_entso_generation in chunks of 50000
+2025-06-11 17:51:44,925 - __main__ - INFO - Total rows in staging_entso_generation: 18000
+2025-06-11 17:51:44,926 - __main__ - INFO - Memory usage: 1.1% (90.0 MB)
+2025-06-11 17:51:45,170 - __main__ - INFO - Memory usage: 1.3% (105.8 MB)
+2025-06-11 17:51:45,171 - __main__ - INFO - Loaded chunk 1 from staging_entso_generation (18000 rows)
+2025-06-11 17:51:45,282 - __main__ - INFO - Memory optimization: 8.7MB -> 1.8MB (reduced by 79.2%)
+2025-06-11 17:51:45,282 - __main__ - INFO - Loaded and optimized 18000 records from staging_entso_generation
+2025-06-11 17:51:45,284 - __main__ - INFO - Memory usage: 1.3% (105.4 MB)
+2025-06-11 17:51:45,284 - __main__ - INFO - Memory usage after loading staging_entso_generation: 1.3%
+2025-06-11 17:51:45,289 - __main__ - INFO - Loading staging_entso_forecast...
+2025-06-11 17:51:45,289 - __main__ - INFO - Memory usage: 1.3% (105.4 MB)
+2025-06-11 17:51:45,291 - __main__ - INFO - Loading data from staging_entso_forecast in chunks of 50000
+2025-06-11 17:51:45,296 - __main__ - INFO - Total rows in staging_entso_forecast: 2568
+2025-06-11 17:51:45,297 - __main__ - INFO - Memory usage: 1.3% (105.4 MB)
+2025-06-11 17:51:45,327 - __main__ - INFO - Memory usage: 1.3% (105.4 MB)
+2025-06-11 17:51:45,328 - __main__ - INFO - Loaded chunk 1 from staging_entso_forecast (2568 rows)
+2025-06-11 17:51:45,377 - __main__ - INFO - Memory optimization: 1.1MB -> 0.3MB (reduced by 76.2%)
+2025-06-11 17:51:45,377 - __main__ - INFO - Loaded and optimized 2568 records from staging_entso_forecast
+2025-06-11 17:51:45,381 - __main__ - INFO - Memory usage: 1.3% (105.4 MB)
+2025-06-11 17:51:45,385 - __main__ - INFO - Memory usage after loading staging_entso_forecast: 1.3%
+2025-06-11 17:51:45,385 - __main__ - INFO - Loading staging_weather_data...
+2025-06-11 17:51:45,386 - __main__ - INFO - Memory usage: 1.3% (105.4 MB)
+2025-06-11 17:51:45,386 - __main__ - INFO - Loading data from staging_weather_data in chunks of 50000
+2025-06-11 17:51:45,498 - __main__ - INFO - Total rows in staging_weather_data: 8544
+2025-06-11 17:51:45,498 - __main__ - INFO - Memory usage: 1.3% (105.4 MB)
+2025-06-11 17:51:45,871 - __main__ - INFO - Memory usage: 1.5% (118.8 MB)
+2025-06-11 17:51:45,871 - __main__ - INFO - Loaded chunk 1 from staging_weather_data (8544 rows)
+2025-06-11 17:51:46,013 - __main__ - INFO - Memory optimization: 4.8MB -> 1.3MB (reduced by 73.5%)
+2025-06-11 17:51:46,014 - __main__ - INFO - Loaded and optimized 8544 records from staging_weather_data
+2025-06-11 17:51:46,017 - __main__ - INFO - Memory usage: 1.5% (118.2 MB)
+2025-06-11 17:51:46,022 - __main__ - INFO - Memory usage after loading staging_weather_data: 1.5%
+2025-06-11 17:51:46,023 - __main__ - INFO - Loading staging_climate_data...
+2025-06-11 17:51:46,024 - __main__ - INFO - Memory usage: 1.5% (118.2 MB)
+2025-06-11 17:51:46,025 - __main__ - INFO - Loading data from staging_climate_data in chunks of 50000
+2025-06-11 17:51:46,116 - __main__ - INFO - Total rows in staging_climate_data: 356
+2025-06-11 17:51:46,116 - __main__ - INFO - Memory usage: 1.5% (118.2 MB)
+2025-06-11 17:51:46,142 - __main__ - INFO - Memory usage: 1.5% (118.2 MB)
+2025-06-11 17:51:46,142 - __main__ - INFO - Loaded chunk 1 from staging_climate_data (356 rows)
+2025-06-11 17:51:46,194 - __main__ - INFO - Memory optimization: 0.2MB -> 0.1MB (reduced by 62.3%)
+2025-06-11 17:51:46,195 - __main__ - INFO - Loaded and optimized 356 records from staging_climate_data
+2025-06-11 17:51:46,197 - __main__ - INFO - Memory usage: 1.5% (118.3 MB)
+2025-06-11 17:51:46,203 - __main__ - INFO - Memory usage after loading staging_climate_data: 1.5%
+2025-06-11 17:51:46,204 - __main__ - INFO - Merging energy and weather data with memory optimization
+2025-06-11 17:51:46,204 - __main__ - INFO - Preparing energy data with memory optimization
+2025-06-11 17:51:46,205 - __main__ - INFO - Processing 1362 entso_actual_load records
+2025-06-11 17:51:46,208 - __main__ - INFO - Memory optimization: 0.1MB -> 0.1MB (reduced by 0.0%)
+2025-06-11 17:51:47,127 - __main__ - INFO - Memory usage: 1.5% (118.6 MB)
+2025-06-11 17:51:47,148 - __main__ - INFO - Processing 18000 entso_generation records
+2025-06-11 17:51:47,164 - __main__ - INFO - Memory optimization: 1.8MB -> 1.8MB (reduced by 0.0%)
+2025-06-11 17:51:59,152 - __main__ - INFO - Memory usage: 1.5% (120.1 MB)
+2025-06-11 17:51:59,186 - __main__ - INFO - Processing 2568 entso_forecast records
+2025-06-11 17:51:59,189 - __main__ - INFO - Memory optimization: 0.3MB -> 0.3MB (reduced by 0.0%)
+2025-06-11 17:52:01,009 - __main__ - INFO - Memory usage: 1.5% (119.7 MB)
+2025-06-11 17:52:01,119 - __main__ - INFO - Memory optimization: 4.5MB -> 0.5MB (reduced by 89.3%)
+2025-06-11 17:52:08,137 - __main__ - INFO - Memory usage: 1.5% (122.1 MB)
+2025-06-11 17:52:08,236 - __main__ - INFO - Memory optimization: 5.7MB -> 0.6MB (reduced by 89.6%)
+2025-06-11 17:52:08,237 - __main__ - INFO - Prepared 26604 energy data records
+2025-06-11 17:52:08,239 - __main__ - INFO - Processing 8544 weather records with memory optimization
+2025-06-11 17:52:08,248 - __main__ - INFO - Memory optimization: 1.3MB -> 1.3MB (reduced by 0.0%)
+2025-06-11 17:52:08,255 - __main__ - INFO - Memory optimization: 0.1MB -> 0.1MB (reduced by 0.0%)
+2025-06-11 17:52:08,255 - __main__ - INFO - Merging 356 climate records with weather data
+2025-06-11 17:52:09,137 - __main__ - INFO - Memory optimization: 0.8MB -> 0.7MB (reduced by 8.4%)
+2025-06-11 17:52:09,138 - __main__ - INFO - Memory optimization: 0.6MB -> 0.6MB (reduced by 0.0%)
+2025-06-11 17:52:09,143 - __main__ - INFO - Memory optimization: 0.7MB -> 0.7MB (reduced by 0.0%)
+2025-06-11 17:52:09,149 - __main__ - INFO - Memory usage: 1.5% (122.2 MB)
+2025-06-11 17:52:09,154 - __main__ - INFO - Processing data in 3 batches of 10000 records
+2025-06-11 17:52:09,154 - __main__ - INFO - Memory usage: 1.5% (122.3 MB)
+2025-06-11 17:52:09,155 - __main__ - INFO - Processing batch 1/3: 10000 records (memory: 1.5%)
+2025-06-11 17:52:09,206 - __main__ - INFO - Memory optimization: 3.2MB -> 2.9MB (reduced by 7.9%)
+2025-06-11 17:52:09,207 - __main__ - INFO - Memory usage: 1.5% (124.2 MB)
+2025-06-11 17:52:09,213 - __main__ - INFO - Processing batch 2/3: 10000 records (memory: 1.5%)
+2025-06-11 17:52:09,239 - __main__ - INFO - Memory optimization: 2.7MB -> 2.5MB (reduced by 7.8%)
+2025-06-11 17:52:09,240 - __main__ - INFO - Memory usage: 1.6% (126.2 MB)
+2025-06-11 17:52:09,241 - __main__ - INFO - Processing batch 3/3: 6604 records (memory: 1.6%)
+2025-06-11 17:52:09,260 - __main__ - INFO - Memory optimization: 0.8MB -> 0.8MB (reduced by 0.0%)
+2025-06-11 17:52:09,290 - __main__ - INFO - Saved partial results to file (batch 3), memory freed
+2025-06-11 17:52:09,332 - __main__ - INFO - Merged data contains 66799 records
+2025-06-11 17:52:09,364 - __main__ - INFO - Memory usage: 1.5% (123.7 MB)
+2025-06-11 17:52:09,364 - __main__ - INFO - Garbage collection: collected 26 objects, memory usage: 1.5%
+2025-06-11 17:52:09,365 - __main__ - INFO - Calculating derived metrics with memory optimization
+2025-06-11 17:52:09,365 - __main__ - INFO - Memory usage: 1.5% (123.7 MB)
+2025-06-11 17:52:09,440 - __main__ - INFO - Memory usage: 1.7% (138.0 MB)
+2025-06-11 17:52:09,440 - __main__ - INFO - Derived metrics calculated successfully
+2025-06-11 17:52:09,464 - __main__ - INFO - Memory usage: 1.6% (130.5 MB)
+2025-06-11 17:52:09,465 - __main__ - INFO - Garbage collection: collected 0 objects, memory usage: 1.6%
+2025-06-11 17:52:09,466 - __main__ - INFO - Mapping data to dimension keys
+2025-06-11 17:52:40,340 - __main__ - INFO - Dimension keys mapped successfully
+2025-06-11 17:52:40,361 - __main__ - INFO - Memory usage: 1.7% (134.8 MB)
+2025-06-11 17:52:40,361 - __main__ - INFO - Garbage collection: collected 0 objects, memory usage: 1.7%
+2025-06-11 17:52:40,362 - __main__ - INFO - Inserting facts into staging table
+2025-06-11 17:52:40,366 - __main__ - INFO - Inserting 66799 facts to staging table with memory optimization
+2025-06-11 17:52:40,366 - __main__ - INFO - Creating staging fact table
+2025-06-11 17:52:40,413 - __main__ - INFO - staging_fact_energy_weather table already exists
+2025-06-11 17:52:40,414 - __main__ - INFO - Truncating staging fact table
+2025-06-11 17:52:40,621 - __main__ - INFO - Truncated staging_fact_energy_weather table
+2025-06-11 17:52:40,621 - __main__ - INFO - Memory usage: 1.7% (134.8 MB)
+2025-06-11 17:52:41,856 - __main__ - INFO - Memory usage: 1.7% (135.7 MB)
+2025-06-11 17:52:42,882 - __main__ - INFO - Memory usage: 1.7% (136.5 MB)
+2025-06-11 17:52:44,001 - __main__ - INFO - Memory usage: 1.7% (136.5 MB)
+2025-06-11 17:52:45,093 - __main__ - INFO - Memory usage: 1.7% (136.5 MB)
+2025-06-11 17:52:46,073 - __main__ - INFO - Inserted and committed 10000/66799 rows (15.0%)
+2025-06-11 17:52:46,095 - __main__ - INFO - Memory usage: 1.7% (136.5 MB)
+2025-06-11 17:52:46,869 - __main__ - INFO - Memory usage: 1.7% (136.5 MB)
+2025-06-11 17:52:47,333 - __main__ - INFO - Memory usage: 1.7% (136.5 MB)
+2025-06-11 17:52:48,347 - __main__ - INFO - Memory usage: 1.7% (136.5 MB)
+2025-06-11 17:52:48,926 - __main__ - INFO - Memory usage: 1.7% (136.5 MB)
+2025-06-11 17:52:49,289 - __main__ - INFO - Inserted and committed 20000/66799 rows (29.9%)
+2025-06-11 17:52:49,310 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:49,930 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:50,518 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:51,367 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:52,020 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:52,669 - __main__ - INFO - Inserted and committed 30000/66799 rows (44.9%)
+2025-06-11 17:52:52,690 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:53,102 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:53,942 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:54,606 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:55,085 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:56,133 - __main__ - INFO - Inserted and committed 40000/66799 rows (59.9%)
+2025-06-11 17:52:56,162 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:56,809 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:57,195 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:57,789 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:58,285 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:58,895 - __main__ - INFO - Inserted and committed 50000/66799 rows (74.9%)
+2025-06-11 17:52:58,919 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:52:59,584 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:53:00,156 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:53:00,723 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:53:01,240 - __main__ - INFO - Memory usage: 1.7% (136.6 MB)
+2025-06-11 17:53:01,640 - __main__ - INFO - Inserted and committed 60000/66799 rows (89.8%)
+2025-06-11 17:53:01,671 - __main__ - INFO - Memory usage: 1.7% (135.9 MB)
+2025-06-11 17:53:02,364 - __main__ - INFO - Memory usage: 1.7% (136.7 MB)
+2025-06-11 17:53:03,043 - __main__ - INFO - Memory usage: 1.7% (136.7 MB)
+2025-06-11 17:53:03,685 - __main__ - INFO - Memory usage: 1.7% (136.7 MB)
+2025-06-11 17:53:03,827 - __main__ - INFO - Inserted and committed 66799/66799 rows (100.0%)
+2025-06-11 17:53:03,850 - __main__ - INFO - Successfully inserted 66799 fact records to staging
+2025-06-11 17:53:04,650 - __main__ - INFO - Successfully processed 66799 fact records
+2025-06-11 17:53:04,650 - __main__ - INFO - Memory usage: 1.7% (136.7 MB)
+2025-06-11 17:53:04,653 - __main__ - INFO - Final memory usage: 1.7% (change: +0.8%)
+2025-06-11 17:53:04,687 - __main__ - INFO - Memory usage: 1.7% (136.7 MB)
+2025-06-11 17:53:04,687 - __main__ - INFO - Garbage collection: collected 0 objects, memory usage: 1.7%
+2025-06-11 17:53:04,697 - OptimizedFactProcessorMain - INFO - Memory-optimized fact processing completed successfully

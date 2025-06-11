@@ -1,0 +1,93 @@
+2025-06-11 10:41:40,070 - OptimizedWarehouseBuilderMain - INFO - Starting Optimized Warehouse Rebuild - UNLIMITED EXECUTION TIME
+2025-06-11 10:41:40,070 - OptimizedWarehouseBuilderMain - INFO - Configuration - Max connections: 3, Batch size: 5000
+2025-06-11 10:41:40,070 - OptimizedWarehouseBuilderMain - INFO - No timeouts configured - operations will run until completion
+2025-06-11 10:41:40,071 - OptimizedWarehouseBuilderMain - INFO - Testing database connection...
+2025-06-11 10:41:44,249 - OptimizedWarehouseBuilderMain - INFO - Database connection test successful
+2025-06-11 10:41:44,249 - __main__ - INFO - Initialized WarehouseBuilder - No timeouts (unlimited execution time)
+2025-06-11 10:41:44,250 - __main__ - INFO - Starting optimized full warehouse rebuild
+2025-06-11 10:41:44,250 - __main__ - INFO - Starting: Dropping existing tables
+2025-06-11 10:41:44,250 - __main__ - INFO - Dropping existing tables (optimized)
+2025-06-11 10:41:44,251 - __main__ - INFO - Attempting to drop foreign key constraints
+2025-06-11 10:41:44,549 - __main__ - INFO - Processed 7 foreign key constraints
+2025-06-11 10:41:45,474 - __main__ - INFO - Successfully processed 14 tables
+2025-06-11 10:41:45,474 - __main__ - INFO - Completed: Dropping existing tables in 1.22 seconds
+2025-06-11 10:41:45,474 - __main__ - INFO - Starting: Creating dimension tables
+2025-06-11 10:41:45,474 - __main__ - INFO - Creating dimension tables (optimized)
+2025-06-11 10:41:45,625 - __main__ - INFO - Successfully created 7 dimension tables
+2025-06-11 10:41:45,625 - __main__ - INFO - Completed: Creating dimension tables in 0.15 seconds
+2025-06-11 10:41:45,625 - __main__ - INFO - Starting: Inserting default dimension records
+2025-06-11 10:41:45,625 - __main__ - INFO - Inserting default dimension records (batch)
+2025-06-11 10:41:45,647 - __main__ - INFO - Successfully inserted 7 default dimension records
+2025-06-11 10:41:45,648 - __main__ - INFO - Completed: Inserting default dimension records in 0.02 seconds
+2025-06-11 10:41:45,648 - __main__ - INFO - Starting: Creating source tables
+2025-06-11 10:41:45,648 - __main__ - INFO - Creating source tables (optimized)
+2025-06-11 10:41:45,666 - __main__ - INFO - Successfully created 6 source tables
+2025-06-11 10:41:45,667 - __main__ - INFO - Completed: Creating source tables in 0.02 seconds
+2025-06-11 10:41:45,667 - __main__ - INFO - Starting: Creating fact table
+2025-06-11 10:41:45,669 - __main__ - INFO - Creating fact table (optimized)
+2025-06-11 10:41:45,692 - __main__ - INFO - Successfully created fact table with constraints
+2025-06-11 10:41:45,693 - __main__ - INFO - Completed: Creating fact table in 0.03 seconds
+2025-06-11 10:41:45,694 - __main__ - INFO - Starting: Loading data from staging
+2025-06-11 10:41:45,696 - __main__ - INFO - Loading data from staging (parallel processing)
+2025-06-11 10:41:45,952 - __main__ - INFO - Successfully loaded dimension: dim_date
+2025-06-11 10:41:45,952 - __main__ - INFO - Successfully loaded dimension: dim_time
+2025-06-11 10:41:45,959 - __main__ - INFO - Successfully loaded dimension: dim_bidding_zone
+2025-06-11 10:41:45,979 - __main__ - INFO - Successfully loaded dimension: dim_weather_zone
+2025-06-11 10:41:46,098 - __main__ - INFO - Successfully loaded dimension: dim_socioeconomic_profile
+2025-06-11 10:41:46,151 - __main__ - INFO - Successfully loaded dimension: dim_generation_type
+2025-06-11 10:41:46,156 - __main__ - INFO - Successfully loaded dimension: dim_weather_condition
+2025-06-11 10:41:46,543 - __main__ - INFO - Successfully loaded source: src_entso_actual_load
+2025-06-11 10:41:46,648 - __main__ - INFO - Successfully loaded source: src_climate_data
+2025-06-11 10:41:46,690 - __main__ - INFO - Successfully loaded source: src_entso_forecast
+2025-06-11 10:41:46,858 - __main__ - INFO - Successfully loaded source: src_eurostat_integrated
+2025-06-11 10:41:47,062 - __main__ - INFO - Successfully loaded source: src_weather_data
+2025-06-11 10:41:53,039 - __main__ - INFO - Successfully loaded source: src_entso_generation
+2025-06-11 10:42:08,598 - __main__ - INFO - Found 26 common columns for fact table
+2025-06-11 10:42:08,599 - __main__ - INFO - Large fact table detected (174995 records), using batch processing
+2025-06-11 10:42:08,600 - __main__ - INFO - Processing batch 1: records 1 to 5000
+2025-06-11 10:42:52,830 - __main__ - INFO - Processing batch 2: records 5001 to 10000
+2025-06-11 10:42:53,071 - __main__ - INFO - Processing batch 3: records 10001 to 15000
+2025-06-11 10:42:53,301 - __main__ - INFO - Processing batch 4: records 15001 to 20000
+2025-06-11 10:42:53,449 - __main__ - INFO - Processing batch 5: records 20001 to 25000
+2025-06-11 10:42:53,610 - __main__ - INFO - Progress: 25000/174995 records (14.3%) - Elapsed: 45s, Est. remaining: 261s
+2025-06-11 10:42:53,611 - __main__ - INFO - Processing batch 6: records 25001 to 30000
+2025-06-11 10:42:54,003 - __main__ - INFO - Processing batch 7: records 30001 to 35000
+2025-06-11 10:42:55,438 - __main__ - INFO - Processing batch 8: records 35001 to 40000
+2025-06-11 10:42:55,696 - __main__ - INFO - Processing batch 9: records 40001 to 45000
+2025-06-11 10:42:57,910 - __main__ - INFO - Processing batch 10: records 45001 to 50000
+2025-06-11 10:42:59,232 - __main__ - INFO - Progress: 50000/174995 records (28.6%) - Elapsed: 51s, Est. remaining: 122s
+2025-06-11 10:42:59,233 - __main__ - INFO - Processing batch 11: records 50001 to 55000
+2025-06-11 10:43:00,265 - __main__ - INFO - Processing batch 12: records 55001 to 60000
+2025-06-11 10:43:02,935 - __main__ - INFO - Processing batch 13: records 60001 to 65000
+2025-06-11 10:43:04,206 - __main__ - INFO - Processing batch 14: records 65001 to 70000
+2025-06-11 10:43:06,495 - __main__ - INFO - Processing batch 15: records 70001 to 75000
+2025-06-11 10:43:09,948 - __main__ - INFO - Progress: 75000/174995 records (42.9%) - Elapsed: 61s, Est. remaining: 78s
+2025-06-11 10:43:09,948 - __main__ - INFO - Processing batch 16: records 75001 to 80000
+2025-06-11 10:43:15,657 - __main__ - INFO - Processing batch 17: records 80001 to 85000
+2025-06-11 10:43:19,074 - __main__ - INFO - Processing batch 18: records 85001 to 90000
+2025-06-11 10:43:25,334 - __main__ - INFO - Processing batch 19: records 90001 to 95000
+2025-06-11 10:43:35,506 - __main__ - INFO - Processing batch 20: records 95001 to 100000
+2025-06-11 10:43:42,150 - __main__ - INFO - Progress: 100000/174995 records (57.1%) - Elapsed: 94s, Est. remaining: 65s
+2025-06-11 10:43:42,150 - __main__ - INFO - Processing batch 21: records 100001 to 105000
+2025-06-11 10:43:42,732 - __main__ - INFO - Processing batch 22: records 105001 to 110000
+2025-06-11 10:43:45,859 - __main__ - INFO - Processing batch 23: records 110001 to 115000
+2025-06-11 10:43:48,253 - __main__ - INFO - Processing batch 24: records 115001 to 120000
+2025-06-11 10:43:50,042 - __main__ - INFO - Processing batch 25: records 120001 to 125000
+2025-06-11 10:43:50,512 - __main__ - INFO - Progress: 125000/174995 records (71.4%) - Elapsed: 102s, Est. remaining: 37s
+2025-06-11 10:43:50,512 - __main__ - INFO - Processing batch 26: records 125001 to 130000
+2025-06-11 10:43:50,866 - __main__ - INFO - Processing batch 27: records 130001 to 135000
+2025-06-11 10:43:53,434 - __main__ - INFO - Processing batch 28: records 135001 to 140000
+2025-06-11 10:43:54,974 - __main__ - INFO - Processing batch 29: records 140001 to 145000
+2025-06-11 10:43:57,508 - __main__ - INFO - Processing batch 30: records 145001 to 150000
+2025-06-11 10:43:57,947 - __main__ - INFO - Progress: 150000/174995 records (85.7%) - Elapsed: 109s, Est. remaining: 15s
+2025-06-11 10:43:57,947 - __main__ - INFO - Processing batch 31: records 150001 to 155000
+2025-06-11 10:44:05,452 - __main__ - INFO - Processing batch 32: records 155001 to 160000
+2025-06-11 10:44:06,318 - __main__ - INFO - Processing batch 33: records 160001 to 165000
+2025-06-11 10:44:10,364 - __main__ - INFO - Processing batch 34: records 165001 to 170000
+2025-06-11 10:44:14,281 - __main__ - INFO - Processing batch 35: records 170001 to 174995
+2025-06-11 10:44:16,758 - __main__ - INFO - Progress: 174995/174995 records (100.0%) - Elapsed: 128s, Est. remaining: 0s
+2025-06-11 10:44:16,758 - __main__ - INFO - Successfully loaded 174995 records to fact_energy_weather using batch processing
+2025-06-11 10:44:16,759 - __main__ - INFO - All data loaded successfully
+2025-06-11 10:44:16,760 - __main__ - INFO - Completed: Loading data from staging in 151.07 seconds
+2025-06-11 10:44:16,762 - __main__ - INFO - Optimized warehouse rebuild completed successfully in 152.51 seconds
+2025-06-11 10:44:16,763 - OptimizedWarehouseBuilderMain - INFO - Optimized warehouse rebuild completed successfully

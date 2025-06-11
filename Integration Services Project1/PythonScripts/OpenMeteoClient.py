@@ -1089,8 +1089,10 @@ def main():
     from datetime import datetime, timedelta
     
     # Parametry z SSIS lub zmiennych środowiskowych
-    connection_string = os.getenv('DW_CONNECTION_STRING', '')
-    
+    connection_string = os.getenv('ConnectionString', '')
+   
+    print("Connection string successfully read")
+   
     # Sprawdzenie czy connection_string ma odpowiedni format
     if not connection_string or ('Driver' not in connection_string and 'DSN' not in connection_string):
         # Domyślny connection string jako bezpieczna opcja

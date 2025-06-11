@@ -1,0 +1,272 @@
+2025-06-10 12:38:29,020 - DataCleanerMain - INFO - Starting DataCleaner process
+2025-06-10 12:38:29,021 - DataCleanerMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-10 12:38:29,021 - __main__ - INFO - Starting full ETL process
+2025-06-10 12:38:33,813 - __main__ - INFO - Checking staging tables
+2025-06-10 12:38:33,839 - __main__ - INFO - Table staging_dim_date exists with 1098 records
+2025-06-10 12:38:33,842 - __main__ - INFO - Table staging_dim_time exists with 24 records
+2025-06-10 12:38:33,848 - __main__ - INFO - Table staging_dim_bidding_zone exists with 57 records
+2025-06-10 12:38:33,851 - __main__ - INFO - Table staging_dim_weather_zone exists with 25 records
+2025-06-10 12:38:33,853 - __main__ - INFO - Table staging_dim_generation_type exists with 18 records
+2025-06-10 12:38:33,878 - __main__ - INFO - Table staging_dim_weather_condition exists with 14 records
+2025-06-10 12:38:33,902 - __main__ - INFO - Table staging_dim_socioeconomic_profile exists with 40 records
+2025-06-10 12:38:34,142 - __main__ - INFO - Table staging_fact_energy_weather exists with 174995 records
+2025-06-10 12:38:34,146 - __main__ - INFO - Table staging_entso_actual_load exists with 4050 records
+2025-06-10 12:38:34,188 - __main__ - INFO - Table staging_entso_generation exists with 53950 records
+2025-06-10 12:38:34,202 - __main__ - INFO - Table staging_entso_forecast exists with 5160 records
+2025-06-10 12:38:34,255 - __main__ - INFO - Table staging_weather_data exists with 8544 records
+2025-06-10 12:38:34,258 - __main__ - INFO - Table staging_climate_data exists with 356 records
+2025-06-10 12:38:34,262 - __main__ - INFO - Table staging_eurostat_integrated exists with 40 records
+2025-06-10 12:38:34,263 - __main__ - INFO - Found 14 staging tables with data
+2025-06-10 12:38:34,263 - __main__ - INFO - Ensuring target tables exist
+2025-06-10 12:38:34,264 - __main__ - INFO - Table dim_date already exists
+2025-06-10 12:38:34,276 - __main__ - ERROR - Error ensuring default record in dim_date: ('42S22', "[42S22] [Microsoft][ODBC SQL Server Driver][SQL Server]Invalid column name 'dim_date_id'. (207) (SQLExecDirectW)")
+2025-06-10 12:38:34,277 - __main__ - INFO - Table dim_time already exists
+2025-06-10 12:38:34,289 - __main__ - ERROR - Error ensuring default record in dim_time: ('42S22', "[42S22] [Microsoft][ODBC SQL Server Driver][SQL Server]Invalid column name 'dim_time_id'. (207) (SQLExecDirectW)")
+2025-06-10 12:38:34,290 - __main__ - INFO - Table dim_bidding_zone already exists
+2025-06-10 12:38:34,291 - __main__ - ERROR - Error ensuring default record in dim_bidding_zone: ('42S22', "[42S22] [Microsoft][ODBC SQL Server Driver][SQL Server]Invalid column name 'dim_bidding_zone_id'. (207) (SQLExecDirectW)")
+2025-06-10 12:38:34,295 - __main__ - INFO - Table dim_weather_zone already exists
+2025-06-10 12:38:34,296 - __main__ - ERROR - Error ensuring default record in dim_weather_zone: ('42S22', "[42S22] [Microsoft][ODBC SQL Server Driver][SQL Server]Invalid column name 'dim_weather_zone_id'. (207) (SQLExecDirectW)")
+2025-06-10 12:38:34,297 - __main__ - INFO - Table dim_generation_type already exists
+2025-06-10 12:38:34,298 - __main__ - ERROR - Error ensuring default record in dim_generation_type: ('42S22', "[42S22] [Microsoft][ODBC SQL Server Driver][SQL Server]Invalid column name 'dim_generation_type_id'. (207) (SQLExecDirectW)")
+2025-06-10 12:38:34,299 - __main__ - INFO - Table dim_weather_condition already exists
+2025-06-10 12:38:34,311 - __main__ - ERROR - Error ensuring default record in dim_weather_condition: ('42S22', "[42S22] [Microsoft][ODBC SQL Server Driver][SQL Server]Invalid column name 'dim_weather_condition_id'. (207) (SQLExecDirectW)")
+2025-06-10 12:38:34,331 - __main__ - INFO - Table dim_socioeconomic_profile already exists
+2025-06-10 12:38:34,332 - __main__ - ERROR - Error ensuring default record in dim_socioeconomic_profile: ('42S22', "[42S22] [Microsoft][ODBC SQL Server Driver][SQL Server]Invalid column name 'dim_socioeconomic_profile_id'. (207) (SQLExecDirectW)")
+2025-06-10 12:38:34,334 - __main__ - INFO - Fact table already exists
+2025-06-10 12:38:34,345 - __main__ - INFO - Creating source table src_entso_actual_load from staging
+2025-06-10 12:38:34,382 - __main__ - INFO - Creating table src_entso_actual_load
+2025-06-10 12:38:34,502 - __main__ - INFO - Table src_entso_actual_load created successfully
+2025-06-10 12:38:34,503 - __main__ - INFO - Creating source table src_entso_generation from staging
+2025-06-10 12:38:34,525 - __main__ - INFO - Creating table src_entso_generation
+2025-06-10 12:38:34,530 - __main__ - INFO - Table src_entso_generation created successfully
+2025-06-10 12:38:34,531 - __main__ - INFO - Creating source table src_entso_forecast from staging
+2025-06-10 12:38:34,560 - __main__ - INFO - Creating table src_entso_forecast
+2025-06-10 12:38:34,565 - __main__ - INFO - Table src_entso_forecast created successfully
+2025-06-10 12:38:34,567 - __main__ - INFO - Creating source table src_weather_data from staging
+2025-06-10 12:38:34,583 - __main__ - INFO - Creating table src_weather_data
+2025-06-10 12:38:34,599 - __main__ - INFO - Table src_weather_data created successfully
+2025-06-10 12:38:34,601 - __main__ - INFO - Creating source table src_climate_data from staging
+2025-06-10 12:38:34,620 - __main__ - INFO - Creating table src_climate_data
+2025-06-10 12:38:34,644 - __main__ - INFO - Table src_climate_data created successfully
+2025-06-10 12:38:34,645 - __main__ - INFO - Creating source table src_eurostat_integrated from staging
+2025-06-10 12:38:34,664 - __main__ - INFO - Creating table src_eurostat_integrated
+2025-06-10 12:38:34,678 - __main__ - INFO - Table src_eurostat_integrated created successfully
+2025-06-10 12:38:34,678 - __main__ - INFO - Loading dimensions from staging
+2025-06-10 12:38:34,681 - __main__ - INFO - Loading 1098 records from staging_dim_date to dim_date
+2025-06-10 12:38:34,712 - __main__ - INFO - Cleaning dim_date (preserving default record)
+2025-06-10 12:38:34,715 - __main__ - ERROR - Error loading dimensions: ('42S22', "[42S22] [Microsoft][ODBC SQL Server Driver][SQL Server]Invalid column name 'dim_date_id'. (207) (SQLExecDirectW)")
+2025-06-10 12:38:34,716 - __main__ - ERROR - Failed to load dimensions
+2025-06-10 12:38:34,724 - DataCleanerMain - ERROR - DataCleaner process failed
+2025-06-10 13:17:03,715 - DataCleanerMain - INFO - Starting DataCleaner process
+2025-06-10 13:17:03,732 - DataCleanerMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-10 13:17:03,734 - __main__ - INFO - Starting full ETL process
+2025-06-10 13:17:08,367 - __main__ - INFO - Checking staging tables
+2025-06-10 13:17:08,374 - __main__ - INFO - Table staging_dim_date exists with 1098 records
+2025-06-10 13:17:08,377 - __main__ - INFO - Table staging_dim_time exists with 24 records
+2025-06-10 13:17:08,408 - __main__ - INFO - Table staging_dim_bidding_zone exists with 57 records
+2025-06-10 13:17:08,412 - __main__ - INFO - Table staging_dim_weather_zone exists with 25 records
+2025-06-10 13:17:08,416 - __main__ - INFO - Table staging_dim_generation_type exists with 18 records
+2025-06-10 13:17:08,420 - __main__ - INFO - Table staging_dim_weather_condition exists with 14 records
+2025-06-10 13:17:08,427 - __main__ - INFO - Table staging_dim_socioeconomic_profile exists with 40 records
+2025-06-10 13:17:08,618 - __main__ - INFO - Table staging_fact_energy_weather exists with 174995 records
+2025-06-10 13:17:08,624 - __main__ - INFO - Table staging_entso_actual_load exists with 4050 records
+2025-06-10 13:17:08,665 - __main__ - INFO - Table staging_entso_generation exists with 53950 records
+2025-06-10 13:17:08,676 - __main__ - INFO - Table staging_entso_forecast exists with 5160 records
+2025-06-10 13:17:08,690 - __main__ - INFO - Table staging_weather_data exists with 8544 records
+2025-06-10 13:17:08,694 - __main__ - INFO - Table staging_climate_data exists with 356 records
+2025-06-10 13:17:08,698 - __main__ - INFO - Table staging_eurostat_integrated exists with 40 records
+2025-06-10 13:17:08,699 - __main__ - INFO - Found 14 staging tables with data
+2025-06-10 13:17:08,699 - __main__ - INFO - Ensuring target tables exist
+2025-06-10 13:17:08,702 - __main__ - INFO - Table dim_date already exists
+2025-06-10 13:17:08,705 - __main__ - INFO - Using mapped ID column for dim_date: date_id
+2025-06-10 13:17:08,752 - __main__ - INFO - Adding default record to dim_date
+2025-06-10 13:17:08,813 - __main__ - INFO - Inserting default record to dim_date
+2025-06-10 13:17:08,854 - __main__ - INFO - Default record added to dim_date
+2025-06-10 13:17:08,855 - __main__ - INFO - Table dim_time already exists
+2025-06-10 13:17:08,858 - __main__ - INFO - Using mapped ID column for dim_time: time_id
+2025-06-10 13:17:08,868 - __main__ - INFO - Adding default record to dim_time
+2025-06-10 13:17:08,885 - __main__ - INFO - Inserting default record to dim_time
+2025-06-10 13:17:08,907 - __main__ - INFO - Default record added to dim_time
+2025-06-10 13:17:08,909 - __main__ - INFO - Table dim_bidding_zone already exists
+2025-06-10 13:17:08,909 - __main__ - INFO - Using mapped ID column for dim_bidding_zone: bidding_zone_id
+2025-06-10 13:17:08,926 - __main__ - INFO - Adding default record to dim_bidding_zone
+2025-06-10 13:17:09,028 - __main__ - INFO - Inserting default record to dim_bidding_zone
+2025-06-10 13:17:09,153 - __main__ - INFO - Default record added to dim_bidding_zone
+2025-06-10 13:17:09,154 - __main__ - INFO - Table dim_weather_zone already exists
+2025-06-10 13:17:09,155 - __main__ - INFO - Using mapped ID column for dim_weather_zone: weather_zone_id
+2025-06-10 13:17:09,189 - __main__ - INFO - Adding default record to dim_weather_zone
+2025-06-10 13:17:09,209 - __main__ - INFO - Inserting default record to dim_weather_zone
+2025-06-10 13:17:09,282 - __main__ - ERROR - Error ensuring default record in dim_weather_zone: ('HY007', '[HY007] [Microsoft][ODBC SQL Server Driver]Skojarzona instrukcja nie jest przygotowana (0) (SQLNumResultCols)')
+2025-06-10 13:17:09,285 - __main__ - INFO - Table dim_generation_type already exists
+2025-06-10 13:17:09,289 - __main__ - INFO - Using mapped ID column for dim_generation_type: generation_type_id
+2025-06-10 13:17:09,291 - __main__ - INFO - Adding default record to dim_generation_type
+2025-06-10 13:17:09,308 - __main__ - INFO - Inserting default record to dim_generation_type
+2025-06-10 13:17:09,357 - __main__ - INFO - Default record added to dim_generation_type
+2025-06-10 13:17:09,358 - __main__ - INFO - Table dim_weather_condition already exists
+2025-06-10 13:17:09,359 - __main__ - INFO - Using mapped ID column for dim_weather_condition: weather_condition_id
+2025-06-10 13:17:09,379 - __main__ - INFO - Adding default record to dim_weather_condition
+2025-06-10 13:17:09,412 - __main__ - INFO - Inserting default record to dim_weather_condition
+2025-06-10 13:17:09,415 - __main__ - INFO - Default record added to dim_weather_condition
+2025-06-10 13:17:09,417 - __main__ - INFO - Table dim_socioeconomic_profile already exists
+2025-06-10 13:17:09,419 - __main__ - INFO - Using mapped ID column for dim_socioeconomic_profile: socioeconomic_profile_id
+2025-06-10 13:17:09,423 - __main__ - INFO - Adding default record to dim_socioeconomic_profile
+2025-06-10 13:17:09,437 - __main__ - INFO - Inserting default record to dim_socioeconomic_profile
+2025-06-10 13:17:09,483 - __main__ - ERROR - Error ensuring default record in dim_socioeconomic_profile: ('HY007', '[HY007] [Microsoft][ODBC SQL Server Driver]Skojarzona instrukcja nie jest przygotowana (0) (SQLNumResultCols)')
+2025-06-10 13:17:09,485 - __main__ - INFO - Fact table already exists
+2025-06-10 13:17:09,490 - __main__ - INFO - Source table src_entso_actual_load already exists
+2025-06-10 13:17:09,491 - __main__ - INFO - Source table src_entso_generation already exists
+2025-06-10 13:17:09,492 - __main__ - INFO - Source table src_entso_forecast already exists
+2025-06-10 13:17:09,493 - __main__ - INFO - Source table src_weather_data already exists
+2025-06-10 13:17:09,494 - __main__ - INFO - Source table src_climate_data already exists
+2025-06-10 13:17:09,495 - __main__ - INFO - Source table src_eurostat_integrated already exists
+2025-06-10 13:17:09,495 - __main__ - INFO - Loading dimensions from staging
+2025-06-10 13:17:09,497 - __main__ - INFO - Loading 1098 records from staging_dim_date to dim_date
+2025-06-10 13:17:09,497 - __main__ - INFO - Using mapped ID column for dim_date: date_id
+2025-06-10 13:17:09,525 - __main__ - INFO - Cleaning dim_date (preserving default record)
+2025-06-10 13:17:09,802 - __main__ - INFO - Inserted 1098 records into dim_date
+2025-06-10 13:17:09,804 - __main__ - INFO - Loading 24 records from staging_dim_time to dim_time
+2025-06-10 13:17:09,805 - __main__ - INFO - Using mapped ID column for dim_time: time_id
+2025-06-10 13:17:09,873 - __main__ - INFO - Cleaning dim_time (preserving default record)
+2025-06-10 13:17:09,943 - __main__ - INFO - Inserted 24 records into dim_time
+2025-06-10 13:17:10,051 - __main__ - INFO - Loading 57 records from staging_dim_bidding_zone to dim_bidding_zone
+2025-06-10 13:17:10,051 - __main__ - INFO - Using mapped ID column for dim_bidding_zone: bidding_zone_id
+2025-06-10 13:17:10,128 - __main__ - INFO - Cleaning dim_bidding_zone (preserving default record)
+2025-06-10 13:17:10,199 - __main__ - ERROR - Error loading dimensions: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ__dim_bidd__9C17128788791F62'. Cannot insert duplicate key in object 'dbo.dim_bidding_zone'. The duplicate key value is (10YPL-AREA-----S). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-06-10 13:17:10,200 - __main__ - ERROR - Failed to load dimensions
+2025-06-10 13:17:10,208 - DataCleanerMain - ERROR - DataCleaner process failed
+2025-06-10 13:24:22,571 - DataCleanerMain - INFO - Starting DataCleaner process
+2025-06-10 13:24:22,571 - DataCleanerMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-10 13:24:22,573 - __main__ - INFO - Starting full ETL process
+2025-06-10 13:24:27,055 - __main__ - INFO - Checking staging tables
+2025-06-10 13:24:27,060 - __main__ - INFO - Table staging_dim_date exists with 1098 records
+2025-06-10 13:24:27,063 - __main__ - INFO - Table staging_dim_time exists with 24 records
+2025-06-10 13:24:27,066 - __main__ - INFO - Table staging_dim_bidding_zone exists with 57 records
+2025-06-10 13:24:27,069 - __main__ - INFO - Table staging_dim_weather_zone exists with 25 records
+2025-06-10 13:24:27,073 - __main__ - INFO - Table staging_dim_generation_type exists with 18 records
+2025-06-10 13:24:27,078 - __main__ - INFO - Table staging_dim_weather_condition exists with 14 records
+2025-06-10 13:24:27,083 - __main__ - INFO - Table staging_dim_socioeconomic_profile exists with 40 records
+2025-06-10 13:24:27,274 - __main__ - INFO - Table staging_fact_energy_weather exists with 174995 records
+2025-06-10 13:24:27,281 - __main__ - INFO - Table staging_entso_actual_load exists with 4050 records
+2025-06-10 13:24:27,325 - __main__ - INFO - Table staging_entso_generation exists with 53950 records
+2025-06-10 13:24:27,337 - __main__ - INFO - Table staging_entso_forecast exists with 5160 records
+2025-06-10 13:24:27,352 - __main__ - INFO - Table staging_weather_data exists with 8544 records
+2025-06-10 13:24:27,367 - __main__ - INFO - Table staging_climate_data exists with 356 records
+2025-06-10 13:24:27,370 - __main__ - INFO - Table staging_eurostat_integrated exists with 40 records
+2025-06-10 13:24:27,373 - __main__ - INFO - Found 14 staging tables with data
+2025-06-10 13:24:27,374 - __main__ - INFO - Ensuring target tables exist
+2025-06-10 13:24:27,375 - __main__ - INFO - Table dim_date already exists
+2025-06-10 13:24:27,376 - __main__ - INFO - Using mapped ID column for dim_date: date_id
+2025-06-10 13:24:27,382 - __main__ - INFO - Default record already exists in dim_date
+2025-06-10 13:24:27,384 - __main__ - INFO - Table dim_time already exists
+2025-06-10 13:24:27,387 - __main__ - INFO - Using mapped ID column for dim_time: time_id
+2025-06-10 13:24:27,390 - __main__ - INFO - Default record already exists in dim_time
+2025-06-10 13:24:27,391 - __main__ - INFO - Table dim_bidding_zone already exists
+2025-06-10 13:24:27,391 - __main__ - INFO - Using mapped ID column for dim_bidding_zone: bidding_zone_id
+2025-06-10 13:24:27,395 - __main__ - INFO - Default record already exists in dim_bidding_zone
+2025-06-10 13:24:27,399 - __main__ - INFO - Table dim_weather_zone already exists
+2025-06-10 13:24:27,402 - __main__ - INFO - Using mapped ID column for dim_weather_zone: weather_zone_id
+2025-06-10 13:24:27,403 - __main__ - INFO - Adding default record to dim_weather_zone
+2025-06-10 13:24:27,575 - __main__ - INFO - Inserting default record to dim_weather_zone
+2025-06-10 13:24:27,644 - __main__ - INFO - Default record added to dim_weather_zone
+2025-06-10 13:24:27,645 - __main__ - INFO - Table dim_generation_type already exists
+2025-06-10 13:24:27,647 - __main__ - INFO - Using mapped ID column for dim_generation_type: generation_type_id
+2025-06-10 13:24:27,655 - __main__ - INFO - Default record already exists in dim_generation_type
+2025-06-10 13:24:27,656 - __main__ - INFO - Table dim_weather_condition already exists
+2025-06-10 13:24:27,656 - __main__ - INFO - Using mapped ID column for dim_weather_condition: weather_condition_id
+2025-06-10 13:24:27,659 - __main__ - INFO - Default record already exists in dim_weather_condition
+2025-06-10 13:24:27,660 - __main__ - INFO - Table dim_socioeconomic_profile already exists
+2025-06-10 13:24:27,663 - __main__ - INFO - Using mapped ID column for dim_socioeconomic_profile: socioeconomic_profile_id
+2025-06-10 13:24:27,669 - __main__ - INFO - Adding default record to dim_socioeconomic_profile
+2025-06-10 13:24:27,742 - __main__ - INFO - Inserting default record to dim_socioeconomic_profile
+2025-06-10 13:24:27,748 - __main__ - INFO - Default record added to dim_socioeconomic_profile
+2025-06-10 13:24:27,748 - __main__ - INFO - Fact table already exists
+2025-06-10 13:24:27,750 - __main__ - INFO - Source table src_entso_actual_load already exists
+2025-06-10 13:24:27,750 - __main__ - INFO - Source table src_entso_generation already exists
+2025-06-10 13:24:27,751 - __main__ - INFO - Source table src_entso_forecast already exists
+2025-06-10 13:24:27,752 - __main__ - INFO - Source table src_weather_data already exists
+2025-06-10 13:24:27,753 - __main__ - INFO - Source table src_climate_data already exists
+2025-06-10 13:24:27,756 - __main__ - INFO - Source table src_eurostat_integrated already exists
+2025-06-10 13:24:27,760 - __main__ - INFO - Loading dimensions from staging
+2025-06-10 13:24:27,763 - __main__ - INFO - Loading 1098 records from staging_dim_date to dim_date
+2025-06-10 13:24:27,764 - __main__ - INFO - Using mapped ID column for dim_date: date_id
+2025-06-10 13:24:27,788 - __main__ - INFO - Unique columns for dim_date: ['full_date']
+2025-06-10 13:24:27,829 - __main__ - INFO - Using MERGE for dim_date based on unique columns: ['full_date']
+2025-06-10 13:24:28,094 - __main__ - INFO - MERGE completed for dim_date, record count: 1098
+2025-06-10 13:24:28,095 - __main__ - INFO - Loading 24 records from staging_dim_time to dim_time
+2025-06-10 13:24:28,098 - __main__ - INFO - Using mapped ID column for dim_time: time_id
+2025-06-10 13:24:28,133 - __main__ - INFO - Unique columns for dim_time: ['hour', 'minute']
+2025-06-10 13:24:28,162 - __main__ - INFO - Using MERGE for dim_time based on unique columns: ['hour', 'minute']
+2025-06-10 13:24:28,188 - __main__ - INFO - MERGE completed for dim_time, record count: 24
+2025-06-10 13:24:28,189 - __main__ - INFO - Loading 57 records from staging_dim_bidding_zone to dim_bidding_zone
+2025-06-10 13:24:28,189 - __main__ - INFO - Using mapped ID column for dim_bidding_zone: bidding_zone_id
+2025-06-10 13:24:28,209 - __main__ - INFO - Unique columns for dim_bidding_zone: ['bidding_zone_code']
+2025-06-10 13:24:28,249 - __main__ - INFO - Using MERGE for dim_bidding_zone based on unique columns: ['bidding_zone_code']
+2025-06-10 13:24:28,309 - __main__ - ERROR - Error loading dimensions: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ__dim_bidd__9C17128788791F62'. Cannot insert duplicate key in object 'dbo.dim_bidding_zone'. The duplicate key value is (10YCZ-CEPS-----N). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-06-10 13:24:28,311 - __main__ - ERROR - Failed to load dimensions
+2025-06-10 13:24:28,346 - DataCleanerMain - ERROR - DataCleaner process failed
+2025-06-10 13:32:28,375 - DataCleanerMain - INFO - Starting DataCleaner process
+2025-06-10 13:32:28,375 - DataCleanerMain - INFO - Using default connection string: Driver={SQL Server};Server=localhost;Database=EnergyWeatherDW;Trusted_Connection=yes;
+2025-06-10 13:32:28,377 - __main__ - INFO - Starting full ETL process
+2025-06-10 13:32:34,809 - __main__ - INFO - Checking staging tables
+2025-06-10 13:32:34,854 - __main__ - INFO - Table staging_dim_date exists with 1098 records
+2025-06-10 13:32:34,867 - __main__ - INFO - Table staging_dim_time exists with 24 records
+2025-06-10 13:32:34,903 - __main__ - INFO - Table staging_dim_bidding_zone exists with 57 records
+2025-06-10 13:32:34,915 - __main__ - INFO - Table staging_dim_weather_zone exists with 25 records
+2025-06-10 13:32:34,917 - __main__ - INFO - Table staging_dim_generation_type exists with 18 records
+2025-06-10 13:32:34,931 - __main__ - INFO - Table staging_dim_weather_condition exists with 14 records
+2025-06-10 13:32:35,016 - __main__ - INFO - Table staging_dim_socioeconomic_profile exists with 40 records
+2025-06-10 13:32:59,617 - __main__ - INFO - Table staging_fact_energy_weather exists with 174995 records
+2025-06-10 13:32:59,674 - __main__ - INFO - Table staging_entso_actual_load exists with 4050 records
+2025-06-10 13:33:00,306 - __main__ - INFO - Table staging_entso_generation exists with 53950 records
+2025-06-10 13:33:00,375 - __main__ - INFO - Table staging_entso_forecast exists with 5160 records
+2025-06-10 13:33:00,407 - __main__ - INFO - Table staging_weather_data exists with 8544 records
+2025-06-10 13:33:00,496 - __main__ - INFO - Table staging_climate_data exists with 356 records
+2025-06-10 13:33:00,527 - __main__ - INFO - Table staging_eurostat_integrated exists with 40 records
+2025-06-10 13:33:00,571 - __main__ - INFO - Found 14 staging tables with data
+2025-06-10 13:33:00,572 - __main__ - INFO - Ensuring target tables exist
+2025-06-10 13:33:00,573 - __main__ - INFO - Table dim_date already exists
+2025-06-10 13:33:00,574 - __main__ - INFO - Using mapped ID column for dim_date: date_id
+2025-06-10 13:33:00,607 - __main__ - INFO - Default record already exists in dim_date
+2025-06-10 13:33:00,620 - __main__ - INFO - Table dim_time already exists
+2025-06-10 13:33:00,620 - __main__ - INFO - Using mapped ID column for dim_time: time_id
+2025-06-10 13:33:00,633 - __main__ - INFO - Default record already exists in dim_time
+2025-06-10 13:33:00,643 - __main__ - INFO - Table dim_bidding_zone already exists
+2025-06-10 13:33:00,643 - __main__ - INFO - Using mapped ID column for dim_bidding_zone: bidding_zone_id
+2025-06-10 13:33:00,656 - __main__ - INFO - Default record already exists in dim_bidding_zone
+2025-06-10 13:33:00,700 - __main__ - INFO - Table dim_weather_zone already exists
+2025-06-10 13:33:00,701 - __main__ - INFO - Using mapped ID column for dim_weather_zone: weather_zone_id
+2025-06-10 13:33:00,714 - __main__ - INFO - Default record already exists in dim_weather_zone
+2025-06-10 13:33:00,722 - __main__ - INFO - Table dim_generation_type already exists
+2025-06-10 13:33:00,722 - __main__ - INFO - Using mapped ID column for dim_generation_type: generation_type_id
+2025-06-10 13:33:00,744 - __main__ - INFO - Default record already exists in dim_generation_type
+2025-06-10 13:33:00,755 - __main__ - INFO - Table dim_weather_condition already exists
+2025-06-10 13:33:00,755 - __main__ - INFO - Using mapped ID column for dim_weather_condition: weather_condition_id
+2025-06-10 13:33:00,775 - __main__ - INFO - Default record already exists in dim_weather_condition
+2025-06-10 13:33:00,782 - __main__ - INFO - Table dim_socioeconomic_profile already exists
+2025-06-10 13:33:00,782 - __main__ - INFO - Using mapped ID column for dim_socioeconomic_profile: socioeconomic_profile_id
+2025-06-10 13:33:00,805 - __main__ - INFO - Default record already exists in dim_socioeconomic_profile
+2025-06-10 13:33:00,894 - __main__ - INFO - Fact table already exists
+2025-06-10 13:33:00,906 - __main__ - INFO - Source table src_entso_actual_load already exists
+2025-06-10 13:33:00,906 - __main__ - INFO - Source table src_entso_generation already exists
+2025-06-10 13:33:00,907 - __main__ - INFO - Source table src_entso_forecast already exists
+2025-06-10 13:33:00,908 - __main__ - INFO - Source table src_weather_data already exists
+2025-06-10 13:33:00,909 - __main__ - INFO - Source table src_climate_data already exists
+2025-06-10 13:33:00,909 - __main__ - INFO - Source table src_eurostat_integrated already exists
+2025-06-10 13:33:00,910 - __main__ - INFO - Loading dimensions from staging
+2025-06-10 13:33:00,967 - __main__ - INFO - Loading 1098 records from staging_dim_date to dim_date
+2025-06-10 13:33:00,968 - __main__ - INFO - Using mapped ID column for dim_date: date_id
+2025-06-10 13:33:02,074 - __main__ - INFO - Removing existing records from dim_date (keeping default record with ID=0)
+2025-06-10 13:33:02,236 - __main__ - INFO - Inserting 1098 records into dim_date
+2025-06-10 13:33:02,475 - __main__ - INFO - Successfully inserted 1098 records into dim_date
+2025-06-10 13:33:02,479 - __main__ - INFO - Loading 24 records from staging_dim_time to dim_time
+2025-06-10 13:33:02,483 - __main__ - INFO - Using mapped ID column for dim_time: time_id
+2025-06-10 13:33:02,535 - __main__ - INFO - Removing existing records from dim_time (keeping default record with ID=0)
+2025-06-10 13:33:02,580 - __main__ - INFO - Inserting 24 records into dim_time
+2025-06-10 13:33:02,609 - __main__ - INFO - Successfully inserted 24 records into dim_time
+2025-06-10 13:33:02,612 - __main__ - INFO - Loading 57 records from staging_dim_bidding_zone to dim_bidding_zone
+2025-06-10 13:33:02,612 - __main__ - INFO - Using mapped ID column for dim_bidding_zone: bidding_zone_id
+2025-06-10 13:33:02,642 - __main__ - INFO - Removing existing records from dim_bidding_zone (keeping default record with ID=0)
+2025-06-10 13:33:02,742 - __main__ - INFO - Inserting 57 records into dim_bidding_zone
+2025-06-10 13:33:02,758 - __main__ - ERROR - Error loading dimensions: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ__dim_bidd__9C17128788791F62'. Cannot insert duplicate key in object 'dbo.dim_bidding_zone'. The duplicate key value is (10YPL-AREA-----S). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+2025-06-10 13:33:02,759 - __main__ - ERROR - Failed to load dimensions
+2025-06-10 13:33:02,779 - DataCleanerMain - ERROR - DataCleaner process failed
